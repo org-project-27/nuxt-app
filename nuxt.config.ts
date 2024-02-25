@@ -26,13 +26,6 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**', './stores/**/*'],
   },
-  nitro: {
-    storage: {
-      data: {
-        driver: 'vercelKV'
-      }
-    }
-  }
   // devtools: {
   //   enable: true,
   //

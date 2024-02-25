@@ -4,39 +4,39 @@
     {
       "name": "vite:load-fallback",
       "result": "import {\n    defaults,\n    models,\n    type TokensModel,\n    type SignupResponseModel,\n    type LoginResponseModel,\n    type AuthResponseModel,\n} from \"assets/scripts/types/models/userAuthModels\"\nimport {\n    authService,\n    loginService,\n    signupService\n} from \"~/services/user\";\nexport const useAuthStore = defineStore('authStore', {\n    state: () => (models),\n    getters: {\n        isAuthenticated(state){\n            // #TODO: Configure user is really auth or not\n            return !!state.modelAuth.user_id;\n        },\n    },\n    actions: {\n        resetModelSignup() : void {\n            this.modelSignup = defaults.defaultSignup();\n        },\n        resetModelLogin() : void {\n            this.modelLogin = defaults.defaultLogin();\n        },\n        resetModelAuth() : void {\n            this.modelAuth = defaults.defaultResponses.auth();\n        },\n        async submitLogin() : Promise<LoginResponseModel> {\n            this.resetModelAuth();\n            this.resetTokensOnLocalStorage();\n            const { data, tokens } = await loginService(this.modelLogin);\n            this.setTokenToLocalStorage(tokens);\n            return data;\n        },\n        async submitSignup() : Promise<SignupResponseModel> {\n            const { data } = await signupService(this.modelSignup);\n            return data;\n        },\n        async authUser() : Promise<AuthResponseModel> {\n            try {\n                const { data } = await authService();\n                this.modelAuth = { ...data };\n            } catch(error){\n                console.log('Auth error', error);\n                this.resetTokensOnLocalStorage();\n                this.modelAuth = defaults.defaultResponses.auth();\n            } finally {\n                this.setAuthProgressIsLoading(false);\n                this.resetModelLogin();\n            }\n            return this.modelAuth;\n        },\n        syncTokensFromLocalStorage() : TokensModel {\n            const data : any = defaults.defaultResponses.tokens();\n            Object.keys(data).forEach((key: string) => {\n                const value = localStorage.getItem(key);\n                if(value && !isNaN(Number(value))){\n                    data[key] = Number(value) || 0;\n                } else {\n                    data[key] = value || null;\n                }\n            });\n            this.modelToken = {...data};\n\n            return this.modelToken;\n        },\n        setTokenToLocalStorage(data: TokensModel = { ...defaults.defaultResponses.tokens() }) {\n            Object.entries(data).forEach(([key, value]) => {\n               localStorage.removeItem(key);\n               if(value) localStorage.setItem(key, value);\n            });\n            this.syncTokensFromLocalStorage();\n        },\n        resetTokensOnLocalStorage() : void {\n            this.setTokenToLocalStorage();\n        },\n        setAuthProgressIsLoading(value: boolean){\n            this.authProgressIsLoading = value;\n        },\n        setAfterAuthPath(path: string){\n            this.afterAuthPath = path;\n        },\n        resetAllModels(){\n            this.resetTokensOnLocalStorage();\n            this.resetModelAuth();\n            this.resetModelLogin();\n            this.resetModelSignup();\n        },\n        logout() : void {\n            this.resetAllModels();\n            window.location.reload();\n        }\n    }\n});",
-      "start": 1708867440341,
-      "end": 1708867440444,
+      "start": 1708870618829,
+      "end": 1708870618943,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867440444,
-      "end": 1708867440444,
+      "start": 1708870618943,
+      "end": 1708870618943,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867440444,
-      "end": 1708867440444,
+      "start": 1708870618943,
+      "end": 1708870618943,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867440444,
-      "end": 1708867440444,
+      "start": 1708870618943,
+      "end": 1708870618943,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867440444,
-      "end": 1708867440444,
+      "start": 1708870618943,
+      "end": 1708870618943,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import {\n  defaults,\n  models\n} from \"assets/scripts/types/models/userAuthModels\";\nimport {\n  authService,\n  loginService,\n  signupService\n} from \"~/services/user\";\nexport const useAuthStore = defineStore(\"authStore\", {\n  state: () => models,\n  getters: {\n    isAuthenticated(state) {\n      return !!state.modelAuth.user_id;\n    }\n  },\n  actions: {\n    resetModelSignup() {\n      this.modelSignup = defaults.defaultSignup();\n    },\n    resetModelLogin() {\n      this.modelLogin = defaults.defaultLogin();\n    },\n    resetModelAuth() {\n      this.modelAuth = defaults.defaultResponses.auth();\n    },\n    async submitLogin() {\n      this.resetModelAuth();\n      this.resetTokensOnLocalStorage();\n      const { data, tokens } = await loginService(this.modelLogin);\n      this.setTokenToLocalStorage(tokens);\n      return data;\n    },\n    async submitSignup() {\n      const { data } = await signupService(this.modelSignup);\n      return data;\n    },\n    async authUser() {\n      try {\n        const { data } = await authService();\n        this.modelAuth = { ...data };\n      } catch (error) {\n        console.log(\"Auth error\", error);\n        this.resetTokensOnLocalStorage();\n        this.modelAuth = defaults.defaultResponses.auth();\n      } finally {\n        this.setAuthProgressIsLoading(false);\n        this.resetModelLogin();\n      }\n      return this.modelAuth;\n    },\n    syncTokensFromLocalStorage() {\n      const data = defaults.defaultResponses.tokens();\n      Object.keys(data).forEach((key) => {\n        const value = localStorage.getItem(key);\n        if (value && !isNaN(Number(value))) {\n          data[key] = Number(value) || 0;\n        } else {\n          data[key] = value || null;\n        }\n      });\n      this.modelToken = { ...data };\n      return this.modelToken;\n    },\n    setTokenToLocalStorage(data = { ...defaults.defaultResponses.tokens() }) {\n      Object.entries(data).forEach(([key, value]) => {\n        localStorage.removeItem(key);\n        if (value)\n          localStorage.setItem(key, value);\n      });\n      this.syncTokensFromLocalStorage();\n    },\n    resetTokensOnLocalStorage() {\n      this.setTokenToLocalStorage();\n    },\n    setAuthProgressIsLoading(value) {\n      this.authProgressIsLoading = value;\n    },\n    setAfterAuthPath(path) {\n      this.afterAuthPath = path;\n    },\n    resetAllModels() {\n      this.resetTokensOnLocalStorage();\n      this.resetModelAuth();\n      this.resetModelLogin();\n      this.resetModelSignup();\n    },\n    logout() {\n      this.resetAllModels();\n      window.location.reload();\n    }\n  }\n});\n",
-      "start": 1708867440444,
-      "end": 1708867441577,
+      "start": 1708870618943,
+      "end": 1708870620178,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -52,123 +52,123 @@
     },
     {
       "name": "vite:json",
-      "start": 1708867441577,
-      "end": 1708867441577,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867441577,
-      "end": 1708867441577,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867441577,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867441578,
-      "end": 1708867441578,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867441578,
-      "end": 1708867441579,
+      "start": 1708870620178,
+      "end": 1708870620178,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineStore } from '/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/node_modules/@pinia/nuxt/dist/runtime/composables';\nimport {\n  defaults,\n  models\n} from \"assets/scripts/types/models/userAuthModels\";\nimport {\n  authService,\n  loginService,\n  signupService\n} from \"~/services/user\";\nexport const useAuthStore = defineStore(\"authStore\", {\n  state: () => models,\n  getters: {\n    isAuthenticated(state) {\n      return !!state.modelAuth.user_id;\n    }\n  },\n  actions: {\n    resetModelSignup() {\n      this.modelSignup = defaults.defaultSignup();\n    },\n    resetModelLogin() {\n      this.modelLogin = defaults.defaultLogin();\n    },\n    resetModelAuth() {\n      this.modelAuth = defaults.defaultResponses.auth();\n    },\n    async submitLogin() {\n      this.resetModelAuth();\n      this.resetTokensOnLocalStorage();\n      const { data, tokens } = await loginService(this.modelLogin);\n      this.setTokenToLocalStorage(tokens);\n      return data;\n    },\n    async submitSignup() {\n      const { data } = await signupService(this.modelSignup);\n      return data;\n    },\n    async authUser() {\n      try {\n        const { data } = await authService();\n        this.modelAuth = { ...data };\n      } catch (error) {\n        console.log(\"Auth error\", error);\n        this.resetTokensOnLocalStorage();\n        this.modelAuth = defaults.defaultResponses.auth();\n      } finally {\n        this.setAuthProgressIsLoading(false);\n        this.resetModelLogin();\n      }\n      return this.modelAuth;\n    },\n    syncTokensFromLocalStorage() {\n      const data = defaults.defaultResponses.tokens();\n      Object.keys(data).forEach((key) => {\n        const value = localStorage.getItem(key);\n        if (value && !isNaN(Number(value))) {\n          data[key] = Number(value) || 0;\n        } else {\n          data[key] = value || null;\n        }\n      });\n      this.modelToken = { ...data };\n      return this.modelToken;\n    },\n    setTokenToLocalStorage(data = { ...defaults.defaultResponses.tokens() }) {\n      Object.entries(data).forEach(([key, value]) => {\n        localStorage.removeItem(key);\n        if (value)\n          localStorage.setItem(key, value);\n      });\n      this.syncTokensFromLocalStorage();\n    },\n    resetTokensOnLocalStorage() {\n      this.setTokenToLocalStorage();\n    },\n    setAuthProgressIsLoading(value) {\n      this.authProgressIsLoading = value;\n    },\n    setAfterAuthPath(path) {\n      this.afterAuthPath = path;\n    },\n    resetAllModels() {\n      this.resetTokensOnLocalStorage();\n      this.resetModelAuth();\n      this.resetModelLogin();\n      this.resetModelSignup();\n    },\n    logout() {\n      this.resetAllModels();\n      window.location.reload();\n    }\n  }\n});\n",
-      "start": 1708867441579,
-      "end": 1708867441579,
+      "start": 1708870620178,
+      "end": 1708870620179,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -181,50 +181,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620179,
+      "end": 1708870620179,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620179,
+      "end": 1708870620179,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620179,
+      "end": 1708870620179,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620179,
+      "end": 1708870620179,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620179,
+      "end": 1708870620179,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620180,
+      "end": 1708870620180,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620180,
+      "end": 1708870620180,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867441580,
-      "end": 1708867441580,
+      "start": 1708870620180,
+      "end": 1708870620180,
       "order": "normal"
     }
   ]

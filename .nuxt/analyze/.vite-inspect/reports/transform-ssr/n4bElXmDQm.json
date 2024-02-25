@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div\n      v-if=\"inputCategory === 'writeable'\"\n      v-show=\"readyForView\"\n      ref=\"input-component\"\n      class=\"input-component writeable\"\n      :class=\"{\n        'active': focusComputed,\n        'deactive': !focusComputed,\n        'disabled': disabled,\n        'message-active': inputMessage.message,\n        'info': inputMessage.key === 'info',\n        'error': inputMessage.key === 'error',\n        'warning': inputMessage.key === 'warning',\n        'success': inputMessage.key === 'success',\n      }\">\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        v-if=\"labelActive\">\n      {{ label }} {{required && !disabled ? '*' : null}}\n    </label>\n    <div class=\"input-container flex-row-center\">\n      <div class=\"left-side\" :class=\"{'deactive': !showInputLeftSideArea}\">\n        <icon-component\n            class=\"input-icon\"\n            :fill=\"focusComputed\"\n            :icon-name=\"leftIcon?.icon\"\n            :icon-size=\"leftIcon?.size\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n      <input\n          :id=\"idComputed\"\n          :type=\"type\"\n          :name=\"name\"\n          :required=\"required\"\n          :autofocus=\"autofocus\"\n          :placeholder=\"placeholder\"\n          :maxlength=\"maxlength\"\n          :readonly=\"readonly\"\n          :disabled=\"disabled\"\n          :pattern=\"pattern\"\n          :style=\"inputStyle\"\n          :autocomplete=\"autocomplete\"\n          @focusin=\"focusComputed = true\"\n          @focusout=\"focusComputed = false\"\n          @input=\"handleInputChange\"\n          v-model=\"modelComputed\"/>\n      <div class=\"right-side\" :class=\"{'deactive': !showInputRightSideArea}\">\n        <div\n            class=\"cannot-select char-counter\"\n            v-if=\"showMaxLengthCounter\">\n          {{ modelValue.length }}/{{ maxlength }}\n        </div>\n        <icon-component\n            v-if=\"showClearButton\"\n            @click.stop=\"clearAllButton\"\n            icon-name=\"cancel\"\n            icon-size=\"2rem\"\n            class=\"clear-icon\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n    </div>\n    <div v-if=\"!!inputMessage.message\" class=\"message-area cannot-select\">\n      <icon-component\n          v-if=\"!!inputMessage.icon\"\n          :icon-name=\"inputMessage.icon\"\n          icon-size=\"1.3rem\"\n          class=\"message-icon\"\n          :color=\"inputMessage.color\"/>\n      <span :style=\"{'color': inputMessage.color}\">\n        {{inputMessage.message}}\n      </span>\n    </div>\n  </div>\n  <div\n      v-else-if=\"inputCategory === 'password'\"\n      v-show=\"readyForView\"\n      ref=\"input-component\"\n      class=\"input-component writeable\"\n      :class=\"{\n        'active': focusComputed,\n        'deactive': !focusComputed,\n        'disabled': disabled,\n        'message-active': inputMessage.message,\n        'info': inputMessage.key === 'info',\n        'error': inputMessage.key === 'error',\n        'warning': inputMessage.key === 'warning',\n        'success': inputMessage.key === 'success',\n      }\">\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        v-if=\"labelActive\">\n      {{ label }} {{required && !disabled ? '*' : null}}\n    </label>\n    <div class=\"input-container flex-row-center\">\n      <div class=\"left-side\" :class=\"{'deactive': !showInputLeftSideArea}\">\n        <icon-component\n            class=\"input-icon\"\n            :fill=\"focusComputed\"\n            :icon-name=\"leftIcon?.icon\"\n            :icon-size=\"leftIcon?.size\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n      <input\n          :id=\"idComputed\"\n          :type=\"visibilityTrigger ? 'text' : type\"\n          :name=\"name\"\n          :required=\"required\"\n          :autofocus=\"autofocus\"\n          :placeholder=\"placeholder || '•••••••••'\"\n          :maxlength=\"maxlength\"\n          :readonly=\"readonly\"\n          :disabled=\"disabled\"\n          :pattern=\"pattern\"\n          :style=\"inputStyle\"\n          :autocomplete=\"autocomplete\"\n          @focusin=\"focusComputed = true\"\n          @focusout=\"focusComputed = false\"\n          @input=\"handleInputChange\"\n          v-model=\"modelComputed\"/>\n      <div class=\"right-side\" :class=\"{'deactive': !showInputRightSideArea}\">\n        <icon-component\n            v-if=\"modelComputed\"\n            @click.stop=\"visibilityTrigger = !visibilityTrigger\"\n            :icon-name=\"visibilityTrigger ? 'visibility' : 'visibility_off'\"\n            icon-size=\"2rem\"\n            class=\"clear-icon\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n    </div>\n    <div v-if=\"!!inputMessage.message\" class=\"message-area cannot-select\">\n      <icon-component\n          v-if=\"!!inputMessage.icon\"\n          :icon-name=\"inputMessage.icon\"\n          icon-size=\"1.3rem\"\n          class=\"message-icon\"\n          :color=\"inputMessage.color\"/>\n      <span :style=\"{'color': inputMessage.color}\">\n        {{ inputMessage.message }}\n      </span>\n    </div>\n  </div>\n  <div\n      v-else-if=\"inputCategory === 'buttons'\"\n      class=\"input-component buttons cannot-select\"\n      :class=\"\n        `${isLoading ? 'is-loading' : ''}` +\n        ` ${disabled ? 'disabled' : ''}` +\n        ' button-type-' + buttonType\"\n      ref=\"input-component\"\n      v-show=\"readyForView\">\n    <div v-if=\"isLoading\" class=\"image-box\">\n      <loading-component\n          :id=\"idComputed\"\n          size=\"25\"\n          type=\"5\"\n          color=\"white\"\n          speed=\".8\"/>\n    </div>\n    <input\n        :id=\"idComputed\"\n        :type=\"type\"\n        :name=\"name\"\n        :autofocus=\"autofocus\"\n        :disabled=\"disabled\"\n        :style=\"inputStyle\"\n        :value=\"label\"\n        :class=\"{'mid-size': midSize}\"\n        @click.stop=\"$emit('click')\"\n        v-else\n    />\n  </div>\n  <div\n      class=\"input-component selectable\"\n      :class=\"{ 'disabled': disabled }\"\n      v-else-if=\"inputCategory === 'selectable'\"\n      v-show=\"readyForView\">\n    <input\n        :id=\"idComputed\"\n        :type=\"type\"\n        :name=\"name\"\n        :autofocus=\"autofocus\"\n        :disabled=\"disabled\"\n        :style=\"inputStyle\"\n        :value=\"value\"\n        :required=\"required\"\n        :class=\"{ 'disabled': disabled }\"\n        @click.stop=\"$emit('click')\"\n        v-model=\"modelComputed\" />\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        :class=\"{ 'disabled': disabled }\"\n        v-if=\"label\">{{ label }}</label>\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        :class=\"{ 'disabled': disabled }\"\n        v-else-if=\"htmlLabel\">\n        <span v-html=\"htmlLabel\"></span>\n    </label>\n  </div>\n</template>\n\n<script src=\"@/assets/scripts/components/inputComponent.js\">\n</script>\n\n<style scoped lang=\"scss\">\n@import \"assets/stylesheets/components/inputComponent\";\n</style>",
-      "start": 1708867443756,
-      "end": 1708867443934,
+      "start": 1708870622290,
+      "end": 1708870622475,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867443934,
-      "end": 1708867443934,
+      "start": 1708870622475,
+      "end": 1708870622475,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import _sfc_main from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nexport * from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderDynamicModel as _ssrRenderDynamicModel, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_icon_component = _resolveComponent(\"icon-component\")\n  const _component_loading_component = _resolveComponent(\"loading-component\")\n\n  if (_ctx.inputCategory === 'writeable') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder)\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.readonly)) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.showMaxLengthCounter) {\n      _push(`<div class=\"cannot-select char-counter\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.modelValue.length)\n      }/${\n        _ssrInterpolate(_ctx.maxlength)\n      }</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.showClearButton) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: _ctx.clearAllButton,\n        \"icon-name\": \"cancel\",\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'password') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.visibilityTrigger ? 'text' : _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder || '•••••••••')\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.readonly)) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.visibilityTrigger ? 'text' : _ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.modelComputed) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: $event => (_ctx.visibilityTrigger = !_ctx.visibilityTrigger),\n        \"icon-name\": _ctx.visibilityTrigger ? 'visibility' : 'visibility_off',\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'buttons') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      class: [\"input-component buttons cannot-select\", \n        `${_ctx.isLoading ? 'is-loading' : ''}` +\n        ` ${_ctx.disabled ? 'disabled' : ''}` +\n        ' button-type-' + _ctx.buttonType],\n      ref: \"input-component\",\n      style: (_ctx.readyForView) ? null : { display: \"none\" }\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.isLoading) {\n      _push(`<div class=\"image-box\" data-v-d1ae12c6>`)\n      _push(_ssrRenderComponent(_component_loading_component, {\n        id: _ctx.idComputed,\n        size: \"25\",\n        type: \"5\",\n        color: \"white\",\n        speed: \".8\"\n      }, null, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<input${\n        _ssrRenderAttr(\"id\", _ctx.idComputed)\n      }${\n        _ssrRenderAttr(\"type\", _ctx.type)\n      }${\n        _ssrRenderAttr(\"name\", _ctx.name)\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n      } style=\"${\n        _ssrRenderStyle(_ctx.inputStyle)\n      }\"${\n        _ssrRenderAttr(\"value\", _ctx.label)\n      } class=\"${\n        _ssrRenderClass({'mid-size': _ctx.midSize})\n      }\" data-v-d1ae12c6>`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'selectable') {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({\n        class: [\"input-component selectable\", { 'disabled': _ctx.disabled }],\n        style: (_ctx.readyForView) ? null : { display: \"none\" }\n      }, _attrs))\n    } data-v-d1ae12c6><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"value\", _ctx.value)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    } class=\"${\n      _ssrRenderClass({ 'disabled': _ctx.disabled })\n    }\"${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, _ctx.value)\n    } data-v-d1ae12c6>`)\n    if (_ctx.label) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      }</label>`)\n    } else if (_ctx.htmlLabel) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6><span data-v-d1ae12c6>${\n        _ctx.htmlLabel\n      }</span></label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue?vue&type=style&index=0&scoped=d1ae12c6&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/InputComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-d1ae12c6\"]])",
-      "start": 1708867443934,
-      "end": 1708867443944,
+      "start": 1708870622475,
+      "end": 1708870622485,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -116,117 +116,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867443945,
-      "end": 1708867443945,
+      "start": 1708870622486,
+      "end": 1708870622486,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { readonly as __unimport_readonly, unref as __unimport_unref_ } from 'vue';import _sfc_main from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nexport * from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderDynamicModel as _ssrRenderDynamicModel, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_icon_component = _resolveComponent(\"icon-component\")\n  const _component_loading_component = _resolveComponent(\"loading-component\")\n\n  if (_ctx.inputCategory === 'writeable') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder)\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr((\"readonly\" in _ctx ? _ctx.readonly : __unimport_unref_(__unimport_readonly)))) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.showMaxLengthCounter) {\n      _push(`<div class=\"cannot-select char-counter\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.modelValue.length)\n      }/${\n        _ssrInterpolate(_ctx.maxlength)\n      }</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.showClearButton) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: _ctx.clearAllButton,\n        \"icon-name\": \"cancel\",\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'password') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.visibilityTrigger ? 'text' : _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder || '•••••••••')\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr((\"readonly\" in _ctx ? _ctx.readonly : __unimport_unref_(__unimport_readonly)))) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.visibilityTrigger ? 'text' : _ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.modelComputed) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: $event => (_ctx.visibilityTrigger = !_ctx.visibilityTrigger),\n        \"icon-name\": _ctx.visibilityTrigger ? 'visibility' : 'visibility_off',\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'buttons') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      class: [\"input-component buttons cannot-select\", \n        `${_ctx.isLoading ? 'is-loading' : ''}` +\n        ` ${_ctx.disabled ? 'disabled' : ''}` +\n        ' button-type-' + _ctx.buttonType],\n      ref: \"input-component\",\n      style: (_ctx.readyForView) ? null : { display: \"none\" }\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.isLoading) {\n      _push(`<div class=\"image-box\" data-v-d1ae12c6>`)\n      _push(_ssrRenderComponent(_component_loading_component, {\n        id: _ctx.idComputed,\n        size: \"25\",\n        type: \"5\",\n        color: \"white\",\n        speed: \".8\"\n      }, null, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<input${\n        _ssrRenderAttr(\"id\", _ctx.idComputed)\n      }${\n        _ssrRenderAttr(\"type\", _ctx.type)\n      }${\n        _ssrRenderAttr(\"name\", _ctx.name)\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n      } style=\"${\n        _ssrRenderStyle(_ctx.inputStyle)\n      }\"${\n        _ssrRenderAttr(\"value\", _ctx.label)\n      } class=\"${\n        _ssrRenderClass({'mid-size': _ctx.midSize})\n      }\" data-v-d1ae12c6>`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'selectable') {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({\n        class: [\"input-component selectable\", { 'disabled': _ctx.disabled }],\n        style: (_ctx.readyForView) ? null : { display: \"none\" }\n      }, _attrs))\n    } data-v-d1ae12c6><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"value\", _ctx.value)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    } class=\"${\n      _ssrRenderClass({ 'disabled': _ctx.disabled })\n    }\"${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, _ctx.value)\n    } data-v-d1ae12c6>`)\n    if (_ctx.label) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      }</label>`)\n    } else if (_ctx.htmlLabel) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6><span data-v-d1ae12c6>${\n        _ctx.htmlLabel\n      }</span></label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue?vue&type=style&index=0&scoped=d1ae12c6&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/InputComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-d1ae12c6\"]])",
-      "start": 1708867443945,
-      "end": 1708867443954,
+      "start": 1708870622486,
+      "end": 1708870622490,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -240,8 +240,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { readonly as __unimport_readonly, unref as __unimport_unref_ } from 'vue';import _sfc_main from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nexport * from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderDynamicModel as _ssrRenderDynamicModel, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_icon_component = _resolveComponent(\"icon-component\")\n  const _component_loading_component = _resolveComponent(\"loading-component\")\n\n  if (_ctx.inputCategory === 'writeable') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder)\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr((\"readonly\" in _ctx ? _ctx.readonly : __unimport_unref_(__unimport_readonly)))) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.showMaxLengthCounter) {\n      _push(`<div class=\"cannot-select char-counter\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.modelValue.length)\n      }/${\n        _ssrInterpolate(_ctx.maxlength)\n      }</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.showClearButton) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: _ctx.clearAllButton,\n        \"icon-name\": \"cancel\",\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'password') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.visibilityTrigger ? 'text' : _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder || '•••••••••')\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr((\"readonly\" in _ctx ? _ctx.readonly : __unimport_unref_(__unimport_readonly)))) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.visibilityTrigger ? 'text' : _ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.modelComputed) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: $event => (_ctx.visibilityTrigger = !_ctx.visibilityTrigger),\n        \"icon-name\": _ctx.visibilityTrigger ? 'visibility' : 'visibility_off',\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'buttons') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      class: [\"input-component buttons cannot-select\", \n        `${_ctx.isLoading ? 'is-loading' : ''}` +\n        ` ${_ctx.disabled ? 'disabled' : ''}` +\n        ' button-type-' + _ctx.buttonType],\n      ref: \"input-component\",\n      style: (_ctx.readyForView) ? null : { display: \"none\" }\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.isLoading) {\n      _push(`<div class=\"image-box\" data-v-d1ae12c6>`)\n      _push(_ssrRenderComponent(_component_loading_component, {\n        id: _ctx.idComputed,\n        size: \"25\",\n        type: \"5\",\n        color: \"white\",\n        speed: \".8\"\n      }, null, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<input${\n        _ssrRenderAttr(\"id\", _ctx.idComputed)\n      }${\n        _ssrRenderAttr(\"type\", _ctx.type)\n      }${\n        _ssrRenderAttr(\"name\", _ctx.name)\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n      } style=\"${\n        _ssrRenderStyle(_ctx.inputStyle)\n      }\"${\n        _ssrRenderAttr(\"value\", _ctx.label)\n      } class=\"${\n        _ssrRenderClass({'mid-size': _ctx.midSize})\n      }\" data-v-d1ae12c6>`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'selectable') {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({\n        class: [\"input-component selectable\", { 'disabled': _ctx.disabled }],\n        style: (_ctx.readyForView) ? null : { display: \"none\" }\n      }, _attrs))\n    } data-v-d1ae12c6><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"value\", _ctx.value)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    } class=\"${\n      _ssrRenderClass({ 'disabled': _ctx.disabled })\n    }\"${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, _ctx.value)\n    } data-v-d1ae12c6>`)\n    if (_ctx.label) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      }</label>`)\n    } else if (_ctx.htmlLabel) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6><span data-v-d1ae12c6>${\n        _ctx.htmlLabel\n      }</span></label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue?vue&type=style&index=0&scoped=d1ae12c6&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/InputComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-d1ae12c6\"]])",
-      "start": 1708867443945,
-      "end": 1708867443954,
+      "start": 1708870622486,
+      "end": 1708870622490,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -254,39 +254,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867443954,
-      "end": 1708867443954,
+      "start": 1708870622490,
+      "end": 1708870622490,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867443954,
-      "end": 1708867443954,
+      "start": 1708870622490,
+      "end": 1708870622490,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867443954,
-      "end": 1708867443954,
+      "start": 1708870622490,
+      "end": 1708870622490,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867443954,
-      "end": 1708867443954,
+      "start": 1708870622490,
+      "end": 1708870622490,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867443954,
-      "end": 1708867443955,
+      "start": 1708870622490,
+      "end": 1708870622490,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/IconComponent.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingComponent.vue\";\nimport { readonly as __unimport_readonly, unref as __unimport_unref_ } from 'vue';import _sfc_main from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nexport * from \"@/assets/scripts/components/inputComponent.js?vue&type=script&src=true&lang.js\"\nimport { resolveComponent as _resolveComponent, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderClass as _ssrRenderClass, ssrIncludeBooleanAttr as _ssrIncludeBooleanAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderDynamicModel as _ssrRenderDynamicModel, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_icon_component = __nuxt_component_0\n  const _component_loading_component = __nuxt_component_1\n\n  if (_ctx.inputCategory === 'writeable') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder)\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr((\"readonly\" in _ctx ? _ctx.readonly : __unimport_unref_(__unimport_readonly)))) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.showMaxLengthCounter) {\n      _push(`<div class=\"cannot-select char-counter\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.modelValue.length)\n      }/${\n        _ssrInterpolate(_ctx.maxlength)\n      }</div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    if (_ctx.showClearButton) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: _ctx.clearAllButton,\n        \"icon-name\": \"cancel\",\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'password') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      style: (_ctx.readyForView) ? null : { display: \"none\" },\n      ref: \"input-component\",\n      class: [\"input-component writeable\", {\n        'active': _ctx.focusComputed,\n        'deactive': !_ctx.focusComputed,\n        'disabled': _ctx.disabled,\n        'message-active': _ctx.inputMessage.message,\n        'info': _ctx.inputMessage.key === 'info',\n        'error': _ctx.inputMessage.key === 'error',\n        'warning': _ctx.inputMessage.key === 'warning',\n        'success': _ctx.inputMessage.key === 'success',\n      }]\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.labelActive) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"cannot-select\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      } ${\n        _ssrInterpolate(_ctx.required && !_ctx.disabled ? '*' : null)\n      }</label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`<div class=\"input-container flex-row-center\" data-v-d1ae12c6><div class=\"${_ssrRenderClass([{'deactive': !_ctx.showInputLeftSideArea}, \"left-side\"])}\" data-v-d1ae12c6>`)\n    _push(_ssrRenderComponent(_component_icon_component, {\n      class: \"input-icon\",\n      fill: _ctx.focusComputed,\n      \"icon-name\": _ctx.leftIcon?.icon,\n      \"icon-size\": _ctx.leftIcon?.size,\n      color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n    }, null, _parent))\n    _push(`</div><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.visibilityTrigger ? 'text' : _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      _ssrRenderAttr(\"placeholder\", _ctx.placeholder || '•••••••••')\n    }${\n      _ssrRenderAttr(\"maxlength\", _ctx.maxlength)\n    }${\n      (_ssrIncludeBooleanAttr((\"readonly\" in _ctx ? _ctx.readonly : __unimport_unref_(__unimport_readonly)))) ? \" readonly\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    }${\n      _ssrRenderAttr(\"pattern\", _ctx.pattern)\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"autocomplete\", _ctx.autocomplete)\n    }${\n      _ssrRenderDynamicModel(_ctx.visibilityTrigger ? 'text' : _ctx.type, _ctx.modelComputed, null)\n    } data-v-d1ae12c6><div class=\"${\n      _ssrRenderClass([{'deactive': !_ctx.showInputRightSideArea}, \"right-side\"])\n    }\" data-v-d1ae12c6>`)\n    if (_ctx.modelComputed) {\n      _push(_ssrRenderComponent(_component_icon_component, {\n        onClick: $event => (_ctx.visibilityTrigger = !_ctx.visibilityTrigger),\n        \"icon-name\": _ctx.visibilityTrigger ? 'visibility' : 'visibility_off',\n        \"icon-size\": \"2rem\",\n        class: \"clear-icon\",\n        color: _ctx.iconColorDetecter(_ctx.leftIcon?.color)\n      }, null, _parent))\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div></div>`)\n    if (!!_ctx.inputMessage.message) {\n      _push(`<div class=\"message-area cannot-select\" data-v-d1ae12c6>`)\n      if (!!_ctx.inputMessage.icon) {\n        _push(_ssrRenderComponent(_component_icon_component, {\n          \"icon-name\": _ctx.inputMessage.icon,\n          \"icon-size\": \"1.3rem\",\n          class: \"message-icon\",\n          color: _ctx.inputMessage.color\n        }, null, _parent))\n      } else {\n        _push(`<!---->`)\n      }\n      _push(`<span style=\"${\n        _ssrRenderStyle({'color': _ctx.inputMessage.color})\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.inputMessage.message)\n      }</span></div>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'buttons') {\n    _push(`<div${_ssrRenderAttrs(_mergeProps({\n      class: [\"input-component buttons cannot-select\", \n        `${_ctx.isLoading ? 'is-loading' : ''}` +\n        ` ${_ctx.disabled ? 'disabled' : ''}` +\n        ' button-type-' + _ctx.buttonType],\n      ref: \"input-component\",\n      style: (_ctx.readyForView) ? null : { display: \"none\" }\n    }, _attrs))} data-v-d1ae12c6>`)\n    if (_ctx.isLoading) {\n      _push(`<div class=\"image-box\" data-v-d1ae12c6>`)\n      _push(_ssrRenderComponent(_component_loading_component, {\n        id: _ctx.idComputed,\n        size: \"25\",\n        type: \"5\",\n        color: \"white\",\n        speed: \".8\"\n      }, null, _parent))\n      _push(`</div>`)\n    } else {\n      _push(`<input${\n        _ssrRenderAttr(\"id\", _ctx.idComputed)\n      }${\n        _ssrRenderAttr(\"type\", _ctx.type)\n      }${\n        _ssrRenderAttr(\"name\", _ctx.name)\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n      }${\n        (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n      } style=\"${\n        _ssrRenderStyle(_ctx.inputStyle)\n      }\"${\n        _ssrRenderAttr(\"value\", _ctx.label)\n      } class=\"${\n        _ssrRenderClass({'mid-size': _ctx.midSize})\n      }\" data-v-d1ae12c6>`)\n    }\n    _push(`</div>`)\n  } else if (_ctx.inputCategory === 'selectable') {\n    _push(`<div${\n      _ssrRenderAttrs(_mergeProps({\n        class: [\"input-component selectable\", { 'disabled': _ctx.disabled }],\n        style: (_ctx.readyForView) ? null : { display: \"none\" }\n      }, _attrs))\n    } data-v-d1ae12c6><input${\n      _ssrRenderAttr(\"id\", _ctx.idComputed)\n    }${\n      _ssrRenderAttr(\"type\", _ctx.type)\n    }${\n      _ssrRenderAttr(\"name\", _ctx.name)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.autofocus)) ? \" autofocus\" : \"\"\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.disabled)) ? \" disabled\" : \"\"\n    } style=\"${\n      _ssrRenderStyle(_ctx.inputStyle)\n    }\"${\n      _ssrRenderAttr(\"value\", _ctx.value)\n    }${\n      (_ssrIncludeBooleanAttr(_ctx.required)) ? \" required\" : \"\"\n    } class=\"${\n      _ssrRenderClass({ 'disabled': _ctx.disabled })\n    }\"${\n      _ssrRenderDynamicModel(_ctx.type, _ctx.modelComputed, _ctx.value)\n    } data-v-d1ae12c6>`)\n    if (_ctx.label) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6>${\n        _ssrInterpolate(_ctx.label)\n      }</label>`)\n    } else if (_ctx.htmlLabel) {\n      _push(`<label${\n        _ssrRenderAttr(\"for\", _ctx.idComputed)\n      } class=\"${\n        _ssrRenderClass([{ 'disabled': _ctx.disabled }, \"cannot-select\"])\n      }\" data-v-d1ae12c6><span data-v-d1ae12c6>${\n        _ctx.htmlLabel\n      }</span></label>`)\n    } else {\n      _push(`<!---->`)\n    }\n    _push(`</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue?vue&type=style&index=0&scoped=d1ae12c6&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/InputComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-d1ae12c6\"]])",
-      "start": 1708867443955,
-      "end": 1708867443956,
+      "start": 1708870622490,
+      "end": 1708870622491,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -299,20 +299,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867443956,
-      "end": 1708867443956,
+      "start": 1708870622491,
+      "end": 1708870622491,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867443956,
-      "end": 1708867443956,
+      "start": 1708870622491,
+      "end": 1708870622491,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867443956,
-      "end": 1708867443956,
+      "start": 1708870622491,
+      "end": 1708870622491,
       "order": "normal"
     }
   ]

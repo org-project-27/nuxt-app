@@ -4,57 +4,57 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div id=\"loading-page-container\">\n    <div>\n      <img\n        width=\"50px\"\n        :src=\"loadingGIF\" \n        :alt=\"'Please wait...'\"/>\n    </div>\n  </div>\n</template>\n\n<script>\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nexport default defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n</script>\n\n<style scoped lang=\"scss\">\n#loading-page-container{\n  width: 100vw;\n  height: 100vh;\n  position: absolute;\n  top: 0;\n  left: 0;\n  backdrop-filter: blur(5px);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: progress;\n  user-select: none;\n\n}\n</style>",
-      "start": 1708867440366,
-      "end": 1708867440518,
+      "start": 1708870618824,
+      "end": 1708870618940,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867440518,
-      "end": 1708867440518,
+      "start": 1708870618940,
+      "end": 1708870618940,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nconst _sfc_main = defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-56e4fe92\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { id: \"loading-page-container\" }\nconst _hoisted_2 = [\"src\", \"alt\"]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"img\", {\n        width: \"50px\",\n        src: _ctx.loadingGIF,\n        alt: 'Please wait...'\n      }, null, 8, _hoisted_2)\n    ])\n  ]))\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingPageComponent.vue?vue&type=style&index=0&scoped=56e4fe92&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-56e4fe92\"]])",
-      "start": 1708867440518,
-      "end": 1708867440519,
+      "start": 1708870618940,
+      "end": 1708870618941,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,105 +62,105 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618941,
+      "end": 1708870618941,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867440519,
-      "end": 1708867440519,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineComponent } from 'vue';\n\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nconst _sfc_main = defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-56e4fe92\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { id: \"loading-page-container\" }\nconst _hoisted_2 = [\"src\", \"alt\"]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", null, [\n      _createElementVNode(\"img\", {\n        width: \"50px\",\n        src: _ctx.loadingGIF,\n        alt: 'Please wait...'\n      }, null, 8, _hoisted_2)\n    ])\n  ]))\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingPageComponent.vue?vue&type=style&index=0&scoped=56e4fe92&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-56e4fe92\"]])",
-      "start": 1708867440519,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -173,50 +173,50 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618942,
+      "end": 1708870618942,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618943,
+      "end": 1708870618943,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867440520,
-      "end": 1708867440520,
+      "start": 1708870618943,
+      "end": 1708870618943,
       "order": "normal"
     }
   ]

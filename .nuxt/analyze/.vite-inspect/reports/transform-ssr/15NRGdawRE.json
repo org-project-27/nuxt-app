@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div id=\"loading-page-container\">\n    <div>\n      <img\n        width=\"50px\"\n        :src=\"loadingGIF\" \n        :alt=\"'Please wait...'\"/>\n    </div>\n  </div>\n</template>\n\n<script>\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nexport default defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n</script>\n\n<style scoped lang=\"scss\">\n#loading-page-container{\n  width: 100vw;\n  height: 100vh;\n  position: absolute;\n  top: 0;\n  left: 0;\n  backdrop-filter: blur(5px);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: progress;\n  user-select: none;\n\n}\n</style>",
-      "start": 1708867444088,
-      "end": 1708867444157,
+      "start": 1708870622725,
+      "end": 1708870622801,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867444157,
-      "end": 1708867444157,
+      "start": 1708870622801,
+      "end": 1708870622801,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nconst _sfc_main = defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ id: \"loading-page-container\" }, _attrs))\n  } data-v-56e4fe92><div data-v-56e4fe92><img width=\"50px\"${\n    _ssrRenderAttr(\"src\", _ctx.loadingGIF)\n  }${\n    _ssrRenderAttr(\"alt\", 'Please wait...')\n  } data-v-56e4fe92></div></div>`)\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingPageComponent.vue?vue&type=style&index=0&scoped=56e4fe92&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/LoadingPageComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-56e4fe92\"]])",
-      "start": 1708867444157,
-      "end": 1708867444158,
+      "start": 1708870622801,
+      "end": 1708870622802,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -83,117 +83,117 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622802,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867444158,
-      "end": 1708867444158,
+      "start": 1708870622802,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineComponent } from 'vue';\n\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nconst _sfc_main = defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ id: \"loading-page-container\" }, _attrs))\n  } data-v-56e4fe92><div data-v-56e4fe92><img width=\"50px\"${\n    _ssrRenderAttr(\"src\", _ctx.loadingGIF)\n  }${\n    _ssrRenderAttr(\"alt\", 'Please wait...')\n  } data-v-56e4fe92></div></div>`)\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingPageComponent.vue?vue&type=style&index=0&scoped=56e4fe92&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/LoadingPageComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-56e4fe92\"]])",
-      "start": 1708867444158,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -207,8 +207,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { defineComponent } from 'vue';\n\nimport loadingGIF from \"~/assets/images/gifs/loading2.gif\";\nconst _sfc_main = defineComponent({\n  name: \"LoadingPage\",\n  data(){\n    return {\n      loadingGIF\n    }\n  },\n  mounted(){\n      //#TODO: Set title \"Loading\"\n  }\n})\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ id: \"loading-page-container\" }, _attrs))\n  } data-v-56e4fe92><div data-v-56e4fe92><img width=\"50px\"${\n    _ssrRenderAttr(\"src\", _ctx.loadingGIF)\n  }${\n    _ssrRenderAttr(\"alt\", 'Please wait...')\n  } data-v-56e4fe92></div></div>`)\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingPageComponent.vue?vue&type=style&index=0&scoped=56e4fe92&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/LoadingPageComponent.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-56e4fe92\"]])",
-      "start": 1708867444158,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -221,56 +221,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622803,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622803,
+      "end": 1708870622804,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867444159,
-      "end": 1708867444159,
+      "start": 1708870622804,
+      "end": 1708870622804,
       "order": "normal"
     }
   ]

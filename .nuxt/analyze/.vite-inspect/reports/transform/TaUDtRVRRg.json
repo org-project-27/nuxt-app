@@ -4,57 +4,57 @@
     {
       "name": "vite:load-fallback",
       "result": "<template :key=\"type\">\n      <span v-if=\"type === 'error'\"\n            :class=\"type\">\n        <icon-component\n            v-if=\"!hideIcon\"\n            icon-name=\"error\"\n            icon-size=\"25\"\n            :color=\"colorUtilities.$error_color_1\"/>\n            <b>{{ message }}</b>\n      </span>\n  <span v-else-if=\"type === 'warn'\"\n        :class=\"type\">\n        <icon-component\n            v-if=\"!hideIcon\"\n            icon-name=\"warning\"\n            icon-size=\"25\"\n            :color=\"colorUtilities.$warning_color_3\"/>\n            <b>{{ message }}</b>\n      </span>\n  <span v-else-if=\"type === 'success'\"\n        :class=\"type\">\n        <icon-component\n            v-if=\"!hideIcon\"\n            fill\n            icon-name=\"check_circle\"\n            icon-size=\"25\"\n            :color=\"colorUtilities.$success_color_1\"/>\n            <b>{{ message }}</b>\n      </span>\n  <span v-else-if=\"type === 'info'\"\n        :class=\"type\">\n        <icon-component\n            v-if=\"!hideIcon\"\n            icon-name=\"info\"\n            icon-size=\"25\"\n            :color=\"colorUtilities.$black_color_2\"/>\n            <b>{{ message }}</b>\n      </span>\n</template>\n\n<script lang=\"js\">\nimport {defineComponent} from 'vue';\nimport colorUtilities from \"assets/scripts/constants/colorUtilities\";\n\nlet timeOutId;\nexport default defineComponent({\n  name: \"MessageComponent\",\n  props: {\n    message: [String, Number],\n    type: {\n      type: String,\n      default: () => 'warn',\n    },\n    hideIcon: Boolean,\n    hideAnimation: Boolean,\n  },\n  data() {\n    return {\n      colorUtilities,\n      timeOut: 1200,\n      timeOutId,\n    }\n  },\n  methods: {\n    addBounceEffect() {\n      this.timeOutId = setTimeout(() => {\n        const element = document.getElementsByClassName(this.type)[0];\n        if (element) {\n          element.classList.add('bounce');\n        }\n        clearTimeout(this.timeOutId);\n      }, this.timeOut);\n    },\n  },\n  mounted() {\n      if(!this.hideAnimation){\n        this.addBounceEffect();\n      }\n  },\n  unmounted() {\n    clearTimeout(this.timeOutId);\n  }\n});\n\n</script>\n\n<style scoped lang=\"scss\">\nspan {\n  @include animate-intro-shifting-x(1s);\n  user-select: none;\n  font-size: 1.2rem;\n  border-radius: 8px;\n  box-shadow: $box_shadow_2;\n  display: flex;\n  font-weight: bold;\n  flex-direction: row;\n  align-items: center;\n  padding: 1rem 2rem;\n  gap: .5rem;\n  max-width: 100%;\n  b{\n    white-space: nowrap;\n  }\n}\n\nspan{\n  background-color: $white_color_1;\n  color: $black_color_1;\n}\n\nspan.error {\n  //color: $error_color_1;\n}\n\nspan.warn {\n  //color: $warning_color_2;\n}\n\nspan.success {\n  //color: $success_color_3;\n}\n\nspan.info {\n  //color: $black_color_1;\n}\n\nspan.bounce {\n  @include animate-bounce(1.7s);\n}\n</style>",
-      "start": 1708867440344,
-      "end": 1708867440469,
+      "start": 1708870618834,
+      "end": 1708870618981,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867440469,
-      "end": 1708867440469,
+      "start": 1708870618981,
+      "end": 1708870618981,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nimport {defineComponent} from 'vue';\nimport colorUtilities from \"assets/scripts/constants/colorUtilities\";\n\nlet timeOutId;\nconst _sfc_main = defineComponent({\n  name: \"MessageComponent\",\n  props: {\n    message: [String, Number],\n    type: {\n      type: String,\n      default: () => 'warn',\n    },\n    hideIcon: Boolean,\n    hideAnimation: Boolean,\n  },\n  data() {\n    return {\n      colorUtilities,\n      timeOut: 1200,\n      timeOutId,\n    }\n  },\n  methods: {\n    addBounceEffect() {\n      this.timeOutId = setTimeout(() => {\n        const element = document.getElementsByClassName(this.type)[0];\n        if (element) {\n          element.classList.add('bounce');\n        }\n        clearTimeout(this.timeOutId);\n      }, this.timeOut);\n    },\n  },\n  mounted() {\n      if(!this.hideAnimation){\n        this.addBounceEffect();\n      }\n  },\n  unmounted() {\n    clearTimeout(this.timeOutId);\n  }\n});\n\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_icon_component = _resolveComponent(\"icon-component\")\n\n  return (_ctx.type === 'error')\n    ? (_openBlock(), _createElementBlock(\"span\", {\n        key: 0,\n        class: _normalizeClass(_ctx.type)\n      }, [\n        (!_ctx.hideIcon)\n          ? (_openBlock(), _createBlock(_component_icon_component, {\n              key: 0,\n              \"icon-name\": \"error\",\n              \"icon-size\": \"25\",\n              color: _ctx.colorUtilities.$error_color_1\n            }, null, 8, [\"color\"]))\n          : _createCommentVNode(\"\", true),\n        _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n      ], 2))\n    : (_ctx.type === 'warn')\n      ? (_openBlock(), _createElementBlock(\"span\", {\n          key: 1,\n          class: _normalizeClass(_ctx.type)\n        }, [\n          (!_ctx.hideIcon)\n            ? (_openBlock(), _createBlock(_component_icon_component, {\n                key: 0,\n                \"icon-name\": \"warning\",\n                \"icon-size\": \"25\",\n                color: _ctx.colorUtilities.$warning_color_3\n              }, null, 8, [\"color\"]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n        ], 2))\n      : (_ctx.type === 'success')\n        ? (_openBlock(), _createElementBlock(\"span\", {\n            key: 2,\n            class: _normalizeClass(_ctx.type)\n          }, [\n            (!_ctx.hideIcon)\n              ? (_openBlock(), _createBlock(_component_icon_component, {\n                  key: 0,\n                  fill: \"\",\n                  \"icon-name\": \"check_circle\",\n                  \"icon-size\": \"25\",\n                  color: _ctx.colorUtilities.$success_color_1\n                }, null, 8, [\"color\"]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n          ], 2))\n        : (_ctx.type === 'info')\n          ? (_openBlock(), _createElementBlock(\"span\", {\n              key: 3,\n              class: _normalizeClass(_ctx.type)\n            }, [\n              (!_ctx.hideIcon)\n                ? (_openBlock(), _createBlock(_component_icon_component, {\n                    key: 0,\n                    \"icon-name\": \"info\",\n                    \"icon-size\": \"25\",\n                    color: _ctx.colorUtilities.$black_color_2\n                  }, null, 8, [\"color\"]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n            ], 2))\n          : _createCommentVNode(\"\", true)\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/MessageComponent.vue?vue&type=style&index=0&scoped=d3b3991c&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-d3b3991c\"]])",
-      "start": 1708867440469,
-      "end": 1708867440472,
+      "start": 1708870618981,
+      "end": 1708870618983,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,153 +62,153 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867440472,
-      "end": 1708867440472,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618983,
+      "end": 1708870618983,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618984,
+      "end": 1708870618984,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618984,
+      "end": 1708870618984,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867440473,
-      "end": 1708867440473,
+      "start": 1708870618984,
+      "end": 1708870618984,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867440473,
-      "end": 1708867440474,
+      "start": 1708870618984,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/IconComponent.vue\";\n\nimport {defineComponent} from 'vue';\nimport colorUtilities from \"assets/scripts/constants/colorUtilities\";\n\nlet timeOutId;\nconst _sfc_main = defineComponent({\n  name: \"MessageComponent\",\n  props: {\n    message: [String, Number],\n    type: {\n      type: String,\n      default: () => 'warn',\n    },\n    hideIcon: Boolean,\n    hideAnimation: Boolean,\n  },\n  data() {\n    return {\n      colorUtilities,\n      timeOut: 1200,\n      timeOutId,\n    }\n  },\n  methods: {\n    addBounceEffect() {\n      this.timeOutId = setTimeout(() => {\n        const element = document.getElementsByClassName(this.type)[0];\n        if (element) {\n          element.classList.add('bounce');\n        }\n        clearTimeout(this.timeOutId);\n      }, this.timeOut);\n    },\n  },\n  mounted() {\n      if(!this.hideAnimation){\n        this.addBounceEffect();\n      }\n  },\n  unmounted() {\n    clearTimeout(this.timeOutId);\n  }\n});\n\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, normalizeClass as _normalizeClass, createElementBlock as _createElementBlock } from \"vue\"\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_icon_component = __nuxt_component_0\n\n  return (_ctx.type === 'error')\n    ? (_openBlock(), _createElementBlock(\"span\", {\n        key: 0,\n        class: _normalizeClass(_ctx.type)\n      }, [\n        (!_ctx.hideIcon)\n          ? (_openBlock(), _createBlock(_component_icon_component, {\n              key: 0,\n              \"icon-name\": \"error\",\n              \"icon-size\": \"25\",\n              color: _ctx.colorUtilities.$error_color_1\n            }, null, 8, [\"color\"]))\n          : _createCommentVNode(\"\", true),\n        _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n      ], 2))\n    : (_ctx.type === 'warn')\n      ? (_openBlock(), _createElementBlock(\"span\", {\n          key: 1,\n          class: _normalizeClass(_ctx.type)\n        }, [\n          (!_ctx.hideIcon)\n            ? (_openBlock(), _createBlock(_component_icon_component, {\n                key: 0,\n                \"icon-name\": \"warning\",\n                \"icon-size\": \"25\",\n                color: _ctx.colorUtilities.$warning_color_3\n              }, null, 8, [\"color\"]))\n            : _createCommentVNode(\"\", true),\n          _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n        ], 2))\n      : (_ctx.type === 'success')\n        ? (_openBlock(), _createElementBlock(\"span\", {\n            key: 2,\n            class: _normalizeClass(_ctx.type)\n          }, [\n            (!_ctx.hideIcon)\n              ? (_openBlock(), _createBlock(_component_icon_component, {\n                  key: 0,\n                  fill: \"\",\n                  \"icon-name\": \"check_circle\",\n                  \"icon-size\": \"25\",\n                  color: _ctx.colorUtilities.$success_color_1\n                }, null, 8, [\"color\"]))\n              : _createCommentVNode(\"\", true),\n            _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n          ], 2))\n        : (_ctx.type === 'info')\n          ? (_openBlock(), _createElementBlock(\"span\", {\n              key: 3,\n              class: _normalizeClass(_ctx.type)\n            }, [\n              (!_ctx.hideIcon)\n                ? (_openBlock(), _createBlock(_component_icon_component, {\n                    key: 0,\n                    \"icon-name\": \"info\",\n                    \"icon-size\": \"25\",\n                    color: _ctx.colorUtilities.$black_color_2\n                  }, null, 8, [\"color\"]))\n                : _createCommentVNode(\"\", true),\n              _createElementVNode(\"b\", null, _toDisplayString(_ctx.message), 1)\n            ], 2))\n          : _createCommentVNode(\"\", true)\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/MessageComponent.vue?vue&type=style&index=0&scoped=d3b3991c&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-d3b3991c\"]])",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867440474,
-      "end": 1708867440474,
+      "start": 1708870618985,
+      "end": 1708870618985,
       "order": "normal"
     }
   ]

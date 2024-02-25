@@ -4,206 +4,206 @@
     {
       "name": "vite:vue",
       "result": "import {defineComponent} from 'vue';\nimport {\n    developerAnnounce,\n    generateUniqueId,\n} from 'assets/scripts/helpers/generalHelpers.js';\nimport {inputCategories, inputTypes} from \"assets/scripts/constants/inputConstants.js\";\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n\n//#TODO: This components aren't Vue file. Be careful for it!\nimport IconComponent from \"assets/scripts/components/iconComponent.js\";\nimport LoadingComponent from \"assets/scripts/components/loadingComponent.js\";\n\nexport default defineComponent({\n    name: \"InputComponent\",\n    components: { IconComponent, LoadingComponent },\n    emits: [\n        'click',\n        'inputFocus',\n        'readyForView',\n        'update:modelValue',\n    ],\n    props: {\n        inputStyle: Object,\n        style: Object,\n        leftIcon: Object,\n        id: [String, Number],\n        required: Boolean,\n        autofocus: Boolean,\n        readonly: Boolean,\n        autocomplete: String,\n        disabled: Boolean,\n        pattern: String,\n        maxlength: [Number, String],\n        value: [Number, String, Object, Boolean],\n        label: String,\n        htmlLabel: String,\n        isLoading: Boolean,\n        midSize: Boolean,\n        type: {\n            type: String,\n            default: () => 'text'\n        },\n        name: {\n            type: String,\n            default: () => 'text'\n        },\n        placeholder: String,\n        inputSize: {\n            type: Object,\n            default: () => {\n                return {\n                    width: '300px',\n                    height: '50px'\n                }\n            }\n        },\n        modelValue: {\n            default: () => null\n        },\n        clearable: {\n            type: Boolean,\n            default: () => false\n        },\n        hideMaxlengthCounter: {\n            type: Boolean,\n            default: () => false\n        },\n        buttonType: {\n            type: String,\n            default: () => '0'\n        },\n        showSuccess: {\n            type: Object,\n            default: () => {\n                return {\n                    message: null,\n                    highlight: false,\n                    icon: null\n                }\n            }\n        },\n        showInfo: {\n            type: Object,\n            default: () => {\n                return {\n                    message: null,\n                    highlight: false,\n                    icon: null\n                }\n            }\n        },\n        showWarning: {\n            type: Object,\n            default: () => {\n                return {\n                    message: null,\n                    highlight: false,\n                    icon: null\n                }\n            }\n        },\n        showError: {\n            type: Object,\n            default: () => {\n                return {\n                    message: null,\n                    highlight: false,\n                    icon: null\n                }\n            }\n        },\n    },\n    computed: {\n        colorUtilities() {\n            return colorUtilities\n        },\n        idComputed(){\n            if(!this.id){\n                developerAnnounce('Input component required an id!');\n                return this.generateUniqueId();\n            }\n            return this.id;\n        },\n        modelComputed:{\n            set(val){\n                if(!this.disabled){\n                    this.model = val;\n                    this.$emit('update:modelValue', val);\n                }\n            },\n            get(){\n                return this.model;\n            }\n        },\n        focusComputed: {\n            set(val){\n                this.inputFocus = val;\n                this.$emit('inputFocus', val);\n            },\n            get(){\n                return this.inputFocus;\n            }\n        },\n        labelActive(){\n            return this.label;\n        },\n        showMaxLengthCounter(){\n            return this.typing\n                && this.inputFocus\n                && (this.maxlength\n                    && this.modelValue\n                    && !this.hideMaxlengthCounter);\n        },\n        showClearButton(){\n            return !this.typing && (this.modelComputed && this.clearable);\n        },\n        showInputRightSideArea(){\n            if(this.inputCategory === 'password'){\n                return true;\n            } else {\n                return this.showMaxLengthCounter || this.showClearButton;\n            }\n        },\n        showInputLeftSideArea(){\n            return this.leftIcon;\n        },\n        inputCategory() {\n            if(this.type){\n                if(inputTypes.includes(this.type)){\n                    return Object.keys(inputCategories).find(key => {\n                        return inputCategories[key].includes(this.type)\n                    })\n                }\n            }\n            return null;\n        },\n        inputMessage(){\n            let messageData = {\n                key: null,\n                message: null,\n                color: null,\n                icon: null\n            }\n            if (this.showError.message || this.showError.highlight){\n                messageData.key = this.showError.highlight ? 'error' : null;\n                messageData.icon = this.showError.icon || 'error';\n                messageData.message = this.showError.message;\n                messageData.color = colorUtilities.$error_color;\n            } else if (this.showWarning.message || this.showWarning.highlight){\n                messageData.key = this.showWarning.highlight ? 'warning' : null;\n                messageData.icon = this.showWarning.icon || 'warning';\n                messageData.message = this.showWarning.message;\n                messageData.color = colorUtilities.$warning_color\n            } else if (this.showSuccess.message || this.showSuccess.highlight){\n                messageData.key = this.showSuccess.highlight ? 'success' : null;\n                messageData.icon = this.showSuccess.icon || 'check_circle';\n                messageData.message = this.showSuccess.message;\n                messageData.color = colorUtilities.$success_color_1;\n            } else if (this.showInfo.message || this.showInfo.highlight){\n                messageData.key = this.showInfo.highlight ? 'info' : null;\n                messageData.icon = this.showInfo.icon || 'info';\n                messageData.message = this.showInfo.message;\n                messageData.color = colorUtilities.$black_color;\n            }\n            return messageData\n        },\n        visibilityTrigger: {\n            set(val){\n                this.passwordVisibilityTrigger = val;\n            },\n            get(){\n                return this.passwordVisibilityTrigger;\n            }\n        }\n    },\n    data() {\n        return {\n            inputTypes,\n            model: null,\n            readyForView: false,\n            inputFocus: false,\n            typing: false,\n            debounceId: null,\n            passwordVisibilityTrigger: false\n        }\n    },\n    mounted() {\n        const input = this.$refs['input-component'];\n        if(input){\n            if(this.modelValue){\n                this.modelComputed = this.modelValue;\n            }\n            if(this.inputSize){\n                input.style.width = this.inputSize.width;\n                input.style.height = this.inputSize.height;\n            }\n            if(this.midSize){\n                input.style.width = 100 + 'px';\n                input.style.height = 30 + 'px';\n            }\n            if(this.style){\n                Object.entries(this.style).forEach(([key, value]) => {\n                    input.style[key] = value;\n                });\n            }\n        }\n        this.readyForView = true;\n    },\n    unmounted() {\n        this.readyForView = false;\n    },\n    watch: {\n        modelValue(val, oldVal){\n            if(val !== oldVal && !this.disabled){\n                this.modelComputed = this.modelValue;\n            }\n        },\n        readyForView(val) {\n                this.$emit('readyForView', val)\n        }\n    },\n    methods:{\n        generateUniqueId,\n        clearAllButton(){\n            this.modelComputed = null;\n            const input = document.getElementById(this.idComputed);\n            if(input){\n                input.focus();\n            }\n        },\n        handleInputChange(){\n            this.typing = true;\n            this.customDebounce(function (){\n                this.typing = false;\n            })();\n        },\n        customDebounce(func, delay = 400) {\n            const self = this\n            return function(...args) {\n                clearTimeout(self.debounceId);\n                self.debounceId = setTimeout(() => {\n                    func.apply(self, args);\n                }, delay);\n            };\n        },\n        iconColorDetecter(main) {\n            if(this.focusComputed){\n                return main ? main : colorUtilities.$black_color;\n            }\n            return colorUtilities.$black_color_4\n        },\n    }\n});",
-      "start": 1708867440542,
-      "end": 1708867440543,
+      "start": 1708870619038,
+      "end": 1708870619040,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867440543,
-      "end": 1708867440543,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867440544,
-      "end": 1708867440544,
+      "start": 1708870619040,
+      "end": 1708870619040,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867440544,
-      "end": 1708867440546,
+      "start": 1708870619040,
+      "end": 1708870619042,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867440546,
-      "end": 1708867440546,
+      "start": 1708870619042,
+      "end": 1708870619042,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867440546,
-      "end": 1708867440546,
+      "start": 1708870619042,
+      "end": 1708870619042,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1708867440546,
-      "end": 1708867440546,
+      "start": 1708870619042,
+      "end": 1708870619042,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1708867440546,
-      "end": 1708867440546,
+      "start": 1708870619042,
+      "end": 1708870619042,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867440546,
-      "end": 1708867440546,
+      "start": 1708870619042,
+      "end": 1708870619043,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867440546,
-      "end": 1708867440546,
+      "start": 1708870619043,
+      "end": 1708870619043,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867440546,
-      "end": 1708867440547,
+      "start": 1708870619043,
+      "end": 1708870619043,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867440547,
-      "end": 1708867440547,
+      "start": 1708870619043,
+      "end": 1708870619043,
       "order": "normal"
     }
   ]

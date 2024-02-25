@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'index',\n  __ssrInlineRender: true,\n  setup(__props) {\n\nlet {getPosts} = usePostsStore();\nlet posts = getPosts(200);\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"parent flex-row-center\" }, _attrs))} data-v-25e9acfb><!--[-->`)\n  _ssrRenderList(_unref(posts), (post) => {\n    _push(_ssrRenderComponent(_component_NuxtLink, {\n      id: 'post-'+post.id,\n      key: post.id,\n      to: '/posts/'+post.id,\n      class: \"child cannot-select flex-column-center default-container\"\n    }, {\n      default: _withCtx((_, _push, _parent, _scopeId) => {\n        if (_push) {\n          _push(`<img${\n            _ssrRenderAttr(\"src\", post.thumbnailUrl)\n          }${\n            _ssrRenderAttr(\"alt\", post.title)\n          } data-v-25e9acfb${\n            _scopeId\n          }>`)\n        } else {\n          return [\n            _createVNode(\"img\", {\n              src: post.thumbnailUrl,\n              alt: post.title\n            }, null, 8, [\"src\", \"alt\"])\n          ]\n        }\n      }),\n      _: 2\n    }, _parent))\n  })\n  _push(`<!--]--></div>`)\n}\n}\n\n})",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,45 +20,45 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867444906,
-      "end": 1708867444906,
+      "start": 1708870623531,
+      "end": 1708870623531,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"parent flex-row-center\" }, _attrs))} data-v-25e9acfb><!--[-->`);\n      _ssrRenderList(_unref(posts), (post) => {\n        _push(_ssrRenderComponent(_component_NuxtLink, {\n          id: \"post-\" + post.id,\n          key: post.id,\n          to: \"/posts/\" + post.id,\n          class: \"child cannot-select flex-column-center default-container\"\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<img${_ssrRenderAttr(\"src\", post.thumbnailUrl)}${_ssrRenderAttr(\"alt\", post.title)} data-v-25e9acfb${_scopeId}>`);\n            } else {\n              return [\n                _createVNode(\"img\", {\n                  src: post.thumbnailUrl,\n                  alt: post.title\n                }, null, 8, [\"src\", \"alt\"])\n              ];\n            }\n          }),\n          _: 2\n        }, _parent));\n      });\n      _push(`<!--]--></div>`);\n    };\n  }\n});\n",
-      "start": 1708867444908,
-      "end": 1708867445067,
+      "start": 1708870623532,
+      "end": 1708870623681,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -77,135 +77,135 @@
     },
     {
       "name": "vite:json",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867445067,
-      "end": 1708867445067,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867445068,
-      "end": 1708867445068,
+      "start": 1708870623681,
+      "end": 1708870623681,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { usePostsStore } from '/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/stores/posts.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"parent flex-row-center\" }, _attrs))} data-v-25e9acfb><!--[-->`);\n      _ssrRenderList(_unref(posts), (post) => {\n        _push(_ssrRenderComponent(_component_NuxtLink, {\n          id: \"post-\" + post.id,\n          key: post.id,\n          to: \"/posts/\" + post.id,\n          class: \"child cannot-select flex-column-center default-container\"\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<img${_ssrRenderAttr(\"src\", post.thumbnailUrl)}${_ssrRenderAttr(\"alt\", post.title)} data-v-25e9acfb${_scopeId}>`);\n            } else {\n              return [\n                _createVNode(\"img\", {\n                  src: post.thumbnailUrl,\n                  alt: post.title\n                }, null, 8, [\"src\", \"alt\"])\n              ];\n            }\n          }),\n          _: 2\n        }, _parent));\n      });\n      _push(`<!--]--></div>`);\n    };\n  }\n});\n",
-      "start": 1708867445068,
-      "end": 1708867445070,
+      "start": 1708870623681,
+      "end": 1708870623682,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -219,8 +219,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { usePostsStore } from '/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/stores/posts.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"parent flex-row-center\" }, _attrs))} data-v-25e9acfb><!--[-->`);\n      _ssrRenderList(_unref(posts), (post) => {\n        _push(_ssrRenderComponent(_component_NuxtLink, {\n          id: \"post-\" + post.id,\n          key: post.id,\n          to: \"/posts/\" + post.id,\n          class: \"child cannot-select flex-column-center default-container\"\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<img${_ssrRenderAttr(\"src\", post.thumbnailUrl)}${_ssrRenderAttr(\"alt\", post.title)} data-v-25e9acfb${_scopeId}>`);\n            } else {\n              return [\n                _createVNode(\"img\", {\n                  src: post.thumbnailUrl,\n                  alt: post.title\n                }, null, 8, [\"src\", \"alt\"])\n              ];\n            }\n          }),\n          _: 2\n        }, _parent));\n      });\n      _push(`<!--]--></div>`);\n    };\n  }\n});\n",
-      "start": 1708867445068,
-      "end": 1708867445070,
+      "start": 1708870623681,
+      "end": 1708870623682,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -233,39 +233,39 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867445070,
-      "end": 1708867445070,
+      "start": 1708870623682,
+      "end": 1708870623682,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867445070,
-      "end": 1708867445070,
+      "start": 1708870623682,
+      "end": 1708870623682,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867445070,
-      "end": 1708867445070,
+      "start": 1708870623682,
+      "end": 1708870623682,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867445070,
-      "end": 1708867445070,
+      "start": 1708870623682,
+      "end": 1708870623682,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867445070,
-      "end": 1708867445070,
+      "start": 1708870623682,
+      "end": 1708870623682,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { usePostsStore } from '/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/stores/posts.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _push, _parent, _attrs) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"parent flex-row-center\" }, _attrs))} data-v-25e9acfb><!--[-->`);\n      _ssrRenderList(_unref(posts), (post) => {\n        _push(_ssrRenderComponent(_component_NuxtLink, {\n          id: \"post-\" + post.id,\n          key: post.id,\n          to: \"/posts/\" + post.id,\n          class: \"child cannot-select flex-column-center default-container\"\n        }, {\n          default: _withCtx((_, _push2, _parent2, _scopeId) => {\n            if (_push2) {\n              _push2(`<img${_ssrRenderAttr(\"src\", post.thumbnailUrl)}${_ssrRenderAttr(\"alt\", post.title)} data-v-25e9acfb${_scopeId}>`);\n            } else {\n              return [\n                _createVNode(\"img\", {\n                  src: post.thumbnailUrl,\n                  alt: post.title\n                }, null, 8, [\"src\", \"alt\"])\n              ];\n            }\n          }),\n          _: 2\n        }, _parent));\n      });\n      _push(`<!--]--></div>`);\n    };\n  }\n});\n",
-      "start": 1708867445070,
-      "end": 1708867445071,
+      "start": 1708870623683,
+      "end": 1708870623683,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -278,20 +278,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867445071,
-      "end": 1708867445071,
+      "start": 1708870623683,
+      "end": 1708870623683,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867445071,
-      "end": 1708867445071,
+      "start": 1708870623683,
+      "end": 1708870623683,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867445071,
-      "end": 1708867445071,
+      "start": 1708870623683,
+      "end": 1708870623683,
       "order": "normal"
     }
   ]

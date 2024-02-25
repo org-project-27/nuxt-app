@@ -4,38 +4,38 @@
     {
       "name": "vite:vue",
       "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-25e9acfb\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"parent flex-row-center\" }\nconst _hoisted_2 = [\"src\", \"alt\"]\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'index',\n  setup(__props) {\n\nlet {getPosts} = usePostsStore();\nlet posts = getPosts(200);\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post) => {\n      return (_openBlock(), _createBlock(_component_NuxtLink, {\n        id: 'post-'+post.id,\n        key: post.id,\n        to: '/posts/'+post.id,\n        class: \"child cannot-select flex-column-center default-container\"\n      }, {\n        default: _withCtx(() => [\n          _createElementVNode(\"img\", {\n            src: post.thumbnailUrl,\n            alt: post.title\n          }, null, 8, _hoisted_2)\n        ]),\n        _: 2\n      }, 1032, [\"id\", \"to\"]))\n    }), 128))\n  ]))\n}\n}\n\n})",
-      "start": 1708867441536,
-      "end": 1708867441536
+      "start": 1708870619974,
+      "end": 1708870619974
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867441536,
-      "end": 1708867441536,
+      "start": 1708870619974,
+      "end": 1708870619974,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867441536,
-      "end": 1708867441536,
+      "start": 1708870619974,
+      "end": 1708870619974,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867441536,
-      "end": 1708867441536,
+      "start": 1708870619974,
+      "end": 1708870619974,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867441537,
-      "end": 1708867441537,
+      "start": 1708870619974,
+      "end": 1708870619974,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-25e9acfb\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = { class: \"parent flex-row-center\" };\nconst _hoisted_2 = [\"src\", \"alt\"];\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post) => {\n          return _openBlock(), _createBlock(_component_NuxtLink, {\n            id: \"post-\" + post.id,\n            key: post.id,\n            to: \"/posts/\" + post.id,\n            class: \"child cannot-select flex-column-center default-container\"\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"img\", {\n                src: post.thumbnailUrl,\n                alt: post.title\n              }, null, 8, _hoisted_2)\n            ]),\n            _: 2\n          }, 1032, [\"id\", \"to\"]);\n        }), 128))\n      ]);\n    };\n  }\n});\n",
-      "start": 1708867441539,
-      "end": 1708867441785,
+      "start": 1708870619976,
+      "end": 1708870620284,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -51,123 +51,123 @@
     },
     {
       "name": "vite:json",
-      "start": 1708867441785,
-      "end": 1708867441785,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867441785,
-      "end": 1708867441785,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867441785,
-      "end": 1708867441785,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867441786,
-      "end": 1708867441786,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867441786,
-      "end": 1708867441786,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867441786,
-      "end": 1708867441786,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1708867441786,
-      "end": 1708867441786,
+      "start": 1708870620284,
+      "end": 1708870620284,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867441786,
-      "end": 1708867441786,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867441786,
-      "end": 1708867441786,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867441787,
-      "end": 1708867441787,
+      "start": 1708870620285,
+      "end": 1708870620285,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { usePostsStore } from '/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/stores/posts.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-25e9acfb\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = { class: \"parent flex-row-center\" };\nconst _hoisted_2 = [\"src\", \"alt\"];\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = _resolveComponent(\"NuxtLink\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post) => {\n          return _openBlock(), _createBlock(_component_NuxtLink, {\n            id: \"post-\" + post.id,\n            key: post.id,\n            to: \"/posts/\" + post.id,\n            class: \"child cannot-select flex-column-center default-container\"\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"img\", {\n                src: post.thumbnailUrl,\n                alt: post.title\n              }, null, 8, _hoisted_2)\n            ]),\n            _: 2\n          }, 1032, [\"id\", \"to\"]);\n        }), 128))\n      ]);\n    };\n  }\n});\n",
-      "start": 1708867441787,
-      "end": 1708867441788,
+      "start": 1708870620286,
+      "end": 1708870620287,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -180,51 +180,51 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867441788,
-      "end": 1708867441788,
+      "start": 1708870620287,
+      "end": 1708870620287,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867441788,
-      "end": 1708867441788,
+      "start": 1708870620289,
+      "end": 1708870620289,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1708867441789,
-      "end": 1708867441789,
+      "start": 1708870620289,
+      "end": 1708870620289,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1708867441789,
-      "end": 1708867441789,
+      "start": 1708870620289,
+      "end": 1708870620289,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { usePostsStore } from '/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/stores/posts.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createBlock as _createBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\";\nconst _withScopeId = (n) => (_pushScopeId(\"data-v-25e9acfb\"), n = n(), _popScopeId(), n);\nconst _hoisted_1 = { class: \"parent flex-row-center\" };\nconst _hoisted_2 = [\"src\", \"alt\"];\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"index\",\n  setup(__props) {\n    let { getPosts } = usePostsStore();\n    let posts = getPosts(200);\n    return (_ctx, _cache) => {\n      const _component_NuxtLink = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(posts), (post) => {\n          return _openBlock(), _createBlock(_component_NuxtLink, {\n            id: \"post-\" + post.id,\n            key: post.id,\n            to: \"/posts/\" + post.id,\n            class: \"child cannot-select flex-column-center default-container\"\n          }, {\n            default: _withCtx(() => [\n              _createElementVNode(\"img\", {\n                src: post.thumbnailUrl,\n                alt: post.title\n              }, null, 8, _hoisted_2)\n            ]),\n            _: 2\n          }, 1032, [\"id\", \"to\"]);\n        }), 128))\n      ]);\n    };\n  }\n});\n",
-      "start": 1708867441789,
-      "end": 1708867441789,
+      "start": 1708870620289,
+      "end": 1708870620289,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867441789,
-      "end": 1708867441789,
+      "start": 1708870620289,
+      "end": 1708870620289,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867441789,
-      "end": 1708867441789,
+      "start": 1708870620290,
+      "end": 1708870620290,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867441789,
-      "end": 1708867441789,
+      "start": 1708870620290,
+      "end": 1708870620290,
       "order": "normal"
     }
   ]

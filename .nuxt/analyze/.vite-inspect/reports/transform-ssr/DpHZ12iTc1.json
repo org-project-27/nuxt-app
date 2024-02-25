@@ -4,244 +4,244 @@
     {
       "name": "vite:vue",
       "result": "import {defineComponent} from 'vue'\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\nimport {developerAnnounce, generateUniqueId} from \"assets/scripts/helpers/generalHelpers.js\";\n\nexport default defineComponent({\n    name: \"LoadingComponent\",\n    props: {\n        id: [String, Number],\n        type: {\n            type: String,\n            default: () => '2'\n        },\n        size: {\n            type: String,\n            default: () => '20'\n        },\n        color: {\n            type: String,\n            default: () => colorUtilities.$main_color\n        },\n        speed: {\n            type: String,\n            default: () => '1'\n        }\n    },\n    computed:{\n        idComputed(){\n            if(!this.id){\n                developerAnnounce('Loading component required an id!');\n                return this.generateUniqueId();\n            }\n            return this.id;\n        },\n    },\n    data(){\n        return {\n            readyForView: false\n        }\n    },\n    mounted() {\n        this.readyForView = false;\n        this.getStyledAnimated();\n    },\n    methods: {\n        generateUniqueId,\n        getStyledAnimated(){\n            this.$nextTick(() => {\n                const element = document.getElementById(this.idComputed);\n                switch (this.type){\n                    case '1':\n                        element.style.background = this.color;\n                        element.style.padding = (Number(this.size) / 5) + 'px';\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case '2':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.backgroundSize = `${Number(this.size) / 3}px ${Number(this.size) / 3}px`;\n                        element.style.aspectRatio = \"1\";\n                        element.style.setProperty('--_c', `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case '3':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.border = `${this.size / 5}px solid ${this.color}`;\n                        break;\n                    case '4':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.backgroundSize = `${Number(this.size) / 4}px ${Number(this.size) / 4}px`;\n                        element.style.aspectRatio = \"1.154\";\n                        element.style.setProperty('--_g', `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case '5':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case 'clock':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.color = this.color;\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    default:\n                        element.style.display = 'none';\n                }\n                this.readyForView = true;\n            })\n        }\n    },\n    unmounted() {\n        this.readyForView = false;\n    },\n    watch: {\n        type(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n        size(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n        color(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n        speed(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n    }\n})",
-      "start": 1708867444090,
-      "end": 1708867444090,
+      "start": 1708870622616,
+      "end": 1708870622616,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622617,
+      "end": 1708870622617,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867444092,
-      "end": 1708867444092,
+      "start": 1708870622618,
+      "end": 1708870622618,
       "order": "normal"
     },
     {
       "name": "vite:define",
       "result": "import { defineComponent } from \"vue\";\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\nimport { developerAnnounce, generateUniqueId } from \"assets/scripts/helpers/generalHelpers.js\";\nexport default defineComponent({\n  name: \"LoadingComponent\",\n  props: {\n    id: [String, Number],\n    type: {\n      type: String,\n      default: () => \"2\"\n    },\n    size: {\n      type: String,\n      default: () => \"20\"\n    },\n    color: {\n      type: String,\n      default: () => colorUtilities.$main_color\n    },\n    speed: {\n      type: String,\n      default: () => \"1\"\n    }\n  },\n  computed: {\n    idComputed() {\n      if (!this.id) {\n        developerAnnounce(\"Loading component required an id!\");\n        return this.generateUniqueId();\n      }\n      return this.id;\n    }\n  },\n  data() {\n    return {\n      readyForView: false\n    };\n  },\n  mounted() {\n    this.readyForView = false;\n    this.getStyledAnimated();\n  },\n  methods: {\n    generateUniqueId,\n    getStyledAnimated() {\n      this.$nextTick(() => {\n        const element = (void 0).getElementById(this.idComputed);\n        switch (this.type) {\n          case \"1\":\n            element.style.background = this.color;\n            element.style.padding = Number(this.size) / 5 + \"px\";\n            element.style.width = Number(this.size) + \"px\";\n            element.style.animationDuration = `${1 / this.speed}s`;\n            break;\n          case \"2\":\n            element.style.width = Number(this.size) + \"px\";\n            element.style.backgroundSize = `${Number(this.size) / 3}px ${Number(this.size) / 3}px`;\n            element.style.aspectRatio = \"1\";\n            element.style.setProperty(\"--_c\", `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\n            element.style.animationDuration = `${1 / this.speed}s`;\n            break;\n          case \"3\":\n            element.style.width = Number(this.size) + \"px\";\n            element.style.border = `${this.size / 5}px solid ${this.color}`;\n            break;\n          case \"4\":\n            element.style.width = Number(this.size) + \"px\";\n            element.style.backgroundSize = `${Number(this.size) / 4}px ${Number(this.size) / 4}px`;\n            element.style.aspectRatio = \"1.154\";\n            element.style.setProperty(\"--_g\", `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\n            element.style.animationDuration = `${1 / this.speed}s`;\n            break;\n          case \"5\":\n            element.style.width = Number(this.size) + \"px\";\n            element.style.animationDuration = `${1 / this.speed}s`;\n            break;\n          case \"clock\":\n            element.style.width = Number(this.size) + \"px\";\n            element.style.color = this.color;\n            element.style.animationDuration = `${1 / this.speed}s`;\n            break;\n          default:\n            element.style.display = \"none\";\n        }\n        this.readyForView = true;\n      });\n    }\n  },\n  unmounted() {\n    this.readyForView = false;\n  },\n  watch: {\n    type() {\n      this.readyForView = false;\n      this.getStyledAnimated();\n    },\n    size() {\n      this.readyForView = false;\n      this.getStyledAnimated();\n    },\n    color() {\n      this.readyForView = false;\n      this.getStyledAnimated();\n    },\n    speed() {\n      this.readyForView = false;\n      this.getStyledAnimated();\n    }\n  }\n});\n",
-      "start": 1708867444092,
-      "end": 1708867444966,
+      "start": 1708870622618,
+      "end": 1708870623574,
       "order": "normal",
       "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/scripts/components/loadingComponent.js?vue&type=script&src=true&lang.js\"],\n  \"sourcesContent\": [\"import {defineComponent} from 'vue'\\nimport colorUtilities from \\\"assets/scripts/constants/colorUtilities.js\\\";\\nimport {developerAnnounce, generateUniqueId} from \\\"assets/scripts/helpers/generalHelpers.js\\\";\\n\\nexport default defineComponent({\\n    name: \\\"LoadingComponent\\\",\\n    props: {\\n        id: [String, Number],\\n        type: {\\n            type: String,\\n            default: () => '2'\\n        },\\n        size: {\\n            type: String,\\n            default: () => '20'\\n        },\\n        color: {\\n            type: String,\\n            default: () => colorUtilities.$main_color\\n        },\\n        speed: {\\n            type: String,\\n            default: () => '1'\\n        }\\n    },\\n    computed:{\\n        idComputed(){\\n            if(!this.id){\\n                developerAnnounce('Loading component required an id!');\\n                return this.generateUniqueId();\\n            }\\n            return this.id;\\n        },\\n    },\\n    data(){\\n        return {\\n            readyForView: false\\n        }\\n    },\\n    mounted() {\\n        this.readyForView = false;\\n        this.getStyledAnimated();\\n    },\\n    methods: {\\n        generateUniqueId,\\n        getStyledAnimated(){\\n            this.$nextTick(() => {\\n                const element = document.getElementById(this.idComputed);\\n                switch (this.type){\\n                    case '1':\\n                        element.style.background = this.color;\\n                        element.style.padding = (Number(this.size) / 5) + 'px';\\n                        element.style.width = Number(this.size) + 'px';\\n                        element.style.animationDuration = `${1 / this.speed}s`\\n                        break;\\n                    case '2':\\n                        element.style.width = Number(this.size) + 'px';\\n                        element.style.backgroundSize = `${Number(this.size) / 3}px ${Number(this.size) / 3}px`;\\n                        element.style.aspectRatio = \\\"1\\\";\\n                        element.style.setProperty('--_c', `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\\n                        element.style.animationDuration = `${1 / this.speed}s`\\n                        break;\\n                    case '3':\\n                        element.style.width = Number(this.size) + 'px';\\n                        element.style.border = `${this.size / 5}px solid ${this.color}`;\\n                        break;\\n                    case '4':\\n                        element.style.width = Number(this.size) + 'px';\\n                        element.style.backgroundSize = `${Number(this.size) / 4}px ${Number(this.size) / 4}px`;\\n                        element.style.aspectRatio = \\\"1.154\\\";\\n                        element.style.setProperty('--_g', `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\\n                        element.style.animationDuration = `${1 / this.speed}s`\\n                        break;\\n                    case '5':\\n                        element.style.width = Number(this.size) + 'px';\\n                        element.style.animationDuration = `${1 / this.speed}s`\\n                        break;\\n                    case 'clock':\\n                        element.style.width = Number(this.size) + 'px';\\n                        element.style.color = this.color;\\n                        element.style.animationDuration = `${1 / this.speed}s`\\n                        break;\\n                    default:\\n                        element.style.display = 'none';\\n                }\\n                this.readyForView = true;\\n            })\\n        }\\n    },\\n    unmounted() {\\n        this.readyForView = false;\\n    },\\n    watch: {\\n        type(){\\n            this.readyForView = false;\\n            this.getStyledAnimated();\\n        },\\n        size(){\\n            this.readyForView = false;\\n            this.getStyledAnimated();\\n        },\\n        color(){\\n            this.readyForView = false;\\n            this.getStyledAnimated();\\n        },\\n        speed(){\\n            this.readyForView = false;\\n            this.getStyledAnimated();\\n        },\\n    }\\n})\"],\n  \"mappings\": \"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\",\n  \"names\": []\n}\n"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867444966,
-      "end": 1708867444966,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867444966,
-      "end": 1708867444966,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867444966,
-      "end": 1708867444966,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867444967,
-      "end": 1708867444967,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867444967,
-      "end": 1708867444967,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867444967,
-      "end": 1708867444967,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867444967,
-      "end": 1708867444967,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867444967,
-      "end": 1708867444967,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867444967,
-      "end": 1708867444967,
+      "start": 1708870623574,
+      "end": 1708870623574,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867444967,
-      "end": 1708867444968,
+      "start": 1708870623574,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867444967,
-      "end": 1708867444968,
+      "start": 1708870623574,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623575,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623575,
+      "end": 1708870623576,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867444968,
-      "end": 1708867444968,
+      "start": 1708870623576,
+      "end": 1708870623576,
       "order": "normal"
     }
   ]

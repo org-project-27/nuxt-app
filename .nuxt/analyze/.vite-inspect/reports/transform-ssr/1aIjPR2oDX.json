@@ -4,51 +4,51 @@
     {
       "name": "vite:load-fallback",
       "result": "import type {LanguageContent} from \"assets/scripts/types/LocalesType\";\n\nlet locales: LanguageContent;\nlocales = {\n    lang: \"Language\",\n    note: \"Note\",\n    az: \"Azərbaycanca\",\n    en: \"English\",\n    ru: \"Русский\",\n    buttons: {\n        search: \"Search\",\n        filter: \"Filter\",\n        login: \"Login\",\n        logout: \"Log out\",\n        continue: \"Continue\",\n        waiting: \"Waiting\",\n        get_started: \"Get started\",\n    },\n    pages: {\n        default: \"Default\",\n        main: \"Main page\",\n        404: \"Page is not found!\",\n        profile: \"Account\",\n        get_started: \"Get started\",\n        post: \"Product\",\n        log_in: \"Log in\",\n        sign_up: \"Sign up\",\n        terms_of_service: \"Terms of service\",\n        privacy_and_policy: \"Privacy policy\",\n        favorites: \"Favorites\",\n        cart: \"Cart\"\n    },\n    get_started: {\n        log_in: {\n            log_in: \"Log in\",\n            sign_up: \"Sign up\",\n            welcome_message: \"⭐️ Welcome back!\",\n            email: \"Email\",\n            password: \"Password\",\n            login: \"Login\",\n            forget_password: \"Forgot password?\",\n            submit_btn: \"Log in\",\n            no_account_yet: \"Don't have an account yet?\",\n            now: \"Now\"\n        },\n        sign_up: {\n            log_in: \"Log in\",\n            sign_up: \"Sign up\",\n            welcome_message: \"🙃 Lets join us!\",\n            fullname: \"Full name\",\n            email: \"Email\",\n            password: \"Password\",\n            confirm_password: \"Confirm password\",\n            register: \"Register\",\n            submit_btn: \"Register Now\",\n            already_have_account: \"Already have an account?\",\n            password_levels: {\n                weak: \"Weak: Needs more characters and variety!\",\n                moderate: \"Moderate: Add variety to enhance strength.\",\n                strong: \"Strong: Your password is secure and robust.\"\n            },\n            terms_of_service: \"<span>I accept the <a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Terms of service</a> and <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Privacy policy</a></span>\"\n        }\n    },\n    backend_messages: {\n        DONE: 'Done!',\n        SOMETHING_WENT_WRONG: 'Something went wrong!',\n        EMAIL_IS_EXIST: 'Email is exist!',\n        USER_REGISTRATION_FAILED: 'User registration progress was failed!',\n        USER_SUCCESSFULLY_REGISTERED: 'User successfully registered!',\n        EMAIL_IS_NOT_VALID: 'Email is not valid!',\n        INVALID_EMAIL: 'Email is not valid!',\n        INVALID_PASSWORD: 'Password is not valid!',\n        INVALID_FULLNAME: 'Fullname is not valid!',\n        INVALID_TOKEN: 'Something went wrong!',\n        BCRYPT_ERROR: 'Something went wrong!',\n        USER_LOGIN_PROGRESS_FAILED: 'User login progress was failed!',\n        USER_SUCCESSFULLY_LOGIN: 'User successfully login!',\n        EMAIL_IS_NOT_REGISTERED: 'Email is not registered!',\n        EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect',\n    }\n};\n\nexport default { ...locales };",
-      "start": 1708867443348,
-      "end": 1708867443394,
+      "start": 1708870621872,
+      "end": 1708870621929,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867443394,
-      "end": 1708867443394,
+      "start": 1708870621929,
+      "end": 1708870621929,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867443394,
-      "end": 1708867443394,
+      "start": 1708870621929,
+      "end": 1708870621929,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867443394,
-      "end": 1708867443394,
+      "start": 1708870621929,
+      "end": 1708870621929,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867443394,
-      "end": 1708867443394,
+      "start": 1708870621929,
+      "end": 1708870621929,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867443394,
-      "end": 1708867443394,
+      "start": 1708870621929,
+      "end": 1708870621929,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867443394,
-      "end": 1708867443394,
+      "start": 1708870621929,
+      "end": 1708870621929,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "let locales;\nlocales = {\n  lang: \"Language\",\n  note: \"Note\",\n  az: \"Azərbaycanca\",\n  en: \"English\",\n  ru: \"Русский\",\n  buttons: {\n    search: \"Search\",\n    filter: \"Filter\",\n    login: \"Login\",\n    logout: \"Log out\",\n    continue: \"Continue\",\n    waiting: \"Waiting\",\n    get_started: \"Get started\"\n  },\n  pages: {\n    default: \"Default\",\n    main: \"Main page\",\n    404: \"Page is not found!\",\n    profile: \"Account\",\n    get_started: \"Get started\",\n    post: \"Product\",\n    log_in: \"Log in\",\n    sign_up: \"Sign up\",\n    terms_of_service: \"Terms of service\",\n    privacy_and_policy: \"Privacy policy\",\n    favorites: \"Favorites\",\n    cart: \"Cart\"\n  },\n  get_started: {\n    log_in: {\n      log_in: \"Log in\",\n      sign_up: \"Sign up\",\n      welcome_message: \"⭐️ Welcome back!\",\n      email: \"Email\",\n      password: \"Password\",\n      login: \"Login\",\n      forget_password: \"Forgot password?\",\n      submit_btn: \"Log in\",\n      no_account_yet: \"Don't have an account yet?\",\n      now: \"Now\"\n    },\n    sign_up: {\n      log_in: \"Log in\",\n      sign_up: \"Sign up\",\n      welcome_message: \"🙃 Lets join us!\",\n      fullname: \"Full name\",\n      email: \"Email\",\n      password: \"Password\",\n      confirm_password: \"Confirm password\",\n      register: \"Register\",\n      submit_btn: \"Register Now\",\n      already_have_account: \"Already have an account?\",\n      password_levels: {\n        weak: \"Weak: Needs more characters and variety!\",\n        moderate: \"Moderate: Add variety to enhance strength.\",\n        strong: \"Strong: Your password is secure and robust.\"\n      },\n      terms_of_service: \"<span>I accept the <a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Terms of service</a> and <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Privacy policy</a></span>\"\n    }\n  },\n  backend_messages: {\n    DONE: \"Done!\",\n    SOMETHING_WENT_WRONG: \"Something went wrong!\",\n    EMAIL_IS_EXIST: \"Email is exist!\",\n    USER_REGISTRATION_FAILED: \"User registration progress was failed!\",\n    USER_SUCCESSFULLY_REGISTERED: \"User successfully registered!\",\n    EMAIL_IS_NOT_VALID: \"Email is not valid!\",\n    INVALID_EMAIL: \"Email is not valid!\",\n    INVALID_PASSWORD: \"Password is not valid!\",\n    INVALID_FULLNAME: \"Fullname is not valid!\",\n    INVALID_TOKEN: \"Something went wrong!\",\n    BCRYPT_ERROR: \"Something went wrong!\",\n    USER_LOGIN_PROGRESS_FAILED: \"User login progress was failed!\",\n    USER_SUCCESSFULLY_LOGIN: \"User successfully login!\",\n    EMAIL_IS_NOT_REGISTERED: \"Email is not registered!\",\n    EMAIL_OR_PASSWORD_INCORRECT: \"Email or password incorrect\"\n  }\n};\nexport default { ...locales };\n",
-      "start": 1708867443394,
-      "end": 1708867444129,
+      "start": 1708870621929,
+      "end": 1708870622630,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -64,194 +64,194 @@
     },
     {
       "name": "vite:json",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867444129,
-      "end": 1708867444129,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622630,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622630,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867444130,
-      "end": 1708867444130,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867444131,
-      "end": 1708867444131,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867444131,
-      "end": 1708867444131,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867444131,
-      "end": 1708867444131,
+      "start": 1708870622631,
+      "end": 1708870622631,
       "order": "normal"
     }
   ]

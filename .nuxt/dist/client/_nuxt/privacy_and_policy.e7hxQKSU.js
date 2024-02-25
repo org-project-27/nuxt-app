@@ -1,1 +1,0 @@
-import{z as e,_ as a,c,o as n}from"./entry.wyuOqA8i.js";const o=e({name:"privacy_and_policy"});function p(r,t,_,s,i,d){return n(),c("div",null," privacy_and_policy page ")}const f=a(o,[["render",p]]);export{f as default};

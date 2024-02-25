@@ -4,8 +4,8 @@
     {
       "name": "vite:vue",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from 'vue'\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'about',\n  __ssrInlineRender: true,\n  async setup(__props) {\n\nlet __temp: any, __restore: any\n\n// definePageMeta({\n//   layout: 'default'\n// });\n\nconst response = (\n  ([__temp,__restore] = _withAsyncContext(() => useFetch('/api/hello'))),\n  __temp = await __temp,\n  __restore(),\n  __temp\n);\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_attrs)}> about page </div>`)\n}\n}\n\n})",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "sourcemaps": {
         "version": 3,
         "sources": [
@@ -20,45 +20,45 @@
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867444884,
-      "end": 1708867444884,
+      "start": 1708870623491,
+      "end": 1708870623491,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"about\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const response = ([__temp, __restore] = _withAsyncContext(() => useFetch(\"/api/hello\")), __temp = await __temp, __restore(), __temp);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_attrs)}> about page </div>`);\n    };\n  }\n});\n",
-      "start": 1708867444884,
-      "end": 1708867445047,
+      "start": 1708870623491,
+      "end": 1708870623676,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -74,123 +74,123 @@
     },
     {
       "name": "vite:json",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867445047,
-      "end": 1708867445047,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867445047,
-      "end": 1708867445048,
+      "start": 1708870623676,
+      "end": 1708870623676,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623676,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867445048,
-      "end": 1708867445048,
+      "start": 1708870623677,
+      "end": 1708870623677,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"about\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const response = ([__temp, __restore] = _withAsyncContext(() => useFetch(\"/api/hello\", '$DWlCMkxhze')), __temp = await __temp, __restore(), __temp);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_attrs)}> about page </div>`);\n    };\n  }\n});\n",
-      "start": 1708867445048,
-      "end": 1708867445049,
+      "start": 1708870623677,
+      "end": 1708870623678,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -204,8 +204,8 @@
     {
       "name": "nuxt:composable-keys",
       "result": "import { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"about\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const response = ([__temp, __restore] = _withAsyncContext(() => useFetch(\"/api/hello\", '$DWlCMkxhze')), __temp = await __temp, __restore(), __temp);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_attrs)}> about page </div>`);\n    };\n  }\n});\n",
-      "start": 1708867445048,
-      "end": 1708867445049,
+      "start": 1708870623677,
+      "end": 1708870623678,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -219,8 +219,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useFetch } from '#app/composables/fetch';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"about\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const response = ([__temp, __restore] = _withAsyncContext(() => useFetch(\"/api/hello\", '$DWlCMkxhze')), __temp = await __temp, __restore(), __temp);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_attrs)}> about page </div>`);\n    };\n  }\n});\n",
-      "start": 1708867445049,
-      "end": 1708867445051,
+      "start": 1708870623678,
+      "end": 1708870623678,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -234,8 +234,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useFetch } from '#app/composables/fetch';\nimport { withAsyncContext as _withAsyncContext, defineComponent as _defineComponent } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"about\",\n  __ssrInlineRender: true,\n  async setup(__props) {\n    let __temp, __restore;\n    const response = ([__temp, __restore] = _withAsyncContext(() => useFetch(\"/api/hello\", '$DWlCMkxhze')), __temp = await __temp, __restore(), __temp);\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_attrs)}> about page </div>`);\n    };\n  }\n});\n",
-      "start": 1708867445049,
-      "end": 1708867445051,
+      "start": 1708870623678,
+      "end": 1708870623678,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -248,56 +248,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867445051,
-      "end": 1708867445051,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867445051,
-      "end": 1708867445051,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867445052,
-      "end": 1708867445052,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867445052,
-      "end": 1708867445052,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867445052,
-      "end": 1708867445052,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867445052,
-      "end": 1708867445052,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867445053,
-      "end": 1708867445053,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867445053,
-      "end": 1708867445053,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867445053,
-      "end": 1708867445053,
+      "start": 1708870623679,
+      "end": 1708870623679,
       "order": "normal"
     }
   ]

@@ -4,57 +4,57 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n  <div class=\"box default-container\">\n    <NuxtLink to=\"/\">\n      Back\n    </NuxtLink>\n    <br>\n    <br>\n    <form\n        class=\"flex-column-no-wrap\"\n        @submit.prevent=\"example\"\n        style=\"gap: 20px\">\n      <input-component\n          id=\"fullname\"\n          label=\"Fullname\"\n          type=\"text\"\n          name=\"fullname\"\n          v-model=\"registerFormStore['fullname']\"\n          maxlength=\"25\"\n          clearable\n          required\n          :left-icon=\"{icon: 'person'}\"\n          :show-error=\"{\n            message: registerFormStore['fullname'],\n            highlight: registerFormStore['fullname'],\n            icon: 'warning'\n          }\"\n          placeholder=\"Full name\"\n      />\n      <input-component\n          id=\"lastname\"\n          label=\"Last name\"\n          type=\"text\"\n          name=\"lastname\"\n          v-model=\"registerFormStore['lastname']\"\n          maxlength=\"25\"\n          clearable\n          :left-icon=\"{icon: 'favorite'}\"\n          :show-warning=\"{\n            message: registerFormStore['lastname'],\n            highlight: registerFormStore['lastname'],\n          }\"\n          placeholder=\"Last name\"\n      />\n      <input-component\n          id=\"email\"\n          label=\"Email\"\n          type=\"email\"\n          name=\"email\"\n          v-model=\"registerFormStore['email']\"\n          maxlength=\"25\"\n          :left-icon=\"{icon: 'alternate_email'}\"\n          required\n          :show-info=\"{\n            message: 'This field is important for register!',\n            icon: 'person'\n          }\"\n          placeholder=\"Email\"\n      />\n      <input-component\n          id=\"password\"\n          label=\"Password\"\n          type=\"password\"\n          name=\"password\"\n          v-model=\"registerFormStore['password']\"\n          maxlength=\"25\"\n          :left-icon=\"{icon: 'lock'}\"\n          required\n          :show-success=\"{\n            message: 'Strong password',\n            highlight: true,\n          }\"\n      />\n      <input-component\n          id=\"phone\"\n          label=\"Phone\"\n          type=\"number\"\n          name=\"phone\"\n          v-model=\"registerFormStore['phone']\"\n          maxlength=\"25\"\n          :left-icon=\"{ icon: 'call' }\"\n          :disabled=\"!!registerFormStore['email']\"\n      />\n      <input-component\n        id=\"submit1\"\n        mid-size\n        label=\"Submit\"\n        type=\"button\"\n        button-type=\"success\"\n        @click=\"isLoading = 1\"\n        :is-loading=\"isLoading === 1\"\n      />\n      <input-component\n          id=\"submit2\"\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"danger\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 2\"\n          :is-loading=\"isLoading === 2\"\n      />\n      <input-component\n          id=\"submit3\"\n          label=\"Reset\"\n          type=\"submit\"\n          button-type=\"1\"\n          @click=\"isLoading = 3\"\n          :is-loading=\"isLoading === 3\"\n      />\n      <input-component\n          id=\"submit4\"\n          mid-size\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"2\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 4\"\n          :is-loading=\"isLoading === 4\"\n      />\n      <input-component\n          id=\"submit5\"\n          mid-size\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"3\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 5\"\n      />\n      <loading-component\n          id=\"example\"\n          type=\"2\"\n          size=\"100\"\n          speed=\".6\"\n          :color=\"colorUtilities.$black_color_2\"\n      />\n\n      <message-component\n          type=\"success\"\n          :message=\"$t('pages.getstarted')\"/>\n      <message-component\n          type=\"warn\"\n          :message=\"$t('pages.getstarted')\"/>\n      <message-component\n          type=\"error\"\n          :message=\"$t('pages.getstarted')\"/>\n      <message-component\n          type=\"info\"\n          :message=\"$t('pages.getstarted')\"/>\n\n    </form>\n    {{ $t('buttons.search') }}\n\n    <div class=\"responsive-test flex-row-center\">\n      <div class=\"show-for-large\">\n        show-for-large\n      </div>\n      <div class=\"show-for-desktop\">\n        show-for-desktop\n      </div>\n      <div class=\"show-for-tablet\">\n        show-for-tablet\n      </div>\n      <div class=\"show-for-mobile\">\n        show-for-mobile\n      </div>\n      <div class=\"show-for-extrasmall\">\n        show-for-extrasmall\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { defineComponent } from 'vue';\nexport default defineComponent({\n  name: \"PostsPage\",\n  data() {\n    return {\n      model: {},\n      isLoading: true,\n      registerFormStore: {}\n    }\n  },\n  mounted(){\n  },\n  methods: {\n    incrementButton(){\n        console.log(this.model);\n    },\n    example(){\n      console.log('hello', this.registerFormStore)\n    }\n  }\n})\n</script>\n\n<script setup>\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n</script>\n\n<style scoped lang=\"scss\">\ndiv.color-pallets{\n  display: flex;\n  gap: 5px;\n  overflow: scroll;\n  div{\n    width: 50px;\n    height: 50px;\n  }\n  & > div:nth-child(1){\n    background-color: $black_color;\n  }\n  & > div:nth-child(2){\n    background-color: $black_color_1;\n  }\n  & > div:nth-child(3){\n    background-color: $black_color_2;\n  }\n  & > div:nth-child(4){\n    background-color: $black_color_3;\n  }\n  & > div:nth-child(5){\n    background-color: $black_color_4;\n  }\n  & > div:nth-child(6){\n    background-color: $black_color_5;\n  }\n  & > div:nth-child(7){\n    background-color: $black_color_6;\n  }\n  & > div:nth-child(8){\n    background-color: $black_color_7;\n  }\n  & > div:nth-child(9){\n    background-color: $black_color_8;\n  }\n  & > div:nth-child(10){\n    background-color: $black_color_9;\n  }\n}\n.box {\n  padding: 30px;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n\n.responsive-test {\n  & > div {\n    font-size: 1rem;\n    width: 10rem;\n    height: 10rem;\n    color: $white_color_1;\n    background-color: $main_color_2;\n  }\n}\n.button-type-1{\n   button{\n     display: none;\n   }\n}\n</style>",
-      "start": 1708867440192,
-      "end": 1708867440272,
+      "start": 1708870618685,
+      "end": 1708870618766,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "import { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, unref as _unref, withModifiers as _withModifiers, toDisplayString as _toDisplayString, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-47c41c26\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"box default-container\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_3 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_4 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"responsive-test flex-row-center\\\" data-v-47c41c26><div class=\\\"show-for-large\\\" data-v-47c41c26> show-for-large </div><div class=\\\"show-for-desktop\\\" data-v-47c41c26> show-for-desktop </div><div class=\\\"show-for-tablet\\\" data-v-47c41c26> show-for-tablet </div><div class=\\\"show-for-mobile\\\" data-v-47c41c26> show-for-mobile </div><div class=\\\"show-for-extrasmall\\\" data-v-47c41c26> show-for-extrasmall </div></div>\", 1)\n\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n\nimport { defineComponent } from 'vue';\nconst __default__ = defineComponent({\n  name: \"PostsPage\",\n  data() {\n    return {\n      model: {},\n      isLoading: true,\n      registerFormStore: {}\n    }\n  },\n  mounted(){\n  },\n  methods: {\n    incrementButton(){\n        console.log(this.model);\n    },\n    example(){\n      console.log('hello', this.registerFormStore)\n    }\n  }\n})\n\nconst _sfc_main = /*#__PURE__*/Object.assign(__default__, {\n  setup(__props) {\n\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_input_component = _resolveComponent(\"input-component\")\n  const _component_loading_component = _resolveComponent(\"loading-component\")\n  const _component_message_component = _resolveComponent(\"message-component\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_NuxtLink, { to: \"/\" }, {\n      default: _withCtx(() => [\n        _createTextVNode(\" Back \")\n      ]),\n      _: 1\n    }),\n    _hoisted_2,\n    _hoisted_3,\n    _createElementVNode(\"form\", {\n      class: \"flex-column-no-wrap\",\n      onSubmit: _cache[10] || (_cache[10] = _withModifiers((...args) => (_ctx.example && _ctx.example(...args)), [\"prevent\"])),\n      style: {\"gap\":\"20px\"}\n    }, [\n      _createVNode(_component_input_component, {\n        id: \"fullname\",\n        label: \"Fullname\",\n        type: \"text\",\n        name: \"fullname\",\n        modelValue: _ctx.registerFormStore['fullname'],\n        \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_ctx.registerFormStore['fullname']) = $event)),\n        maxlength: \"25\",\n        clearable: \"\",\n        required: \"\",\n        \"left-icon\": {icon: 'person'},\n        \"show-error\": {\n            message: _ctx.registerFormStore['fullname'],\n            highlight: _ctx.registerFormStore['fullname'],\n            icon: 'warning'\n          },\n        placeholder: \"Full name\"\n      }, null, 8, [\"modelValue\", \"show-error\"]),\n      _createVNode(_component_input_component, {\n        id: \"lastname\",\n        label: \"Last name\",\n        type: \"text\",\n        name: \"lastname\",\n        modelValue: _ctx.registerFormStore['lastname'],\n        \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_ctx.registerFormStore['lastname']) = $event)),\n        maxlength: \"25\",\n        clearable: \"\",\n        \"left-icon\": {icon: 'favorite'},\n        \"show-warning\": {\n            message: _ctx.registerFormStore['lastname'],\n            highlight: _ctx.registerFormStore['lastname'],\n          },\n        placeholder: \"Last name\"\n      }, null, 8, [\"modelValue\", \"show-warning\"]),\n      _createVNode(_component_input_component, {\n        id: \"email\",\n        label: \"Email\",\n        type: \"email\",\n        name: \"email\",\n        modelValue: _ctx.registerFormStore['email'],\n        \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_ctx.registerFormStore['email']) = $event)),\n        maxlength: \"25\",\n        \"left-icon\": {icon: 'alternate_email'},\n        required: \"\",\n        \"show-info\": {\n            message: 'This field is important for register!',\n            icon: 'person'\n          },\n        placeholder: \"Email\"\n      }, null, 8, [\"modelValue\"]),\n      _createVNode(_component_input_component, {\n        id: \"password\",\n        label: \"Password\",\n        type: \"password\",\n        name: \"password\",\n        modelValue: _ctx.registerFormStore['password'],\n        \"onUpdate:modelValue\": _cache[3] || (_cache[3] = $event => ((_ctx.registerFormStore['password']) = $event)),\n        maxlength: \"25\",\n        \"left-icon\": {icon: 'lock'},\n        required: \"\",\n        \"show-success\": {\n            message: 'Strong password',\n            highlight: true,\n          }\n      }, null, 8, [\"modelValue\"]),\n      _createVNode(_component_input_component, {\n        id: \"phone\",\n        label: \"Phone\",\n        type: \"number\",\n        name: \"phone\",\n        modelValue: _ctx.registerFormStore['phone'],\n        \"onUpdate:modelValue\": _cache[4] || (_cache[4] = $event => ((_ctx.registerFormStore['phone']) = $event)),\n        maxlength: \"25\",\n        \"left-icon\": { icon: 'call' },\n        disabled: !!_ctx.registerFormStore['email']\n      }, null, 8, [\"modelValue\", \"disabled\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit1\",\n        \"mid-size\": \"\",\n        label: \"Submit\",\n        type: \"button\",\n        \"button-type\": \"success\",\n        onClick: _cache[5] || (_cache[5] = $event => (_ctx.isLoading = 1)),\n        \"is-loading\": _ctx.isLoading === 1\n      }, null, 8, [\"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit2\",\n        label: \"Submit\",\n        type: \"submit\",\n        \"button-type\": \"danger\",\n        disabled: _ctx.isLoading === 1,\n        onClick: _cache[6] || (_cache[6] = $event => (_ctx.isLoading = 2)),\n        \"is-loading\": _ctx.isLoading === 2\n      }, null, 8, [\"disabled\", \"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit3\",\n        label: \"Reset\",\n        type: \"submit\",\n        \"button-type\": \"1\",\n        onClick: _cache[7] || (_cache[7] = $event => (_ctx.isLoading = 3)),\n        \"is-loading\": _ctx.isLoading === 3\n      }, null, 8, [\"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit4\",\n        \"mid-size\": \"\",\n        label: \"Submit\",\n        type: \"submit\",\n        \"button-type\": \"2\",\n        disabled: _ctx.isLoading === 1,\n        onClick: _cache[8] || (_cache[8] = $event => (_ctx.isLoading = 4)),\n        \"is-loading\": _ctx.isLoading === 4\n      }, null, 8, [\"disabled\", \"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit5\",\n        \"mid-size\": \"\",\n        label: \"Submit\",\n        type: \"submit\",\n        \"button-type\": \"3\",\n        disabled: _ctx.isLoading === 1,\n        onClick: _cache[9] || (_cache[9] = $event => (_ctx.isLoading = 5))\n      }, null, 8, [\"disabled\"]),\n      _createVNode(_component_loading_component, {\n        id: \"example\",\n        type: \"2\",\n        size: \"100\",\n        speed: \".6\",\n        color: _unref(colorUtilities).$black_color_2\n      }, null, 8, [\"color\"]),\n      _createVNode(_component_message_component, {\n        type: \"success\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"]),\n      _createVNode(_component_message_component, {\n        type: \"warn\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"]),\n      _createVNode(_component_message_component, {\n        type: \"error\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"]),\n      _createVNode(_component_message_component, {\n        type: \"info\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"])\n    ], 32),\n    _createTextVNode(\" \" + _toDisplayString(_ctx.$t('buttons.search')) + \" \", 1),\n    _hoisted_4\n  ]))\n}\n}\n\n})\n\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/posts/[id].vue?vue&type=style&index=0&scoped=47c41c26&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-47c41c26\"]])",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618766,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,153 +62,153 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618766,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867440272,
-      "end": 1708867440272,
+      "start": 1708870618767,
+      "end": 1708870618767,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708867440272,
-      "end": 1708867440274,
+      "start": 1708870618767,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { default as __nuxt_component_1 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/LoadingComponent.vue\";\nimport { default as __nuxt_component_3 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/MessageComponent.vue\";\nimport { createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, createElementVNode as _createElementVNode, unref as _unref, withModifiers as _withModifiers, toDisplayString as _toDisplayString, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-47c41c26\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"box default-container\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_3 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_4 = /*#__PURE__*/_createStaticVNode(\"<div class=\\\"responsive-test flex-row-center\\\" data-v-47c41c26><div class=\\\"show-for-large\\\" data-v-47c41c26> show-for-large </div><div class=\\\"show-for-desktop\\\" data-v-47c41c26> show-for-desktop </div><div class=\\\"show-for-tablet\\\" data-v-47c41c26> show-for-tablet </div><div class=\\\"show-for-mobile\\\" data-v-47c41c26> show-for-mobile </div><div class=\\\"show-for-extrasmall\\\" data-v-47c41c26> show-for-extrasmall </div></div>\", 1)\n\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n\nimport { defineComponent } from 'vue';\nconst __default__ = defineComponent({\n  name: \"PostsPage\",\n  data() {\n    return {\n      model: {},\n      isLoading: true,\n      registerFormStore: {}\n    }\n  },\n  mounted(){\n  },\n  methods: {\n    incrementButton(){\n        console.log(this.model);\n    },\n    example(){\n      console.log('hello', this.registerFormStore)\n    }\n  }\n})\n\nconst _sfc_main = /*#__PURE__*/Object.assign(__default__, {\n  setup(__props) {\n\n\nreturn (_ctx, _cache) => {\n  const _component_NuxtLink = __nuxt_component_0\n  const _component_input_component = __nuxt_component_1\n  const _component_loading_component = __nuxt_component_2\n  const _component_message_component = __nuxt_component_3\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_NuxtLink, { to: \"/\" }, {\n      default: _withCtx(() => [\n        _createTextVNode(\" Back \")\n      ]),\n      _: 1\n    }),\n    _hoisted_2,\n    _hoisted_3,\n    _createElementVNode(\"form\", {\n      class: \"flex-column-no-wrap\",\n      onSubmit: _cache[10] || (_cache[10] = _withModifiers((...args) => (_ctx.example && _ctx.example(...args)), [\"prevent\"])),\n      style: {\"gap\":\"20px\"}\n    }, [\n      _createVNode(_component_input_component, {\n        id: \"fullname\",\n        label: \"Fullname\",\n        type: \"text\",\n        name: \"fullname\",\n        modelValue: _ctx.registerFormStore['fullname'],\n        \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_ctx.registerFormStore['fullname']) = $event)),\n        maxlength: \"25\",\n        clearable: \"\",\n        required: \"\",\n        \"left-icon\": {icon: 'person'},\n        \"show-error\": {\n            message: _ctx.registerFormStore['fullname'],\n            highlight: _ctx.registerFormStore['fullname'],\n            icon: 'warning'\n          },\n        placeholder: \"Full name\"\n      }, null, 8, [\"modelValue\", \"show-error\"]),\n      _createVNode(_component_input_component, {\n        id: \"lastname\",\n        label: \"Last name\",\n        type: \"text\",\n        name: \"lastname\",\n        modelValue: _ctx.registerFormStore['lastname'],\n        \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_ctx.registerFormStore['lastname']) = $event)),\n        maxlength: \"25\",\n        clearable: \"\",\n        \"left-icon\": {icon: 'favorite'},\n        \"show-warning\": {\n            message: _ctx.registerFormStore['lastname'],\n            highlight: _ctx.registerFormStore['lastname'],\n          },\n        placeholder: \"Last name\"\n      }, null, 8, [\"modelValue\", \"show-warning\"]),\n      _createVNode(_component_input_component, {\n        id: \"email\",\n        label: \"Email\",\n        type: \"email\",\n        name: \"email\",\n        modelValue: _ctx.registerFormStore['email'],\n        \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_ctx.registerFormStore['email']) = $event)),\n        maxlength: \"25\",\n        \"left-icon\": {icon: 'alternate_email'},\n        required: \"\",\n        \"show-info\": {\n            message: 'This field is important for register!',\n            icon: 'person'\n          },\n        placeholder: \"Email\"\n      }, null, 8, [\"modelValue\"]),\n      _createVNode(_component_input_component, {\n        id: \"password\",\n        label: \"Password\",\n        type: \"password\",\n        name: \"password\",\n        modelValue: _ctx.registerFormStore['password'],\n        \"onUpdate:modelValue\": _cache[3] || (_cache[3] = $event => ((_ctx.registerFormStore['password']) = $event)),\n        maxlength: \"25\",\n        \"left-icon\": {icon: 'lock'},\n        required: \"\",\n        \"show-success\": {\n            message: 'Strong password',\n            highlight: true,\n          }\n      }, null, 8, [\"modelValue\"]),\n      _createVNode(_component_input_component, {\n        id: \"phone\",\n        label: \"Phone\",\n        type: \"number\",\n        name: \"phone\",\n        modelValue: _ctx.registerFormStore['phone'],\n        \"onUpdate:modelValue\": _cache[4] || (_cache[4] = $event => ((_ctx.registerFormStore['phone']) = $event)),\n        maxlength: \"25\",\n        \"left-icon\": { icon: 'call' },\n        disabled: !!_ctx.registerFormStore['email']\n      }, null, 8, [\"modelValue\", \"disabled\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit1\",\n        \"mid-size\": \"\",\n        label: \"Submit\",\n        type: \"button\",\n        \"button-type\": \"success\",\n        onClick: _cache[5] || (_cache[5] = $event => (_ctx.isLoading = 1)),\n        \"is-loading\": _ctx.isLoading === 1\n      }, null, 8, [\"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit2\",\n        label: \"Submit\",\n        type: \"submit\",\n        \"button-type\": \"danger\",\n        disabled: _ctx.isLoading === 1,\n        onClick: _cache[6] || (_cache[6] = $event => (_ctx.isLoading = 2)),\n        \"is-loading\": _ctx.isLoading === 2\n      }, null, 8, [\"disabled\", \"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit3\",\n        label: \"Reset\",\n        type: \"submit\",\n        \"button-type\": \"1\",\n        onClick: _cache[7] || (_cache[7] = $event => (_ctx.isLoading = 3)),\n        \"is-loading\": _ctx.isLoading === 3\n      }, null, 8, [\"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit4\",\n        \"mid-size\": \"\",\n        label: \"Submit\",\n        type: \"submit\",\n        \"button-type\": \"2\",\n        disabled: _ctx.isLoading === 1,\n        onClick: _cache[8] || (_cache[8] = $event => (_ctx.isLoading = 4)),\n        \"is-loading\": _ctx.isLoading === 4\n      }, null, 8, [\"disabled\", \"is-loading\"]),\n      _createVNode(_component_input_component, {\n        id: \"submit5\",\n        \"mid-size\": \"\",\n        label: \"Submit\",\n        type: \"submit\",\n        \"button-type\": \"3\",\n        disabled: _ctx.isLoading === 1,\n        onClick: _cache[9] || (_cache[9] = $event => (_ctx.isLoading = 5))\n      }, null, 8, [\"disabled\"]),\n      _createVNode(_component_loading_component, {\n        id: \"example\",\n        type: \"2\",\n        size: \"100\",\n        speed: \".6\",\n        color: _unref(colorUtilities).$black_color_2\n      }, null, 8, [\"color\"]),\n      _createVNode(_component_message_component, {\n        type: \"success\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"]),\n      _createVNode(_component_message_component, {\n        type: \"warn\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"]),\n      _createVNode(_component_message_component, {\n        type: \"error\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"]),\n      _createVNode(_component_message_component, {\n        type: \"info\",\n        message: _ctx.$t('pages.getstarted')\n      }, null, 8, [\"message\"])\n    ], 32),\n    _createTextVNode(\" \" + _toDisplayString(_ctx.$t('buttons.search')) + \" \", 1),\n    _hoisted_4\n  ]))\n}\n}\n\n})\n\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/posts/[id].vue?vue&type=style&index=0&scoped=47c41c26&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-47c41c26\"]])",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867440275,
-      "end": 1708867440275,
+      "start": 1708870618769,
+      "end": 1708870618769,
       "order": "normal"
     }
   ]

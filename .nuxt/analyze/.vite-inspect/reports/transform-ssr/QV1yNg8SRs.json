@@ -4,51 +4,51 @@
     {
       "name": "vite:load-fallback",
       "result": "import { type RouteConfigurations } from '~/assets/scripts/types/RouteConfigTypes';\nimport {i18n} from \"~/plugins/i18n\"; // Adjust the import path\n\nconst routeConfig: RouteConfigurations =  {\n    default: {\n        auth: false,\n        title: i18n.global.t('pages.default'),\n        layout: 'default',\n        description: \"Default description\",\n        middlewareMethod(to, from){\n\n        }\n    },\n    \"/\": {\n        auth: false,\n        title: i18n.global.t('pages.main'),\n        layout: 'default',\n        description: \"Welcome\",\n        middlewareMethod(to, from){\n            //console.log('Main page')\n        }\n    },\n    \"/getstarted\": {\n        auth: false,\n        title: i18n.global.t('pages.get_started'),\n        layout: 'default',\n        description: \"Let's get started!\",\n        middlewareMethod(to, from){\n            if(to.query.view){\n                useSeoMeta({\n                    title: i18n.global.t(`pages.${to.query.view}`)\n                });\n            }\n        }\n    },\n    \"/posts/*\": {\n        auth: false,\n        title: i18n.global.t('pages.post'),\n        layout: 'default',\n        description: \"No description\",\n        middlewareMethod(to, from){\n            //console.log('Posts page function')\n        }\n    },\n    \"/account/user\":{\n        auth: true,\n        title: i18n.global.t('pages.profile'),\n        layout: \"default\",\n        description: \"No description\",\n        middlewareMethod(to,from) {\n\n        }\n    },\n    \"/account/favorites\":{\n        auth: true,\n        title: i18n.global.t('pages.favorites'),\n        layout: \"default\",\n        description: \"No description\",\n        middlewareMethod(to,from) {\n\n        }\n    },\n    \"/account/cart\":{\n        auth: true,\n        title: i18n.global.t('pages.cart'),\n        layout: \"default\",\n        description: \"No description\",\n        middlewareMethod(to,from) {\n\n        }\n    },\n    \"/terms_of_service\":{\n        auth: false,\n        title: i18n.global.t('pages.terms_of_service'),\n        layout: \"default\",\n        description: \"No description\",\n        middlewareMethod(to,from) {\n\n        }\n    },\n    \"/privacy_and_policy\":{\n        auth: false,\n        title: i18n.global.t('pages.privacy_and_policy'),\n        layout: \"default\",\n        description: \"No description\",\n        middlewareMethod(to,from) {\n\n        }\n    },\n    //#TODO: These are examples. So delete it after if you don't need it enough.\n    \"/posts/example/*\": {\n        auth: false,\n        title: \"Example\",\n        layout: 'custom',\n        description: \"No description\",\n        middlewareMethod(to, from){\n            //console.log('Posts page function')\n        }\n    },\n    \"/posts/link3\": {\n        auth: true,\n        title: \"POST AUTH NEED\",\n        layout: 'default',\n        description: \"No description\",\n        middlewareMethod(to, from){\n            //console.log('Posts page special')\n        }\n    }\n};\n\nexport default routeConfig;",
-      "start": 1708867444686,
-      "end": 1708867444885,
+      "start": 1708870623220,
+      "end": 1708870623312,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444885,
-      "end": 1708867444885,
+      "start": 1708870623312,
+      "end": 1708870623312,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708867444885,
-      "end": 1708867444885,
+      "start": 1708870623312,
+      "end": 1708870623312,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444885,
-      "end": 1708867444885,
+      "start": 1708870623312,
+      "end": 1708870623312,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708867444885,
-      "end": 1708867444885,
+      "start": 1708870623312,
+      "end": 1708870623312,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708867444885,
-      "end": 1708867444885,
+      "start": 1708870623312,
+      "end": 1708870623313,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708867444885,
-      "end": 1708867444885,
+      "start": 1708870623313,
+      "end": 1708870623313,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
       "result": "import { i18n } from \"~/plugins/i18n\";\nconst routeConfig = {\n  default: {\n    auth: false,\n    title: i18n.global.t(\"pages.default\"),\n    layout: \"default\",\n    description: \"Default description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/\": {\n    auth: false,\n    title: i18n.global.t(\"pages.main\"),\n    layout: \"default\",\n    description: \"Welcome\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/getstarted\": {\n    auth: false,\n    title: i18n.global.t(\"pages.get_started\"),\n    layout: \"default\",\n    description: \"Let's get started!\",\n    middlewareMethod(to, from) {\n      if (to.query.view) {\n        useSeoMeta({\n          title: i18n.global.t(`pages.${to.query.view}`)\n        });\n      }\n    }\n  },\n  \"/posts/*\": {\n    auth: false,\n    title: i18n.global.t(\"pages.post\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/user\": {\n    auth: true,\n    title: i18n.global.t(\"pages.profile\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/favorites\": {\n    auth: true,\n    title: i18n.global.t(\"pages.favorites\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/cart\": {\n    auth: true,\n    title: i18n.global.t(\"pages.cart\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/terms_of_service\": {\n    auth: false,\n    title: i18n.global.t(\"pages.terms_of_service\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/privacy_and_policy\": {\n    auth: false,\n    title: i18n.global.t(\"pages.privacy_and_policy\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  //#TODO: These are examples. So delete it after if you don't need it enough.\n  \"/posts/example/*\": {\n    auth: false,\n    title: \"Example\",\n    layout: \"custom\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/posts/link3\": {\n    auth: true,\n    title: \"POST AUTH NEED\",\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  }\n};\nexport default routeConfig;\n",
-      "start": 1708867444885,
-      "end": 1708867445059,
+      "start": 1708870623313,
+      "end": 1708870623661,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -64,135 +64,135 @@
     },
     {
       "name": "vite:json",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623661,
+      "end": 1708870623661,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623661,
+      "end": 1708870623661,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623661,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708867445059,
-      "end": 1708867445059,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623662,
+      "end": 1708870623662,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623663,
+      "end": 1708870623663,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623663,
+      "end": 1708870623663,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623663,
+      "end": 1708870623663,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623663,
+      "end": 1708870623663,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708867445060,
-      "end": 1708867445060,
+      "start": 1708870623663,
+      "end": 1708870623663,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSeoMeta } from '@unhead/vue';\nimport { i18n } from \"~/plugins/i18n\";\nconst routeConfig = {\n  default: {\n    auth: false,\n    title: i18n.global.t(\"pages.default\"),\n    layout: \"default\",\n    description: \"Default description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/\": {\n    auth: false,\n    title: i18n.global.t(\"pages.main\"),\n    layout: \"default\",\n    description: \"Welcome\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/getstarted\": {\n    auth: false,\n    title: i18n.global.t(\"pages.get_started\"),\n    layout: \"default\",\n    description: \"Let's get started!\",\n    middlewareMethod(to, from) {\n      if (to.query.view) {\n        useSeoMeta({\n          title: i18n.global.t(`pages.${to.query.view}`)\n        });\n      }\n    }\n  },\n  \"/posts/*\": {\n    auth: false,\n    title: i18n.global.t(\"pages.post\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/user\": {\n    auth: true,\n    title: i18n.global.t(\"pages.profile\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/favorites\": {\n    auth: true,\n    title: i18n.global.t(\"pages.favorites\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/cart\": {\n    auth: true,\n    title: i18n.global.t(\"pages.cart\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/terms_of_service\": {\n    auth: false,\n    title: i18n.global.t(\"pages.terms_of_service\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/privacy_and_policy\": {\n    auth: false,\n    title: i18n.global.t(\"pages.privacy_and_policy\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  //#TODO: These are examples. So delete it after if you don't need it enough.\n  \"/posts/example/*\": {\n    auth: false,\n    title: \"Example\",\n    layout: \"custom\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/posts/link3\": {\n    auth: true,\n    title: \"POST AUTH NEED\",\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  }\n};\nexport default routeConfig;\n",
-      "start": 1708867445060,
-      "end": 1708867445061,
+      "start": 1708870623663,
+      "end": 1708870623664,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -206,8 +206,8 @@
     {
       "name": "nuxt:imports-transform",
       "result": "import { useSeoMeta } from '@unhead/vue';\nimport { i18n } from \"~/plugins/i18n\";\nconst routeConfig = {\n  default: {\n    auth: false,\n    title: i18n.global.t(\"pages.default\"),\n    layout: \"default\",\n    description: \"Default description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/\": {\n    auth: false,\n    title: i18n.global.t(\"pages.main\"),\n    layout: \"default\",\n    description: \"Welcome\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/getstarted\": {\n    auth: false,\n    title: i18n.global.t(\"pages.get_started\"),\n    layout: \"default\",\n    description: \"Let's get started!\",\n    middlewareMethod(to, from) {\n      if (to.query.view) {\n        useSeoMeta({\n          title: i18n.global.t(`pages.${to.query.view}`)\n        });\n      }\n    }\n  },\n  \"/posts/*\": {\n    auth: false,\n    title: i18n.global.t(\"pages.post\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/user\": {\n    auth: true,\n    title: i18n.global.t(\"pages.profile\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/favorites\": {\n    auth: true,\n    title: i18n.global.t(\"pages.favorites\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/account/cart\": {\n    auth: true,\n    title: i18n.global.t(\"pages.cart\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/terms_of_service\": {\n    auth: false,\n    title: i18n.global.t(\"pages.terms_of_service\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/privacy_and_policy\": {\n    auth: false,\n    title: i18n.global.t(\"pages.privacy_and_policy\"),\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  //#TODO: These are examples. So delete it after if you don't need it enough.\n  \"/posts/example/*\": {\n    auth: false,\n    title: \"Example\",\n    layout: \"custom\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  },\n  \"/posts/link3\": {\n    auth: true,\n    title: \"POST AUTH NEED\",\n    layout: \"default\",\n    description: \"No description\",\n    middlewareMethod(to, from) {\n    }\n  }\n};\nexport default routeConfig;\n",
-      "start": 1708867445060,
-      "end": 1708867445061,
+      "start": 1708870623663,
+      "end": 1708870623664,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -220,56 +220,56 @@
     },
     {
       "name": "unctx:transform",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623665,
+      "end": 1708870623665,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623665,
+      "end": 1708870623665,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623665,
+      "end": 1708870623665,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623665,
+      "end": 1708870623665,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623666,
+      "end": 1708870623666,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623666,
+      "end": 1708870623666,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623666,
+      "end": 1708870623666,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623666,
+      "end": 1708870623666,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708867445061,
-      "end": 1708867445061,
+      "start": 1708870623666,
+      "end": 1708870623666,
       "order": "normal"
     }
   ]
