@@ -1,0 +1,166 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@mixin animate-fade-in($duration: 1s) {
+  animation-name: fade-in;
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+}
+
+// @include animate-fade-in(2s);
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@mixin animate-bounce($duration: 1s, $delay: 0s) {
+  animation-name: bounce;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+// @include animate-bounce(2s, 0.5s);
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin animate-rotate($duration: 1s, $timing-function: ease) {
+  animation-name: rotate;
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+  animation-iteration-count: infinite;
+}
+
+// @include animate-rotate(2s, linear);
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.26);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin animate-pulse($duration: 1s, $delay: 0s) {
+  animation-name: pulse;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+// @include animate-pulse(2s, 0.5s);
+
+@keyframes color-change {
+  0% {
+    fill: red;
+    color: red;
+  }
+  25% {
+    fill: dodgerblue;
+    color: dodgerblue;
+  }
+  75% {
+    fill: limegreen;
+    color: limegreen;
+  }
+  100% {
+    fill: red;
+    color: red;
+  }
+}
+
+@mixin hover-color-change($duration: 1s) {
+  animation-name: color-change;
+  animation-duration: $duration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+// @include hover-color-change(2s);
+
+@keyframes intro-shifting-x {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@mixin animate-intro-shifting-x($duration: 1s, $delay: 0s) {
+  animation-name: intro-shifting-x;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+// @include animate-intro-shifting-x(3s, 0s);
+
+@keyframes intro-shifting-y {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-50vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@mixin animate-intro-shifting-y($duration: 1s, $delay: 0s) {
+  animation-name: intro-shifting-y;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+
+@keyframes outro-shifting-x {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+}
+
+@mixin animate-outro-shifting-x($duration: 1s, $delay: 0s) {
+  animation-name: outro-shifting-x;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}

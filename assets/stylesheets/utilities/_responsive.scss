@@ -1,0 +1,144 @@
+$large-size: 2000px;  // For larger desktops
+$desktop-size: 1250px;  // For larger desktops
+$tablet-size: 600px;   // For full-sized tablets
+$mobile-size: 325px;    // For larger phones
+$small-mobile-size: 100px; // For smaller phones
+
+@mixin for-size($min, $max: null) {
+  @if $max {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+// Base styles
+html {
+  font-size: 13px; // Default for extra small devices
+  display: unset;
+}
+
+.show-for-extrasmall,
+.show-for-mobile,
+.show-for-tablet,
+.show-for-desktop,
+.show-for-large {
+  display: none;
+}
+
+// Adjusting font sizes based on breakpoints
+
+// For lower than small devices
+@include for-size($small-mobile-size) {
+  .responsive-width{ width: 100vw; }
+  html {
+    font-size: 8px;
+  }
+}
+
+// For small devices
+@include for-size($small-mobile-size, $mobile-size) {
+  .responsive-width{ width: 97vw; }
+  html {
+    font-size: 8px;
+  }
+  .show-for-extrasmall {
+    display: unset;
+  }
+  .hide-for-extrasmall {
+    display: none;
+  }
+}
+
+// For mobile devices
+@include for-size($mobile-size, $tablet-size) {
+  .responsive-width{ width: 95vw; }
+  html {
+    font-size: 10px;
+  }
+  .show-for-mobile {
+    display: unset;
+  }
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+// For tablet devices
+@include for-size($tablet-size, $desktop-size) {
+  .responsive-width{ width: 96vw; }
+  html {
+    font-size: 12px;
+  }
+  .show-for-tablet {
+    display: unset;
+  }
+  .hide-for-tablet {
+    display: none;
+  }
+}
+
+// For desktop devices
+@include for-size($desktop-size, $large-size) {
+  .responsive-width{ width: $desktop-size; }
+  html {
+    font-size: 14px;
+  }
+  .show-for-desktop {
+    display: unset;
+  }
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+// For large than desktop devices
+@include for-size($large-size) {
+  //.responsive-width{ width: $large-size; }
+  .responsive-width{ width: $desktop-size; }
+
+  html {
+    font-size: 15px;
+  }
+  .show-for-large {
+    display: unset;
+  }
+  .hide-for-large {
+    display: none;
+  }
+}
+
+// Classes for Extra Small Devices
+
+// .show-for-extrasmall
+// .hide-for-extrasmall
+
+//-------------------------------
+
+// Classes for Mobile Devices
+// .show-for-mobile
+// .hide-for-mobile
+
+//-------------------------------
+
+// Classes for Tablet Devices
+// .show-for-tablet
+// .hide-for-tablet
+
+//-------------------------------
+
+// Classes for Desktop Devices
+// .show-for-desktop
+// .hide-for-desktop
+
+//-------------------------------
+
+// Classes for Large Devices
+// .show-for-large
+// .hide-for-large
+
+// -------------------------------

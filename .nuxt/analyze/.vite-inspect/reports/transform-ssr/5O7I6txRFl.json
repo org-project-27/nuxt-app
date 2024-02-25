@@ -1,0 +1,262 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div id=\"pallet-container\">\n    <div :id=\"`color-pallets-${targetColor}`\">\n      <div>${{targetColor}}-color</div>\n      <div>${{targetColor}}-color-1</div>\n      <div>${{targetColor}}-color-2</div>\n      <div>${{targetColor}}-color-3</div>\n      <div>${{targetColor}}-color-4</div>\n      <div>${{targetColor}}-color-5</div>\n      <div>${{targetColor}}-color-6</div>\n      <div>${{targetColor}}-color-7</div>\n      <div>${{targetColor}}-color-8</div>\n      <div>${{targetColor}}-color-9</div>\n    </div>\n    <div class=\"color-pallets-2\">\n      <div v-for=\"(value, key) in colorUtilities\"\n           v-show=\"key.startsWith(`$${targetColor}`)\"\n           :key=\"key\" :style=\"{'background-color': value, 'height': '100px'}\">\n        {{value}}\n      </div>\n    </div>\n  </div>\n</template>\n\n<script lang=\"ts\">\nimport {defineComponent} from 'vue'\nimport colorUtilities from \"assets/scripts/constants/colorUtilities\";\n\nexport default defineComponent({\n  name: \"color_pallet\",\n  computed: {\n    colorUtilities() {\n      return colorUtilities\n    },\n    targetColor(){\n      return this.$route.query.color || 'main'\n    }\n  }\n})\n</script>\n\n<style scoped lang=\"scss\">\n#pallet-container{\n  display: flex;\n  justify-content: center;\n  gap: 30px;\n  & > div,\n  #color-pallets-main{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $main_color;\n    }\n    & > div:nth-child(2){\n      background-color: $main_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $main_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $main_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $main_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $main_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $main_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $main_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $main_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $main_color_9;\n    }\n  }\n  #color-pallets-black{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $black_color;\n    }\n    & > div:nth-child(2){\n      background-color: $black_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $black_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $black_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $black_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $black_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $black_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $black_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $black_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $black_color_9;\n    }\n  }\n  #color-pallets-white{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $white_color;\n    }\n    & > div:nth-child(2){\n      background-color: $white_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $white_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $white_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $white_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $white_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $white_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $white_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $white_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $white_color_9;\n    }\n  }\n  #color-pallets-error{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $error_color;\n    }\n    & > div:nth-child(2){\n      background-color: $error_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $error_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $error_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $error_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $error_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $error_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $error_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $error_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $error_color_9;\n    }\n  }\n  #color-pallets-success{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $success_color;\n    }\n    & > div:nth-child(2){\n      background-color: $success_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $success_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $success_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $success_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $success_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $success_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $success_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $success_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $success_color_9;\n    }\n  }\n  #color-pallets-warning{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $warning_color;\n    }\n    & > div:nth-child(2){\n      background-color: $warning_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $warning_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $warning_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $warning_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $warning_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $warning_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $warning_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $warning_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $warning_color_9;\n    }\n  }\n}\n</style>",
+      "start": 1708867443509,
+      "end": 1708867443716,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867443716,
+      "end": 1708867443716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue?vue&type=script&lang.ts\";\nexport * from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue?vue&type=script&lang.ts\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ id: \"pallet-container\" }, _attrs))} data-v-9d7ea342><div${_ssrRenderAttr(\"id\", `color-pallets-${_ctx.targetColor}`)} data-v-9d7ea342><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-1</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-2</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-3</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-4</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-5</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-6</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-7</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-8</div><div data-v-9d7ea342>$${_ssrInterpolate(_ctx.targetColor)}-color-9</div></div><div class=\"color-pallets-2\" data-v-9d7ea342><!--[-->`);\n  _ssrRenderList(_ctx.colorUtilities, (value, key) => {\n    _push(`<div style=\"${_ssrRenderStyle([\n      key.startsWith(`$${_ctx.targetColor}`) ? null : { display: \"none\" },\n      { \"background-color\": value, \"height\": \"100px\" }\n    ])}\" data-v-9d7ea342>${_ssrInterpolate(value)}</div>`);\n  });\n  _push(`<!--]--></div></div>`);\n}\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue?vue&type=style&index=0&scoped=9d7ea342&lang.scss\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"pages/color_pallet.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"ssrRender\", _sfc_ssrRender], [\"__scopeId\", \"data-v-9d7ea342\"]]);\n",
+      "start": 1708867443716,
+      "end": 1708867444898,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "mappings": ";;;;SAAA,4BACS,SAAC,gBADV;eAAA,gBAEU,YAAE,yBAAmBA,GAAW,gCAF1C,qBAGcA,iBAAW,6DAHzB,gBAIcA,gBAAW,sCAJzB,gBAKcA,gBAAW,wCALzB,gBAMcA,gBAAW,wCANzB,gBAOcA,gBAAW,wCAPzB,gBAQcA,gBAAW,wCARzB,gBAScA,gBAAW,wCATzB,gBAUcA,gBAAW,wCAVzB,gBAWcA,gBAAW,wCAXzB,gBAYcA,gBAAW,wCAZzB,gBAekCC,gBAAc,4EAfhD;iBAAA;UAgBmB;;;IAhBnB;AAAA",
+        "names": [
+          "targetColor",
+          "colorUtilities"
+        ],
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n  <div id=\"pallet-container\">\n    <div :id=\"`color-pallets-${targetColor}`\">\n      <div>${{targetColor}}-color</div>\n      <div>${{targetColor}}-color-1</div>\n      <div>${{targetColor}}-color-2</div>\n      <div>${{targetColor}}-color-3</div>\n      <div>${{targetColor}}-color-4</div>\n      <div>${{targetColor}}-color-5</div>\n      <div>${{targetColor}}-color-6</div>\n      <div>${{targetColor}}-color-7</div>\n      <div>${{targetColor}}-color-8</div>\n      <div>${{targetColor}}-color-9</div>\n    </div>\n    <div class=\"color-pallets-2\">\n      <div v-for=\"(value, key) in colorUtilities\"\n           v-show=\"key.startsWith(`$${targetColor}`)\"\n           :key=\"key\" :style=\"{'background-color': value, 'height': '100px'}\">\n        {{value}}\n      </div>\n    </div>\n  </div>\n</template>\n\n<script lang=\"ts\">\nimport {defineComponent} from 'vue'\nimport colorUtilities from \"assets/scripts/constants/colorUtilities\";\n\nexport default defineComponent({\n  name: \"color_pallet\",\n  computed: {\n    colorUtilities() {\n      return colorUtilities\n    },\n    targetColor(){\n      return this.$route.query.color || 'main'\n    }\n  }\n})\n</script>\n\n<style scoped lang=\"scss\">\n#pallet-container{\n  display: flex;\n  justify-content: center;\n  gap: 30px;\n  & > div,\n  #color-pallets-main{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $main_color;\n    }\n    & > div:nth-child(2){\n      background-color: $main_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $main_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $main_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $main_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $main_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $main_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $main_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $main_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $main_color_9;\n    }\n  }\n  #color-pallets-black{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $black_color;\n    }\n    & > div:nth-child(2){\n      background-color: $black_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $black_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $black_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $black_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $black_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $black_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $black_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $black_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $black_color_9;\n    }\n  }\n  #color-pallets-white{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $white_color;\n    }\n    & > div:nth-child(2){\n      background-color: $white_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $white_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $white_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $white_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $white_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $white_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $white_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $white_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $white_color_9;\n    }\n  }\n  #color-pallets-error{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $error_color;\n    }\n    & > div:nth-child(2){\n      background-color: $error_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $error_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $error_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $error_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $error_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $error_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $error_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $error_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $error_color_9;\n    }\n  }\n  #color-pallets-success{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $success_color;\n    }\n    & > div:nth-child(2){\n      background-color: $success_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $success_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $success_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $success_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $success_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $success_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $success_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $success_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $success_color_9;\n    }\n  }\n  #color-pallets-warning{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $warning_color;\n    }\n    & > div:nth-child(2){\n      background-color: $warning_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $warning_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $warning_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $warning_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $warning_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $warning_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $warning_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $warning_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $warning_color_9;\n    }\n  }\n}\n</style>"
+        ],
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444898,
+      "end": 1708867444898,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867444898,
+      "end": 1708867444899,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867444899,
+      "end": 1708867444899,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867444899,
+      "end": 1708867444899,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867444899,
+      "end": 1708867444899,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867444899,
+      "end": 1708867444899,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867444900,
+      "end": 1708867444900,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867444903,
+      "end": 1708867444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867444903,
+      "end": 1708867444903,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867444903,
+      "end": 1708867444903,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444903,
+      "end": 1708867444903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444903,
+      "end": 1708867444903,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444903,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444903,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867444904,
+      "end": 1708867444904,
+      "order": "normal"
+    }
+  ]
+}

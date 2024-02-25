@@ -1,0 +1,1 @@
+import{_ as r,c as t,d as a,U as o,o as n}from"./entry.wyuOqA8i.js";const c={};function s(e,l){return n(),t("div",null,[a(" General layot "),o(e.$slots,"default")])}const _=r(c,[["render",s]]);export{_ as default};

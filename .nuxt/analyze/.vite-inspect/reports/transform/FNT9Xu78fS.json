@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/color_pallet.vue?vue&type=style&index=0&scoped=9d7ea342&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n#pallet-container{\n  display: flex;\n  justify-content: center;\n  gap: 30px;\n  & > div,\n  #color-pallets-main{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $main_color;\n    }\n    & > div:nth-child(2){\n      background-color: $main_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $main_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $main_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $main_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $main_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $main_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $main_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $main_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $main_color_9;\n    }\n  }\n  #color-pallets-black{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $black_color;\n    }\n    & > div:nth-child(2){\n      background-color: $black_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $black_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $black_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $black_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $black_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $black_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $black_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $black_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $black_color_9;\n    }\n  }\n  #color-pallets-white{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $white_color;\n    }\n    & > div:nth-child(2){\n      background-color: $white_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $white_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $white_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $white_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $white_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $white_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $white_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $white_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $white_color_9;\n    }\n  }\n  #color-pallets-error{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $error_color;\n    }\n    & > div:nth-child(2){\n      background-color: $error_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $error_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $error_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $error_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $error_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $error_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $error_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $error_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $error_color_9;\n    }\n  }\n  #color-pallets-success{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $success_color;\n    }\n    & > div:nth-child(2){\n      background-color: $success_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $success_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $success_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $success_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $success_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $success_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $success_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $success_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $success_color_9;\n    }\n  }\n  #color-pallets-warning{\n    width: 100px;\n    display: flex;\n    flex-direction: column-reverse;\n    & > div {\n      width: 100px;\n      height: 100px;\n      margin-bottom: 30px;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n    & > div:nth-child(1){\n      background-color: $warning_color;\n    }\n    & > div:nth-child(2){\n      background-color: $warning_color_1;\n    }\n    & > div:nth-child(3){\n      background-color: $warning_color_2;\n    }\n    & > div:nth-child(4){\n      background-color: $warning_color_3;\n    }\n    & > div:nth-child(5){\n      background-color: $warning_color_4;\n    }\n    & > div:nth-child(6){\n      background-color: $warning_color_5;\n    }\n    & > div:nth-child(7){\n      background-color: $warning_color_6;\n    }\n    & > div:nth-child(8){\n      background-color: $warning_color_7;\n    }\n    & > div:nth-child(9){\n      background-color: $warning_color_8;\n    }\n    & > div:nth-child(10){\n      background-color: $warning_color_9;\n    }\n  }\n}\n",
+      "start": 1708867441553,
+      "end": 1708867441553
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867441553,
+      "end": 1708867441553,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867441553,
+      "end": 1708867441553,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867441553,
+      "end": 1708867441553,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".default-container{background-color:#fff!important}html{display:unset;font-size:13px}.show-for-desktop,.show-for-extrasmall,.show-for-large,.show-for-mobile,.show-for-tablet{display:none}@media only screen and (min-width:100px){.responsive-width{width:100vw}html{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width{width:97vw}html{font-size:8px}.show-for-extrasmall{display:unset}.hide-for-extrasmall{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width{width:95vw}html{font-size:10px}.show-for-mobile{display:unset}.hide-for-mobile{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width{width:96vw}html{font-size:12px}.show-for-tablet{display:unset}.hide-for-tablet{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width{width:1250px}html{font-size:14px}.show-for-desktop{display:unset}.hide-for-desktop{display:none}}@media only screen and (min-width:2000px){.responsive-width{width:1250px}html{font-size:15px}.show-for-large{display:unset}.hide-for-large{display:none}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}#pallet-container{display:flex;gap:30px;justify-content:center}#pallet-container #color-pallets-main,#pallet-container>div{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-main>div,#pallet-container>div>div{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-main>div:first-child,#pallet-container>div>div:first-child{background-color:#f6a462}#pallet-container #color-pallets-main>div:nth-child(2),#pallet-container>div>div:nth-child(2){background-color:#f7b27a}#pallet-container #color-pallets-main>div:nth-child(3),#pallet-container>div>div:nth-child(3){background-color:#f9c092}#pallet-container #color-pallets-main>div:nth-child(4),#pallet-container>div>div:nth-child(4){background-color:#faceaa}#pallet-container #color-pallets-main>div:nth-child(5),#pallet-container>div>div:nth-child(5){background-color:#fcdcc2}#pallet-container #color-pallets-main>div:nth-child(6),#pallet-container>div>div:nth-child(6){background-color:#fdeadb}#pallet-container #color-pallets-main>div:nth-child(7),#pallet-container>div>div:nth-child(7){background-color:#fef8f3}#pallet-container #color-pallets-main>div:nth-child(10),#pallet-container #color-pallets-main>div:nth-child(8),#pallet-container #color-pallets-main>div:nth-child(9),#pallet-container>div>div:nth-child(10),#pallet-container>div>div:nth-child(8),#pallet-container>div>div:nth-child(9){background-color:#fff}#pallet-container #color-pallets-black{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-black>div{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-black>div:first-child{background-color:#0b1623}#pallet-container #color-pallets-black>div:nth-child(2){background-color:#221f16}#pallet-container #color-pallets-black>div:nth-child(3){background-color:#413c2a}#pallet-container #color-pallets-black>div:nth-child(4){background-color:#61583d}#pallet-container #color-pallets-black>div:nth-child(5){background-color:#807451}#pallet-container #color-pallets-black>div:nth-child(6){background-color:#9e9066}#pallet-container #color-pallets-black>div:nth-child(7){background-color:#b2a785}#pallet-container #color-pallets-black>div:nth-child(8){background-color:#c5bda5}#pallet-container #color-pallets-black>div:nth-child(9){background-color:#d9d4c4}#pallet-container #color-pallets-black>div:nth-child(10){background-color:#edebe3}#pallet-container #color-pallets-white{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-white>div{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-white>div:first-child{background-color:#fff}#pallet-container #color-pallets-white>div:nth-child(2){background-color:#f5f4ef}#pallet-container #color-pallets-white>div:nth-child(3){background-color:#ebe8e0}#pallet-container #color-pallets-white>div:nth-child(4){background-color:#d7d2c1}#pallet-container #color-pallets-white>div:nth-child(5){background-color:#c4bba2}#pallet-container #color-pallets-white>div:nth-child(6){background-color:#b0a482}#pallet-container #color-pallets-white>div:nth-child(7){background-color:#9c8e63}#pallet-container #color-pallets-white>div:nth-child(8){background-color:#7d714f}#pallet-container #color-pallets-white>div:nth-child(9){background-color:#5e553c}#pallet-container #color-pallets-white>div:nth-child(10){background-color:#3e3928}#pallet-container #color-pallets-error{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-error>div{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-error>div:first-child{background-color:#d50000}#pallet-container #color-pallets-error>div:nth-child(2){background-color:#ff0909}#pallet-container #color-pallets-error>div:nth-child(3){background-color:#ff3c3c}#pallet-container #color-pallets-error>div:nth-child(4){background-color:#ff6f6f}#pallet-container #color-pallets-error>div:nth-child(5){background-color:#ffa2a2}#pallet-container #color-pallets-error>div:nth-child(6){background-color:#ffd5d5}#pallet-container #color-pallets-error>div:nth-child(10),#pallet-container #color-pallets-error>div:nth-child(7),#pallet-container #color-pallets-error>div:nth-child(8),#pallet-container #color-pallets-error>div:nth-child(9){background-color:#fff}#pallet-container #color-pallets-success{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-success>div{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-success>div:first-child{background-color:#147930}#pallet-container #color-pallets-success>div:nth-child(2){background-color:#1ba541}#pallet-container #color-pallets-success>div:nth-child(3){background-color:#22d153}#pallet-container #color-pallets-success>div:nth-child(4){background-color:#46e071}#pallet-container #color-pallets-success>div:nth-child(5){background-color:#71e892}#pallet-container #color-pallets-success>div:nth-child(6){background-color:#9defb4}#pallet-container #color-pallets-success>div:nth-child(7){background-color:#c9f6d5}#pallet-container #color-pallets-success>div:nth-child(8){background-color:#f5fdf7}#pallet-container #color-pallets-success>div:nth-child(10),#pallet-container #color-pallets-success>div:nth-child(9){background-color:#fff}#pallet-container #color-pallets-warning{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-warning>div{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-warning>div:first-child{background-color:#febd15}#pallet-container #color-pallets-warning>div:nth-child(2){background-color:#fecb48}#pallet-container #color-pallets-warning>div:nth-child(3){background-color:#feda7b}#pallet-container #color-pallets-warning>div:nth-child(4){background-color:#ffe8ad}#pallet-container #color-pallets-warning>div:nth-child(5){background-color:#fff6e0}#pallet-container #color-pallets-warning>div:nth-child(10),#pallet-container #color-pallets-warning>div:nth-child(6),#pallet-container #color-pallets-warning>div:nth-child(7),#pallet-container #color-pallets-warning>div:nth-child(8),#pallet-container #color-pallets-warning>div:nth-child(9){background-color:#fff}",
+      "start": 1708867441553,
+      "end": 1708867441743,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867441743,
+      "end": 1708867441743,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867441743,
+      "end": 1708867441743,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867441743,
+      "end": 1708867441743,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".default-container[data-v-9d7ea342]{background-color:#fff!important}html[data-v-9d7ea342]{display:unset;font-size:13px}.show-for-desktop[data-v-9d7ea342],.show-for-extrasmall[data-v-9d7ea342],.show-for-large[data-v-9d7ea342],.show-for-mobile[data-v-9d7ea342],.show-for-tablet[data-v-9d7ea342]{display:none}@media only screen and (min-width:100px){.responsive-width[data-v-9d7ea342]{width:100vw}html[data-v-9d7ea342]{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width[data-v-9d7ea342]{width:97vw}html[data-v-9d7ea342]{font-size:8px}.show-for-extrasmall[data-v-9d7ea342]{display:unset}.hide-for-extrasmall[data-v-9d7ea342]{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width[data-v-9d7ea342]{width:95vw}html[data-v-9d7ea342]{font-size:10px}.show-for-mobile[data-v-9d7ea342]{display:unset}.hide-for-mobile[data-v-9d7ea342]{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width[data-v-9d7ea342]{width:96vw}html[data-v-9d7ea342]{font-size:12px}.show-for-tablet[data-v-9d7ea342]{display:unset}.hide-for-tablet[data-v-9d7ea342]{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width[data-v-9d7ea342]{width:1250px}html[data-v-9d7ea342]{font-size:14px}.show-for-desktop[data-v-9d7ea342]{display:unset}.hide-for-desktop[data-v-9d7ea342]{display:none}}@media only screen and (min-width:2000px){.responsive-width[data-v-9d7ea342]{width:1250px}html[data-v-9d7ea342]{font-size:15px}.show-for-large[data-v-9d7ea342]{display:unset}.hide-for-large[data-v-9d7ea342]{display:none}}@keyframes fade-in-9d7ea342{0%{opacity:0}to{opacity:1}}@keyframes bounce-9d7ea342{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate-9d7ea342{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse-9d7ea342{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change-9d7ea342{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x-9d7ea342{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y-9d7ea342{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x-9d7ea342{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}#pallet-container[data-v-9d7ea342]{display:flex;gap:30px;justify-content:center}#pallet-container #color-pallets-main[data-v-9d7ea342],#pallet-container>div[data-v-9d7ea342]{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-main>div[data-v-9d7ea342],#pallet-container>div>div[data-v-9d7ea342]{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:first-child,#pallet-container>div>div[data-v-9d7ea342]:first-child{background-color:#f6a462}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(2),#pallet-container>div>div[data-v-9d7ea342]:nth-child(2){background-color:#f7b27a}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(3),#pallet-container>div>div[data-v-9d7ea342]:nth-child(3){background-color:#f9c092}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(4),#pallet-container>div>div[data-v-9d7ea342]:nth-child(4){background-color:#faceaa}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(5),#pallet-container>div>div[data-v-9d7ea342]:nth-child(5){background-color:#fcdcc2}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(6),#pallet-container>div>div[data-v-9d7ea342]:nth-child(6){background-color:#fdeadb}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(7),#pallet-container>div>div[data-v-9d7ea342]:nth-child(7){background-color:#fef8f3}#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(10),#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(8),#pallet-container #color-pallets-main>div[data-v-9d7ea342]:nth-child(9),#pallet-container>div>div[data-v-9d7ea342]:nth-child(10),#pallet-container>div>div[data-v-9d7ea342]:nth-child(8),#pallet-container>div>div[data-v-9d7ea342]:nth-child(9){background-color:#fff}#pallet-container #color-pallets-black[data-v-9d7ea342]{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-black>div[data-v-9d7ea342]{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:first-child{background-color:#0b1623}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(2){background-color:#221f16}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(3){background-color:#413c2a}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(4){background-color:#61583d}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(5){background-color:#807451}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(6){background-color:#9e9066}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(7){background-color:#b2a785}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(8){background-color:#c5bda5}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(9){background-color:#d9d4c4}#pallet-container #color-pallets-black>div[data-v-9d7ea342]:nth-child(10){background-color:#edebe3}#pallet-container #color-pallets-white[data-v-9d7ea342]{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-white>div[data-v-9d7ea342]{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:first-child{background-color:#fff}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(2){background-color:#f5f4ef}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(3){background-color:#ebe8e0}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(4){background-color:#d7d2c1}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(5){background-color:#c4bba2}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(6){background-color:#b0a482}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(7){background-color:#9c8e63}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(8){background-color:#7d714f}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(9){background-color:#5e553c}#pallet-container #color-pallets-white>div[data-v-9d7ea342]:nth-child(10){background-color:#3e3928}#pallet-container #color-pallets-error[data-v-9d7ea342]{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-error>div[data-v-9d7ea342]{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:first-child{background-color:#d50000}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(2){background-color:#ff0909}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(3){background-color:#ff3c3c}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(4){background-color:#ff6f6f}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(5){background-color:#ffa2a2}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(6){background-color:#ffd5d5}#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(10),#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(7),#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(8),#pallet-container #color-pallets-error>div[data-v-9d7ea342]:nth-child(9){background-color:#fff}#pallet-container #color-pallets-success[data-v-9d7ea342]{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-success>div[data-v-9d7ea342]{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:first-child{background-color:#147930}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(2){background-color:#1ba541}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(3){background-color:#22d153}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(4){background-color:#46e071}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(5){background-color:#71e892}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(6){background-color:#9defb4}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(7){background-color:#c9f6d5}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(8){background-color:#f5fdf7}#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(10),#pallet-container #color-pallets-success>div[data-v-9d7ea342]:nth-child(9){background-color:#fff}#pallet-container #color-pallets-warning[data-v-9d7ea342]{display:flex;flex-direction:column-reverse;width:100px}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]{align-items:center;display:flex;flex-direction:column;height:100px;justify-content:center;margin-bottom:30px;width:100px}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:first-child{background-color:#febd15}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(2){background-color:#fecb48}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(3){background-color:#feda7b}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(4){background-color:#ffe8ad}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(5){background-color:#fff6e0}#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(10),#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(6),#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(7),#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(8),#pallet-container #color-pallets-warning>div[data-v-9d7ea342]:nth-child(9){background-color:#fff}",
+      "start": 1708867441743,
+      "end": 1708867441750,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867441750,
+      "end": 1708867441750,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867441750,
+      "end": 1708867441750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867441750,
+      "end": 1708867441750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708867441750,
+      "end": 1708867441750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867441750,
+      "end": 1708867441750,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867441751,
+      "end": 1708867441751,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867441753,
+      "end": 1708867441753,
+      "order": "normal"
+    }
+  ]
+}

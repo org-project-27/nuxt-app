@@ -1,0 +1,276 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/posts/example/[id].vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div class=\"box\">\n    <NuxtLink to=\"/\">\n      Back\n    </NuxtLink>\n    <br>\n    <br>\n    <form\n        class=\"flex-column-no-wrap\"\n        @submit.prevent=\"example\"\n        style=\"gap: 20px\">\n      <input-component\n          id=\"fullname\"\n          label=\"Fullname\"\n          type=\"text\"\n          name=\"fullname\"\n          v-model=\"registerFormStore['fullname']\"\n          maxlength=\"25\"\n          clearable\n          required\n          :left-icon=\"{icon: 'person'}\"\n          :show-error=\"{\n            message: registerFormStore['fullname'],\n            highlight: registerFormStore['fullname'],\n            icon: 'warning'\n          }\"\n          placeholder=\"Full name\"\n      />\n      <input-component\n          id=\"lastname\"\n          label=\"Last name\"\n          type=\"text\"\n          name=\"lastname\"\n          v-model=\"registerFormStore['lastname']\"\n          maxlength=\"25\"\n          clearable\n          :left-icon=\"{icon: 'favorite'}\"\n          :show-warning=\"{\n            highlight: registerFormStore['lastname'],\n          }\"\n          placeholder=\"Last name\"\n      />\n      <input-component\n          id=\"email\"\n          label=\"Email\"\n          type=\"email\"\n          name=\"email\"\n          v-model=\"registerFormStore['email']\"\n          maxlength=\"25\"\n          :left-icon=\"{icon: 'alternate_email'}\"\n          required\n          :show-info=\"{\n            message: 'This field is important for register!',\n            icon: 'person'\n          }\"\n          placeholder=\"Email\"\n      />\n      <input-component\n          id=\"password\"\n          label=\"Password\"\n          type=\"password\"\n          name=\"password\"\n          v-model=\"registerFormStore['password']\"\n          maxlength=\"25\"\n          :left-icon=\"{icon: 'lock'}\"\n          required\n          :show-success=\"{\n            message: 'Strong password',\n            highlight: true,\n          }\"\n      />\n      <input-component\n          id=\"phone\"\n          label=\"Phone\"\n          type=\"number\"\n          name=\"phone\"\n          v-model=\"registerFormStore['phone']\"\n          maxlength=\"25\"\n          :left-icon=\"{ icon: 'call' }\"\n          :disabled=\"!!registerFormStore['email']\"\n      />\n      <input-component\n        id=\"submit1\"\n        mid-size\n        label=\"Submit\"\n        type=\"button\"\n        button-type=\"success\"\n        @click=\"isLoading = 1\"\n        :is-loading=\"isLoading === 1\"\n      />\n      <input-component\n          id=\"submit2\"\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"danger\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 2\"\n          :is-loading=\"isLoading === 2\"\n      />\n      <input-component\n          id=\"submit3\"\n          label=\"Reset\"\n          type=\"submit\"\n          button-type=\"1\"\n          @click=\"isLoading = 3\"\n          :is-loading=\"isLoading === 3\"\n      />\n      <input-component\n          id=\"submit4\"\n          mid-size\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"2\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 4\"\n          :is-loading=\"isLoading === 4\"\n      />\n      <input-component\n          id=\"submit5\"\n          mid-size\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"3\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 5\"\n      />\n      <loading-component\n          id=\"example\"\n          type=\"2\"\n          size=\"100\"\n          speed=\".6\"\n          :color=\"colorUtilities.$black_color_2\"\n      />\n\n      <message-component\n          type=\"success\"\n          :message=\"$t('get_started.sign_in.welcome_message')\"/>\n      <message-component\n          type=\"warn\"\n          :message=\"$t('get_started.sign_in.welcome_message')\"/>\n      <message-component\n          type=\"error\"\n          :message=\"$t('get_started.sign_in.welcome_message')\"/>\n\n    </form>\n    {{ $t('buttons.search') }}\n\n    <div class=\"responsive-test flex-row-center\">\n      <div class=\"show-for-large\">\n        show-for-large\n      </div>\n      <div class=\"show-for-desktop\">\n        show-for-desktop\n      </div>\n      <div class=\"show-for-tablet\">\n        show-for-tablet\n      </div>\n      <div class=\"show-for-mobile\">\n        show-for-mobile\n      </div>\n      <div class=\"show-for-extrasmall\">\n        show-for-extrasmall\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { defineComponent } from 'vue';\nexport default defineComponent({\n  name: \"PostsPage\",\n  data() {\n    return {\n      model: {},\n      isLoading: true,\n      registerFormStore: {}\n    }\n  },\n  mounted(){\n  },\n  methods: {\n    incrementButton(){\n        console.log(this.model);\n    },\n    example(){\n      console.log('hello', this.registerFormStore)\n    }\n  }\n})\n</script>\n\n<script setup>\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n</script>\n\n<style scoped lang=\"scss\">\n.box {\n  height: 100vh;\n  padding: 30px;\n  display: flex;\n  flex-direction: column;\n  background-color: $white_color_1;\n  gap: 20px;\n}\n\n.responsive-test {\n  & > div {\n    font-size: 1rem;\n    width: 10rem;\n    height: 10rem;\n    color: $white_color_1;\n    background-color: $main_color_2;\n  }\n}\n.button-type-1{\n   button{\n     display: none;\n   }\n}\n</style>",
+      "start": 1708867443500,
+      "end": 1708867443669,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443669,
+      "end": 1708867443669,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443669,
+      "end": 1708867443669,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443669,
+      "end": 1708867443669,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443669,
+      "end": 1708867443669,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867443669,
+      "end": 1708867443669,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867443669,
+      "end": 1708867443669,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867443669,
+      "end": 1708867443670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867443670,
+      "end": 1708867443670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867443670,
+      "end": 1708867443670,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import { resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode, unref as _unref, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n\nimport { defineComponent } from 'vue';\nconst __default__ = defineComponent({\n  name: \"PostsPage\",\n  data() {\n    return {\n      model: {},\n      isLoading: true,\n      registerFormStore: {}\n    }\n  },\n  mounted(){\n  },\n  methods: {\n    incrementButton(){\n        console.log(this.model);\n    },\n    example(){\n      console.log('hello', this.registerFormStore)\n    }\n  }\n})\n\nconst _sfc_main = /*#__PURE__*/Object.assign(__default__, {\n  __ssrInlineRender: true,\n  setup(__props) {\n\n\nreturn (_ctx, _push, _parent, _attrs) => {\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n  const _component_input_component = _resolveComponent(\"input-component\")\n  const _component_loading_component = _resolveComponent(\"loading-component\")\n  const _component_message_component = _resolveComponent(\"message-component\")\n\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"box\" }, _attrs))} data-v-f862c472>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, { to: \"/\" }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Back `)\n      } else {\n        return [\n          _createTextVNode(\" Back \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`<br data-v-f862c472><br data-v-f862c472><form class=\"flex-column-no-wrap\" style=\"${_ssrRenderStyle({\"gap\":\"20px\"})}\" data-v-f862c472>`)\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"fullname\",\n    label: \"Fullname\",\n    type: \"text\",\n    name: \"fullname\",\n    modelValue: _ctx.registerFormStore['fullname'],\n    \"onUpdate:modelValue\": $event => ((_ctx.registerFormStore['fullname']) = $event),\n    maxlength: \"25\",\n    clearable: \"\",\n    required: \"\",\n    \"left-icon\": {icon: 'person'},\n    \"show-error\": {\n            message: _ctx.registerFormStore['fullname'],\n            highlight: _ctx.registerFormStore['fullname'],\n            icon: 'warning'\n          },\n    placeholder: \"Full name\"\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"lastname\",\n    label: \"Last name\",\n    type: \"text\",\n    name: \"lastname\",\n    modelValue: _ctx.registerFormStore['lastname'],\n    \"onUpdate:modelValue\": $event => ((_ctx.registerFormStore['lastname']) = $event),\n    maxlength: \"25\",\n    clearable: \"\",\n    \"left-icon\": {icon: 'favorite'},\n    \"show-warning\": {\n            highlight: _ctx.registerFormStore['lastname'],\n          },\n    placeholder: \"Last name\"\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"email\",\n    label: \"Email\",\n    type: \"email\",\n    name: \"email\",\n    modelValue: _ctx.registerFormStore['email'],\n    \"onUpdate:modelValue\": $event => ((_ctx.registerFormStore['email']) = $event),\n    maxlength: \"25\",\n    \"left-icon\": {icon: 'alternate_email'},\n    required: \"\",\n    \"show-info\": {\n            message: 'This field is important for register!',\n            icon: 'person'\n          },\n    placeholder: \"Email\"\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"password\",\n    label: \"Password\",\n    type: \"password\",\n    name: \"password\",\n    modelValue: _ctx.registerFormStore['password'],\n    \"onUpdate:modelValue\": $event => ((_ctx.registerFormStore['password']) = $event),\n    maxlength: \"25\",\n    \"left-icon\": {icon: 'lock'},\n    required: \"\",\n    \"show-success\": {\n            message: 'Strong password',\n            highlight: true,\n          }\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"phone\",\n    label: \"Phone\",\n    type: \"number\",\n    name: \"phone\",\n    modelValue: _ctx.registerFormStore['phone'],\n    \"onUpdate:modelValue\": $event => ((_ctx.registerFormStore['phone']) = $event),\n    maxlength: \"25\",\n    \"left-icon\": { icon: 'call' },\n    disabled: !!_ctx.registerFormStore['email']\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"submit1\",\n    \"mid-size\": \"\",\n    label: \"Submit\",\n    type: \"button\",\n    \"button-type\": \"success\",\n    onClick: $event => (_ctx.isLoading = 1),\n    \"is-loading\": _ctx.isLoading === 1\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"submit2\",\n    label: \"Submit\",\n    type: \"submit\",\n    \"button-type\": \"danger\",\n    disabled: _ctx.isLoading === 1,\n    onClick: $event => (_ctx.isLoading = 2),\n    \"is-loading\": _ctx.isLoading === 2\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"submit3\",\n    label: \"Reset\",\n    type: \"submit\",\n    \"button-type\": \"1\",\n    onClick: $event => (_ctx.isLoading = 3),\n    \"is-loading\": _ctx.isLoading === 3\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"submit4\",\n    \"mid-size\": \"\",\n    label: \"Submit\",\n    type: \"submit\",\n    \"button-type\": \"2\",\n    disabled: _ctx.isLoading === 1,\n    onClick: $event => (_ctx.isLoading = 4),\n    \"is-loading\": _ctx.isLoading === 4\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_input_component, {\n    id: \"submit5\",\n    \"mid-size\": \"\",\n    label: \"Submit\",\n    type: \"submit\",\n    \"button-type\": \"3\",\n    disabled: _ctx.isLoading === 1,\n    onClick: $event => (_ctx.isLoading = 5)\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_loading_component, {\n    id: \"example\",\n    type: \"2\",\n    size: \"100\",\n    speed: \".6\",\n    color: _unref(colorUtilities).$black_color_2\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_message_component, {\n    type: \"success\",\n    message: _ctx.$t('get_started.sign_in.welcome_message')\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_message_component, {\n    type: \"warn\",\n    message: _ctx.$t('get_started.sign_in.welcome_message')\n  }, null, _parent))\n  _push(_ssrRenderComponent(_component_message_component, {\n    type: \"error\",\n    message: _ctx.$t('get_started.sign_in.welcome_message')\n  }, null, _parent))\n  _push(`</form> ${_ssrInterpolate(_ctx.$t('buttons.search'))} <div class=\"responsive-test flex-row-center\" data-v-f862c472><div class=\"show-for-large\" data-v-f862c472> show-for-large </div><div class=\"show-for-desktop\" data-v-f862c472> show-for-desktop </div><div class=\"show-for-tablet\" data-v-f862c472> show-for-tablet </div><div class=\"show-for-mobile\" data-v-f862c472> show-for-mobile </div><div class=\"show-for-extrasmall\" data-v-f862c472> show-for-extrasmall </div></div></div>`)\n}\n}\n\n})\n\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/posts/example/[id].vue?vue&type=style&index=0&scoped=f862c472&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/posts/example/[id].vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-f862c472\"]])",
+      "start": 1708867443670,
+      "end": 1708867443675,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/posts/example/[id].vue"
+        ],
+        "sourcesContent": [
+          "<template>\n  <div class=\"box\">\n    <NuxtLink to=\"/\">\n      Back\n    </NuxtLink>\n    <br>\n    <br>\n    <form\n        class=\"flex-column-no-wrap\"\n        @submit.prevent=\"example\"\n        style=\"gap: 20px\">\n      <input-component\n          id=\"fullname\"\n          label=\"Fullname\"\n          type=\"text\"\n          name=\"fullname\"\n          v-model=\"registerFormStore['fullname']\"\n          maxlength=\"25\"\n          clearable\n          required\n          :left-icon=\"{icon: 'person'}\"\n          :show-error=\"{\n            message: registerFormStore['fullname'],\n            highlight: registerFormStore['fullname'],\n            icon: 'warning'\n          }\"\n          placeholder=\"Full name\"\n      />\n      <input-component\n          id=\"lastname\"\n          label=\"Last name\"\n          type=\"text\"\n          name=\"lastname\"\n          v-model=\"registerFormStore['lastname']\"\n          maxlength=\"25\"\n          clearable\n          :left-icon=\"{icon: 'favorite'}\"\n          :show-warning=\"{\n            highlight: registerFormStore['lastname'],\n          }\"\n          placeholder=\"Last name\"\n      />\n      <input-component\n          id=\"email\"\n          label=\"Email\"\n          type=\"email\"\n          name=\"email\"\n          v-model=\"registerFormStore['email']\"\n          maxlength=\"25\"\n          :left-icon=\"{icon: 'alternate_email'}\"\n          required\n          :show-info=\"{\n            message: 'This field is important for register!',\n            icon: 'person'\n          }\"\n          placeholder=\"Email\"\n      />\n      <input-component\n          id=\"password\"\n          label=\"Password\"\n          type=\"password\"\n          name=\"password\"\n          v-model=\"registerFormStore['password']\"\n          maxlength=\"25\"\n          :left-icon=\"{icon: 'lock'}\"\n          required\n          :show-success=\"{\n            message: 'Strong password',\n            highlight: true,\n          }\"\n      />\n      <input-component\n          id=\"phone\"\n          label=\"Phone\"\n          type=\"number\"\n          name=\"phone\"\n          v-model=\"registerFormStore['phone']\"\n          maxlength=\"25\"\n          :left-icon=\"{ icon: 'call' }\"\n          :disabled=\"!!registerFormStore['email']\"\n      />\n      <input-component\n        id=\"submit1\"\n        mid-size\n        label=\"Submit\"\n        type=\"button\"\n        button-type=\"success\"\n        @click=\"isLoading = 1\"\n        :is-loading=\"isLoading === 1\"\n      />\n      <input-component\n          id=\"submit2\"\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"danger\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 2\"\n          :is-loading=\"isLoading === 2\"\n      />\n      <input-component\n          id=\"submit3\"\n          label=\"Reset\"\n          type=\"submit\"\n          button-type=\"1\"\n          @click=\"isLoading = 3\"\n          :is-loading=\"isLoading === 3\"\n      />\n      <input-component\n          id=\"submit4\"\n          mid-size\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"2\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 4\"\n          :is-loading=\"isLoading === 4\"\n      />\n      <input-component\n          id=\"submit5\"\n          mid-size\n          label=\"Submit\"\n          type=\"submit\"\n          button-type=\"3\"\n          :disabled=\"isLoading === 1\"\n          @click=\"isLoading = 5\"\n      />\n      <loading-component\n          id=\"example\"\n          type=\"2\"\n          size=\"100\"\n          speed=\".6\"\n          :color=\"colorUtilities.$black_color_2\"\n      />\n\n      <message-component\n          type=\"success\"\n          :message=\"$t('get_started.sign_in.welcome_message')\"/>\n      <message-component\n          type=\"warn\"\n          :message=\"$t('get_started.sign_in.welcome_message')\"/>\n      <message-component\n          type=\"error\"\n          :message=\"$t('get_started.sign_in.welcome_message')\"/>\n\n    </form>\n    {{ $t('buttons.search') }}\n\n    <div class=\"responsive-test flex-row-center\">\n      <div class=\"show-for-large\">\n        show-for-large\n      </div>\n      <div class=\"show-for-desktop\">\n        show-for-desktop\n      </div>\n      <div class=\"show-for-tablet\">\n        show-for-tablet\n      </div>\n      <div class=\"show-for-mobile\">\n        show-for-mobile\n      </div>\n      <div class=\"show-for-extrasmall\">\n        show-for-extrasmall\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport { defineComponent } from 'vue';\nexport default defineComponent({\n  name: \"PostsPage\",\n  data() {\n    return {\n      model: {},\n      isLoading: true,\n      registerFormStore: {}\n    }\n  },\n  mounted(){\n  },\n  methods: {\n    incrementButton(){\n        console.log(this.model);\n    },\n    example(){\n      console.log('hello', this.registerFormStore)\n    }\n  }\n})\n</script>\n\n<script setup>\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\n</script>\n\n<style scoped lang=\"scss\">\n.box {\n  height: 100vh;\n  padding: 30px;\n  display: flex;\n  flex-direction: column;\n  background-color: $white_color_1;\n  gap: 20px;\n}\n\n.responsive-test {\n  & > div {\n    font-size: 1rem;\n    width: 10rem;\n    height: 10rem;\n    color: $white_color_1;\n    background-color: $main_color_2;\n  }\n}\n.button-type-1{\n   button{\n     display: none;\n   }\n}\n</style>"
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867443675,
+      "end": 1708867443675,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867443675,
+      "end": 1708867443677,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867443675,
+      "end": 1708867443677,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867443677,
+      "end": 1708867443677,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867443677,
+      "end": 1708867443677,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1708867443677,
+      "end": 1708867443678,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;AAAA"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
+      "start": 1708867443677,
+      "end": 1708867443678,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA;AAAA;AAAA;AAAA"
+      }
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708867443678,
+      "end": 1708867443678,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867443678,
+      "end": 1708867443678,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867443678,
+      "end": 1708867443678,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867443678,
+      "end": 1708867443678,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867443678,
+      "end": 1708867443678,
+      "order": "normal"
+    }
+  ]
+}

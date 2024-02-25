@@ -1,0 +1,298 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue?vue&type=style&index=0&scoped=d1ae12c6&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n@import \"assets/stylesheets/components/inputComponent\";\n",
+      "start": 1708867444096,
+      "end": 1708867444096,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue"
+        ],
+        "names": [],
+        "mappings": ";AAkNA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC",
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div\n      v-if=\"inputCategory === 'writeable'\"\n      v-show=\"readyForView\"\n      ref=\"input-component\"\n      class=\"input-component writeable\"\n      :class=\"{\n        'active': focusComputed,\n        'deactive': !focusComputed,\n        'disabled': disabled,\n        'message-active': inputMessage.message,\n        'info': inputMessage.key === 'info',\n        'error': inputMessage.key === 'error',\n        'warning': inputMessage.key === 'warning',\n        'success': inputMessage.key === 'success',\n      }\">\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        v-if=\"labelActive\">\n      {{ label }} {{required && !disabled ? '*' : null}}\n    </label>\n    <div class=\"input-container flex-row-center\">\n      <div class=\"left-side\" :class=\"{'deactive': !showInputLeftSideArea}\">\n        <icon-component\n            class=\"input-icon\"\n            :fill=\"focusComputed\"\n            :icon-name=\"leftIcon?.icon\"\n            :icon-size=\"leftIcon?.size\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n      <input\n          :id=\"idComputed\"\n          :type=\"type\"\n          :name=\"name\"\n          :required=\"required\"\n          :autofocus=\"autofocus\"\n          :placeholder=\"placeholder\"\n          :maxlength=\"maxlength\"\n          :readonly=\"readonly\"\n          :disabled=\"disabled\"\n          :pattern=\"pattern\"\n          :style=\"inputStyle\"\n          :autocomplete=\"autocomplete\"\n          @focusin=\"focusComputed = true\"\n          @focusout=\"focusComputed = false\"\n          @input=\"handleInputChange\"\n          v-model=\"modelComputed\"/>\n      <div class=\"right-side\" :class=\"{'deactive': !showInputRightSideArea}\">\n        <div\n            class=\"cannot-select char-counter\"\n            v-if=\"showMaxLengthCounter\">\n          {{ modelValue.length }}/{{ maxlength }}\n        </div>\n        <icon-component\n            v-if=\"showClearButton\"\n            @click.stop=\"clearAllButton\"\n            icon-name=\"cancel\"\n            icon-size=\"2rem\"\n            class=\"clear-icon\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n    </div>\n    <div v-if=\"!!inputMessage.message\" class=\"message-area cannot-select\">\n      <icon-component\n          v-if=\"!!inputMessage.icon\"\n          :icon-name=\"inputMessage.icon\"\n          icon-size=\"1.3rem\"\n          class=\"message-icon\"\n          :color=\"inputMessage.color\"/>\n      <span :style=\"{'color': inputMessage.color}\">\n        {{inputMessage.message}}\n      </span>\n    </div>\n  </div>\n  <div\n      v-else-if=\"inputCategory === 'password'\"\n      v-show=\"readyForView\"\n      ref=\"input-component\"\n      class=\"input-component writeable\"\n      :class=\"{\n        'active': focusComputed,\n        'deactive': !focusComputed,\n        'disabled': disabled,\n        'message-active': inputMessage.message,\n        'info': inputMessage.key === 'info',\n        'error': inputMessage.key === 'error',\n        'warning': inputMessage.key === 'warning',\n        'success': inputMessage.key === 'success',\n      }\">\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        v-if=\"labelActive\">\n      {{ label }} {{required && !disabled ? '*' : null}}\n    </label>\n    <div class=\"input-container flex-row-center\">\n      <div class=\"left-side\" :class=\"{'deactive': !showInputLeftSideArea}\">\n        <icon-component\n            class=\"input-icon\"\n            :fill=\"focusComputed\"\n            :icon-name=\"leftIcon?.icon\"\n            :icon-size=\"leftIcon?.size\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n      <input\n          :id=\"idComputed\"\n          :type=\"visibilityTrigger ? 'text' : type\"\n          :name=\"name\"\n          :required=\"required\"\n          :autofocus=\"autofocus\"\n          :placeholder=\"placeholder || '•••••••••'\"\n          :maxlength=\"maxlength\"\n          :readonly=\"readonly\"\n          :disabled=\"disabled\"\n          :pattern=\"pattern\"\n          :style=\"inputStyle\"\n          :autocomplete=\"autocomplete\"\n          @focusin=\"focusComputed = true\"\n          @focusout=\"focusComputed = false\"\n          @input=\"handleInputChange\"\n          v-model=\"modelComputed\"/>\n      <div class=\"right-side\" :class=\"{'deactive': !showInputRightSideArea}\">\n        <icon-component\n            v-if=\"modelComputed\"\n            @click.stop=\"visibilityTrigger = !visibilityTrigger\"\n            :icon-name=\"visibilityTrigger ? 'visibility' : 'visibility_off'\"\n            icon-size=\"2rem\"\n            class=\"clear-icon\"\n            :color=\"iconColorDetecter(leftIcon?.color)\"/>\n      </div>\n    </div>\n    <div v-if=\"!!inputMessage.message\" class=\"message-area cannot-select\">\n      <icon-component\n          v-if=\"!!inputMessage.icon\"\n          :icon-name=\"inputMessage.icon\"\n          icon-size=\"1.3rem\"\n          class=\"message-icon\"\n          :color=\"inputMessage.color\"/>\n      <span :style=\"{'color': inputMessage.color}\">\n        {{ inputMessage.message }}\n      </span>\n    </div>\n  </div>\n  <div\n      v-else-if=\"inputCategory === 'buttons'\"\n      class=\"input-component buttons cannot-select\"\n      :class=\"\n        `${isLoading ? 'is-loading' : ''}` +\n        ` ${disabled ? 'disabled' : ''}` +\n        ' button-type-' + buttonType\"\n      ref=\"input-component\"\n      v-show=\"readyForView\">\n    <div v-if=\"isLoading\" class=\"image-box\">\n      <loading-component\n          :id=\"idComputed\"\n          size=\"25\"\n          type=\"5\"\n          color=\"white\"\n          speed=\".8\"/>\n    </div>\n    <input\n        :id=\"idComputed\"\n        :type=\"type\"\n        :name=\"name\"\n        :autofocus=\"autofocus\"\n        :disabled=\"disabled\"\n        :style=\"inputStyle\"\n        :value=\"label\"\n        :class=\"{'mid-size': midSize}\"\n        @click.stop=\"$emit('click')\"\n        v-else\n    />\n  </div>\n  <div\n      class=\"input-component selectable\"\n      :class=\"{ 'disabled': disabled }\"\n      v-else-if=\"inputCategory === 'selectable'\"\n      v-show=\"readyForView\">\n    <input\n        :id=\"idComputed\"\n        :type=\"type\"\n        :name=\"name\"\n        :autofocus=\"autofocus\"\n        :disabled=\"disabled\"\n        :style=\"inputStyle\"\n        :value=\"value\"\n        :required=\"required\"\n        :class=\"{ 'disabled': disabled }\"\n        @click.stop=\"$emit('click')\"\n        v-model=\"modelComputed\" />\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        :class=\"{ 'disabled': disabled }\"\n        v-if=\"label\">{{ label }}</label>\n    <label\n        :for=\"idComputed\"\n        class=\"cannot-select\"\n        :class=\"{ 'disabled': disabled }\"\n        v-else-if=\"htmlLabel\">\n        <span v-html=\"htmlLabel\"></span>\n    </label>\n  </div>\n</template>\n\n<script src=\"@/assets/scripts/components/inputComponent.js\">\n</script>\n\n<style scoped lang=\"scss\">\n@import \"assets/stylesheets/components/inputComponent\";\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867444096,
+      "end": 1708867444096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867444096,
+      "end": 1708867444096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867444096,
+      "end": 1708867444096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867444096,
+      "end": 1708867444096,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867444096,
+      "end": 1708867444096,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".default-container{background-color:#fff!important}html{display:unset;font-size:13px}.show-for-desktop,.show-for-extrasmall,.show-for-large,.show-for-mobile,.show-for-tablet{display:none}@media only screen and (min-width:100px){.responsive-width{width:100vw}html{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width{width:97vw}html{font-size:8px}.show-for-extrasmall{display:unset}.hide-for-extrasmall{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width{width:95vw}html{font-size:10px}.show-for-mobile{display:unset}.hide-for-mobile{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width{width:96vw}html{font-size:12px}.show-for-tablet{display:unset}.hide-for-tablet{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width{width:1250px}html{font-size:14px}.show-for-desktop{display:unset}.hide-for-desktop{display:none}}@media only screen and (min-width:2000px){.responsive-width{width:1250px}html{font-size:15px}.show-for-large{display:unset}.hide-for-large{display:none}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}.input-component.writeable{border-radius:5px;transition-duration:.2s}.input-component.writeable label{background-color:#fff;font-size:1rem;height:12px;margin-left:10px;margin-top:-7px;padding:0 3px;position:absolute}.input-component.writeable .message-area{align-items:center;display:flex;font-size:.8rem;gap:3px;justify-content:center;margin-top:5px}.input-component.writeable .message-area div{width:20px}.input-component.writeable .message-area span{align-items:center;display:flex;width:100%}.input-component.writeable .input-container{background-color:transparent;height:100%;overflow:hidden;width:100%}.input-component.writeable .input-container>div{align-items:center;display:flex;height:100%;justify-content:center;min-width:4rem}.input-component.writeable .input-container>div.deactive{min-width:10px}.input-component.writeable .input-container .input-icon{position:relative;top:1px}.input-component.writeable .input-container .clear-icon{cursor:pointer}.input-component.writeable .input-container .char-counter{color:#807451;cursor:pointer;font-size:12px;position:relative}.input-component.writeable .input-container input{background-color:transparent;border:none;font-size:1.2rem;height:100%;outline:none;width:100%}.input-component.writeable .input-container input::-moz-placeholder{font-style:oblique}.input-component.writeable .input-container input::placeholder{font-style:oblique}.input-component.writeable.message-active{margin-bottom:20px}.input-component.writeable.active{background-color:#fff!important;border:1px solid #0b1623!important;box-shadow:0 3px 6px 0 hsla(212,9%,59%,.15)!important}.input-component.writeable.active input{color:#0b1623!important}.input-component.writeable.active input::-moz-placeholder{opacity:.6}.input-component.writeable.active input::placeholder{opacity:.6}.input-component.writeable.active label{color:#0b1623!important}.input-component.writeable.deactive{border:1px solid #807451}.input-component.writeable.deactive input{color:#807451}.input-component.writeable.deactive input::-moz-placeholder{opacity:.4}.input-component.writeable.deactive input::placeholder{opacity:.4}.input-component.writeable.deactive label{color:#807451}.input-component.writeable.disabled{border:1px solid #9e9066;cursor:not-allowed;opacity:.6}.input-component.writeable.disabled input{color:#807451}.input-component.writeable.disabled input::-moz-placeholder{opacity:.4}.input-component.writeable.disabled input::placeholder{opacity:.4}.input-component.writeable.disabled input:disabled{background-color:transparent;cursor:not-allowed}.input-component.writeable.disabled label{color:#807451}.input-component.writeable.error{background-color:#fffbfb;border:1px solid #e20000}.input-component.writeable.error label{color:#e20000}.input-component.writeable.warning{background-color:#fffcf4;border:1px solid #febd15}.input-component.writeable.warning label{color:#febd15}.input-component.buttons{align-items:center;background-color:#edebe3;border-radius:5px;box-shadow:0 1px 3px #d7d2c1,0 1px 2px rgba(0,0,0,.24);cursor:pointer;display:flex;justify-content:center;overflow:hidden;transition-duration:.2s}.input-component.buttons input{background-color:transparent;border:none;cursor:pointer;font-size:1.5rem;font-weight:700;height:100%;width:100%}.input-component.buttons input.mid-size{font-size:1rem}.input-component.buttons.is-loading{background-color:#b2a785;box-shadow:inset 0 0 10px 0 rgba(0,0,0,.45);cursor:wait!important}.input-component.buttons.button-type-0{background-color:#f5f4ef}.input-component.buttons.button-type-0 input{color:#9e9066;font-size:1.2rem!important;font-weight:400!important}.input-component.buttons.button-type-1{background-color:#f6a462}.input-component.buttons.button-type-1 input{color:#fff}.input-component.buttons.button-type-1.is-loading{cursor:wait!important;opacity:.7!important}.input-component.buttons.button-type-2{background-color:#fcdcc2;border:1px solid #f7b27a;box-shadow:none}.input-component.buttons.button-type-2 input{color:#f6a462}.input-component.buttons.button-type-2.is-loading{cursor:wait!important}.input-component.buttons.button-type-danger{background-color:#ff0909}.input-component.buttons.button-type-danger input{color:#fff}.input-component.buttons.button-type-danger.is-loading{cursor:wait!important;opacity:.7!important}.input-component.buttons.button-type-success{background-color:#22d153}.input-component.buttons.button-type-success input{color:#fff}.input-component.buttons.button-type-success.is-loading{cursor:wait!important;opacity:.7!important}.input-component.buttons:active{box-shadow:inset 0 0 10px 0 rgba(0,0,0,.45)}.input-component.buttons:active input{opacity:.7}.input-component.buttons.disabled{box-shadow:inset 0 0 10px 0 rgba(0,0,0,.45);cursor:not-allowed!important;opacity:.5}.input-component.buttons.disabled input{cursor:not-allowed!important;opacity:.7}.input-component.buttons .image-box{align-items:center;display:flex;flex-direction:column;justify-content:center}.input-component.selectable{align-items:center;display:flex;gap:1.2rem;height:100%!important}.input-component.selectable input[type=checkbox]{-moz-appearance:none;appearance:none;-webkit-appearance:none;border:.1rem solid #f5964a;border-radius:.25rem;cursor:pointer;height:1.5rem;position:relative;width:1.5rem}.input-component.selectable input[type=checkbox]:checked{background-color:#f6a462}.input-component.selectable input[type=checkbox]:checked:after{border:solid #fff;border-width:0 .35rem .35rem 0;content:\"\";height:.875rem;left:.35rem;position:absolute;transform:rotate(45deg);width:.35rem}.input-component.selectable label{color:#61583d;cursor:pointer;font-size:1.1rem}.input-component.selectable label.disabled{cursor:not-allowed;opacity:.5}",
+      "start": 1708867444096,
+      "end": 1708867444864,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue",
+        "mappings": "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",
+        "names": [],
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_configs.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_responsive.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_animations.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_fonts.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/components/inputComponent.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_colors.scss"
+        ],
+        "sourcesContent": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867444864,
+      "end": 1708867444864,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867444864,
+      "end": 1708867444864,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867444869,
+      "end": 1708867444869,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".default-container[data-v-d1ae12c6]{background-color:#fff!important}html[data-v-d1ae12c6]{display:unset;font-size:13px}.show-for-desktop[data-v-d1ae12c6],.show-for-extrasmall[data-v-d1ae12c6],.show-for-large[data-v-d1ae12c6],.show-for-mobile[data-v-d1ae12c6],.show-for-tablet[data-v-d1ae12c6]{display:none}@media only screen and (min-width:100px){.responsive-width[data-v-d1ae12c6]{width:100vw}html[data-v-d1ae12c6]{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width[data-v-d1ae12c6]{width:97vw}html[data-v-d1ae12c6]{font-size:8px}.show-for-extrasmall[data-v-d1ae12c6]{display:unset}.hide-for-extrasmall[data-v-d1ae12c6]{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width[data-v-d1ae12c6]{width:95vw}html[data-v-d1ae12c6]{font-size:10px}.show-for-mobile[data-v-d1ae12c6]{display:unset}.hide-for-mobile[data-v-d1ae12c6]{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width[data-v-d1ae12c6]{width:96vw}html[data-v-d1ae12c6]{font-size:12px}.show-for-tablet[data-v-d1ae12c6]{display:unset}.hide-for-tablet[data-v-d1ae12c6]{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width[data-v-d1ae12c6]{width:1250px}html[data-v-d1ae12c6]{font-size:14px}.show-for-desktop[data-v-d1ae12c6]{display:unset}.hide-for-desktop[data-v-d1ae12c6]{display:none}}@media only screen and (min-width:2000px){.responsive-width[data-v-d1ae12c6]{width:1250px}html[data-v-d1ae12c6]{font-size:15px}.show-for-large[data-v-d1ae12c6]{display:unset}.hide-for-large[data-v-d1ae12c6]{display:none}}@keyframes fade-in-d1ae12c6{0%{opacity:0}to{opacity:1}}@keyframes bounce-d1ae12c6{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate-d1ae12c6{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse-d1ae12c6{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change-d1ae12c6{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x-d1ae12c6{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y-d1ae12c6{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x-d1ae12c6{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}.input-component.writeable[data-v-d1ae12c6]{border-radius:5px;transition-duration:.2s}.input-component.writeable label[data-v-d1ae12c6]{background-color:#fff;font-size:1rem;height:12px;margin-left:10px;margin-top:-7px;padding:0 3px;position:absolute}.input-component.writeable .message-area[data-v-d1ae12c6]{align-items:center;display:flex;font-size:.8rem;gap:3px;justify-content:center;margin-top:5px}.input-component.writeable .message-area div[data-v-d1ae12c6]{width:20px}.input-component.writeable .message-area span[data-v-d1ae12c6]{align-items:center;display:flex;width:100%}.input-component.writeable .input-container[data-v-d1ae12c6]{background-color:transparent;height:100%;overflow:hidden;width:100%}.input-component.writeable .input-container>div[data-v-d1ae12c6]{align-items:center;display:flex;height:100%;justify-content:center;min-width:4rem}.input-component.writeable .input-container>div.deactive[data-v-d1ae12c6]{min-width:10px}.input-component.writeable .input-container .input-icon[data-v-d1ae12c6]{position:relative;top:1px}.input-component.writeable .input-container .clear-icon[data-v-d1ae12c6]{cursor:pointer}.input-component.writeable .input-container .char-counter[data-v-d1ae12c6]{color:#807451;cursor:pointer;font-size:12px;position:relative}.input-component.writeable .input-container input[data-v-d1ae12c6]{background-color:transparent;border:none;font-size:1.2rem;height:100%;outline:none;width:100%}.input-component.writeable .input-container input[data-v-d1ae12c6]::-moz-placeholder{font-style:oblique}.input-component.writeable .input-container input[data-v-d1ae12c6]::placeholder{font-style:oblique}.input-component.writeable.message-active[data-v-d1ae12c6]{margin-bottom:20px}.input-component.writeable.active[data-v-d1ae12c6]{background-color:#fff!important;border:1px solid #0b1623!important;box-shadow:0 3px 6px 0 hsla(212,9%,59%,.15)!important}.input-component.writeable.active input[data-v-d1ae12c6]{color:#0b1623!important}.input-component.writeable.active input[data-v-d1ae12c6]::-moz-placeholder{opacity:.6}.input-component.writeable.active input[data-v-d1ae12c6]::placeholder{opacity:.6}.input-component.writeable.active label[data-v-d1ae12c6]{color:#0b1623!important}.input-component.writeable.deactive[data-v-d1ae12c6]{border:1px solid #807451}.input-component.writeable.deactive input[data-v-d1ae12c6]{color:#807451}.input-component.writeable.deactive input[data-v-d1ae12c6]::-moz-placeholder{opacity:.4}.input-component.writeable.deactive input[data-v-d1ae12c6]::placeholder{opacity:.4}.input-component.writeable.deactive label[data-v-d1ae12c6]{color:#807451}.input-component.writeable.disabled[data-v-d1ae12c6]{border:1px solid #9e9066;cursor:not-allowed;opacity:.6}.input-component.writeable.disabled input[data-v-d1ae12c6]{color:#807451}.input-component.writeable.disabled input[data-v-d1ae12c6]::-moz-placeholder{opacity:.4}.input-component.writeable.disabled input[data-v-d1ae12c6]::placeholder{opacity:.4}.input-component.writeable.disabled input[data-v-d1ae12c6]:disabled{background-color:transparent;cursor:not-allowed}.input-component.writeable.disabled label[data-v-d1ae12c6]{color:#807451}.input-component.writeable.error[data-v-d1ae12c6]{background-color:#fffbfb;border:1px solid #e20000}.input-component.writeable.error label[data-v-d1ae12c6]{color:#e20000}.input-component.writeable.warning[data-v-d1ae12c6]{background-color:#fffcf4;border:1px solid #febd15}.input-component.writeable.warning label[data-v-d1ae12c6]{color:#febd15}.input-component.buttons[data-v-d1ae12c6]{align-items:center;background-color:#edebe3;border-radius:5px;box-shadow:0 1px 3px #d7d2c1,0 1px 2px rgba(0,0,0,.24);cursor:pointer;display:flex;justify-content:center;overflow:hidden;transition-duration:.2s}.input-component.buttons input[data-v-d1ae12c6]{background-color:transparent;border:none;cursor:pointer;font-size:1.5rem;font-weight:700;height:100%;width:100%}.input-component.buttons input.mid-size[data-v-d1ae12c6]{font-size:1rem}.input-component.buttons.is-loading[data-v-d1ae12c6]{background-color:#b2a785;box-shadow:inset 0 0 10px 0 rgba(0,0,0,.45);cursor:wait!important}.input-component.buttons.button-type-0[data-v-d1ae12c6]{background-color:#f5f4ef}.input-component.buttons.button-type-0 input[data-v-d1ae12c6]{color:#9e9066;font-size:1.2rem!important;font-weight:400!important}.input-component.buttons.button-type-1[data-v-d1ae12c6]{background-color:#f6a462}.input-component.buttons.button-type-1 input[data-v-d1ae12c6]{color:#fff}.input-component.buttons.button-type-1.is-loading[data-v-d1ae12c6]{cursor:wait!important;opacity:.7!important}.input-component.buttons.button-type-2[data-v-d1ae12c6]{background-color:#fcdcc2;border:1px solid #f7b27a;box-shadow:none}.input-component.buttons.button-type-2 input[data-v-d1ae12c6]{color:#f6a462}.input-component.buttons.button-type-2.is-loading[data-v-d1ae12c6]{cursor:wait!important}.input-component.buttons.button-type-danger[data-v-d1ae12c6]{background-color:#ff0909}.input-component.buttons.button-type-danger input[data-v-d1ae12c6]{color:#fff}.input-component.buttons.button-type-danger.is-loading[data-v-d1ae12c6]{cursor:wait!important;opacity:.7!important}.input-component.buttons.button-type-success[data-v-d1ae12c6]{background-color:#22d153}.input-component.buttons.button-type-success input[data-v-d1ae12c6]{color:#fff}.input-component.buttons.button-type-success.is-loading[data-v-d1ae12c6]{cursor:wait!important;opacity:.7!important}.input-component.buttons[data-v-d1ae12c6]:active{box-shadow:inset 0 0 10px 0 rgba(0,0,0,.45)}.input-component.buttons:active input[data-v-d1ae12c6]{opacity:.7}.input-component.buttons.disabled[data-v-d1ae12c6]{box-shadow:inset 0 0 10px 0 rgba(0,0,0,.45);cursor:not-allowed!important;opacity:.5}.input-component.buttons.disabled input[data-v-d1ae12c6]{cursor:not-allowed!important;opacity:.7}.input-component.buttons .image-box[data-v-d1ae12c6]{align-items:center;display:flex;flex-direction:column;justify-content:center}.input-component.selectable[data-v-d1ae12c6]{align-items:center;display:flex;gap:1.2rem;height:100%!important}.input-component.selectable input[type=checkbox][data-v-d1ae12c6]{-moz-appearance:none;appearance:none;-webkit-appearance:none;border:.1rem solid #f5964a;border-radius:.25rem;cursor:pointer;height:1.5rem;position:relative;width:1.5rem}.input-component.selectable input[type=checkbox][data-v-d1ae12c6]:checked{background-color:#f6a462}.input-component.selectable input[type=checkbox][data-v-d1ae12c6]:checked:after{border:solid #fff;border-width:0 .35rem .35rem 0;content:\"\";height:.875rem;left:.35rem;position:absolute;transform:rotate(45deg);width:.35rem}.input-component.selectable label[data-v-d1ae12c6]{color:#61583d;cursor:pointer;font-size:1.1rem}.input-component.selectable label.disabled[data-v-d1ae12c6]{cursor:not-allowed;opacity:.5}",
+      "start": 1708867444873,
+      "end": 1708867444880,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue",
+        "mappings": "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",
+        "names": [],
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867444880,
+      "end": 1708867444880,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444880,
+      "end": 1708867444880,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444880,
+      "end": 1708867444880,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444880,
+      "end": 1708867444880,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444880,
+      "end": 1708867444880,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867444881,
+      "end": 1708867444881,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708867444882,
+      "end": 1708867444882,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867444882,
+      "end": 1708867444882,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867444882,
+      "end": 1708867444882,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867444882,
+      "end": 1708867444882,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867444882,
+      "end": 1708867444882,
+      "order": "normal"
+    }
+  ]
+}

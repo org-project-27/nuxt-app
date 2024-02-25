@@ -1,0 +1,1 @@
+import{z as e,_ as o,c as t,o as s}from"./entry.wyuOqA8i.js";const a=e({name:"favorites"}),n={class:"default-container"};function c(r,f,i,_,p,d){return s(),t("div",n," favorites ")}const m=o(a,[["render",c]]);export{m as default};

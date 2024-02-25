@@ -1,0 +1,1 @@
+import{z as e,_ as t,c,o}from"./entry.wyuOqA8i.js";const a=e({name:"cart"}),n={class:"default-container"};function s(r,_,p,d,f,i){return o(),c("div",n," cart ")}const m=t(a,[["render",s]]);export{m as default};

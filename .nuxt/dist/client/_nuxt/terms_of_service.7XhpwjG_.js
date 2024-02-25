@@ -1,0 +1,1 @@
+import{z as e,_ as o,c as s,o as r}from"./entry.wyuOqA8i.js";const t=e({name:"terms_of_service"});function c(n,_,a,f,i,m){return r(),s("div",null," terms_of_service ")}const d=o(t,[["render",c]]);export{d as default};

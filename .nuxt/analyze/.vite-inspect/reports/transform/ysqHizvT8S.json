@@ -1,0 +1,215 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/views/signUp.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n  <div id=\"sign-up-page\" class=\"flex-column-center\" v-show=\"readyForView\">\n    <form class=\"sign-up-form\" @submit.prevent=\"submit\">\n      <div class=\"message-box\">\n        <message-component\n            v-if=\"signupProgressStatus\"\n            type=\"success\"\n            :message=\"backendMessage(signupResponse.message)\"/>\n        <message-component\n            v-else-if=\"showEmailInputError || showFullnameInputError\"\n            type=\"error\"\n            :message=\"backendMessage(messages.USER_REGISTRATION_FAILED)\"/>\n        <message-component\n            v-else-if=\"signupProgressStatus === false\"\n            type=\"error\"\n            :message=\"backendMessage(signupResponse.message)\"/>\n        <message-component\n            v-else\n            hide-icon\n            type=\"info\"\n            :message=\"$t('get_started.sign_up.welcome_message')\"/>\n      </div>\n      <div class=\"input-group\">\n        <input-component\n            id=\"fullname-input\"\n            type=\"text\"\n            name=\"fullname\"\n            autocomplete=\"name\"\n            placeholder=\"John Doe\"\n            v-model=\"modelSignup.fullname\"\n            maxlength=\"50\"\n            :label=\"$t('get_started.sign_up.fullname')\"\n            :left-icon=\"{ icon: 'person', size: '2.5rem' }\"\n            :input-size=\"{\n              width: '100%',\n              height: '4rem'\n            }\"\n            :show-error=\"{\n              message: showFullnameInputError,\n              highlight: !!showFullnameInputError\n            }\"\n            required\n            clearable\n        />\n        <br>\n        <input-component\n            id=\"email-input\"\n            type=\"email\"\n            name=\"email\"\n            autocomplete=\"email\"\n            placeholder=\"example@domain.com\"\n            v-model=\"modelSignup.email\"\n            :label=\"$t('get_started.sign_up.email')\"\n            :left-icon=\"{ icon: 'alternate_email', size: '2.5rem' }\"\n            :input-size=\"{\n              width: '100%',\n              height: '4rem'\n            }\"\n            :show-error=\"{\n              message: showEmailInputError,\n              highlight: !!showEmailInputError\n            }\"\n            required\n            clearable\n        />\n        <br>\n        <input-component\n            id=\"password-input\"\n            type=\"password\"\n            name=\"password\"\n            autocomplete=\"new-password\"\n            v-model=\"modelSignup.password\"\n            :label=\"$t('get_started.sign_up.password')\"\n            :left-icon=\"{ icon: 'lock', size: '2.5rem' }\"\n            :input-size=\"{\n              width: '100%',\n              height: '4rem'\n            }\"\n            :show-error=\"{\n              message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,\n              highlight: passwordStrength === 1\n            }\"\n            :show-warning=\"{\n              message: passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null,\n              highlight: passwordStrength === 2\n            }\"\n            :show-success=\"{\n              message: passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null,\n            }\"\n            required\n            clearable\n        />\n        <br>\n        <input-component\n            id=\"terms-of-service\"\n            name=\"terms-of-service\"\n            type=\"checkbox\"\n            :html-label=\"termsOfService.html\"\n            required\n            v-model=\"termsOfService.value\"/>\n      </div>\n      <input-component\n          id=\"submit-btn\"\n          type=\"submit\"\n          @ready-for-view=\"setReadyForView\"\n          :label=\"$t('get_started.sign_up.submit_btn')\"\n          button-type=\"1\"\n          :left-icon=\"{ icon: 'lock' }\"\n          :input-size=\"{\n              width: '100%',\n              height: '3.5rem'\n          }\"\n          :disabled=\"!readyForSubmit\"\n          :is-loading=\"submitIsLoading\"\n      />\n    </form>\n    <span class=\"already-have-account\">\n      {{ $t('get_started.sign_up.already_have_account') }}\n      <nuxt-link to=\"?view=log_in\" class=\"decoration\">\n      {{ $t('get_started.sign_up.log_in') }}\n      </nuxt-link>\n    </span>\n    <br>\n  </div>\n</template>\n\n<script>\nimport { defineComponent } from 'vue';\nimport { evaluatePasswordStrength } from \"~/assets/scripts/helpers/inputHelpers\";\nimport { useAuthStore } from \"~/stores/user/auth\";\nimport { defaults } from \"~/assets/scripts/types/models/userAuthModels\"\nimport { backendMessage } from \"~/assets/scripts/helpers/generalHelpers\";\nimport messages from \"~/assets/scripts/constants/apiMessageKeys\";\n\nconst signupResponse = defaults.defaultResponses.signup();\n\nexport default defineComponent({\n  name: \"SignUp\",\n  data(){\n    return {\n      termsOfService: {\n        html: this.$t('get_started.sign_up.terms_of_service'),\n        value: false\n      },\n      readyForView: false,\n      submitIsLoading: false,\n      redirectToLoginTimeId: null,\n      signupResponse,\n      messages\n    }\n  },\n  computed: {\n    passwordStrength() {\n      return this.evaluatePasswordStrength(this.modelSignup.password);\n    },\n    readyForSubmit() {\n      let ready = false;\n      let { fullname, password, email } = this.modelSignup;\n      if (fullname && password && email) {\n        if (this.passwordStrength > 1) {\n          ready = true;\n        }\n      }\n      if(this.signupProgressStatus === false){\n        ready = false;\n      }\n      return ready;\n    },\n    modelSignup(){\n      const { modelSignup } = useAuthStore();\n      return modelSignup;\n    },\n    signupProgressStatus(){\n      return this.signupResponse.success;\n    },\n    showFullnameInputError(){\n      let error = null;\n      if (this.signupProgressStatus === false) {\n        if (this.signupResponse.message === this.messages.INVALID_FULLNAME) {\n          error = this.backendMessage(this.messages.INVALID_FULLNAME);\n        }\n      }\n      return error;\n    },\n    showEmailInputError(){\n      let error = null;\n      if (this.signupProgressStatus === false) {\n        if (this.signupResponse.message === this.messages.EMAIL_IS_EXIST) {\n          error = this.backendMessage(this.messages.EMAIL_IS_EXIST);\n        } else if (this.signupResponse.message === this.messages.INVALID_EMAIL) {\n          error = this.backendMessage(this.messages.INVALID_EMAIL);\n        }\n      }\n      return error;\n    }\n  },\n  unmounted(){\n    this.resetModel();\n    clearTimeout(this.redirectToLoginTimeId);\n  },\n  methods: {\n    backendMessage,\n    evaluatePasswordStrength,\n    async submit() {\n      this.submitIsLoading = true;\n      const { submitSignup, modelLogin } = useAuthStore();\n      await submitSignup()\n        .then(response => {\n          this.signupResponse = { ...response };\n          if(this.signupProgressStatus){\n            modelLogin.email = this.modelSignup.email;\n            this.redirectToLoginTimeId = setTimeout(() => {\n              this.$router.push('?view=log_in');\n              clearTimeout(this.redirectToLoginTimeId);\n            }, 2000)\n          }\n        })\n        .catch(error => {\n          this.signupResponse = { ...error };\n        })\n        .finally(() => {\n          this.submitIsLoading = false;\n        });\n    },\n    resetModel() {\n      const { resetModelSignup } = useAuthStore();\n      resetModelSignup();\n    },\n    setReadyForView(val) {\n      this.readyForView = val;\n    },\n  },\n  watch: {\n    modelSignup: {\n      handler(val){\n        this.signupResponse = signupResponse;\n        clearTimeout(this.redirectToLoginTimeId);\n        Object.keys(this.modelSignup).forEach(key => {\n          this.modelSignup[key] = this.modelSignup[key]?.trim();\n        });\n      },\n      deep: true\n    }\n  }\n});\n</script>\n\n<style scoped lang=\"scss\">\n#sign-up-page {\n  form.sign-up-form {\n    width: 70%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    gap: 2rem;\n    margin: 2.5rem 0;\n\n    .input-group {\n      display: flex;\n      flex-direction: column;\n      gap: .4rem;\n      width: 100%;\n    }\n\n    .message-box {\n      margin-bottom: 1rem;\n    }\n  }\n\n  .already-have-account {\n    font-size: 1.1rem;\n    color: $black_color;\n  }\n}\n\n</style>",
+      "start": 1708867440356,
+      "end": 1708867440490,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867440490,
+      "end": 1708867440490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\nimport { defineComponent } from 'vue';\nimport { evaluatePasswordStrength } from \"~/assets/scripts/helpers/inputHelpers\";\nimport { useAuthStore } from \"~/stores/user/auth\";\nimport { defaults } from \"~/assets/scripts/types/models/userAuthModels\"\nimport { backendMessage } from \"~/assets/scripts/helpers/generalHelpers\";\nimport messages from \"~/assets/scripts/constants/apiMessageKeys\";\n\nconst signupResponse = defaults.defaultResponses.signup();\n\nconst _sfc_main = defineComponent({\n  name: \"SignUp\",\n  data(){\n    return {\n      termsOfService: {\n        html: this.$t('get_started.sign_up.terms_of_service'),\n        value: false\n      },\n      readyForView: false,\n      submitIsLoading: false,\n      redirectToLoginTimeId: null,\n      signupResponse,\n      messages\n    }\n  },\n  computed: {\n    passwordStrength() {\n      return this.evaluatePasswordStrength(this.modelSignup.password);\n    },\n    readyForSubmit() {\n      let ready = false;\n      let { fullname, password, email } = this.modelSignup;\n      if (fullname && password && email) {\n        if (this.passwordStrength > 1) {\n          ready = true;\n        }\n      }\n      if(this.signupProgressStatus === false){\n        ready = false;\n      }\n      return ready;\n    },\n    modelSignup(){\n      const { modelSignup } = useAuthStore();\n      return modelSignup;\n    },\n    signupProgressStatus(){\n      return this.signupResponse.success;\n    },\n    showFullnameInputError(){\n      let error = null;\n      if (this.signupProgressStatus === false) {\n        if (this.signupResponse.message === this.messages.INVALID_FULLNAME) {\n          error = this.backendMessage(this.messages.INVALID_FULLNAME);\n        }\n      }\n      return error;\n    },\n    showEmailInputError(){\n      let error = null;\n      if (this.signupProgressStatus === false) {\n        if (this.signupResponse.message === this.messages.EMAIL_IS_EXIST) {\n          error = this.backendMessage(this.messages.EMAIL_IS_EXIST);\n        } else if (this.signupResponse.message === this.messages.INVALID_EMAIL) {\n          error = this.backendMessage(this.messages.INVALID_EMAIL);\n        }\n      }\n      return error;\n    }\n  },\n  unmounted(){\n    this.resetModel();\n    clearTimeout(this.redirectToLoginTimeId);\n  },\n  methods: {\n    backendMessage,\n    evaluatePasswordStrength,\n    async submit() {\n      this.submitIsLoading = true;\n      const { submitSignup, modelLogin } = useAuthStore();\n      await submitSignup()\n        .then(response => {\n          this.signupResponse = { ...response };\n          if(this.signupProgressStatus){\n            modelLogin.email = this.modelSignup.email;\n            this.redirectToLoginTimeId = setTimeout(() => {\n              this.$router.push('?view=log_in');\n              clearTimeout(this.redirectToLoginTimeId);\n            }, 2000)\n          }\n        })\n        .catch(error => {\n          this.signupResponse = { ...error };\n        })\n        .finally(() => {\n          this.submitIsLoading = false;\n        });\n    },\n    resetModel() {\n      const { resetModelSignup } = useAuthStore();\n      resetModelSignup();\n    },\n    setReadyForView(val) {\n      this.readyForView = val;\n    },\n  },\n  watch: {\n    modelSignup: {\n      handler(val){\n        this.signupResponse = signupResponse;\n        clearTimeout(this.redirectToLoginTimeId);\n        Object.keys(this.modelSignup).forEach(key => {\n          this.modelSignup[key] = this.modelSignup[key]?.trim();\n        });\n      },\n      deep: true\n    }\n  }\n});\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, createVNode as _createVNode, withModifiers as _withModifiers, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, withCtx as _withCtx, vShow as _vShow, withDirectives as _withDirectives, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-2eeca6b5\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = {\n  id: \"sign-up-page\",\n  class: \"flex-column-center\"\n}\nconst _hoisted_2 = { class: \"message-box\" }\nconst _hoisted_3 = { class: \"input-group\" }\nconst _hoisted_4 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_5 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_6 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_7 = { class: \"already-have-account\" }\nconst _hoisted_8 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_message_component = _resolveComponent(\"message-component\")\n  const _component_input_component = _resolveComponent(\"input-component\")\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"form\", {\n      class: \"sign-up-form\",\n      onSubmit: _cache[4] || (_cache[4] = _withModifiers((...args) => (_ctx.submit && _ctx.submit(...args)), [\"prevent\"]))\n    }, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        (_ctx.signupProgressStatus)\n          ? (_openBlock(), _createBlock(_component_message_component, {\n              key: 0,\n              type: \"success\",\n              message: _ctx.backendMessage(_ctx.signupResponse.message)\n            }, null, 8, [\"message\"]))\n          : (_ctx.showEmailInputError || _ctx.showFullnameInputError)\n            ? (_openBlock(), _createBlock(_component_message_component, {\n                key: 1,\n                type: \"error\",\n                message: _ctx.backendMessage(_ctx.messages.USER_REGISTRATION_FAILED)\n              }, null, 8, [\"message\"]))\n            : (_ctx.signupProgressStatus === false)\n              ? (_openBlock(), _createBlock(_component_message_component, {\n                  key: 2,\n                  type: \"error\",\n                  message: _ctx.backendMessage(_ctx.signupResponse.message)\n                }, null, 8, [\"message\"]))\n              : (_openBlock(), _createBlock(_component_message_component, {\n                  key: 3,\n                  \"hide-icon\": \"\",\n                  type: \"info\",\n                  message: _ctx.$t('get_started.sign_up.welcome_message')\n                }, null, 8, [\"message\"]))\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createVNode(_component_input_component, {\n          id: \"fullname-input\",\n          type: \"text\",\n          name: \"fullname\",\n          autocomplete: \"name\",\n          placeholder: \"John Doe\",\n          modelValue: _ctx.modelSignup.fullname,\n          \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_ctx.modelSignup.fullname) = $event)),\n          maxlength: \"50\",\n          label: _ctx.$t('get_started.sign_up.fullname'),\n          \"left-icon\": { icon: 'person', size: '2.5rem' },\n          \"input-size\": {\n              width: '100%',\n              height: '4rem'\n            },\n          \"show-error\": {\n              message: _ctx.showFullnameInputError,\n              highlight: !!_ctx.showFullnameInputError\n            },\n          required: \"\",\n          clearable: \"\"\n        }, null, 8, [\"modelValue\", \"label\", \"show-error\"]),\n        _hoisted_4,\n        _createVNode(_component_input_component, {\n          id: \"email-input\",\n          type: \"email\",\n          name: \"email\",\n          autocomplete: \"email\",\n          placeholder: \"example@domain.com\",\n          modelValue: _ctx.modelSignup.email,\n          \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_ctx.modelSignup.email) = $event)),\n          label: _ctx.$t('get_started.sign_up.email'),\n          \"left-icon\": { icon: 'alternate_email', size: '2.5rem' },\n          \"input-size\": {\n              width: '100%',\n              height: '4rem'\n            },\n          \"show-error\": {\n              message: _ctx.showEmailInputError,\n              highlight: !!_ctx.showEmailInputError\n            },\n          required: \"\",\n          clearable: \"\"\n        }, null, 8, [\"modelValue\", \"label\", \"show-error\"]),\n        _hoisted_5,\n        _createVNode(_component_input_component, {\n          id: \"password-input\",\n          type: \"password\",\n          name: \"password\",\n          autocomplete: \"new-password\",\n          modelValue: _ctx.modelSignup.password,\n          \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_ctx.modelSignup.password) = $event)),\n          label: _ctx.$t('get_started.sign_up.password'),\n          \"left-icon\": { icon: 'lock', size: '2.5rem' },\n          \"input-size\": {\n              width: '100%',\n              height: '4rem'\n            },\n          \"show-error\": {\n              message: _ctx.passwordStrength === 1 ? _ctx.$t('get_started.sign_up.password_levels.weak') : null,\n              highlight: _ctx.passwordStrength === 1\n            },\n          \"show-warning\": {\n              message: _ctx.passwordStrength === 2 ? _ctx.$t('get_started.sign_up.password_levels.moderate') : null,\n              highlight: _ctx.passwordStrength === 2\n            },\n          \"show-success\": {\n              message: _ctx.passwordStrength === 3 ? _ctx.$t('get_started.sign_up.password_levels.strong') : null,\n            },\n          required: \"\",\n          clearable: \"\"\n        }, null, 8, [\"modelValue\", \"label\", \"show-error\", \"show-warning\", \"show-success\"]),\n        _hoisted_6,\n        _createVNode(_component_input_component, {\n          id: \"terms-of-service\",\n          name: \"terms-of-service\",\n          type: \"checkbox\",\n          \"html-label\": _ctx.termsOfService.html,\n          required: \"\",\n          modelValue: _ctx.termsOfService.value,\n          \"onUpdate:modelValue\": _cache[3] || (_cache[3] = $event => ((_ctx.termsOfService.value) = $event))\n        }, null, 8, [\"html-label\", \"modelValue\"])\n      ]),\n      _createVNode(_component_input_component, {\n        id: \"submit-btn\",\n        type: \"submit\",\n        onReadyForView: _ctx.setReadyForView,\n        label: _ctx.$t('get_started.sign_up.submit_btn'),\n        \"button-type\": \"1\",\n        \"left-icon\": { icon: 'lock' },\n        \"input-size\": {\n              width: '100%',\n              height: '3.5rem'\n          },\n        disabled: !_ctx.readyForSubmit,\n        \"is-loading\": _ctx.submitIsLoading\n      }, null, 8, [\"onReadyForView\", \"label\", \"disabled\", \"is-loading\"])\n    ], 32),\n    _createElementVNode(\"span\", _hoisted_7, [\n      _createTextVNode(_toDisplayString(_ctx.$t('get_started.sign_up.already_have_account')) + \" \", 1),\n      _createVNode(_component_nuxt_link, {\n        to: \"?view=log_in\",\n        class: \"decoration\"\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t('get_started.sign_up.log_in')), 1)\n        ]),\n        _: 1\n      })\n    ]),\n    _hoisted_8\n  ], 512)), [\n    [_vShow, _ctx.readyForView]\n  ])\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/views/signUp.vue?vue&type=style&index=0&scoped=2eeca6b5&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-2eeca6b5\"]])",
+      "start": 1708867440490,
+      "end": 1708867440498,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867440498,
+      "end": 1708867440498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867440499,
+      "end": 1708867440499,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867440499,
+      "end": 1708867440499,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867440499,
+      "end": 1708867440499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867440499,
+      "end": 1708867440502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867440502,
+      "end": 1708867440502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867440502,
+      "end": 1708867440502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708867440502,
+      "end": 1708867440502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708867440502,
+      "end": 1708867440502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/MessageComponent.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/InputComponent.vue\";\nimport { default as __nuxt_component_2 } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/node_modules/nuxt/dist/app/components/nuxt-link\";\n\nimport { defineComponent } from 'vue';\nimport { evaluatePasswordStrength } from \"~/assets/scripts/helpers/inputHelpers\";\nimport { useAuthStore } from \"~/stores/user/auth\";\nimport { defaults } from \"~/assets/scripts/types/models/userAuthModels\"\nimport { backendMessage } from \"~/assets/scripts/helpers/generalHelpers\";\nimport messages from \"~/assets/scripts/constants/apiMessageKeys\";\n\nconst signupResponse = defaults.defaultResponses.signup();\n\nconst _sfc_main = defineComponent({\n  name: \"SignUp\",\n  data(){\n    return {\n      termsOfService: {\n        html: this.$t('get_started.sign_up.terms_of_service'),\n        value: false\n      },\n      readyForView: false,\n      submitIsLoading: false,\n      redirectToLoginTimeId: null,\n      signupResponse,\n      messages\n    }\n  },\n  computed: {\n    passwordStrength() {\n      return this.evaluatePasswordStrength(this.modelSignup.password);\n    },\n    readyForSubmit() {\n      let ready = false;\n      let { fullname, password, email } = this.modelSignup;\n      if (fullname && password && email) {\n        if (this.passwordStrength > 1) {\n          ready = true;\n        }\n      }\n      if(this.signupProgressStatus === false){\n        ready = false;\n      }\n      return ready;\n    },\n    modelSignup(){\n      const { modelSignup } = useAuthStore();\n      return modelSignup;\n    },\n    signupProgressStatus(){\n      return this.signupResponse.success;\n    },\n    showFullnameInputError(){\n      let error = null;\n      if (this.signupProgressStatus === false) {\n        if (this.signupResponse.message === this.messages.INVALID_FULLNAME) {\n          error = this.backendMessage(this.messages.INVALID_FULLNAME);\n        }\n      }\n      return error;\n    },\n    showEmailInputError(){\n      let error = null;\n      if (this.signupProgressStatus === false) {\n        if (this.signupResponse.message === this.messages.EMAIL_IS_EXIST) {\n          error = this.backendMessage(this.messages.EMAIL_IS_EXIST);\n        } else if (this.signupResponse.message === this.messages.INVALID_EMAIL) {\n          error = this.backendMessage(this.messages.INVALID_EMAIL);\n        }\n      }\n      return error;\n    }\n  },\n  unmounted(){\n    this.resetModel();\n    clearTimeout(this.redirectToLoginTimeId);\n  },\n  methods: {\n    backendMessage,\n    evaluatePasswordStrength,\n    async submit() {\n      this.submitIsLoading = true;\n      const { submitSignup, modelLogin } = useAuthStore();\n      await submitSignup()\n        .then(response => {\n          this.signupResponse = { ...response };\n          if(this.signupProgressStatus){\n            modelLogin.email = this.modelSignup.email;\n            this.redirectToLoginTimeId = setTimeout(() => {\n              this.$router.push('?view=log_in');\n              clearTimeout(this.redirectToLoginTimeId);\n            }, 2000)\n          }\n        })\n        .catch(error => {\n          this.signupResponse = { ...error };\n        })\n        .finally(() => {\n          this.submitIsLoading = false;\n        });\n    },\n    resetModel() {\n      const { resetModelSignup } = useAuthStore();\n      resetModelSignup();\n    },\n    setReadyForView(val) {\n      this.readyForView = val;\n    },\n  },\n  watch: {\n    modelSignup: {\n      handler(val){\n        this.signupResponse = signupResponse;\n        clearTimeout(this.redirectToLoginTimeId);\n        Object.keys(this.modelSignup).forEach(key => {\n          this.modelSignup[key] = this.modelSignup[key]?.trim();\n        });\n      },\n      deep: true\n    }\n  }\n});\n\nimport { resolveComponent as _resolveComponent, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementVNode as _createElementVNode, createVNode as _createVNode, withModifiers as _withModifiers, toDisplayString as _toDisplayString, createTextVNode as _createTextVNode, withCtx as _withCtx, vShow as _vShow, withDirectives as _withDirectives, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-2eeca6b5\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = {\n  id: \"sign-up-page\",\n  class: \"flex-column-center\"\n}\nconst _hoisted_2 = { class: \"message-box\" }\nconst _hoisted_3 = { class: \"input-group\" }\nconst _hoisted_4 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_5 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_6 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\nconst _hoisted_7 = { class: \"already-have-account\" }\nconst _hoisted_8 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"br\", null, null, -1))\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  const _component_message_component = __nuxt_component_0\n  const _component_input_component = __nuxt_component_1\n  const _component_nuxt_link = __nuxt_component_2\n\n  return _withDirectives((_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"form\", {\n      class: \"sign-up-form\",\n      onSubmit: _cache[4] || (_cache[4] = _withModifiers((...args) => (_ctx.submit && _ctx.submit(...args)), [\"prevent\"]))\n    }, [\n      _createElementVNode(\"div\", _hoisted_2, [\n        (_ctx.signupProgressStatus)\n          ? (_openBlock(), _createBlock(_component_message_component, {\n              key: 0,\n              type: \"success\",\n              message: _ctx.backendMessage(_ctx.signupResponse.message)\n            }, null, 8, [\"message\"]))\n          : (_ctx.showEmailInputError || _ctx.showFullnameInputError)\n            ? (_openBlock(), _createBlock(_component_message_component, {\n                key: 1,\n                type: \"error\",\n                message: _ctx.backendMessage(_ctx.messages.USER_REGISTRATION_FAILED)\n              }, null, 8, [\"message\"]))\n            : (_ctx.signupProgressStatus === false)\n              ? (_openBlock(), _createBlock(_component_message_component, {\n                  key: 2,\n                  type: \"error\",\n                  message: _ctx.backendMessage(_ctx.signupResponse.message)\n                }, null, 8, [\"message\"]))\n              : (_openBlock(), _createBlock(_component_message_component, {\n                  key: 3,\n                  \"hide-icon\": \"\",\n                  type: \"info\",\n                  message: _ctx.$t('get_started.sign_up.welcome_message')\n                }, null, 8, [\"message\"]))\n      ]),\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createVNode(_component_input_component, {\n          id: \"fullname-input\",\n          type: \"text\",\n          name: \"fullname\",\n          autocomplete: \"name\",\n          placeholder: \"John Doe\",\n          modelValue: _ctx.modelSignup.fullname,\n          \"onUpdate:modelValue\": _cache[0] || (_cache[0] = $event => ((_ctx.modelSignup.fullname) = $event)),\n          maxlength: \"50\",\n          label: _ctx.$t('get_started.sign_up.fullname'),\n          \"left-icon\": { icon: 'person', size: '2.5rem' },\n          \"input-size\": {\n              width: '100%',\n              height: '4rem'\n            },\n          \"show-error\": {\n              message: _ctx.showFullnameInputError,\n              highlight: !!_ctx.showFullnameInputError\n            },\n          required: \"\",\n          clearable: \"\"\n        }, null, 8, [\"modelValue\", \"label\", \"show-error\"]),\n        _hoisted_4,\n        _createVNode(_component_input_component, {\n          id: \"email-input\",\n          type: \"email\",\n          name: \"email\",\n          autocomplete: \"email\",\n          placeholder: \"example@domain.com\",\n          modelValue: _ctx.modelSignup.email,\n          \"onUpdate:modelValue\": _cache[1] || (_cache[1] = $event => ((_ctx.modelSignup.email) = $event)),\n          label: _ctx.$t('get_started.sign_up.email'),\n          \"left-icon\": { icon: 'alternate_email', size: '2.5rem' },\n          \"input-size\": {\n              width: '100%',\n              height: '4rem'\n            },\n          \"show-error\": {\n              message: _ctx.showEmailInputError,\n              highlight: !!_ctx.showEmailInputError\n            },\n          required: \"\",\n          clearable: \"\"\n        }, null, 8, [\"modelValue\", \"label\", \"show-error\"]),\n        _hoisted_5,\n        _createVNode(_component_input_component, {\n          id: \"password-input\",\n          type: \"password\",\n          name: \"password\",\n          autocomplete: \"new-password\",\n          modelValue: _ctx.modelSignup.password,\n          \"onUpdate:modelValue\": _cache[2] || (_cache[2] = $event => ((_ctx.modelSignup.password) = $event)),\n          label: _ctx.$t('get_started.sign_up.password'),\n          \"left-icon\": { icon: 'lock', size: '2.5rem' },\n          \"input-size\": {\n              width: '100%',\n              height: '4rem'\n            },\n          \"show-error\": {\n              message: _ctx.passwordStrength === 1 ? _ctx.$t('get_started.sign_up.password_levels.weak') : null,\n              highlight: _ctx.passwordStrength === 1\n            },\n          \"show-warning\": {\n              message: _ctx.passwordStrength === 2 ? _ctx.$t('get_started.sign_up.password_levels.moderate') : null,\n              highlight: _ctx.passwordStrength === 2\n            },\n          \"show-success\": {\n              message: _ctx.passwordStrength === 3 ? _ctx.$t('get_started.sign_up.password_levels.strong') : null,\n            },\n          required: \"\",\n          clearable: \"\"\n        }, null, 8, [\"modelValue\", \"label\", \"show-error\", \"show-warning\", \"show-success\"]),\n        _hoisted_6,\n        _createVNode(_component_input_component, {\n          id: \"terms-of-service\",\n          name: \"terms-of-service\",\n          type: \"checkbox\",\n          \"html-label\": _ctx.termsOfService.html,\n          required: \"\",\n          modelValue: _ctx.termsOfService.value,\n          \"onUpdate:modelValue\": _cache[3] || (_cache[3] = $event => ((_ctx.termsOfService.value) = $event))\n        }, null, 8, [\"html-label\", \"modelValue\"])\n      ]),\n      _createVNode(_component_input_component, {\n        id: \"submit-btn\",\n        type: \"submit\",\n        onReadyForView: _ctx.setReadyForView,\n        label: _ctx.$t('get_started.sign_up.submit_btn'),\n        \"button-type\": \"1\",\n        \"left-icon\": { icon: 'lock' },\n        \"input-size\": {\n              width: '100%',\n              height: '3.5rem'\n          },\n        disabled: !_ctx.readyForSubmit,\n        \"is-loading\": _ctx.submitIsLoading\n      }, null, 8, [\"onReadyForView\", \"label\", \"disabled\", \"is-loading\"])\n    ], 32),\n    _createElementVNode(\"span\", _hoisted_7, [\n      _createTextVNode(_toDisplayString(_ctx.$t('get_started.sign_up.already_have_account')) + \" \", 1),\n      _createVNode(_component_nuxt_link, {\n        to: \"?view=log_in\",\n        class: \"decoration\"\n      }, {\n        default: _withCtx(() => [\n          _createTextVNode(_toDisplayString(_ctx.$t('get_started.sign_up.log_in')), 1)\n        ]),\n        _: 1\n      })\n    ]),\n    _hoisted_8\n  ], 512)), [\n    [_vShow, _ctx.readyForView]\n  ])\n}\n\nimport \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/components/views/signUp.vue?vue&type=style&index=0&scoped=2eeca6b5&lang.scss\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-2eeca6b5\"]])",
+      "start": 1708867440502,
+      "end": 1708867440502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867440502,
+      "end": 1708867440503,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867440503,
+      "end": 1708867440503,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867440503,
+      "end": 1708867440503,
+      "order": "normal"
+    }
+  ]
+}

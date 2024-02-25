@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/plugins/i18n.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createI18n } from 'vue-i18n';\nimport az from '~/assets/locales/az';\nimport en from '~/assets/locales/en';\nimport ru from '~/assets/locales/ru';\n\nexport const i18n = createI18n({\n  legacy: false,\n  globalInjection: true,\n  locale: 'az',\n  messages: { en, az, ru }\n});\n\nexport default defineNuxtPlugin(({ vueApp }) => {\n  vueApp.use(i18n)\n})",
+      "start": 1708867439633,
+      "end": 1708867439930,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867439931,
+      "end": 1708867439931,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867439931,
+      "end": 1708867439931,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867439931,
+      "end": 1708867439931,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867439931,
+      "end": 1708867439931,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { createI18n } from \"vue-i18n\";\nimport az from \"~/assets/locales/az\";\nimport en from \"~/assets/locales/en\";\nimport ru from \"~/assets/locales/ru\";\nexport const i18n = createI18n({\n  legacy: false,\n  globalInjection: true,\n  locale: \"az\",\n  messages: { en, az, ru }\n});\nexport default defineNuxtPlugin(({ vueApp }) => {\n  vueApp.use(i18n);\n});\n",
+      "start": 1708867439931,
+      "end": 1708867439982,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/plugins/i18n.ts"
+        ],
+        "sourcesContent": [
+          "import { createI18n } from 'vue-i18n';\nimport az from '~/assets/locales/az';\nimport en from '~/assets/locales/en';\nimport ru from '~/assets/locales/ru';\n\nexport const i18n = createI18n({\n  legacy: false,\n  globalInjection: true,\n  locale: 'az',\n  messages: { en, az, ru }\n});\n\nexport default defineNuxtPlugin(({ vueApp }) => {\n  vueApp.use(i18n)\n})"
+        ],
+        "mappings": "AAAA,SAAS,kBAAkB;AAC3B,OAAO,QAAQ;AACf,OAAO,QAAQ;AACf,OAAO,QAAQ;AAER,aAAM,OAAO,WAAW;AAAA,EAC7B,QAAQ;AAAA,EACR,iBAAiB;AAAA,EACjB,QAAQ;AAAA,EACR,UAAU,EAAE,IAAI,IAAI,GAAG;AACzB,CAAC;AAED,eAAe,iBAAiB,CAAC,EAAE,OAAO,MAAM;AAC9C,SAAO,IAAI,IAAI;AACjB,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867439982,
+      "end": 1708867439982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867439982,
+      "end": 1708867439982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1708867439982,
+      "end": 1708867439982,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867439982,
+      "end": 1708867439982,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867439983,
+      "end": 1708867439983,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867439983,
+      "end": 1708867439984,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708867439984,
+      "end": 1708867439984,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867439984,
+      "end": 1708867439984,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867439984,
+      "end": 1708867439984,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867439989,
+      "end": 1708867439989,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867439990,
+      "end": 1708867439990,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867439990,
+      "end": 1708867439990,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport { createI18n } from \"vue-i18n\";\nimport az from \"~/assets/locales/az\";\nimport en from \"~/assets/locales/en\";\nimport ru from \"~/assets/locales/ru\";\nexport const i18n = createI18n({\n  legacy: false,\n  globalInjection: true,\n  locale: \"az\",\n  messages: { en, az, ru }\n});\nexport default defineNuxtPlugin(({ vueApp }) => {\n  vueApp.use(i18n);\n});\n",
+      "start": 1708867439990,
+      "end": 1708867439991,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867439991,
+      "end": 1708867439992,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867439992,
+      "end": 1708867439992,
+      "order": "normal"
+    }
+  ]
+}

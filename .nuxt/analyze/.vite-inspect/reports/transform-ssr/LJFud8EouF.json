@@ -1,0 +1,298 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue?vue&type=style&index=0&lang.scss",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\n$layout-width: 35rem;\n$border-style: .1rem solid $black_color_6;\n$border-radius: 1.5rem;\n\n#getstarted-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  justify-content: center;\n  align-items: center;\n  margin: 2rem 0;\n  .getstarted-container{\n    border-radius: $border-radius;\n    overflow: hidden;\n    box-shadow: $box-shadow-1;\n    nav#getstarted-views-nav {\n      width: $layout-width;\n      height: 3.5rem;\n      background-color: lighten($white_color_1, 3%);\n      position: relative;\n      //overflow: hidden;\n\n      & > a {\n        width: calc($layout-width/2);\n        height: 100%;\n        font-size: 1.3rem;\n        &#sign_up, &#log_in {\n          color: $main_color;\n          border-bottom: 2px solid $main_color;\n        }\n        &.active {\n          color: $black_color_1 !important;\n          background-color: $white_color !important;\n          border: none !important;\n          font-size: 1.2rem;\n        }\n      }\n    }\n    section#getstarted-layout {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      width: $layout-width;\n      height: 100%;\n      overflow: hidden;\n      #sign-up-page,\n      #log-in-page {\n        width: 100%;\n        padding: 1.5rem 0 2.5rem 0;\n      }\n    }\n  }\n}\n",
+      "start": 1708867443783,
+      "end": 1708867443783,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue"
+        ],
+        "names": [],
+        "mappings": ";AA8CA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;AAEtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;EACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;EACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;EACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC;EACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;IACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;MACvB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC;MAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;MAElB,EAAE,EAAE,EAAE;QACJ,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;QAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;QACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;QACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;UAClB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;UAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;QACtC;QACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;UACP,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;UAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;UACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;UACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;QACnB;MACF;IACF;IACA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;MACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;MACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACnB,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;MACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;MACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;QACX,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC;QACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;MAC5B;IACF;EACF;AACF",
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\n  <div id=\"getstarted-page\">\n    <div class=\"getstarted-container default-container\">\n      <nav id=\"getstarted-views-nav\" class=\"flex-row-center\">\n        <nuxt-link\n            class=\"flex-row-center\"\n            :id=\"page\"\n            v-for=\"page in views\"\n            :class=\"{'active': page === currentView}\"\n            :key=\"page\"\n            :to=\"`?view=${page}`\">\n          {{ $t(`pages.${page}`) }}\n        </nuxt-link>\n      </nav>\n      <section id=\"getstarted-layout\" :class=\"`${currentView}-area`\" class=\"default-container\">\n        <component :is=\"currentView\"/>\n      </section>\n    </div>\n  </div>\n</template>\n<script>\nimport {defineComponent} from 'vue'\nimport sign_up from \"~/components/views/signUp.vue\";\nimport log_in from \"~/components/views/logIn.vue\";\n\nexport default defineComponent({\n  name: \"get-started\",\n  components: {sign_up, log_in},\n  data: () => {\n    return {\n      views: ['log_in', 'sign_up']\n    }\n  },\n  computed: {\n    currentView() {\n      let {view} = this.$route.query;\n      if (view && this.views.includes(view?.toString())) {\n        return view;\n      }\n      this.$router.push('?view=log_in');\n      return null;\n    }\n  },\n})\n</script>\n<style lang=\"scss\">\n$layout-width: 35rem;\n$border-style: .1rem solid $black_color_6;\n$border-radius: 1.5rem;\n\n#getstarted-page {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  justify-content: center;\n  align-items: center;\n  margin: 2rem 0;\n  .getstarted-container{\n    border-radius: $border-radius;\n    overflow: hidden;\n    box-shadow: $box-shadow-1;\n    nav#getstarted-views-nav {\n      width: $layout-width;\n      height: 3.5rem;\n      background-color: lighten($white_color_1, 3%);\n      position: relative;\n      //overflow: hidden;\n\n      & > a {\n        width: calc($layout-width/2);\n        height: 100%;\n        font-size: 1.3rem;\n        &#sign_up, &#log_in {\n          color: $main_color;\n          border-bottom: 2px solid $main_color;\n        }\n        &.active {\n          color: $black_color_1 !important;\n          background-color: $white_color !important;\n          border: none !important;\n          font-size: 1.2rem;\n        }\n      }\n    }\n    section#getstarted-layout {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      width: $layout-width;\n      height: 100%;\n      overflow: hidden;\n      #sign-up-page,\n      #log-in-page {\n        width: 100%;\n        padding: 1.5rem 0 2.5rem 0;\n      }\n    }\n  }\n}\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443783,
+      "end": 1708867443783,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443783,
+      "end": 1708867443783,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443783,
+      "end": 1708867443783,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443783,
+      "end": 1708867443783,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867443783,
+      "end": 1708867443783,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".default-container{background-color:#fff!important}html{display:unset;font-size:13px}.show-for-desktop,.show-for-extrasmall,.show-for-large,.show-for-mobile,.show-for-tablet{display:none}@media only screen and (min-width:100px){.responsive-width{width:100vw}html{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width{width:97vw}html{font-size:8px}.show-for-extrasmall{display:unset}.hide-for-extrasmall{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width{width:95vw}html{font-size:10px}.show-for-mobile{display:unset}.hide-for-mobile{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width{width:96vw}html{font-size:12px}.show-for-tablet{display:unset}.hide-for-tablet{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width{width:1250px}html{font-size:14px}.show-for-desktop{display:unset}.hide-for-desktop{display:none}}@media only screen and (min-width:2000px){.responsive-width{width:1250px}html{font-size:15px}.show-for-large{display:unset}.hide-for-large{display:none}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}#getstarted-page{align-items:center;display:flex;flex-direction:column;height:100%;justify-content:center;margin:2rem 0}#getstarted-page .getstarted-container{border-radius:1.5rem;box-shadow:0 1px 3px #d7d2c1,0 1px 2px rgba(0,0,0,.24);overflow:hidden}#getstarted-page .getstarted-container nav#getstarted-views-nav{background-color:#fbfaf9;height:3.5rem;position:relative;width:35rem}#getstarted-page .getstarted-container nav#getstarted-views-nav>a{font-size:1.3rem;height:100%;width:17.5rem}#getstarted-page .getstarted-container nav#getstarted-views-nav>a#log_in,#getstarted-page .getstarted-container nav#getstarted-views-nav>a#sign_up{border-bottom:2px solid #f6a462;color:#f6a462}#getstarted-page .getstarted-container nav#getstarted-views-nav>a.active{background-color:#fff!important;border:none!important;color:#221f16!important;font-size:1.2rem}#getstarted-page .getstarted-container section#getstarted-layout{align-items:center;display:flex;flex-direction:column;height:100%;overflow:hidden;width:35rem}#getstarted-page .getstarted-container section#getstarted-layout #log-in-page,#getstarted-page .getstarted-container section#getstarted-layout #sign-up-page{padding:1.5rem 0 2.5rem;width:100%}",
+      "start": 1708867443783,
+      "end": 1708867444500,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue",
+        "mappings": "AAsBA,mBACE,gCCJF,KAEE,cADA,eAIF,yFAKE,aAjBE,yCAwBF,kBAAmB,YACnB,KACE,eA9BA,+DAoCF,kBAAmB,WACnB,KACE,cAEF,qBACE,cAEF,qBACE,cA5CA,+DAkDF,kBAAmB,WACnB,KACE,eAEF,iBACE,cAEF,iBACE,cA1DA,gEAgEF,kBAAmB,WACnB,KACE,eAEF,iBACE,cAEF,iBACE,cAxEA,iEA8EF,kBAAmB,aACnB,KACE,eAEF,kBACE,cAEF,kBACE,cAlFA,0CAyFF,kBAAmB,aAEnB,KACE,eAEF,gBACE,cAEF,gBACE,cC9GJ,mBACE,GACE,UAEF,GACE,WAaJ,kBACE,MACE,wBAEF,IACE,4BAeJ,kBACE,GACE,uBAEF,GACE,yBAcJ,iBACE,GACE,mBAEF,IACE,sBAEF,GACE,oBAcJ,wBACE,GACE,SACA,UAEF,IACE,aACA,cAEF,IACE,aACA,cAEF,GACE,SACA,WAaJ,4BACE,MACE,UACA,2BAEF,GACE,UACA,yBAcJ,4BACE,MACE,UACA,4BAEF,GACE,UACA,yBAaJ,4BACE,MACE,UACA,wBAEF,GACE,UACA,6BC3JJ,WACE,mBAGA,kBADA,gBADA,qDAYF,WACE,4BAGA,kBADA,gBADA,qDAKF,WACE,iCAGA,kBADA,gBADA,qDAKF,WACE,6BAGA,kBADA,gBADA,qDAKF,WACE,8BAGA,kBADA,gBADA,qDAKF,WACE,yBAGA,kBADA,gBADA,qDAKF,WACE,wBAGA,kBADA,gBADA,qDC9CF,iBAKE,mBAJA,aACA,sBACA,YACA,uBAEA,cACA,uCACE,oBAVY,CAYZ,sDCuEW,CDxEX,gBAEA,gEAGE,yBADA,cAEA,kBAHA,YAMA,kEAGE,iBADA,YADA,cAGA,mJAEE,gCADA,cAGF,yEAEE,gCACA,sBAFA,wBAGA,iBAIN,iEAGE,mBAFA,aACA,sBAGA,YACA,gBAFA,YAGA,6JAGE,wBADA",
+        "names": [],
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_configs.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_responsive.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_animations.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_fonts.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_colors.scss"
+        ],
+        "sourcesContent": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867444500,
+      "end": 1708867444500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867444500,
+      "end": 1708867444500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867444500,
+      "end": 1708867444500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".default-container{background-color:#fff!important}html{display:unset;font-size:13px}.show-for-desktop,.show-for-extrasmall,.show-for-large,.show-for-mobile,.show-for-tablet{display:none}@media only screen and (min-width:100px){.responsive-width{width:100vw}html{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width{width:97vw}html{font-size:8px}.show-for-extrasmall{display:unset}.hide-for-extrasmall{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width{width:95vw}html{font-size:10px}.show-for-mobile{display:unset}.hide-for-mobile{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width{width:96vw}html{font-size:12px}.show-for-tablet{display:unset}.hide-for-tablet{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width{width:1250px}html{font-size:14px}.show-for-desktop{display:unset}.hide-for-desktop{display:none}}@media only screen and (min-width:2000px){.responsive-width{width:1250px}html{font-size:15px}.show-for-large{display:unset}.hide-for-large{display:none}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}#getstarted-page{align-items:center;display:flex;flex-direction:column;height:100%;justify-content:center;margin:2rem 0}#getstarted-page .getstarted-container{border-radius:1.5rem;box-shadow:0 1px 3px #d7d2c1,0 1px 2px rgba(0,0,0,.24);overflow:hidden}#getstarted-page .getstarted-container nav#getstarted-views-nav{background-color:#fbfaf9;height:3.5rem;position:relative;width:35rem}#getstarted-page .getstarted-container nav#getstarted-views-nav>a{font-size:1.3rem;height:100%;width:17.5rem}#getstarted-page .getstarted-container nav#getstarted-views-nav>a#log_in,#getstarted-page .getstarted-container nav#getstarted-views-nav>a#sign_up{border-bottom:2px solid #f6a462;color:#f6a462}#getstarted-page .getstarted-container nav#getstarted-views-nav>a.active{background-color:#fff!important;border:none!important;color:#221f16!important;font-size:1.2rem}#getstarted-page .getstarted-container section#getstarted-layout{align-items:center;display:flex;flex-direction:column;height:100%;overflow:hidden;width:35rem}#getstarted-page .getstarted-container section#getstarted-layout #log-in-page,#getstarted-page .getstarted-container section#getstarted-layout #sign-up-page{padding:1.5rem 0 2.5rem;width:100%}",
+      "start": 1708867444507,
+      "end": 1708867444509,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue",
+        "mappings": "AAAA,mBAAmB,+BAA+B,CAAC,KAAK,aAAa,CAAC,cAAc,CAAC,yFAAyF,YAAY,CAAC,yCAAyC,kBAAkB,WAAW,CAAC,KAAK,aAAa,CAAC,CAAC,+DAA+D,kBAAkB,UAAU,CAAC,KAAK,aAAa,CAAC,qBAAqB,aAAa,CAAC,qBAAqB,YAAY,CAAC,CAAC,+DAA+D,kBAAkB,UAAU,CAAC,KAAK,cAAc,CAAC,iBAAiB,aAAa,CAAC,iBAAiB,YAAY,CAAC,CAAC,gEAAgE,kBAAkB,UAAU,CAAC,KAAK,cAAc,CAAC,iBAAiB,aAAa,CAAC,iBAAiB,YAAY,CAAC,CAAC,iEAAiE,kBAAkB,YAAY,CAAC,KAAK,cAAc,CAAC,kBAAkB,aAAa,CAAC,kBAAkB,YAAY,CAAC,CAAC,0CAA0C,kBAAkB,YAAY,CAAC,KAAK,cAAc,CAAC,gBAAgB,aAAa,CAAC,gBAAgB,YAAY,CAAC,CAAC,mBAAmB,GAAG,SAAS,CAAC,GAAG,SAAS,CAAC,CAAC,kBAAkB,MAAM,uBAAuB,CAAC,IAAI,0BAA0B,CAAC,CAAC,kBAAkB,GAAG,sBAAsB,CAAC,GAAG,uBAAuB,CAAC,CAAC,iBAAiB,GAAG,kBAAkB,CAAC,IAAI,qBAAqB,CAAC,GAAG,kBAAkB,CAAC,CAAC,wBAAwB,GAAG,QAAQ,CAAC,SAAS,CAAC,IAAI,YAAY,CAAC,aAAa,CAAC,IAAI,YAAY,CAAC,aAAa,CAAC,GAAG,QAAQ,CAAC,SAAS,CAAC,CAAC,4BAA4B,MAAM,SAAS,CAAC,0BAA0B,CAAC,GAAG,SAAS,CAAC,uBAAuB,CAAC,CAAC,4BAA4B,MAAM,SAAS,CAAC,2BAA2B,CAAC,GAAG,SAAS,CAAC,uBAAuB,CAAC,CAAC,4BAA4B,MAAM,SAAS,CAAC,uBAAuB,CAAC,GAAG,SAAS,CAAC,2BAA2B,CAAC,CAAC,WAAW,kBAAkB,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,WAAW,2BAA2B,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,WAAW,gCAAgC,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,WAAW,4BAA4B,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,WAAW,6BAA6B,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,WAAW,wBAAwB,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,WAAW,uBAAuB,CAAC,iBAAiB,CAAC,eAAe,CAAC,oDAAoD,CAAC,iBAAiB,kBAAkB,CAAC,YAAY,CAAC,qBAAqB,CAAC,WAAW,CAAC,sBAAsB,CAAC,aAAa,CAAC,uCAAuC,oBAAoB,CAAC,sDAAsD,CAAC,eAAe,CAAC,gEAAgE,wBAAwB,CAAC,aAAa,CAAC,iBAAiB,CAAC,WAAW,CAAC,kEAAkE,gBAAgB,CAAC,WAAW,CAAC,aAAa,CAAC,mJAAmJ,+BAA+B,CAAC,aAAa,CAAC,yEAAyE,+BAA+B,CAAC,qBAAqB,CAAC,uBAAuB,CAAC,gBAAgB,CAAC,iEAAiE,kBAAkB,CAAC,YAAY,CAAC,qBAAqB,CAAC,WAAW,CAAC,eAAe,CAAC,WAAW,CAAC,6JAA6J,uBAAuB,CAAC,UAAU",
+        "names": [],
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/getstarted.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867444509,
+      "end": 1708867444509,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444509,
+      "end": 1708867444509,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444509,
+      "end": 1708867444509,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444509,
+      "end": 1708867444509,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444509,
+      "end": 1708867444509,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867444509,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444510,
+      "end": 1708867444510,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867444511,
+      "end": 1708867444511,
+      "order": "normal"
+    }
+  ]
+}

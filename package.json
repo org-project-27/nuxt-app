@@ -1,0 +1,29 @@
+{
+  "name": "nuxt-app",
+  "author": "Vugar Safarzada",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "production": "nuxt build; node .output/server/index.mjs",
+    "dev": "nuxt dev",
+    "host": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/i18n": "^8.0.0",
+    "nuxt": "^3.9.0",
+    "sass": "^1.69.6",
+    "vue": "^3.4.3",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@nuxtjs/style-resources": "^1.2.2",
+    "@pinia/nuxt": "^0.5.1",
+    "@vercel/kv": "^0.2.4",
+    "axios": "^1.6.0",
+    "pinia": "^2.1.7"
+  }
+}

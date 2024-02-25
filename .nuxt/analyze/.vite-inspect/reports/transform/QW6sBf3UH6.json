@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/locales/az.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type {LanguageContent} from \"assets/scripts/types/LocalesType\";\n\nlet locales: LanguageContent;\nlocales = {\n    lang: \"Dil\",\n    note: \"Qeyd\",\n    az: \"Azərbaycanca\",\n    en: \"İngilis\",\n    ru: \"Rus\",\n    buttons: {\n        search: \"Axtar\",\n        filter: \"Filtr\",\n        login: \"Daxil ol\",\n        logout: \"Çıxış\",\n        continue: \"Davam et\",\n        waiting: \"Gözləyin\",\n        get_started: \"Başlayaq\"\n    },\n    pages: {\n        default: \"Defolt\",\n        main: \"Əsas səhifə\",\n        404: \"Səhifə tapılmadı!\",\n        profile: \"Hesabınız\",\n        get_started: \"Başla\",\n        post: \"Məhsul\",\n        log_in: \"Daxil ol\",\n        sign_up: \"Qeydiyyatdan keç\",\n        privacy_and_policy: \"Məxfilik Siyasətini\",\n        terms_of_service: \"Xidmət Şərtlərini\",\n        favorites: \"Favoritlər\",\n        cart: \"Səbətim\"\n    },\n    get_started: {\n        log_in: {\n            log_in: \"Daxil ol\",\n            sign_up: \"Qeydiyyatdan keç\",\n            welcome_message: \"⭐️ Xoş gəldiniz!\",\n            email: \"E-poçt\",\n            password: \"Şifrə\",\n            login: \"Daxil ol\",\n            forget_password: \"Şifrənizimi unutdunuz?\",\n            submit_btn: \"Daxil ol\",\n            no_account_yet: \"Hələ də hesabınız yoxdu?\",\n            now: \"indi\"\n        },\n        sign_up: {\n            log_in: \"Daxil ol\",\n            sign_up: \"Qeydiyyatdan keç\",\n            welcome_message: \"🙃 Bizə qoşulun!\",\n            fullname: \"Ad və Soyad\",\n            email: \"E-poçt\",\n            password: \"Şifrə\",\n            confirm_password: \"Şifrəni təsdiqlə\",\n            register: \"Qeydiyyat\",\n            submit_btn: \"Qeydiyyatdan keç\",\n            already_have_account: \"Artıq hesabınız var?\",\n            password_levels: {\n                weak: \"Zəif: Daha çox simvol və müxtəlifliyə ehtiyac var!\",\n                moderate: \"Orta: Gücünü artırmaq üçün müxtəliflik əlavə edin.\",\n                strong: \"Güclü: Şifrəniz təhlükəsiz və möhkəmdir.\"\n            },\n            terms_of_service: \"<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>\"\n        }\n    },\n    backend_messages: {\n        DONE: 'Tamamlandı!',\n        SOMETHING_WENT_WRONG: 'Bir şeylər səhv getdi!',\n        EMAIL_IS_EXIST: 'E-poçt artıq mövcuddur!',\n        USER_REGISTRATION_FAILED: 'İstifadəçi qeydiyyatı uğursuz oldu!',\n        USER_SUCCESSFULLY_REGISTERED: 'İstifadəçi uğurla qeydiyyata alındı!',\n        EMAIL_IS_NOT_VALID: 'E-poçt etibarsızdır!',\n        INVALID_EMAIL: 'E-poçt etibarsızdır!',\n        INVALID_PASSWORD: 'Şifrə etibarsızdır!',\n        INVALID_FULLNAME: 'Tam ad etibarsızdır!',\n        INVALID_TOKEN: 'Bir şeylər səhv getdi!',\n        BCRYPT_ERROR: 'Bir şeylər səhv getdi!',\n        USER_LOGIN_PROGRESS_FAILED: 'İstifadəçi girişi uğursuz oldu!',\n        USER_SUCCESSFULLY_LOGIN: 'İstifadəçi uğurla daxil oldu!',\n        EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',\n        EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya şifrə yanlışdır',\n    }\n};\n\nexport default { ...locales };",
+      "start": 1708867440250,
+      "end": 1708867440326,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867440326,
+      "end": 1708867440326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867440326,
+      "end": 1708867440326,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867440326,
+      "end": 1708867440326,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867440326,
+      "end": 1708867440326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "let locales;\nlocales = {\n  lang: \"Dil\",\n  note: \"Qeyd\",\n  az: \"Azərbaycanca\",\n  en: \"İngilis\",\n  ru: \"Rus\",\n  buttons: {\n    search: \"Axtar\",\n    filter: \"Filtr\",\n    login: \"Daxil ol\",\n    logout: \"Çıxış\",\n    continue: \"Davam et\",\n    waiting: \"Gözləyin\",\n    get_started: \"Başlayaq\"\n  },\n  pages: {\n    default: \"Defolt\",\n    main: \"Əsas səhifə\",\n    404: \"Səhifə tapılmadı!\",\n    profile: \"Hesabınız\",\n    get_started: \"Başla\",\n    post: \"Məhsul\",\n    log_in: \"Daxil ol\",\n    sign_up: \"Qeydiyyatdan keç\",\n    privacy_and_policy: \"Məxfilik Siyasətini\",\n    terms_of_service: \"Xidmət Şərtlərini\",\n    favorites: \"Favoritlər\",\n    cart: \"Səbətim\"\n  },\n  get_started: {\n    log_in: {\n      log_in: \"Daxil ol\",\n      sign_up: \"Qeydiyyatdan keç\",\n      welcome_message: \"⭐️ Xoş gəldiniz!\",\n      email: \"E-poçt\",\n      password: \"Şifrə\",\n      login: \"Daxil ol\",\n      forget_password: \"Şifrənizimi unutdunuz?\",\n      submit_btn: \"Daxil ol\",\n      no_account_yet: \"Hələ də hesabınız yoxdu?\",\n      now: \"indi\"\n    },\n    sign_up: {\n      log_in: \"Daxil ol\",\n      sign_up: \"Qeydiyyatdan keç\",\n      welcome_message: \"🙃 Bizə qoşulun!\",\n      fullname: \"Ad və Soyad\",\n      email: \"E-poçt\",\n      password: \"Şifrə\",\n      confirm_password: \"Şifrəni təsdiqlə\",\n      register: \"Qeydiyyat\",\n      submit_btn: \"Qeydiyyatdan keç\",\n      already_have_account: \"Artıq hesabınız var?\",\n      password_levels: {\n        weak: \"Zəif: Daha çox simvol və müxtəlifliyə ehtiyac var!\",\n        moderate: \"Orta: Gücünü artırmaq üçün müxtəliflik əlavə edin.\",\n        strong: \"Güclü: Şifrəniz təhlükəsiz və möhkəmdir.\"\n      },\n      terms_of_service: \"<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>\"\n    }\n  },\n  backend_messages: {\n    DONE: \"Tamamlandı!\",\n    SOMETHING_WENT_WRONG: \"Bir şeylər səhv getdi!\",\n    EMAIL_IS_EXIST: \"E-poçt artıq mövcuddur!\",\n    USER_REGISTRATION_FAILED: \"İstifadəçi qeydiyyatı uğursuz oldu!\",\n    USER_SUCCESSFULLY_REGISTERED: \"İstifadəçi uğurla qeydiyyata alındı!\",\n    EMAIL_IS_NOT_VALID: \"E-poçt etibarsızdır!\",\n    INVALID_EMAIL: \"E-poçt etibarsızdır!\",\n    INVALID_PASSWORD: \"Şifrə etibarsızdır!\",\n    INVALID_FULLNAME: \"Tam ad etibarsızdır!\",\n    INVALID_TOKEN: \"Bir şeylər səhv getdi!\",\n    BCRYPT_ERROR: \"Bir şeylər səhv getdi!\",\n    USER_LOGIN_PROGRESS_FAILED: \"İstifadəçi girişi uğursuz oldu!\",\n    USER_SUCCESSFULLY_LOGIN: \"İstifadəçi uğurla daxil oldu!\",\n    EMAIL_IS_NOT_REGISTERED: \"E-poçt qeydiyyatdan keçməyib!\",\n    EMAIL_OR_PASSWORD_INCORRECT: \"E-poçt və ya şifrə yanlışdır\"\n  }\n};\nexport default { ...locales };\n",
+      "start": 1708867440326,
+      "end": 1708867441541,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/locales/az.ts"
+        ],
+        "sourcesContent": [
+          "import type {LanguageContent} from \"assets/scripts/types/LocalesType\";\n\nlet locales: LanguageContent;\nlocales = {\n    lang: \"Dil\",\n    note: \"Qeyd\",\n    az: \"Azərbaycanca\",\n    en: \"İngilis\",\n    ru: \"Rus\",\n    buttons: {\n        search: \"Axtar\",\n        filter: \"Filtr\",\n        login: \"Daxil ol\",\n        logout: \"Çıxış\",\n        continue: \"Davam et\",\n        waiting: \"Gözləyin\",\n        get_started: \"Başlayaq\"\n    },\n    pages: {\n        default: \"Defolt\",\n        main: \"Əsas səhifə\",\n        404: \"Səhifə tapılmadı!\",\n        profile: \"Hesabınız\",\n        get_started: \"Başla\",\n        post: \"Məhsul\",\n        log_in: \"Daxil ol\",\n        sign_up: \"Qeydiyyatdan keç\",\n        privacy_and_policy: \"Məxfilik Siyasətini\",\n        terms_of_service: \"Xidmət Şərtlərini\",\n        favorites: \"Favoritlər\",\n        cart: \"Səbətim\"\n    },\n    get_started: {\n        log_in: {\n            log_in: \"Daxil ol\",\n            sign_up: \"Qeydiyyatdan keç\",\n            welcome_message: \"⭐️ Xoş gəldiniz!\",\n            email: \"E-poçt\",\n            password: \"Şifrə\",\n            login: \"Daxil ol\",\n            forget_password: \"Şifrənizimi unutdunuz?\",\n            submit_btn: \"Daxil ol\",\n            no_account_yet: \"Hələ də hesabınız yoxdu?\",\n            now: \"indi\"\n        },\n        sign_up: {\n            log_in: \"Daxil ol\",\n            sign_up: \"Qeydiyyatdan keç\",\n            welcome_message: \"🙃 Bizə qoşulun!\",\n            fullname: \"Ad və Soyad\",\n            email: \"E-poçt\",\n            password: \"Şifrə\",\n            confirm_password: \"Şifrəni təsdiqlə\",\n            register: \"Qeydiyyat\",\n            submit_btn: \"Qeydiyyatdan keç\",\n            already_have_account: \"Artıq hesabınız var?\",\n            password_levels: {\n                weak: \"Zəif: Daha çox simvol və müxtəlifliyə ehtiyac var!\",\n                moderate: \"Orta: Gücünü artırmaq üçün müxtəliflik əlavə edin.\",\n                strong: \"Güclü: Şifrəniz təhlükəsiz və möhkəmdir.\"\n            },\n            terms_of_service: \"<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>\"\n        }\n    },\n    backend_messages: {\n        DONE: 'Tamamlandı!',\n        SOMETHING_WENT_WRONG: 'Bir şeylər səhv getdi!',\n        EMAIL_IS_EXIST: 'E-poçt artıq mövcuddur!',\n        USER_REGISTRATION_FAILED: 'İstifadəçi qeydiyyatı uğursuz oldu!',\n        USER_SUCCESSFULLY_REGISTERED: 'İstifadəçi uğurla qeydiyyata alındı!',\n        EMAIL_IS_NOT_VALID: 'E-poçt etibarsızdır!',\n        INVALID_EMAIL: 'E-poçt etibarsızdır!',\n        INVALID_PASSWORD: 'Şifrə etibarsızdır!',\n        INVALID_FULLNAME: 'Tam ad etibarsızdır!',\n        INVALID_TOKEN: 'Bir şeylər səhv getdi!',\n        BCRYPT_ERROR: 'Bir şeylər səhv getdi!',\n        USER_LOGIN_PROGRESS_FAILED: 'İstifadəçi girişi uğursuz oldu!',\n        USER_SUCCESSFULLY_LOGIN: 'İstifadəçi uğurla daxil oldu!',\n        EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',\n        EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya şifrə yanlışdır',\n    }\n};\n\nexport default { ...locales };"
+        ],
+        "mappings": "AAEA,IAAI;AACJ,UAAU;AAAA,EACN,MAAM;AAAA,EACN,MAAM;AAAA,EACN,IAAI;AAAA,EACJ,IAAI;AAAA,EACJ,IAAI;AAAA,EACJ,SAAS;AAAA,IACL,QAAQ;AAAA,IACR,QAAQ;AAAA,IACR,OAAO;AAAA,IACP,QAAQ;AAAA,IACR,UAAU;AAAA,IACV,SAAS;AAAA,IACT,aAAa;AAAA,EACjB;AAAA,EACA,OAAO;AAAA,IACH,SAAS;AAAA,IACT,MAAM;AAAA,IACN,KAAK;AAAA,IACL,SAAS;AAAA,IACT,aAAa;AAAA,IACb,MAAM;AAAA,IACN,QAAQ;AAAA,IACR,SAAS;AAAA,IACT,oBAAoB;AAAA,IACpB,kBAAkB;AAAA,IAClB,WAAW;AAAA,IACX,MAAM;AAAA,EACV;AAAA,EACA,aAAa;AAAA,IACT,QAAQ;AAAA,MACJ,QAAQ;AAAA,MACR,SAAS;AAAA,MACT,iBAAiB;AAAA,MACjB,OAAO;AAAA,MACP,UAAU;AAAA,MACV,OAAO;AAAA,MACP,iBAAiB;AAAA,MACjB,YAAY;AAAA,MACZ,gBAAgB;AAAA,MAChB,KAAK;AAAA,IACT;AAAA,IACA,SAAS;AAAA,MACL,QAAQ;AAAA,MACR,SAAS;AAAA,MACT,iBAAiB;AAAA,MACjB,UAAU;AAAA,MACV,OAAO;AAAA,MACP,UAAU;AAAA,MACV,kBAAkB;AAAA,MAClB,UAAU;AAAA,MACV,YAAY;AAAA,MACZ,sBAAsB;AAAA,MACtB,iBAAiB;AAAA,QACb,MAAM;AAAA,QACN,UAAU;AAAA,QACV,QAAQ;AAAA,MACZ;AAAA,MACA,kBAAkB;AAAA,IACtB;AAAA,EACJ;AAAA,EACA,kBAAkB;AAAA,IACd,MAAM;AAAA,IACN,sBAAsB;AAAA,IACtB,gBAAgB;AAAA,IAChB,0BAA0B;AAAA,IAC1B,8BAA8B;AAAA,IAC9B,oBAAoB;AAAA,IACpB,eAAe;AAAA,IACf,kBAAkB;AAAA,IAClB,kBAAkB;AAAA,IAClB,eAAe;AAAA,IACf,cAAc;AAAA,IACd,4BAA4B;AAAA,IAC5B,yBAAyB;AAAA,IACzB,yBAAyB;AAAA,IACzB,6BAA6B;AAAA,EACjC;AACJ;AAEA,eAAe,EAAE,GAAG,QAAQ;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867441541,
+      "end": 1708867441541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867441541,
+      "end": 1708867441541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1708867441541,
+      "end": 1708867441541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867441541,
+      "end": 1708867441541,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867441541,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867441542,
+      "end": 1708867441542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867441543,
+      "end": 1708867441543,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867441544,
+      "end": 1708867441544,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867441544,
+      "end": 1708867441545,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867441545,
+      "end": 1708867441545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867441545,
+      "end": 1708867441545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708867441546,
+      "end": 1708867441546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708867441546,
+      "end": 1708867441546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867441546,
+      "end": 1708867441546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867441546,
+      "end": 1708867441546,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867441546,
+      "end": 1708867441546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867441546,
+      "end": 1708867441546,
+      "order": "normal"
+    }
+  ]
+}

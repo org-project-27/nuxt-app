@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/middleware/router.global.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import routeConfig from \"~/assets/scripts/configs/routeConfig\";\nexport default defineNuxtRouteMiddleware((to, from) => {\n    const { path } = to;\n    const overall = !!Object.keys(to.params).length;\n    const config = routeConfig[path]\n    if(config){\n        processByConfig(to, from, config);\n    } else if (overall){\n        let parentPath: any = path.split('/');\n        if(parentPath.length > 1) parentPath[parentPath.length - 1] = \"*\";\n        parentPath = parentPath.join('/');\n        const parentConfig = routeConfig[parentPath];\n        processByConfig(to, from, parentConfig);\n    } else {\n        processByConfig(to, from);\n    }\n});\n\nfunction processByConfig(to: object, from: object, config = routeConfig.default): void {\n    const { brandName } = useAppConfig();\n    useSeoMeta({\n        title: `${config.title} • ${brandName}`,\n        description: config.description\n    });\n    if(config.middlewareMethod){\n        config.middlewareMethod(to, from);\n    }\n    setPageLayout(config.layout);\n}",
+      "start": 1708867440068,
+      "end": 1708867440162,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867440162,
+      "end": 1708867440162,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867440162,
+      "end": 1708867440162,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867440162,
+      "end": 1708867440162,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867440162,
+      "end": 1708867440162,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import routeConfig from \"~/assets/scripts/configs/routeConfig\";\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const { path } = to;\n  const overall = !!Object.keys(to.params).length;\n  const config = routeConfig[path];\n  if (config) {\n    processByConfig(to, from, config);\n  } else if (overall) {\n    let parentPath = path.split(\"/\");\n    if (parentPath.length > 1)\n      parentPath[parentPath.length - 1] = \"*\";\n    parentPath = parentPath.join(\"/\");\n    const parentConfig = routeConfig[parentPath];\n    processByConfig(to, from, parentConfig);\n  } else {\n    processByConfig(to, from);\n  }\n});\nfunction processByConfig(to, from, config = routeConfig.default) {\n  const { brandName } = useAppConfig();\n  useSeoMeta({\n    title: `${config.title} • ${brandName}`,\n    description: config.description\n  });\n  if (config.middlewareMethod) {\n    config.middlewareMethod(to, from);\n  }\n  setPageLayout(config.layout);\n}\n",
+      "start": 1708867440162,
+      "end": 1708867441261,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/middleware/router.global.ts"
+        ],
+        "sourcesContent": [
+          "import routeConfig from \"~/assets/scripts/configs/routeConfig\";\nexport default defineNuxtRouteMiddleware((to, from) => {\n    const { path } = to;\n    const overall = !!Object.keys(to.params).length;\n    const config = routeConfig[path]\n    if(config){\n        processByConfig(to, from, config);\n    } else if (overall){\n        let parentPath: any = path.split('/');\n        if(parentPath.length > 1) parentPath[parentPath.length - 1] = \"*\";\n        parentPath = parentPath.join('/');\n        const parentConfig = routeConfig[parentPath];\n        processByConfig(to, from, parentConfig);\n    } else {\n        processByConfig(to, from);\n    }\n});\n\nfunction processByConfig(to: object, from: object, config = routeConfig.default): void {\n    const { brandName } = useAppConfig();\n    useSeoMeta({\n        title: `${config.title} • ${brandName}`,\n        description: config.description\n    });\n    if(config.middlewareMethod){\n        config.middlewareMethod(to, from);\n    }\n    setPageLayout(config.layout);\n}"
+        ],
+        "mappings": "AAAA,OAAO,iBAAiB;AACxB,eAAe,0BAA0B,CAAC,IAAI,SAAS;AACnD,QAAM,EAAE,KAAK,IAAI;AACjB,QAAM,UAAU,CAAC,CAAC,OAAO,KAAK,GAAG,MAAM,EAAE;AACzC,QAAM,SAAS,YAAY,IAAI;AAC/B,MAAG,QAAO;AACN,oBAAgB,IAAI,MAAM,MAAM;AAAA,EACpC,WAAW,SAAQ;AACf,QAAI,aAAkB,KAAK,MAAM,GAAG;AACpC,QAAG,WAAW,SAAS;AAAG,iBAAW,WAAW,SAAS,CAAC,IAAI;AAC9D,iBAAa,WAAW,KAAK,GAAG;AAChC,UAAM,eAAe,YAAY,UAAU;AAC3C,oBAAgB,IAAI,MAAM,YAAY;AAAA,EAC1C,OAAO;AACH,oBAAgB,IAAI,IAAI;AAAA,EAC5B;AACJ,CAAC;AAED,SAAS,gBAAgB,IAAY,MAAc,SAAS,YAAY,SAAe;AACnF,QAAM,EAAE,UAAU,IAAI,aAAa;AACnC,aAAW;AAAA,IACP,OAAO,GAAG,OAAO,KAAK,MAAM,SAAS;AAAA,IACrC,aAAa,OAAO;AAAA,EACxB,CAAC;AACD,MAAG,OAAO,kBAAiB;AACvB,WAAO,iBAAiB,IAAI,IAAI;AAAA,EACpC;AACA,gBAAc,OAAO,MAAM;AAC/B;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867441261,
+      "end": 1708867441261,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware, setPageLayout } from '#app/composables/router';\nimport { useAppConfig } from '#app/config';\nimport { useSeoMeta } from '@unhead/vue';\nimport routeConfig from \"~/assets/scripts/configs/routeConfig\";\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const { path } = to;\n  const overall = !!Object.keys(to.params).length;\n  const config = routeConfig[path];\n  if (config) {\n    processByConfig(to, from, config);\n  } else if (overall) {\n    let parentPath = path.split(\"/\");\n    if (parentPath.length > 1)\n      parentPath[parentPath.length - 1] = \"*\";\n    parentPath = parentPath.join(\"/\");\n    const parentConfig = routeConfig[parentPath];\n    processByConfig(to, from, parentConfig);\n  } else {\n    processByConfig(to, from);\n  }\n});\nfunction processByConfig(to, from, config = routeConfig.default) {\n  const { brandName } = useAppConfig();\n  useSeoMeta({\n    title: `${config.title} • ${brandName}`,\n    description: config.description\n  });\n  if (config.middlewareMethod) {\n    config.middlewareMethod(to, from);\n  }\n  setPageLayout(config.layout);\n}\n",
+      "start": 1708867441261,
+      "end": 1708867441264,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867441264,
+      "end": 1708867441265,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867441265,
+      "end": 1708867441265,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708867441265,
+      "end": 1708867441265,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708867441265,
+      "end": 1708867441265,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867441266,
+      "end": 1708867441266,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867441266,
+      "end": 1708867441266,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867441266,
+      "end": 1708867441266,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867441266,
+      "end": 1708867441266,
+      "order": "normal"
+    }
+  ]
+}

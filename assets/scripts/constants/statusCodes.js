@@ -1,0 +1,20 @@
+const HttpCodes = {
+    HTTP_OK: 200,
+    HTTP_Created: 201,
+    HTTP_BadRequest: 400,
+    HTTP_Unauthorized: 401,
+    HTTP_Forbidden: 403,
+    HTTP_NotFound: 404,
+    HTTP_UnprocessableEntity: 422,
+    HTTP_Locked: 423,
+    HTTP_InternalServerError: 500,
+    HTTP_BadGateway: 502,
+    HTTP_ServiceUnavailable: 503,
+    HTTP_GatewayTimeout: 504,
+    HTTP_VersionNotSupported: 505,
+    HTTP_VariantAlsoNegotiates: 506,
+    HTTP_InsufficientStorage: 507,
+    HTTP_LoopDetected: 508,
+    HTTP_NotExtended: 510,
+    HTTP_NetworkAuthenticationRequired: 511
+};

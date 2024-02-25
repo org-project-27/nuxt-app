@@ -1,0 +1,273 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/style.scss?inline&used",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "@import \"./utilities/colors\";\n@import \"./utilities/configs\";\n@import \"./utilities/animations\";\n@import \"./utilities/responsive\";\n@import \"./utilities/fonts\";\n\n\nhtml{\n  font-size: 14px;\n  background-color: $html_background_color;\n}\nbody{\n  font-family: $font-family;\n  background-color: $body_background_color;\n  .container{\n    overflow: hidden;\n    //margin-top: 2.5rem;\n    background-color: $main_background_color;\n    min-width: 95vw;\n    min-height: 95vh;\n  }\n}\n\n*{\n  margin: 0;\n  padding: 0;\n}\n\na {\n  transition-duration: $default-transition-duration;\n  color: $link-color;\n  font-size: 1.1rem;\n  user-select: none;\n  text-decoration: none;\n  white-space: nowrap;\n  &:hover{\n    color: lighten($link-color, 10%);\n    opacity: .8;\n  }\n  &.decoration{\n    text-decoration: underline;\n  }\n}\n\na.type_1 {\n  color: $header_font_color;\n  border: 3px solid transparent;\n  width: 100%;\n  text-align: center;\n  padding: .5rem;\n  &.active,\n  &:hover\n  {\n    color: $main_color;\n    border-bottom: 3px solid $main_color;\n  }\n\n  &:hover {\n    background-color: lighten($white_color_1, 3%);\n  }\n}\n\n// Auto complete styles\ninput:-webkit-autofill,\ninput:-webkit-autofill:hover,\ninput:-webkit-autofill:focus,\ninput:-webkit-autofill:active {\n  transition: background-color 5000s ease-in-out 0s;\n  -webkit-text-fill-color: $black_color_4;\n  -webkit-box-shadow: 0 0 0px 1000px lighten($white_color_1, 3%) inset;\n}\n\n// Common used styles\n.cannot-select {\n  user-select: none;\n}\n\n.flex-column-between-center{\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n}\n.flex-row-between-center{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n.flex-column-center{\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.flex-row-center{\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center;\n}\n\n.flex-column-start-center {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n}\n\n.flex-row-start-center {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n\n.flex-column-end-center {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  align-items: center;\n}\n\n.flex-row-end-center {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n}\n\n.flex-column-wrap {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.flex-column-no-wrap {\n  display: flex;\n  flex-wrap: nowrap;\n}\n\n.flex-column-align-start {\n  display: flex;\n  align-items: flex-start;\n}\n\n.flex-column-align-end {\n  display: flex;\n  align-items: flex-end;\n}\n\n.flex-column-justify-start {\n  display: flex;\n  justify-content: flex-start;\n}\n\n.flex-column-justify-end {\n  display: flex;\n  justify-content: flex-end;\n}\n\n.flex-column-space-around {\n  display: flex;\n  justify-content: space-around;\n}\n\n.flex-column-space-evenly {\n  display: flex;\n  justify-content: space-evenly;\n}\n\n.flex-column-wrap {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n}\n\n.flex-column-no-wrap {\n  display: flex;\n  flex-direction: column;\n  flex-wrap: nowrap;\n}\n\n.flex-column-align-start {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n\n.flex-column-align-end {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n}\n\n.flex-column-justify-start {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.flex-column-justify-end {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n}\n\n.flex-column-space-around {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n}\n\n.flex-column-space-evenly {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\n",
+      "start": 1708867443227,
+      "end": 1708867443228,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443228,
+      "end": 1708867443228,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443228,
+      "end": 1708867443228,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443228,
+      "end": 1708867443228,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443228,
+      "end": 1708867443228,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867443228,
+      "end": 1708867443228,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__fmK3O7zh__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET__4azBWa4Y__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__og4Oqs_N__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__6GJbuPq1__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__E0lesTvh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__gvzaFxsR__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET__qINpFL2s__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__fDQFZRnd__) format(\"opentype\")}.default-container{background-color:#fff!important}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}html{display:unset;font-size:13px}.show-for-desktop,.show-for-extrasmall,.show-for-large,.show-for-mobile,.show-for-tablet{display:none}@media only screen and (min-width:100px){.responsive-width{width:100vw}html{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width{width:97vw}html{font-size:8px}.show-for-extrasmall{display:unset}.hide-for-extrasmall{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width{width:95vw}html{font-size:10px}.show-for-mobile{display:unset}.hide-for-mobile{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width{width:96vw}html{font-size:12px}.show-for-tablet{display:unset}.hide-for-tablet{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width{width:1250px}html{font-size:14px}.show-for-desktop{display:unset}.hide-for-desktop{display:none}}@media only screen and (min-width:2000px){.responsive-width{width:1250px}html{font-size:15px}.show-for-large{display:unset}.hide-for-large{display:none}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET__u_dBogWz__) format(\"opentype\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\"opentype\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\"opentype\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\"opentype\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\"opentype\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\"opentype\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\"opentype\")}html{background-color:transparent;font-size:14px}body{background-color:#0b1623;font-family:Circle,sans-serif}body .container{background-color:#f5f4ef;min-height:95vh;min-width:95vw;overflow:hidden}*{margin:0;padding:0}a{color:#f6a462;font-size:1.1rem;text-decoration:none;transition-duration:.2s;-webkit-user-select:none;-moz-user-select:none;user-select:none;white-space:nowrap}a:hover{color:#f9c092;opacity:.8}a.decoration{text-decoration:underline}a.type_1{border:3px solid transparent;color:#0b1623;padding:.5rem;text-align:center;width:100%}a.type_1.active,a.type_1:hover{border-bottom:3px solid #f6a462;color:#f6a462}a.type_1:hover{background-color:#fbfaf9}input:-webkit-autofill,input:-webkit-autofill:active,input:-webkit-autofill:focus,input:-webkit-autofill:hover{-webkit-transition:background-color 5000s ease-in-out 0s;transition:background-color 5000s ease-in-out 0s;-webkit-text-fill-color:#807451;-webkit-box-shadow:inset 0 0 0 1000px #fbfaf9}.cannot-select{-webkit-user-select:none;-moz-user-select:none;user-select:none}.flex-column-between-center{flex-direction:column}.flex-column-between-center,.flex-row-between-center{align-items:center;display:flex;justify-content:space-between}.flex-row-between-center{flex-direction:row}.flex-column-center{flex-direction:column}.flex-column-center,.flex-row-center{align-items:center;display:flex;justify-content:center}.flex-row-center{flex-direction:row}.flex-column-start-center{flex-direction:column}.flex-column-start-center,.flex-row-start-center{align-items:center;display:flex;justify-content:flex-start}.flex-row-start-center{flex-direction:row}.flex-column-end-center{flex-direction:column}.flex-column-end-center,.flex-row-end-center{align-items:center;display:flex;justify-content:flex-end}.flex-row-end-center{flex-direction:row}.flex-column-wrap{display:flex;flex-direction:column;flex-wrap:wrap}.flex-column-no-wrap{display:flex;flex-direction:column;flex-wrap:nowrap}.flex-column-align-start{align-items:flex-start;display:flex;flex-direction:column}.flex-column-align-end{align-items:flex-end;display:flex;flex-direction:column}.flex-column-justify-start{display:flex;flex-direction:column;justify-content:flex-start}.flex-column-justify-end{display:flex;flex-direction:column;justify-content:flex-end}.flex-column-space-around{display:flex;flex-direction:column;justify-content:space-around}.flex-column-space-evenly{display:flex;flex-direction:column;justify-content:space-evenly}",
+      "start": 1708867443228,
+      "end": 1708867443701,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/style.scss",
+        "mappings": "AAAA,WACE,mBAGA,kBADA,gBADA,qDAKF,WACE,yBAGA,kBADA,gBADA,qDAKF,WACE,4BAGA,kBADA,gBADA,qDAKF,WACE,iCAGA,kBADA,gBADA,qDAKF,WACE,6BAGA,kBADA,gBADA,qDAKF,WACE,8BAGA,kBADA,gBADA,qDAKF,WACE,yBAGA,kBADA,gBADA,qDAKF,WACE,wBAGA,kBADA,gBADA,qDC7BF,mBACE,gCCvBF,mBACE,GACE,UAEF,GACE,WAaJ,kBACE,MACE,wBAEF,IACE,4BAeJ,kBACE,GACE,uBAEF,GACE,yBAcJ,iBACE,GACE,mBAEF,IACE,sBAEF,GACE,oBAcJ,wBACE,GACE,SACA,UAEF,IACE,aACA,cAEF,IACE,aACA,cAEF,GACE,SACA,WAaJ,4BACE,MACE,UACA,2BAEF,GACE,UACA,yBAcJ,4BACE,MACE,UACA,4BAEF,GACE,UACA,yBAaJ,4BACE,MACE,UACA,wBAEF,GACE,UACA,6BCxIJ,KAEE,cADA,eAIF,yFAKE,aAjBE,yCAwBF,kBAAmB,YACnB,KACE,eA9BA,+DAoCF,kBAAmB,WACnB,KACE,cAEF,qBACE,cAEF,qBACE,cA5CA,+DAkDF,kBAAmB,WACnB,KACE,eAEF,iBACE,cAEF,iBACE,cA1DA,gEAgEF,kBAAmB,WACnB,KACE,eAEF,iBACE,cAEF,iBACE,cAxEA,iEA8EF,kBAAmB,aACnB,KACE,eAEF,kBACE,cAEF,kBACE,cAlFA,0CAyFF,kBAAmB,aAEnB,KACE,eAEF,gBACE,cAEF,gBACE,cH9GJ,WACE,mBAGA,kBADA,gBADA,qDAKF,WACE,yBAGA,kBADA,gBADA,qDAKF,WACE,4BAGA,kBADA,gBADA,qDAKF,WACE,iCAGA,kBADA,gBADA,qDAKF,WACE,6BAGA,kBADA,gBADA,qDAKF,WACE,8BAGA,kBADA,gBADA,qDAKF,WACE,yBAGA,kBADA,gBADA,qDAKF,WACE,wBAGA,kBADA,gBADA,qDI5CF,KAEE,4BHGsB,CGJtB,eAGF,KAEE,wBCyDY,CD1DZ,8BAEA,gBAGE,wBCPY,CDSZ,gBADA,eAHA,gBAQJ,EACE,SACA,UAGF,EAEE,aC4BW,CD3BX,iBAEA,qBAJA,uBH5B4B,CG+B5B,gEAEA,mBACA,QACE,cACA,WAEF,aACE,0BAIJ,SAEE,6BADA,aCyBY,CDrBZ,cADA,kBADA,WAGA,+BAIE,gCADA,cAIF,eACE,yBAKJ,+GAIE,0GACA,+BCOc,CDNd,8CAIF,eACE,gEAGF,4BAEE,sBAIF,qDAFE,mBAHA,aAEA,8BAGF,yBAEE,mBAIF,oBAEE,sBAIF,qCAFE,mBAHA,aAEA,uBAGF,iBAEE,mBAKF,0BAEE,sBAKF,iDAHE,mBAHA,aAEA,2BAIF,uBAEE,mBAKF,wBAEE,sBAKF,6CAHE,mBAHA,aAEA,yBAIF,qBAEE,mBA6CF,kBACE,aACA,sBACA,eAGF,qBACE,aACA,sBACA,iBAGF,yBAGE,uBAFA,aACA,sBAIF,uBAGE,qBAFA,aACA,sBAIF,2BACE,aACA,sBACA,2BAGF,yBACE,aACA,sBACA,yBAGF,0BACE,aACA,sBACA,6BAGF,0BACE,aACA,sBACA",
+        "names": [],
+        "sources": [
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_fonts.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_configs.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_animations.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_responsive.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/style.scss",
+          "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/stylesheets/utilities/_colors.scss"
+        ],
+        "sourcesContent": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867443701,
+      "end": 1708867443701,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867443701,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default \"@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__fmK3O7zh__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET__4azBWa4Y__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__og4Oqs_N__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__6GJbuPq1__) format(\\\"opentype\\\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__E0lesTvh__) format(\\\"opentype\\\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__gvzaFxsR__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET__qINpFL2s__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__fDQFZRnd__) format(\\\"opentype\\\")}.default-container{background-color:#fff!important}@keyframes fade-in{0%{opacity:0}to{opacity:1}}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes rotate{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.26)}to{transform:scale(1)}}@keyframes color-change{0%{fill:red;color:red}25%{fill:#1e90ff;color:#1e90ff}75%{fill:#32cd32;color:#32cd32}to{fill:red;color:red}}@keyframes intro-shifting-x{0%,to{opacity:0;transform:translateX(10vw)}to{opacity:1;transform:translateX(0)}}@keyframes intro-shifting-y{0%,to{opacity:0;transform:translateY(-50vw)}to{opacity:1;transform:translateY(0)}}@keyframes outro-shifting-x{0%,to{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(100vw)}}html{display:unset;font-size:13px}.show-for-desktop,.show-for-extrasmall,.show-for-large,.show-for-mobile,.show-for-tablet{display:none}@media only screen and (min-width:100px){.responsive-width{width:100vw}html{font-size:8px}}@media only screen and (min-width:100px) and (max-width:325px){.responsive-width{width:97vw}html{font-size:8px}.show-for-extrasmall{display:unset}.hide-for-extrasmall{display:none}}@media only screen and (min-width:325px) and (max-width:600px){.responsive-width{width:95vw}html{font-size:10px}.show-for-mobile{display:unset}.hide-for-mobile{display:none}}@media only screen and (min-width:600px) and (max-width:1250px){.responsive-width{width:96vw}html{font-size:12px}.show-for-tablet{display:unset}.hide-for-tablet{display:none}}@media only screen and (min-width:1250px) and (max-width:2000px){.responsive-width{width:1250px}html{font-size:14px}.show-for-desktop{display:unset}.hide-for-desktop{display:none}}@media only screen and (min-width:2000px){.responsive-width{width:1250px}html{font-size:15px}.show-for-large{display:unset}.hide-for-large{display:none}}@font-face{font-family:Circle;font-style:normal;font-weight:400;src:url(__VITE_ASSET__WAJbe2Q4__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET__u_dBogWz__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Alt-Bold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__KZgxYp80__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Alt-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__flFn3tSh__) format(\\\"opentype\\\")}@font-face{font-family:Circle-ExtraBold;font-style:normal;font-weight:400;src:url(__VITE_ASSET__PFG4hsvD__) format(\\\"opentype\\\")}@font-face{font-family:Circle-ExtraLight;font-style:normal;font-weight:400;src:url(__VITE_ASSET__3MmVZvlv__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Light;font-style:normal;font-weight:400;src:url(__VITE_ASSET___X4NV3Yw__) format(\\\"opentype\\\")}@font-face{font-family:Circle-Thin;font-style:normal;font-weight:400;src:url(__VITE_ASSET__F8sl7hDB__) format(\\\"opentype\\\")}html{background-color:transparent;font-size:14px}body{background-color:#0b1623;font-family:Circle,sans-serif}body .container{background-color:#f5f4ef;min-height:95vh;min-width:95vw;overflow:hidden}*{margin:0;padding:0}a{color:#f6a462;font-size:1.1rem;text-decoration:none;transition-duration:.2s;-webkit-user-select:none;-moz-user-select:none;user-select:none;white-space:nowrap}a:hover{color:#f9c092;opacity:.8}a.decoration{text-decoration:underline}a.type_1{border:3px solid transparent;color:#0b1623;padding:.5rem;text-align:center;width:100%}a.type_1.active,a.type_1:hover{border-bottom:3px solid #f6a462;color:#f6a462}a.type_1:hover{background-color:#fbfaf9}input:-webkit-autofill,input:-webkit-autofill:active,input:-webkit-autofill:focus,input:-webkit-autofill:hover{-webkit-transition:background-color 5000s ease-in-out 0s;transition:background-color 5000s ease-in-out 0s;-webkit-text-fill-color:#807451;-webkit-box-shadow:inset 0 0 0 1000px #fbfaf9}.cannot-select{-webkit-user-select:none;-moz-user-select:none;user-select:none}.flex-column-between-center{flex-direction:column}.flex-column-between-center,.flex-row-between-center{align-items:center;display:flex;justify-content:space-between}.flex-row-between-center{flex-direction:row}.flex-column-center{flex-direction:column}.flex-column-center,.flex-row-center{align-items:center;display:flex;justify-content:center}.flex-row-center{flex-direction:row}.flex-column-start-center{flex-direction:column}.flex-column-start-center,.flex-row-start-center{align-items:center;display:flex;justify-content:flex-start}.flex-row-start-center{flex-direction:row}.flex-column-end-center{flex-direction:column}.flex-column-end-center,.flex-row-end-center{align-items:center;display:flex;justify-content:flex-end}.flex-row-end-center{flex-direction:row}.flex-column-wrap{display:flex;flex-direction:column;flex-wrap:wrap}.flex-column-no-wrap{display:flex;flex-direction:column;flex-wrap:nowrap}.flex-column-align-start{align-items:flex-start;display:flex;flex-direction:column}.flex-column-align-end{align-items:flex-end;display:flex;flex-direction:column}.flex-column-justify-start{display:flex;flex-direction:column;justify-content:flex-start}.flex-column-justify-end{display:flex;flex-direction:column;justify-content:flex-end}.flex-column-space-around{display:flex;flex-direction:column;justify-content:space-around}.flex-column-space-evenly{display:flex;flex-direction:column;justify-content:space-evenly}\"",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867443702,
+      "end": 1708867443702,
+      "order": "normal"
+    }
+  ]
+}

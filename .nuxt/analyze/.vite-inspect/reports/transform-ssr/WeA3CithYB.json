@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/about.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        about page\n    </div>\n</template>\n\n<script lang=\"ts\" setup>\n// definePageMeta({\n//   layout: 'default'\n// });\n\nconst response = await useFetch('/api/hello');\n</script>\n\n<style lang=\"scss\">\n</style>",
+      "start": 1708867443408,
+      "end": 1708867443509,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867443509,
+      "end": 1708867443509,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/about.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/about.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"pages/about.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1708867443509,
+      "end": 1708867444582,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867444582,
+      "end": 1708867444582,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444582,
+      "end": 1708867444582,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444582,
+      "end": 1708867444582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444582,
+      "end": 1708867444582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867444582,
+      "end": 1708867444582,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867444582,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867444583,
+      "end": 1708867444583,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444583,
+      "end": 1708867444585,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867444583,
+      "end": 1708867444585,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444585,
+      "end": 1708867444585,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867444585,
+      "end": 1708867444585,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/about.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1708867444585,
+      "end": 1708867444585,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/pages/about.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1708867444585,
+      "end": 1708867444585,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708867444585,
+      "end": 1708867444585,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867444585,
+      "end": 1708867444586,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867444586,
+      "end": 1708867444586,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867444586,
+      "end": 1708867444586,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867444586,
+      "end": 1708867444586,
+      "order": "normal"
+    }
+  ]
+}

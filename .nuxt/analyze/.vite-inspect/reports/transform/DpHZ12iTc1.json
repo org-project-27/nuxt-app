@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/Users/vugarsafarzada/Desktop/Files/Develop/My Projects/e-commercial-app/nuxt-app/assets/scripts/components/loadingComponent.js?vue&type=script&src=true&lang.js",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import {defineComponent} from 'vue'\nimport colorUtilities from \"assets/scripts/constants/colorUtilities.js\";\nimport {developerAnnounce, generateUniqueId} from \"assets/scripts/helpers/generalHelpers.js\";\n\nexport default defineComponent({\n    name: \"LoadingComponent\",\n    props: {\n        id: [String, Number],\n        type: {\n            type: String,\n            default: () => '2'\n        },\n        size: {\n            type: String,\n            default: () => '20'\n        },\n        color: {\n            type: String,\n            default: () => colorUtilities.$main_color\n        },\n        speed: {\n            type: String,\n            default: () => '1'\n        }\n    },\n    computed:{\n        idComputed(){\n            if(!this.id){\n                developerAnnounce('Loading component required an id!');\n                return this.generateUniqueId();\n            }\n            return this.id;\n        },\n    },\n    data(){\n        return {\n            readyForView: false\n        }\n    },\n    mounted() {\n        this.readyForView = false;\n        this.getStyledAnimated();\n    },\n    methods: {\n        generateUniqueId,\n        getStyledAnimated(){\n            this.$nextTick(() => {\n                const element = document.getElementById(this.idComputed);\n                switch (this.type){\n                    case '1':\n                        element.style.background = this.color;\n                        element.style.padding = (Number(this.size) / 5) + 'px';\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case '2':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.backgroundSize = `${Number(this.size) / 3}px ${Number(this.size) / 3}px`;\n                        element.style.aspectRatio = \"1\";\n                        element.style.setProperty('--_c', `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case '3':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.border = `${this.size / 5}px solid ${this.color}`;\n                        break;\n                    case '4':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.backgroundSize = `${Number(this.size) / 4}px ${Number(this.size) / 4}px`;\n                        element.style.aspectRatio = \"1.154\";\n                        element.style.setProperty('--_g', `no-repeat radial-gradient(farthest-side, ${this.color} 92%, #0000)`);\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case '5':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    case 'clock':\n                        element.style.width = Number(this.size) + 'px';\n                        element.style.color = this.color;\n                        element.style.animationDuration = `${1 / this.speed}s`\n                        break;\n                    default:\n                        element.style.display = 'none';\n                }\n                this.readyForView = true;\n            })\n        }\n    },\n    unmounted() {\n        this.readyForView = false;\n    },\n    watch: {\n        type(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n        size(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n        color(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n        speed(){\n            this.readyForView = false;\n            this.getStyledAnimated();\n        },\n    }\n})",
+      "start": 1708867440548,
+      "end": 1708867440550,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708867440550,
+      "end": 1708867440550,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708867440550,
+      "end": 1708867440550,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708867440550,
+      "end": 1708867440551,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708867440551,
+      "end": 1708867440551,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708867440551,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708867440552,
+      "end": 1708867440552,
+      "order": "normal"
+    }
+  ]
+}

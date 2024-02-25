@@ -1,0 +1,91 @@
+// White colors
+$white_color-type0: #FFFFFF;
+$white-color-type1: #F9F6EE;
+$white-color-type2: #F8F7F4; //best
+$white-color-type3: #FBFFF4;
+$white-color-type4: #FCF5E5;
+$white-color-type5: #F5F5F7;
+$white-color-type6: #FEF3EB;
+
+$white_color: lighten($white_color-type2, 10%);
+$white_color_1: darken($white_color, 5%);
+$white_color_2: darken($white_color, 10%);
+$white_color_3: darken($white_color, 20%);
+$white_color_4: darken($white_color, 30%);
+$white_color_5: darken($white_color, 40%);
+$white_color_6: darken($white_color, 50%);
+$white_color_7: darken($white_color, 60%);
+$white_color_8: darken($white_color, 70%);
+$white_color_9: darken($white_color, 80%);
+
+// Error colors
+$error_color: #d50000;
+$error_color_1: lighten($error_color, 10%);
+$error_color_2: lighten($error_color, 20%);
+$error_color_3: lighten($error_color, 30%);
+$error_color_4: lighten($error_color, 40%);
+$error_color_5: lighten($error_color, 50%);
+$error_color_6: lighten($error_color, 60%);
+$error_color_7: lighten($error_color, 70%);
+$error_color_8: lighten($error_color, 80%);
+$error_color_9: lighten($error_color, 90%);
+
+// Success colors
+$success_color: #147930;
+$success_color_1: lighten($success_color, 10%);
+$success_color_2: lighten($success_color, 20%);
+$success_color_3: lighten($success_color, 30%);
+$success_color_4: lighten($success_color, 40%);
+$success_color_5: lighten($success_color, 50%);
+$success_color_6: lighten($success_color, 60%);
+$success_color_7: lighten($success_color, 70%);
+$success_color_8: lighten($success_color, 80%);
+$success_color_9: lighten($success_color, 90%);
+
+// Warning colors
+$warning_color: #FEBD15;
+$warning_color_1: lighten($warning_color, 10%);
+$warning_color_2: lighten($warning_color, 20%);
+$warning_color_3: lighten($warning_color, 30%);
+$warning_color_4: lighten($warning_color, 40%);
+$warning_color_5: lighten($warning_color, 50%);
+$warning_color_6: lighten($warning_color, 60%);
+$warning_color_7: lighten($warning_color, 70%);
+$warning_color_8: lighten($warning_color, 80%);
+$warning_color_9: lighten($warning_color, 90%);
+
+
+// Main colors
+$main_color: #f6a462;
+$main_color_1: lighten($main_color, 5%);
+$main_color_2: lighten($main_color, 10%);
+$main_color_3: lighten($main_color, 15%);
+$main_color_4: lighten($main_color, 20%);
+$main_color_5: lighten($main_color, 25%);
+$main_color_6: lighten($main_color, 30%);
+$main_color_7: lighten($main_color, 35%);
+$main_color_8: lighten($main_color, 40%);
+$main_color_9: lighten($main_color, 45%);
+
+// Black colors
+$black_color: #0B1623;
+$black_color_0: darken($white_color, 99%);
+$black_color_1: lighten($black_color_0, 10%);
+$black_color_2: lighten($black_color_0, 20%);
+$black_color_3: lighten($black_color_0, 30%);
+$black_color_4: lighten($black_color_0, 40%);
+$black_color_5: lighten($black_color_0, 50%);
+$black_color_6: lighten($black_color_0, 60%);
+$black_color_7: lighten($black_color_0, 70%);
+$black_color_8: lighten($black_color_0, 80%);
+$black_color_9: lighten($black_color_0, 90%);
+
+// Box shadows
+$box_shadow__2: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 _2px 1px rgba(0,0,0,0.25);
+$box_shadow__1: 0 0 10px 0 rgba(0,0,0,0.45) inset;
+$box_shadow_0: 0px 3px 6px 0px rgba(140, 149, 159, 0.15);
+$box_shadow_1: 0 1px 3px $white_color_3, 0 1px 2px rgba(0,0,0,0.24);
+$box_shadow_2: 0px 3px 8px $white_color_3;
+$box_shadow_3: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$box_shadow_4: 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 8px 16px rgba(0,0,0,0.11);
+$box_shadow_5: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12);
