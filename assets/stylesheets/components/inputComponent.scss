@@ -174,12 +174,19 @@ $warning-color: $warning_color_1;
     box-shadow: $box_shadow__1;
   }
   &.button-type-0{
-    background-color: $white_color_1;
+    $type-0: #eee;
+    background-color: $type-0;
     input{
       font-size: 1.2rem !important;
-      color: $black_color_5;
-      font-weight: normal !important;
+      color: $black_color;
+      font-weight: bold !important;
     }
+    &.is-loading{
+      cursor: wait !important;
+      opacity: 1 !important;
+      background-color: darken($type-0, 7%);
+    }
+
   }
 
   &.button-type-1{

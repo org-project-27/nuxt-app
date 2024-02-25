@@ -11,7 +11,7 @@ const $black_color = lighten('#0B1623', 5);
 const $error_color = '#d50000';
 const $success_color = '#147930';
 const $warning_color = '#FEBD15';
-const $main_color = '#f38832';
+const $main_color = '#f6a462';
 const $black_color_0 = darken($white_color, 80);
 
 // Colors
@@ -67,14 +67,14 @@ const colors = {
 
     // Main colors
     $main_color,
-    $main_color_1: '#f5964a',
-    $main_color_2: '#f6a462',
-    $main_color_3: '#f7b27a',
-    $main_color_4: '#f9c092',
-    $main_color_5: '#faceaa',
-    $main_color_6: '#fbdcc3',
-    $main_color_7: '#fdeadb',
-    $main_color_8: '#fef8f3',
+    $main_color_1: '#f7b27a',
+    $main_color_2: '#f9c092',
+    $main_color_3: '#faceaa',
+    $main_color_4: '#fbdcc3',
+    $main_color_5: '#fdeadb',
+    $main_color_6: '#fef8f3',
+    $main_color_7: '#fff',
+    $main_color_8: '#fff',
     $main_color_9: '#fff',
 
     // Black colors

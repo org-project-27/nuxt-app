@@ -56,6 +56,7 @@
       <input-component
           id="submit-btn"
           type="submit"
+          button-type="1"
           :label="$t('get_started.log_in.submit_btn')"
           @ready-for-view="setReadyForView"
           :left-icon="{ icon: 'lock' }"

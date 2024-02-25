@@ -40,8 +40,10 @@ $layout-width: 100%;
         .brand-area{
           display: flex;
           align-items: center;
-          font-size: 2rem;
-          color: unset !important;
+          font-size: 2.5rem;
+          font-family: Arial, sans-serif;
+          font-weight: bolder;
+          color: $main_color !important;
           span{
             text-transform: lowercase;
           }
