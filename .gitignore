@@ -24,13 +24,10 @@ logs
 !.env.example
 !/.vscode/
 
-.DS_Store
-node_modules
 /dist
 /public
 
 # local env files
-.env
 .env.local
 .env.*.local
 
@@ -41,7 +38,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Editor directories and files
-.idea
 .vscode
 *.suo
 *.ntvs*
@@ -49,4 +45,3 @@ pnpm-debug.log*
 *.sln
 *.sw?
 *._*
-.env
