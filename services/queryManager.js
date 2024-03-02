@@ -3,7 +3,7 @@ import axios from "axios";
 export const axiosInstance = axios.create({
 //#TODO: Pull baseUrl from an .env file!
   //baseURL: "/api",
-  baseURL: "https://faynn.com/api",
+  baseURL: "http://localhost:5501/api",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
