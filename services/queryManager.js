@@ -1,16 +1,7 @@
 import axios from "axios";
+import { axiosConfigs } from "@/assets/scripts/configs/api.config.ts";
 
-export const axiosInstance = axios.create({
-//#TODO: Pull baseUrl from an .env file!
-  //baseURL: "/api",
-  baseURL: "https://faynn.com/api",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "*",
-  },
-});
+export const axiosInstance = axios.create(axiosConfigs);
 
 const responseHandler = (response) => {
   //#TODO: Improve this section
@@ -23,7 +14,7 @@ const errorHandler = (error) => {
 
 // This interceptor allows us to change user token dynamically
 axiosInstance.interceptors.request.use((config) => {
-  const access_token = localStorage.getItem('access_token');
+  const access_token = localStorage.getItem("access_token");
   config.headers["Authorization"] = "Bearer " + access_token;
   return config;
 });
