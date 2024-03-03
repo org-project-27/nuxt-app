@@ -15,7 +15,9 @@ const errorHandler = (error) => {
 // This interceptor allows us to change user token dynamically
 axiosInstance.interceptors.request.use((config) => {
   const access_token = localStorage.getItem("access_token");
-  config.headers["Authorization"] = "Bearer " + access_token;
+  if (access_token) {
+    config.headers["Authorization"] = "Bearer " + access_token;
+  }
   return config;
 });
 
