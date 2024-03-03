@@ -20,7 +20,7 @@ jobs:
       - name: Deploy to Server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /faynn.com/nuxt-app
+            cd ./faynn.com/nuxt-app
             pm2 stop nuxt-app
             git pull
             npm install
