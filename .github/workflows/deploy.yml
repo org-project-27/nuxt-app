@@ -33,9 +33,10 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
             cd ./faynn.com/nuxt-app
             pm2 stop nuxt-app
+            git checkout master
             git pull
             npm install
-            pm2 start nuxt-app
+            pm2 restart nuxt-app
           EOF
       
       - name: Update deployment status to success
