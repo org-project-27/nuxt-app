@@ -1,7 +1,7 @@
 <template>
   <div id="default-layout" class="container flex-column-between-center">
     <header>
-      <section class="responsive-width">
+      <section class="responsive-width responsive-visibility-1">
         <div class="wrapper-area">
           <nuxt-link
               v-for="i in 4" :key="i"
@@ -39,7 +39,7 @@
             </nuxt-link>
           </div>
         </div>
-        <div class="navigation-area">
+        <div class="navigation-area hide-for-tablet">
           <nav>
             <nuxt-link
                 class="type_1"
@@ -50,6 +50,14 @@
             </nuxt-link>
           </nav>
         </div>
+      </section>
+      <section class="responsive-width responsive-visibility-2">
+        <NuxtLink to="/" class="brand-area cannot-select">
+          <span>&nbsp;{{ brandName }}</span>
+        </NuxtLink>
+        <NuxtLink to="/account/user">
+          <icon-component icon-name="menu" :color="colorUtilities.$white_color_9" icon-size="30"/>
+        </NuxtLink>
       </section>
     </header>
     <main>

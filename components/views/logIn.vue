@@ -170,41 +170,84 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-#log-in-page {
-  form.log-in-form {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2.5rem 0;
-
-    .input-group {
+@include for-size($tablet-size, 100vw) {
+  #log-in-page {
+    form.log-in-form {
+      width: 70%;
       display: flex;
       flex-direction: column;
-      gap: .4rem;
-      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
 
-      .forget-password-area {
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
         width: 100%;
-        text-align: right;
-        margin-top: .5rem;
-        a {
-          font-size: 1rem;
-          color: $black_color_6;
+
+        .forget-password-area {
+          width: 100%;
+          text-align: right;
+          margin-top: .5rem;
+          a {
+            font-size: 1rem;
+            color: $black_color_6;
+          }
         }
+      }
+
+      .message-box {
+        margin-bottom: 1rem;
       }
     }
 
-    .message-box {
-      margin-bottom: 1rem;
+    .no-account-yet {
+      font-size: 1.1rem;
+      color: $black_color;
     }
   }
+}
 
-  .no-account-yet {
-    font-size: 1.1rem;
-    color: $black_color;
+@include for-size($small-mobile-size, $tablet-size){
+  #log-in-page {
+    form.log-in-form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        width: 100%;
+
+        .forget-password-area {
+          width: 100%;
+          text-align: right;
+          margin-top: .5rem;
+          a {
+            font-size: 1rem;
+            color: $black_color_6;
+          }
+        }
+      }
+
+      .message-box {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .no-account-yet {
+      font-size: 1.1rem;
+      color: $black_color;
+    }
   }
 }
+
 </style>

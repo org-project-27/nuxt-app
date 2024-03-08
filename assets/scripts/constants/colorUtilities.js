@@ -7,26 +7,26 @@ const $white_color_type4 = '#FCF5E5';
 const $white_color_type5 = '#F5F5F7';
 const $white_color = $white_color_type2;
 
-const $black_color = lighten('#0B1623', 5);
+const $black_color = '#0B1623';
 const $error_color = '#d50000';
 const $success_color = '#147930';
 const $warning_color = '#FEBD15';
-const $main_color = '#f6a462';
+const $main_color = '#009DE0';
 const $black_color_0 = darken($white_color, 80);
 
 // Colors
 const colors = {
     // White colors
     $white_color: '#fff',
-    $white_color_1: '#f5f4ef',
-    $white_color_2: '#ebe8e0',
-    $white_color_3: '#d7d2c1',
-    $white_color_4: '#c4bba2',
-    $white_color_5: '#b0a482',
-    $white_color_6: '#9c8e63',
-    $white_color_7: '#7d714f',
-    $white_color_8: '#5e553c',
-    $white_color_9: '#3e3928',
+    $white_color_1: '#f5f5f5',
+    $white_color_2: '#f2f2f2',
+    $white_color_3: '#f0f0f0',
+    $white_color_4: '#ededed',
+    $white_color_5: '#eee',
+    $white_color_6: '#ddd',
+    $white_color_7: '#ccc',
+    $white_color_8: '#bbb',
+    $white_color_9: '#aaa',
 
     // Error colors
     $error_color,
@@ -67,27 +67,27 @@ const colors = {
 
     // Main colors
     $main_color,
-    $main_color_1: '#f7b27a',
-    $main_color_2: '#f9c092',
-    $main_color_3: '#faceaa',
-    $main_color_4: '#fbdcc3',
-    $main_color_5: '#fdeadb',
-    $main_color_6: '#fef8f3',
-    $main_color_7: '#fff',
-    $main_color_8: '#fff',
-    $main_color_9: '#fff',
+    $main_color_1: '#00affa',
+    $main_color_2: '#14b9ff',
+    $main_color_3: '#2ec0ff',
+    $main_color_4: '#47c8ff',
+    $main_color_5: '#61d0ff',
+    $main_color_6: '#7ad7ff',
+    $main_color_7: '#94dfff',
+    $main_color_8: '#ade6ff',
+    $main_color_9: '#c7eeff',
 
     // Black colors
     $black_color,
-    $black_color_1: '#221f16',
-    $black_color_2: '#413c2a',
-    $black_color_3: '#61583d',
-    $black_color_4: '#807451',
-    $black_color_5: '#9e9066',
-    $black_color_6: '#b2a785',
-    $black_color_7: '#c5bda5',
-    $black_color_8: '#d9d4c4',
-    $black_color_9: '#edebe3',
+    $black_color_1: '#0d1b2b',
+    $black_color_2: '#102033',
+    $black_color_3: '#12253a',
+    $black_color_4: '#152a42',
+    $black_color_5: '#172e4a',
+    $black_color_6: '#1a3352',
+    $black_color_7: '#1c3859',
+    $black_color_8: '#1f3d61',
+    $black_color_9: '#214269',
 }
 
 // Box shadows
