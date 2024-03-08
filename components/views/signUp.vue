@@ -246,31 +246,63 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-#sign-up-page {
-  form.sign-up-form {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2.5rem 0;
-
-    .input-group {
+@include for-size($tablet-size, 100vw){
+  #sign-up-page {
+    form.sign-up-form {
+      width: 70%;
       display: flex;
       flex-direction: column;
-      gap: .4rem;
-      width: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        width: 100%;
+      }
+
+      .message-box {
+        margin-bottom: 1rem;
+      }
     }
 
-    .message-box {
-      margin-bottom: 1rem;
+    .already-have-account {
+      font-size: 1.1rem;
+      color: $black_color;
     }
   }
+}
 
-  .already-have-account {
-    font-size: 1.1rem;
-    color: $black_color;
+@include for-size($small-mobile-size, $tablet-size) {
+  #sign-up-page {
+    form.sign-up-form {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+        width: 100%;
+      }
+
+      .message-box {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .already-have-account {
+      font-size: 1.1rem;
+      color: $black_color;
+    }
   }
 }
 

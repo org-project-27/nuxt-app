@@ -3,6 +3,7 @@
             :class="type">
         <icon-component
             v-if="!hideIcon"
+            :fill="iconFill"
             icon-name="error"
             icon-size="25"
             :color="colorUtilities.$error_color_1"/>
@@ -12,6 +13,7 @@
         :class="type">
         <icon-component
             v-if="!hideIcon"
+            :fill="iconFill"
             icon-name="warning"
             icon-size="25"
             :color="colorUtilities.$warning_color_3"/>
@@ -21,7 +23,7 @@
         :class="type">
         <icon-component
             v-if="!hideIcon"
-            fill
+            :fill="iconFill"
             icon-name="check_circle"
             icon-size="25"
             :color="colorUtilities.$success_color_1"/>
@@ -30,6 +32,7 @@
   <span v-else-if="type === 'info'"
         :class="type">
         <icon-component
+            :fill="iconFill"
             v-if="!hideIcon"
             icon-name="info"
             icon-size="25"
@@ -53,6 +56,10 @@ export default defineComponent({
     },
     hideIcon: Boolean,
     hideAnimation: Boolean,
+    iconFill: {
+      type: Boolean,
+      default: () => true
+    }
   },
   data() {
     return {
@@ -88,14 +95,14 @@ export default defineComponent({
 span {
   @include animate-intro-shifting-x(1s);
   user-select: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-radius: 8px;
   box-shadow: $box_shadow_2;
   display: flex;
   font-weight: bold;
   flex-direction: row;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   gap: .5rem;
   max-width: 100%;
   b{
@@ -106,10 +113,11 @@ span {
 span{
   background-color: $white_color_1;
   color: $black_color_1;
+  font-family: $font-family-Light;
 }
 
 span.error {
-  //color: $error_color_1;
+  color: $error_color_3;
 }
 
 span.warn {
