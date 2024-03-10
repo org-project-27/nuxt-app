@@ -38,9 +38,6 @@ function setFullscreenModal() {
 </script>
 
 <style scoped lang="scss">
-@include for-size($tablet-size, 100vw) {
-  header#fullscreeen-header-default-layout { display: none !important }
-}
 @include for-size($small-mobile-size, $tablet-size) {
   $layout-width: 100%;
   header#fullscreeen-header-default-layout {

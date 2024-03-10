@@ -29,7 +29,7 @@ $footer_font_color: $main_color_2;
   width: 100%;
   background: $header_background_color;
   height: $default-layout-header-height-fullscreen;
-  nav {
+  .fullscreen-nav {
     display: flex;
     flex-direction: column;
     a {
@@ -38,12 +38,17 @@ $footer_font_color: $main_color_2;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid $white_color_5;
-      padding: 1.3rem 1rem;
+      padding: 1.3rem 1.7rem;
       color: lighten(black, 60%) !important;
-      & > * {
-        width: 3.5rem;
+      font-size: 1.3rem;
+      & > div {
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       &.active {
+        color: $main_color !important;
         border-left: .4rem solid $main_color;
         background-color: lighten($main_color_9, 9%);
       }

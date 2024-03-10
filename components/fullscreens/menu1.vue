@@ -1,6 +1,6 @@
 <template>
   <div id="menu-1" class="fullscreen-menu">
-    <nav>
+    <nav class="fullscreen-nav">
       <nuxt-link
           v-for="(navigate, index) in menuNavigations"
           :key="index"
@@ -8,8 +8,9 @@
           :to="navigate.url">
         <icon-component
             :icon-name="navigate.icon"
-            :color="currentPath === navigate.url ? colorUtilities.$main_color : colorUtilities.$white_color_9"
-            icon-size="1.7rem"/>
+            :color="currentPath === navigate.url
+            ? colorUtilities.$main_color : colorUtilities.$white_color_9"
+            icon-size="30"/>
         <span>{{ navigate.label }}</span>
       </nuxt-link>
     </nav>
@@ -21,14 +22,14 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: "menu1",
   computed: {
-    currentPath(){
+    currentPath() {
       return this.$route.fullPath
     },
     colorUtilities() {
       return useNuxtApp().$colorUtilities;
     }
   },
-  data(){
+  data() {
     return {
       menuNavigations: [
         {
