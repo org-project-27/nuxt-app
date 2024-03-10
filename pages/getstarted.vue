@@ -45,59 +45,99 @@ export default defineComponent({
 </script>
 <style lang="scss">
 
+#getstarted-page {
+  $layout-width: 35rem;
+  $border-radius: 1rem;
+  $nav-active-color: $main_color_2;
+  $border-style: 2px solid $nav-active-color;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  .getstarted-container{
+    nav#getstarted-views-nav {
+      min-height: 3rem;
+      max-height: 3.5rem;
+      background-color: $main_background_color;
+      padding-top: 1px;
+      & > a {
+        &#sign_up {
+          &.active{
+            border-left: $border-style;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+          }
+        }
+        &#log_in {
+          &.active{
+            border-right: $border-style;
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+          }
+        }
+        &#sign_up, &#log_in {
+          height: 100%;
+          color: $white_color_9;
+          border-bottom: $border-style;
+        }
+        &.active {
+          color: $nav-active-color !important;
+          background-color: $white_color !important;
+          border-bottom: none !important;
+          border-top: $border-style !important;
+          font-size: 1.3rem;
+          box-shadow: none !important;
+        }
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+    section#getstarted-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      overflow: hidden !important;
+      border-bottom-left-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
+
+      #sign-up-page,
+      #log-in-page {
+        width: 100%;
+        border-bottom-left-radius: $border-radius !important;
+        border-bottom-right-radius: $border-radius !important;
+        border-bottom: $border-style;
+        padding: 1.5rem 0 2.5rem 0;
+      }
+    }
+  }
+}
+
 @include for-size($tablet-size, 100vw) {
   $layout-width: 35rem;
-  $border-style: .1rem solid $black_color_6;
   $border-radius: 1.5rem;
-
   #getstarted-page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
     .getstarted-container{
       border-radius: $border-radius;
-      overflow: hidden;
-      box-shadow: $box-shadow-2;
       nav#getstarted-views-nav {
+        height: 3.3rem;
         width: $layout-width;
-        height: 3.5rem;
-        background-color: lighten($white_color_1, 3%);
-        position: relative;
-        //overflow: hidden;
-
         & > a {
           width: calc($layout-width/2);
-          height: 100%;
-          font-size: 1.3rem;
           &#sign_up, &#log_in {
-            color: $main_color;
-            box-shadow: $box-shadow-0;
-            border-bottom: 2px solid $main_color;
           }
           &.active {
-            color: $black_color_1 !important;
-            background-color: $white_color !important;
-            border: none !important;
-            font-size: 1.2rem;
-            box-shadow: none !important;
           }
         }
       }
       section#getstarted-layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: $layout-width;
-        height: 100%;
-        overflow: hidden;
-
         #sign-up-page,
         #log-in-page {
-          width: 100%;
-          padding: 1.5rem 0 2.5rem 0;
         }
       }
     }
@@ -106,56 +146,28 @@ export default defineComponent({
 
 @include for-size($small-mobile-size, $tablet-size) {
   $layout-width: 93vw;
-  $border-style: .1rem solid $black_color_6;
   $border-radius: 1rem;
-
   #getstarted-page {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+    margin: .1vh 0;
     border-radius: $border-radius;
     overflow: hidden;
     .getstarted-container{
-      border: 2px solid $white_color_2;
       border-radius: $border-radius;
-      overflow: hidden;
       nav#getstarted-views-nav {
+        height: 4vh;
         width: $layout-width;
-        height: 3.5rem;
-        background-color: lighten($white_color_1, 3%);
-        position: relative;
-        //overflow: hidden;
-
         & > a {
           width: calc($layout-width/2);
-          height: 100%;
-          font-size: 1.3rem;
           &#sign_up, &#log_in {
-            color: $main_color;
-            border-bottom: 2px solid $main_color;
           }
           &.active {
-            color: $black_color_1 !important;
-            background-color: $white_color !important;
-            border: none !important;
-            font-size: 1.2rem;
-            box-shadow: none !important;
           }
         }
       }
       section#getstarted-layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         width: $layout-width;
-        height: 100%;
-        overflow: hidden;
         #sign-up-page,
         #log-in-page {
-          width: 100%;
-          padding: 1.5rem 0 2.5rem 0;
         }
       }
     }

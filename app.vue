@@ -3,10 +3,11 @@
       <NuxtPage/>
     </NuxtLayout>
 </template>
-<script>
-import {defineComponent} from 'vue';
-
-export default defineComponent({
-  name: "App",
+<script setup lang="ts">
+onMounted(() => {
+  if (process.client) {
+    // This code runs after the component is mounted, on the client side only
+    useConfigsStore().detectDeviceType();
+  }
 });
 </script>

@@ -43,7 +43,6 @@
 
 <script lang="js">
 import {defineComponent} from 'vue';
-import colorUtilities from "assets/scripts/constants/colorUtilities";
 
 let timeOutId;
 export default defineComponent({
@@ -61,9 +60,14 @@ export default defineComponent({
       default: () => true
     }
   },
+  setup(){
+    const { $colorUtilities } = useNuxtApp();
+    return {
+      colorUtilities: $colorUtilities
+    }
+  },
   data() {
     return {
-      colorUtilities,
       timeOut: 1200,
       timeOutId,
     }

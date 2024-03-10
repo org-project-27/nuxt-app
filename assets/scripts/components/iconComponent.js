@@ -22,6 +22,12 @@ export default defineComponent({
             default: () => colorUtilities.$black_color
         },
     },
+    setup(){
+        const { $colorUtilities } = useNuxtApp();
+        return {
+            colorUtilities: $colorUtilities
+        }
+    },
     computed: {
         iconComputed() {
             if (this.iconName) {
