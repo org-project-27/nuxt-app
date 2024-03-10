@@ -1,5 +1,8 @@
 import routeConfig from "~/assets/scripts/configs/routeConfig";
+import {useFullscreenModal} from "#imports";
 export default defineNuxtRouteMiddleware((to, from) => {
+    const { setStatus } = useFullscreenModal();
+    setStatus(false);
     const { path } = to;
     const overall = !!Object.keys(to.params).length;
     const config = routeConfig[path]

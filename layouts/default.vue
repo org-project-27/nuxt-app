@@ -1,68 +1,13 @@
 <template>
-  <div id="default-layout" class="container flex-column-between-center">
-    <header>
-      <section class="responsive-width responsive-visibility-1">
-        <div class="wrapper-area">
-          <nuxt-link
-              v-for="i in 4" :key="i"
-              :to="'/posts/link'+i"
-              class="child cannot-select flex-column-center">
-            Link {{i}}
-          </nuxt-link>
-        </div>
-        <div class="main-area">
-          <NuxtLink to="/" class="brand-area cannot-select">
-<!--            <icon-component icon-name="raven" fill :color="colorUtilities.$main_color"/>-->
-            <span>&nbsp;{{ brandName }}</span>
-          </NuxtLink>
-          <div class="search-area">
-            Search the product, category or brand you are looking for
-          </div>
-          <div class="auth-area">
-            <nuxt-link to="/account/user">
-              <icon-component
-                  icon-name="person"
-                  icon-size="1.7rem"/>
-              <span>{{ $t('pages.profile') }}</span>
-            </nuxt-link>
-            <nuxt-link to="/account/favorites">
-              <icon-component
-                  icon-name="favorite"
-                  icon-size="1.7rem"/>
-              <span>{{ $t('pages.favorites') }}</span>
-            </nuxt-link>
-            <nuxt-link to="/account/cart">
-              <icon-component
-                  icon-name="shopping_cart"
-                  icon-size="1.7rem"/>
-              <span>{{ $t('pages.cart') }}</span>
-            </nuxt-link>
-          </div>
-        </div>
-        <div class="navigation-area hide-for-tablet">
-          <nav>
-            <nuxt-link
-                class="type_1"
-                v-for="i in categories.length"
-                :class="{'active': i == currentPath.params.id}"
-                :to="'/categories/'+i" :key=i>
-                {{categories[i-1]}}
-            </nuxt-link>
-          </nav>
-        </div>
-      </section>
-      <section class="responsive-width responsive-visibility-2">
-        <NuxtLink to="/" class="brand-area cannot-select">
-          <span>&nbsp;{{ brandName }}</span>
-        </NuxtLink>
-        <NuxtLink to="/account/user">
-          <icon-component icon-name="menu" :color="colorUtilities.$white_color_9" icon-size="30"/>
-        </NuxtLink>
-      </section>
-    </header>
+  <fullscreen-modal v-if="fullscreenModal.status"/>
+  <div
+      v-show="!fullscreenModal.status"
+      id="default-layout"
+      class="container flex-column-between-center">
+    <header-component/>
     <main>
       <div class="responsive-width">
-        <slot v-if="waitingForAuthProgress === false"/>
+        <slot v-if="waitingForAuthProgress === false && deviceType"/>
         <loading-page-component v-else/>
       </div>
     </main>
@@ -74,37 +19,36 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import { useAuthStore } from '~/stores/user/auth';
 import LoadingPageComponent from '~/components/LoadingPageComponent.vue';
-import colorUtilities from "assets/scripts/constants/colorUtilities.js";
+import HeaderComponent from "~/components/layouts/default/HeaderComponent.vue";
 
 export default defineComponent({
   name: "DefaultLayout",
-  components: { LoadingPageComponent },
+  components: { LoadingPageComponent, HeaderComponent },
   computed: {
-    colorUtilities() {
-      return colorUtilities;
-    },
     authProgressIsLoading(){
       return useAuthStore().authProgressIsLoading;
     },
     currentPath(){
       return this.$route
+    },
+    deviceType(){
+      return useConfigsStore().deviceType;
+    },
+    fullscreenModal(){
+      return useFullscreenModal();
     }
-  },
-  setup(){
-    let { getCategories } = usePostsStore();
-    let categories = getCategories(10)
-    return { brandName: useAppConfig().brandName, categories };
   },
   data(){
     return {
-      waitingForAuthProgress: null
+      waitingForAuthProgress: null,
     }
   },
   mounted(){
     this.waitingForAuthProgress = this.authProgressIsLoading;
+
   },
   watch: {
     authProgressIsLoading(val){
@@ -113,6 +57,11 @@ export default defineComponent({
   }
 });
 </script>
+
+<script setup>
+import FullscreenModal from "~/components/FullscreenModal.vue";
+</script>
+
 <style lang="scss">
 @import "assets/stylesheets/layouts/default";
 </style>

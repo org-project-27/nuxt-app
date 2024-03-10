@@ -5,7 +5,8 @@ $default-loading-speed: 1s;
 // Default Layout configs:
 $default-layout-section-gap: 3rem;
 $default-layout-header-height: 12rem;
-
+$default-layout-header-height-mobile: calc($default-layout-header-height / 2.5);
+$default-layout-header-height-fullscreen: calc(100% - $default-layout-header-height-mobile);
 
 // Default Colors
 $link-color: $main_color;
@@ -22,4 +23,38 @@ $footer_font_color: $main_color_2;
 
 .default-container {
   background-color: $white_color !important;
+}
+
+.fullscreen-menu{
+  width: 100%;
+  background: $header_background_color;
+  height: $default-layout-header-height-fullscreen;
+  .fullscreen-nav {
+    display: flex;
+    flex-direction: column;
+    a {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $white_color_5;
+      padding: 1.3rem 1.7rem;
+      color: lighten(black, 60%) !important;
+      font-size: 1.3rem;
+      & > div {
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.active {
+        color: $main_color !important;
+        border-left: .4rem solid $main_color;
+        background-color: lighten($main_color_9, 9%);
+      }
+      &:hover {
+        border-left: .4rem solid $main_color;
+      }
+    }
+  }
 }
