@@ -57,6 +57,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   .getstarted-container{
+    margin-top: 1rem;
     nav#getstarted-views-nav {
       min-height: 3rem;
       max-height: 3.5rem;

@@ -83,17 +83,17 @@
     color: $main_color;
     border-color: $main_color;
   }
-  40% {
+  5% {
+    fill: $main_color;
+    color: $main_color;
+    border-color: $main_color;
+  }
+  15% {
     fill: $black_color;
     color: $black_color;
     border-color: $black_color;
   }
-  50% {
-    fill: $black_color;
-    color: $black_color;
-    border-color: $black_color;
-  }
-  60% {
+  90% {
     fill: $black_color;
     color: $black_color;
     border-color: $black_color;
