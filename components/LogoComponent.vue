@@ -41,7 +41,7 @@ brandName = brandName.toUpperCase();
   svg {
     width: 3rem;
     height: 3rem;
-    .logo-path{
+    path.logo-path{
       @include hover-color-change(15s);
     }
   }
