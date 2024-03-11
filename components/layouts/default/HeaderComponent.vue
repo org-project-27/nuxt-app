@@ -164,6 +164,9 @@ function setFullscreenModal() {
     @include animate-fade-in();
     overflow: hidden;
     display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     flex-direction: column;
     align-items: center;
     justify-content: center;
