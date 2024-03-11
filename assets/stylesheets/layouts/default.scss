@@ -21,7 +21,9 @@
   $layout-width: 100%;
   #default-layout.container{
     gap: $default-layout-section-gap;
+    margin-top: $default-layout-header-height-mobile;
     main{
+      margin-top: calc($default-layout-header-height-mobile / 2.5);
       border-radius: 1rem;
       overflow: hidden;
       min-height: 70vh;

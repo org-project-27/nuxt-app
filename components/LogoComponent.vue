@@ -56,6 +56,7 @@ $logo-color-active: $black_color;
     color: $logo-color-deactive;
     font-family: $font-family-ExtraBold;
   }
+  &.active,
   &:hover{
       svg {
         path.logo-path{
