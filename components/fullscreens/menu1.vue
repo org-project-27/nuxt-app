@@ -10,7 +10,7 @@
             :icon-name="navigate.icon"
             :fill="currentPath === navigate.url"
             :color="currentPath === navigate.url
-            ? colorUtilities.$main_color : colorUtilities.$white_color_9"
+            ? colorUtilities.$main_color_2 : colorUtilities.$white_color_9"
             icon-size="30"/>
         <span>{{ navigate.label }}</span>
       </nuxt-link>

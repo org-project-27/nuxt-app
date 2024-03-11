@@ -48,12 +48,12 @@ $footer_font_color: $main_color_2;
         justify-content: center;
       }
       &.active {
-        color: $main_color !important;
-        border-left: .4rem solid $main_color;
+        color: $main_color_2 !important;
+        border-left: .4rem solid $main_color_2;
         background-color: lighten($main_color_9, 9%);
       }
       &:hover {
-        border-left: .4rem solid $main_color;
+        border-left: .4rem solid $main_color_2;
       }
     }
   }
