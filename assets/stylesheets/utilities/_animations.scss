@@ -79,29 +79,29 @@
 
 @keyframes color-change {
   0% {
+    fill: $main_color_3;
+    color: $main_color_3;
+    border-color: $main_color_3;
+  }
+  5% {
+    fill: $main_color_2;
+    color: $main_color_2;
+    border-color: $main_color_2;
+  }
+  10% {
     fill: $main_color;
     color: $main_color;
     border-color: $main_color;
   }
-  40% {
-    fill: $black_color;
-    color: $black_color;
-    border-color: $black_color;
-  }
-  50% {
-    fill: $black_color;
-    color: $black_color;
-    border-color: $black_color;
-  }
-  60% {
-    fill: $black_color;
-    color: $black_color;
-    border-color: $black_color;
+  90% {
+    fill: $main_color;
+    color: $main_color;
+    border-color: $main_color;
   }
   100% {
-    fill: $main_color;
-    color: $main_color;
-    border-color: $main_color;
+    fill: $main_color_3;
+    color: $main_color_3;
+    border-color: $main_color_3;
   }
 }
 

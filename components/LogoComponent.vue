@@ -31,6 +31,8 @@ brandName = brandName.toUpperCase();
 </script>
 
 <style scoped lang="scss">
+$animation-duration: 1s;
+$logo-color: $main_color;
 .logo-component{
   user-select: none;
   display: flex;
@@ -42,15 +44,15 @@ brandName = brandName.toUpperCase();
     width: 3rem;
     height: 3rem;
     path.logo-path{
+      fill: $logo-color;
       @include hover-color-change(15s);
     }
   }
   span {
-    font-size: 1.7rem;
-    opacity: .8;
-    color: $black_color;
-    font-family: $font-family-ExtraBold;
     @include hover-color-change(15s);
+    font-size: 1.7rem;
+    color: $logo-color;
+    font-family: $font-family-ExtraBold;
   }
 }
 </style>
