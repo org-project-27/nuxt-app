@@ -76,7 +76,6 @@ function setFullscreenModal() {
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw) {
   header#header-default-layout {
-    @include animate-fade-in();
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -161,7 +160,6 @@ function setFullscreenModal() {
 @include for-size($small-mobile-size, $tablet-size) {
   $layout-width: 100%;
   header#header-default-layout {
-    @include animate-fade-in();
     overflow: hidden;
     display: flex;
     position: fixed;

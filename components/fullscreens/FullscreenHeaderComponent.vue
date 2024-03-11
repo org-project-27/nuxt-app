@@ -39,7 +39,6 @@ function setFullscreenModal() {
 @include for-size($small-mobile-size, $tablet-size) {
   $layout-width: 100%;
   header#fullscreeen-header-default-layout {
-    @include animate-fade-in();
     overflow: hidden;
     display: flex;
     flex-direction: column;
