@@ -10,30 +10,18 @@
         </nuxt-link>
       </div>
       <div class="main-area">
-        <NuxtLink to="/" class="brand-area cannot-select">
-          <span>&nbsp;{{ brandName }}</span>
-        </NuxtLink>
+        <logo-component/>
         <div class="search-area">
           Search the product, category or brand you are looking for
         </div>
         <nav class="auth-area">
-          <nuxt-link to="/account/user">
+          <nuxt-link v-for="navigation in headerRoutes.authRoutes"
+                     :key="navigation.url"
+                     :to="navigation.url">
             <icon-component
-                icon-name="person"
+                :icon-name="navigation.icon"
                 icon-size="1.7rem"/>
-            <span>{{ $t('pages.profile') }}</span>
-          </nuxt-link>
-          <nuxt-link to="/account/favorites">
-            <icon-component
-                icon-name="favorite"
-                icon-size="1.7rem"/>
-            <span>{{ $t('pages.favorites') }}</span>
-          </nuxt-link>
-          <nuxt-link to="/account/cart">
-            <icon-component
-                icon-name="shopping_cart"
-                icon-size="1.7rem"/>
-            <span>{{ $t('pages.cart') }}</span>
+            <span>{{ navigation.label }}</span>
           </nuxt-link>
         </nav>
       </div>
@@ -50,9 +38,7 @@
       </div>
     </section>
     <section class="responsive-width responsive-visibility-2">
-      <NuxtLink to="/" class="brand-area cannot-select">
-        <span>&nbsp;{{ brandName }}</span>
-      </NuxtLink>
+      <logo-component/>
       <NuxtLink :to="currentPath" @click="setFullscreenModal">
         <icon-component
             :icon-name="status ? 'close' : 'menu'"
@@ -67,10 +53,9 @@
 <script setup lang="js">
 import {useRoute} from 'vue-router';
 import menu1 from "~/components/fullscreens/menu1.vue";
+import {headerRoutes} from "assets/scripts/constants/availableAppRoutes.js";
 
 const {getCategories} = usePostsStore();
-const {brandName} = useAppConfig();
-
 const categories = getCategories(10);
 const currentPath = useRoute();
 const colorUtilities = useNuxtApp().$colorUtilities;
@@ -129,19 +114,6 @@ function setFullscreenModal() {
       .main-area {
         height: calc($default-layout-header-height * (3 / 6));
         gap: 2rem;
-
-        .brand-area {
-          display: flex;
-          align-items: center;
-          font-size: 2.5rem;
-          font-family: Arial, sans-serif;
-          font-weight: bolder;
-          color: $main_color !important;
-
-          span {
-            text-transform: lowercase;
-          }
-        }
 
         .search-area {
           background-color: $main_background_color;
@@ -205,19 +177,6 @@ function setFullscreenModal() {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-
-      .brand-area {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: bolder;
-
-        span {
-          color: $black_color;
-          text-transform: lowercase;
-        }
-      }
-
       & > * {
         min-width: 50px;
       }

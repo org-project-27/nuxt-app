@@ -8,6 +8,7 @@
           :to="navigate.url">
         <icon-component
             :icon-name="navigate.icon"
+            :fill="currentPath === navigate.url"
             :color="currentPath === navigate.url
             ? colorUtilities.$main_color : colorUtilities.$white_color_9"
             icon-size="30"/>
@@ -18,6 +19,7 @@
 </template>
 <script lang="ts">
 import {defineComponent} from 'vue'
+import {headerRoutes} from "assets/scripts/constants/availableAppRoutes";
 
 export default defineComponent({
   name: "menu1",
@@ -31,23 +33,7 @@ export default defineComponent({
   },
   data() {
     return {
-      menuNavigations: [
-        {
-          url: '/account/user',
-          icon: 'person',
-          label: this.$t('pages.profile')
-        },
-        {
-          url: '/account/favorites',
-          icon: 'favorite',
-          label: this.$t('pages.favorites')
-        },
-        {
-          url: '/account/cart',
-          icon: 'shopping_cart',
-          label: this.$t('pages.cart')
-        },
-      ]
+      menuNavigations: headerRoutes.authRoutes
     }
   }
 })

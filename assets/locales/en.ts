@@ -18,7 +18,7 @@ locales = {
     },
     pages: {
         default: "Default",
-        main: "Main page",
+        main: "Home",
         404: "Page is not found!",
         profile: "Account",
         get_started: "Get started",

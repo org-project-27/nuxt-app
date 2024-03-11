@@ -1,5 +1,4 @@
 import routeConfig from "~/assets/scripts/configs/routeConfig";
-import {useFullscreenModal} from "#imports";
 export default defineNuxtRouteMiddleware((to, from) => {
     const { setStatus } = useFullscreenModal();
     setStatus(false);
@@ -22,7 +21,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 function processByConfig(to: object, from: object, config = routeConfig.default): void {
     const { brandName } = useAppConfig();
     useSeoMeta({
-        title: `${config.title} • ${brandName}`,
+        title: `${config.title} | ${brandName}`,
         description: config.description
     });
     if(config.middlewareMethod){

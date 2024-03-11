@@ -1,9 +1,7 @@
 <template>
   <header id="fullscreeen-header-default-layout">
     <section class="responsive-width responsive-visibility-2">
-      <NuxtLink to="/" class="brand-area cannot-select" @click="setFullscreenModal">
-        <span>&nbsp;{{ brandName }}</span>
-      </NuxtLink>
+      <logo-component/>
       <NuxtLink :to="currentPath" @click="setFullscreenModal">
         <icon-component
             :icon-name="status ? 'close' : 'menu'"
@@ -57,18 +55,6 @@ function setFullscreenModal() {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-
-      .brand-area {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: bolder;
-
-        span {
-          color: $black_color;
-          text-transform: lowercase;
-        }
-      }
 
       & > * {
         min-width: 50px;

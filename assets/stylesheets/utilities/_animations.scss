@@ -79,20 +79,29 @@
 
 @keyframes color-change {
   0% {
-    fill: red;
-    color: red;
+    fill: $main_color;
+    color: $main_color;
+    border-color: $main_color;
   }
-  25% {
-    fill: dodgerblue;
-    color: dodgerblue;
+  40% {
+    fill: $black_color;
+    color: $black_color;
+    border-color: $black_color;
   }
-  75% {
-    fill: limegreen;
-    color: limegreen;
+  50% {
+    fill: $black_color;
+    color: $black_color;
+    border-color: $black_color;
+  }
+  60% {
+    fill: $black_color;
+    color: $black_color;
+    border-color: $black_color;
   }
   100% {
-    fill: red;
-    color: red;
+    fill: $main_color;
+    color: $main_color;
+    border-color: $main_color;
   }
 }
 
