@@ -13,7 +13,7 @@ const { status, view } = useFullscreenModal();
 
 <style scoped lang="scss">
 #fullscreen-modal{
-  @include animate-intro-shifting-x(.2s);
+  @include animate-intro-shifting-x(.5s);
   position: absolute;
   top: 0;
   left: 0;

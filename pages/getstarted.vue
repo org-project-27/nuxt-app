@@ -50,6 +50,7 @@ export default defineComponent({
   $border-radius: 1rem;
   $nav-active-color: $main_color_2;
   $border-style: 2px solid $nav-active-color;
+  $border-style-disabled: 1px solid lighten($white_color_6, 3%);
 
   display: flex;
   flex-direction: column;
@@ -59,13 +60,15 @@ export default defineComponent({
   .getstarted-container{
     margin-top: 1rem;
     nav#getstarted-views-nav {
-      min-height: 3rem;
+      min-height: 3.2rem;
       max-height: 3.5rem;
       background-color: $main_background_color;
       padding-top: 1px;
       & > a {
+        border: $border-style-disabled;
         &#sign_up {
           &.active{
+            border-right: $border-style;
             border-left: $border-style;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
@@ -73,6 +76,7 @@ export default defineComponent({
         }
         &#log_in {
           &.active{
+            border-left: $border-style;
             border-right: $border-style;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
@@ -80,7 +84,10 @@ export default defineComponent({
         }
         &#sign_up, &#log_in {
           height: 100%;
-          color: $white_color_9;
+          color: darken($white_color_9, 20%);
+          border-top-left-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+          border-top: $border-style-disabled;
           border-bottom: $border-style;
         }
         &.active {
