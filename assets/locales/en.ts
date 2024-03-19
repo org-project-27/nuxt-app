@@ -28,7 +28,8 @@ locales = {
         terms_of_service: "Terms of service",
         privacy_and_policy: "Privacy policy",
         favorites: "Favorites",
-        cart: "Cart"
+        cart: "Cart",
+        forgot_password: "Forgot password"
     },
     get_started: {
         log_in: {
@@ -60,6 +61,12 @@ locales = {
                 strong: "Strong: Your password is secure and robust."
             },
             terms_of_service: "<span>I accept the <a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Terms of service</a> and <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Privacy policy</a></span>"
+        },
+        forgot_password: {
+            welcome_message: "🔑 Enter your email, and we'll send you a link to reset it quickly and securely!",
+            submit_btn: 'Send link',
+            forget_password: "Reset password",
+            email: 'Your email'
         }
     },
     backend_messages: {

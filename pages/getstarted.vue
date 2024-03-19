@@ -22,10 +22,11 @@
 import {defineComponent} from 'vue'
 import sign_up from "~/components/views/signUp.vue";
 import log_in from "~/components/views/logIn.vue";
+import forgot_password from "~/components/views/forgotPassword.vue";
 
 export default defineComponent({
   name: "get-started",
-  components: {sign_up, log_in},
+  components: {sign_up, log_in, forgot_password},
   data: () => {
     return {
       views: ['log_in', 'sign_up']
@@ -36,6 +37,8 @@ export default defineComponent({
       let {view} = this.$route.query;
       if (view && this.views.includes(view?.toString())) {
         return view;
+      } else if(view === 'forgot_password'){
+        return 'forgot_password'
       }
       this.$router.push('?view=log_in');
       return null;
@@ -113,7 +116,8 @@ export default defineComponent({
       border-bottom-right-radius: $border-radius !important;
 
       #sign-up-page,
-      #log-in-page {
+      #log-in-page,
+      #forgot-password-page{
         width: 100%;
         border-bottom-left-radius: $border-radius !important;
         border-bottom-right-radius: $border-radius !important;
@@ -125,7 +129,7 @@ export default defineComponent({
 }
 
 @include for-size($tablet-size, 100vw) {
-  $layout-width: 35rem;
+  $layout-width: 32rem;
   $border-radius: 1.5rem;
   #getstarted-page {
     margin: 1rem 0;

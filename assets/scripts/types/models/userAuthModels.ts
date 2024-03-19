@@ -1,6 +1,5 @@
 import { deepCopy } from "assets/scripts/helpers/generalHelpers";
 
-
 // Signup data modeling:
 export interface Signup extends Login {
     fullname: string | null;
@@ -34,6 +33,27 @@ const tokensResponse: TokensModel = {
     expires_in: 0
 };
 
+// Forgot password data modeling
+export interface ResetPasswordModel {
+    newPassword: string | null;
+    confirmPassword: string | null;
+}
+
+export interface ForgotPasswordModel {
+    email: string | null
+    resetPassword: ResetPasswordModel
+}
+
+const forgotPassword: ForgotPasswordModel = {
+    email: null,
+    resetPassword: {
+        newPassword: null,
+        confirmPassword: null
+    }
+}
+
+// --- Back Responses ---
+
 // Signup response data modeling:
 export interface SignupResponseModel {
     record_id: number | null,
@@ -60,7 +80,6 @@ const loginResponse: LoginResponseModel = {
     data: tokensResponse
 };
 
-
 // Auth response data modeling:
 export interface AuthResponseModel {
     email: string | null,
@@ -73,14 +92,13 @@ const auth: AuthResponseModel = {
     user_id: null
 }
 
-
 const getModelSignup = () : Signup => deepCopy(signup);
 const getModelLogin = () : Login  => deepCopy(login);
 const getModelAuthResponse = () : AuthResponseModel => deepCopy(auth);
 const getModelTokensResponse = () : TokensModel => deepCopy(tokensResponse);
 const getModelSignupResponse = () : SignupResponseModel => deepCopy(signupResponse);
 const getModelLoginResponse = () : LoginResponseModel => deepCopy(loginResponse);
-
+const getModelForgotPassword = () : ForgotPasswordModel => deepCopy(forgotPassword);
 
 export const models: {
     authProgressIsLoading: boolean | null,
@@ -89,6 +107,7 @@ export const models: {
     modelToken: TokensModel | any,
     modelSignup: Signup,
     modelLogin: Login,
+    modelForgotPassword: ForgotPasswordModel
 } = {
     authProgressIsLoading: null,
     afterAuthPath: '/account/user',
@@ -96,10 +115,12 @@ export const models: {
     modelToken: getModelTokensResponse(),
     modelSignup: getModelSignup(),
     modelLogin: getModelLogin(),
+    modelForgotPassword: getModelForgotPassword()
 }
 export const defaults = {
     defaultSignup: getModelSignup,
     defaultLogin: getModelLogin,
+    defaultForgotPassword: getModelForgotPassword,
     defaultResponses: {
         auth: getModelAuthResponse,
         tokens: getModelTokensResponse,

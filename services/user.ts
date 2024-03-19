@@ -1,5 +1,5 @@
 import { axiosInstance } from "~/services/queryManager";
-import { defaults} from "assets/scripts/types/models/userAuthModels";
+import { defaults } from "assets/scripts/types/models/userAuthModels";
 import type {
     Login,
     Signup,
@@ -45,8 +45,18 @@ export async function authService(){
     let data: AuthResponseModel = defaults.defaultResponses.auth();
 
     await axiosInstance.get('/v1/user/auth')
-        .then(async response => {
+        .then(response => {
             data = response.data.data
         });
+    return { data };
+}
+
+export async function forgotPasswordService(payload: { email: string | null }){
+    let data = {};
+    await axiosInstance.post('/v1/user/forgot_password', payload)
+        .then(response => {
+            data = response.data.data;
+        });
+
     return { data };
 }

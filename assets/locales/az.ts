@@ -28,7 +28,8 @@ locales = {
         privacy_and_policy: "Məxfilik Siyasətini",
         terms_of_service: "Xidmət Şərtlərini",
         favorites: "Favoritlər",
-        cart: "Səbətim"
+        cart: "Səbətim",
+        forgot_password: "Şifrəmi unutdum"
     },
     get_started: {
         log_in: {
@@ -60,6 +61,12 @@ locales = {
                 strong: "Güclü: Şifrəniz təhlükəsiz və möhkəmdir."
             },
             terms_of_service: "<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>"
+        },
+        forgot_password: {
+            welcome_message: "🔑 Zəhmət olmasa e-poçt adressinizi daxil edin. Sizə parolu tez və təhlükəsiz şəkildə yeniləmək üçün bir link göndərəcəyik!",
+            submit_btn: 'Linki göndər',
+            forget_password: "Parolu yenilə",
+            email: 'E-poçt adresiniz'
         }
     },
     backend_messages: {
