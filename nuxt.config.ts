@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  // @ts-ignore
   app: {
     head: {
       meta: [
@@ -33,11 +34,11 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ['./stores/**', './stores/**/*'],
   },
-  // devtools: {
-  //   enable: true,
-  //
-  //   timeline: {
-  //     enabled: true
-  //   }
-  // }
+  devtools: {
+    enable: false,
+
+    timeline: {
+      enabled: false
+    }
+  }
 });

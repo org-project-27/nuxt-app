@@ -9,7 +9,8 @@ import {
 import {
     authService,
     loginService,
-    signupService
+    signupService,
+    forgotPasswordService,
 } from "~/services/user";
 export const useAuthStore = defineStore('authStore', {
     state: () => (models),
@@ -28,6 +29,9 @@ export const useAuthStore = defineStore('authStore', {
         },
         resetModelAuth() : void {
             this.modelAuth = defaults.defaultResponses.auth();
+        },
+        resetModelForgotPassword() : void {
+            this.modelForgotPassword = defaults.defaultForgotPassword()
         },
         async submitLogin() : Promise<LoginResponseModel> {
             this.resetModelAuth();
@@ -53,6 +57,15 @@ export const useAuthStore = defineStore('authStore', {
                 this.resetModelLogin();
             }
             return this.modelAuth;
+        },
+        // #TODO: Add a response type for function
+        async submitForgotPassword() {
+            try {
+                const data = await forgotPasswordService({ email: this.modelForgotPassword.email });
+                console.log(data);
+            } catch (error){
+                throw error;
+            }
         },
         syncTokensFromLocalStorage() : TokensModel {
             const data : any = defaults.defaultResponses.tokens();

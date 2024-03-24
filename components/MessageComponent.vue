@@ -104,13 +104,14 @@ span {
   box-shadow: $box_shadow_2;
   display: flex;
   font-weight: bold;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding: 1rem 1.5rem;
   gap: .5rem;
   max-width: 100%;
   b{
-    white-space: nowrap;
+    text-align: center;
+    overflow-wrap: break-word;
   }
 }
 

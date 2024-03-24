@@ -36,13 +36,15 @@ export interface Pages {
     sign_up: string;
     terms_of_service: string;
     privacy_and_policy: string;
-    favorites: string,
-    cart: string
+    favorites: string;
+    cart: string;
+    forgot_password: string;
 }
 
 export interface GetStarted {
     log_in: Login;
     sign_up: SignUp;
+    forgot_password: ForgotPassword;
 }
 
 export interface Login {
@@ -56,6 +58,13 @@ export interface Login {
     submit_btn: string;
     no_account_yet: string;
     now: string;
+}
+
+export interface ForgotPassword {
+    welcome_message: string;
+    forget_password: string;
+    submit_btn: string;
+    email: string,
 }
 
 export interface SignUp {

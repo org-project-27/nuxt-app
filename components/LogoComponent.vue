@@ -32,7 +32,7 @@ brandName = brandName.toUpperCase();
 
 <style scoped lang="scss">
 $animation-duration: .5s;
-$logo-color-deactive: $main_color_2;
+$logo-color-deactive: $main_color_1;
 $logo-color-active: $black_color;
 .logo-component{
   user-select: none;

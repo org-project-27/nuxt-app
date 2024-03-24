@@ -1,8 +1,10 @@
 import {type RouteConfigurations} from '~/assets/scripts/types/RouteConfigTypes';
 import {i18n} from "~/plugins/i18n";
-import appAvailableRoutes from "assets/scripts/constants/availableAppRoutes"; // Adjust the import path
+import appAvailableRoutes from "assets/scripts/constants/availableAppRoutes";
+import router from "#app/plugins/router"; // Adjust the import path
 
 let routeConfig: RouteConfigurations = {};
+
 routeConfig = {
     default: {
         auth: false,
@@ -30,7 +32,7 @@ routeConfig = {
         middlewareMethod(to, from) {
             //console.log('Posts page special')
         }
-    }
+    },
 };
 
 routeConfig[appAvailableRoutes.main] = {
@@ -126,4 +128,21 @@ routeConfig[appAvailableRoutes.privacy_and_policy] = {
 
     }
 };
+
+routeConfig[appAvailableRoutes.confirm_email] = {
+    auth: false,
+    title: "Email Confirmation",
+    layout: 'default',
+    description: "Email Confirmation",
+    middlewareMethod(to, from) {
+
+    }
+};
+
 export default routeConfig;
+
+/*
+
+http://192.168.31.253:5500/confirm-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTEwMzUwNDcsImV4cCI6MTcxMTAzODY0N30.b6hnxxCNf7VYCrG5W6mYuYyo0Da5RrkWMWFyfegs314
+
+*/

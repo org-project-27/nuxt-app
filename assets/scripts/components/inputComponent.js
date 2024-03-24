@@ -285,9 +285,9 @@ export default defineComponent({
         },
         iconColorDetecter(main) {
             if(this.focusComputed){
-                return main ? main : colorUtilities.$black_color;
+                return main ? main : colorUtilities.$main_color;
             }
-            return colorUtilities.$black_color_4
+            return colorUtilities.$black_color_9
         },
     }
 });

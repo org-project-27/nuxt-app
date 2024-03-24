@@ -22,10 +22,11 @@
 import {defineComponent} from 'vue'
 import sign_up from "~/components/views/signUp.vue";
 import log_in from "~/components/views/logIn.vue";
+import forgot_password from "~/components/views/forgotPassword.vue";
 
 export default defineComponent({
   name: "get-started",
-  components: {sign_up, log_in},
+  components: {sign_up, log_in, forgot_password},
   data: () => {
     return {
       views: ['log_in', 'sign_up']
@@ -36,6 +37,8 @@ export default defineComponent({
       let {view} = this.$route.query;
       if (view && this.views.includes(view?.toString())) {
         return view;
+      } else if(view === 'forgot_password'){
+        return 'forgot_password'
       }
       this.$router.push('?view=log_in');
       return null;
@@ -50,6 +53,7 @@ export default defineComponent({
   $border-radius: 1rem;
   $nav-active-color: $main_color_2;
   $border-style: 2px solid $nav-active-color;
+  $border-style-disabled: 1px solid lighten($white_color_6, 3%);
 
   display: flex;
   flex-direction: column;
@@ -59,13 +63,15 @@ export default defineComponent({
   .getstarted-container{
     margin-top: 1rem;
     nav#getstarted-views-nav {
-      min-height: 3rem;
+      min-height: 3.2rem;
       max-height: 3.5rem;
       background-color: $main_background_color;
       padding-top: 1px;
       & > a {
+        border: $border-style-disabled;
         &#sign_up {
           &.active{
+            border-right: $border-style;
             border-left: $border-style;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
@@ -73,6 +79,7 @@ export default defineComponent({
         }
         &#log_in {
           &.active{
+            border-left: $border-style;
             border-right: $border-style;
             border-top-left-radius: $border-radius;
             border-top-right-radius: $border-radius;
@@ -80,7 +87,10 @@ export default defineComponent({
         }
         &#sign_up, &#log_in {
           height: 100%;
-          color: $white_color_9;
+          color: darken($white_color_9, 20%);
+          border-top-left-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+          border-top: $border-style-disabled;
           border-bottom: $border-style;
         }
         &.active {
@@ -106,7 +116,8 @@ export default defineComponent({
       border-bottom-right-radius: $border-radius !important;
 
       #sign-up-page,
-      #log-in-page {
+      #log-in-page,
+      #forgot-password-page{
         width: 100%;
         border-bottom-left-radius: $border-radius !important;
         border-bottom-right-radius: $border-radius !important;
@@ -118,7 +129,7 @@ export default defineComponent({
 }
 
 @include for-size($tablet-size, 100vw) {
-  $layout-width: 35rem;
+  $layout-width: 32rem;
   $border-radius: 1.5rem;
   #getstarted-page {
     margin: 1rem 0;

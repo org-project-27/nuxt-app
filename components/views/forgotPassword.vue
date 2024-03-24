@@ -1,16 +1,11 @@
 <template>
-  <div id="log-in-page" class="flex-column-center" v-show="readyForView">
-    <form class="log-in-form" @submit.prevent="submit">
+    <div id="forgot-password-page" class="flex-column-center" v-show="readyForView">
+    <form class="forgot-password-form" @submit.prevent="submitForgotPassword">
       <div class="message-box">
         <message-component
-            v-if="!showEmailInputError && loginProgressStatus === false"
-            type="error"
-            :message="backendMessage(loginResponse.message)"/>
-        <message-component
-            v-else
             hide-icon
             type="info"
-            :message="$t('get_started.log_in.welcome_message')" />
+            :message="$t('get_started.forgot_password.welcome_message')" />
       </div>
       <div class="input-group">
         <input-component
@@ -18,9 +13,9 @@
             type="email"
             name="email"
             placeholder="example@domain.com"
-            v-model="modelLogin.email"
+            v-model="modelForgotPassword.email"
             autocomplete="email"
-            :label="$t('get_started.log_in.email')"
+            :label="$t('get_started.forgot_password.email')"
             :left-icon="{ icon: 'alternate_email', size: '2.5rem' }"
             :input-size="{
               width: '100%',
@@ -32,32 +27,12 @@
             }"
             required
             clearable />
-        <br>
-        <input-component
-            id="password-input"
-            type="password"
-            name="password"
-            autocomplete="current-password"
-            v-model="modelLogin.password"
-            :label="$t('get_started.log_in.password')"
-            :left-icon="{ icon: 'lock', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
-            required
-            clearable />
-        <div class="forget-password-area">
-          <nuxt-link to="?view=forgot_password" class="decoration">
-            {{ $t('get_started.log_in.forget_password') }}
-          </nuxt-link>
-        </div>
       </div>
       <input-component
           id="submit-btn"
           type="submit"
           button-type="1"
-          :label="$t('get_started.log_in.submit_btn')"
+          :label="$t('get_started.forgot_password.submit_btn')"
           @ready-for-view="setReadyForView"
           :left-icon="{ icon: 'lock' }"
           :input-size="{
@@ -65,16 +40,8 @@
             height: '3.5rem'
           }"
           :is-loading="submitIsLoading"
-          :disabled="!readyForSubmit" />
+          :disabled="!readyForSubmitForgotPassword" />
     </form>
-    <span class="no-account-yet">
-      {{ $t('get_started.log_in.no_account_yet') }}
-      <nuxt-link to="?view=sign_up" class="decoration">
-        {{ $t('get_started.log_in.sign_up') }}
-      </nuxt-link>
-      {{ $t('get_started.log_in.now').toLowerCase() }}!
-    </span>
-    <br>
   </div>
 </template>
 
@@ -85,40 +52,28 @@ import { defaults } from "~/assets/scripts/types/models/userAuthModels"
 import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
 import messages from "~/assets/scripts/constants/apiMessageKeys";
 
-const loginResponse = defaults.defaultResponses.login();
-
 export default defineComponent({
-  name: "LogIn",
+  name: "ForgotPassword",
   computed: {
-    readyForSubmit() {
+    readyForSubmitForgotPassword() {
       let ready = false;
-      let { password, email } = this.modelLogin;
-      if (password && email) {
-        ready = true
+      if(this.modelForgotPassword.email) {
+        ready = true;
       }
       return ready;
     },
-    modelLogin() {
-      const { modelLogin } = useAuthStore();
-      return modelLogin;
-    },
-    loginProgressStatus() {
-      return this.loginResponse.success;
-    },
     showEmailInputError(){
       let error = null;
-      if (this.loginProgressStatus === false &&
-          this.loginResponse.message === this.messages.INVALID_EMAIL) {
-          error = this.backendMessage(this.messages.INVALID_EMAIL);
-      }
       return error;
-    }
+    },
+    modelForgotPassword() {
+      return useAuthStore().modelForgotPassword;
+    },
   },
   data: () => {
     return {
       readyForView: false,
       submitIsLoading: false,
-      loginResponse,
       messages,
     }
   },
@@ -127,52 +82,28 @@ export default defineComponent({
   },
   methods: {
     backendMessage,
-    async submit() {
+    async submitForgotPassword() {
       this.submitIsLoading = true;
-      const { submitLogin, authUser, afterAuthPath } = useAuthStore();
-      await submitLogin()
-        .then(async (response) => {
-          this.loginResponse = { ... response };
-          if(this.loginResponse.success){
-            // Getting auth user
-            await authUser()
-                .then(() => this.$router.push(afterAuthPath))
-                .finally(() => this.submitIsLoading = false);
-          }
-        })
-        .catch(error => {
-          this.loginResponse = { ...error };
-        })
-        .finally(() => {
-          this.submitIsLoading = false;
-        });
+      await useAuthStore().submitForgotPassword();
+      this.submitIsLoading = false;
     },
     resetModel() {
-      const { resetModelLogin } = useAuthStore();
-      resetModelLogin();
+      const { resetModelForgotPassword } = useAuthStore();
+      resetModelForgotPassword();
     },
     setReadyForView(val) {
       this.readyForView = val;
     }
   },
   watch: {
-    modelLogin: {
-      handler() {
-        this.loginResponse = loginResponse;
-        Object.keys(this.modelLogin).forEach(key => {
-          this.modelLogin[key] = this.modelLogin[key]?.trim();
-        });
-      },
-      deep: true
-    }
   }
 });
 </script>
 
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw) {
-  #log-in-page {
-    form.log-in-form {
+  #forgot-password-page {
+    form.forgot-password-form {
       width: 70%;
       display: flex;
       flex-direction: column;
@@ -211,8 +142,8 @@ export default defineComponent({
 }
 
 @include for-size($small-mobile-size, $tablet-size){
-  #log-in-page {
-    form.log-in-form {
+  #forgot-password-page {
+    form.forgot-password-form {
       width: 80%;
       display: flex;
       flex-direction: column;
