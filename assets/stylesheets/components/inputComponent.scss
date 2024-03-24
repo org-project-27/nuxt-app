@@ -1,4 +1,4 @@
-$active-color: $black_color;
+$active-color: $main_color;
 $disabled-color: $black_color_4;
 $error-color: $error_color_1;
 $warning-color: $warning_color_1;
@@ -82,7 +82,7 @@ $warning-color: $warning_color_1;
     border: 1px solid $active-color !important;
     background-color: $white_color !important;
     input{
-      color: $active-color !important;
+      color: $black_color !important;
       &::placeholder{
         opacity: .6;
       }

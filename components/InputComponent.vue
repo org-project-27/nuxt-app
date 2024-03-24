@@ -55,7 +55,7 @@
         <icon-component
             v-if="showClearButton"
             @click.stop="clearAllButton"
-            icon-name="cancel"
+            icon-name="backspace"
             icon-size="2rem"
             class="clear-icon"
             :color="iconColorDetecter(leftIcon?.color)"/>

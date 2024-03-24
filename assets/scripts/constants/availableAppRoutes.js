@@ -9,7 +9,8 @@ const availableAppRoutes = {
     favorites: '/account/favorites',
     cart: '/account/cart',
     terms_of_service: '/terms_of_service',
-    privacy_and_policy: '/privacy_and_policy'
+    privacy_and_policy: '/privacy_and_policy',
+    confirm_email: '/confirm-email'
 };
 
 export const headerRoutes = {
