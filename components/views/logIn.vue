@@ -21,11 +21,8 @@
             v-model="modelLogin.email"
             autocomplete="email"
             :label="$t('get_started.log_in.email')"
-            :left-icon="{ icon: 'alternate_email', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
+            :left-icon="{ icon: 'alternate_email', size: inputSizes.medium.iconSize }"
+            :input-size="inputSizes.medium"
             :show-error="{
               message: showEmailInputError,
               highlight: !!showEmailInputError
@@ -40,11 +37,8 @@
             autocomplete="current-password"
             v-model="modelLogin.password"
             :label="$t('get_started.log_in.password')"
-            :left-icon="{ icon: 'lock', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
+            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
+            :input-size="inputSizes.medium"
             required
             clearable />
         <div class="forget-password-area">
@@ -84,6 +78,7 @@ import { useAuthStore } from "~/stores/user/auth";
 import { defaults } from "~/assets/scripts/types/models/userAuthModels"
 import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
 import messages from "~/assets/scripts/constants/apiMessageKeys";
+import { inputSizes } from "~/assets/scripts/configs/defaults.ts";
 
 const loginResponse = defaults.defaultResponses.login();
 
@@ -120,6 +115,7 @@ export default defineComponent({
       submitIsLoading: false,
       loginResponse,
       messages,
+      inputSizes
     }
   },
   unmounted() {
