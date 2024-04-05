@@ -56,7 +56,7 @@
             v-if="showClearButton"
             @click.stop="clearAllButton"
             icon-name="backspace"
-            icon-size="2rem"
+            :icon-size="leftIcon?.size || '2rem'"
             class="clear-icon"
             :color="iconColorDetecter(leftIcon?.color)"/>
       </div>
@@ -65,7 +65,7 @@
       <icon-component
           v-if="!!inputMessage.icon"
           :icon-name="inputMessage.icon"
-          icon-size="1.3rem"
+          :icon-size="leftIcon?.size || '1.3rem'"
           class="message-icon"
           :color="inputMessage.color"/>
       <span :style="{'color': inputMessage.color}">
