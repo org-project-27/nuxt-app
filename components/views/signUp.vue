@@ -30,11 +30,8 @@
             v-model="modelSignup.fullname"
             maxlength="50"
             :label="$t('get_started.sign_up.fullname')"
-            :left-icon="{ icon: 'person', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
+            :left-icon="{ icon: 'person', size: inputSizes.medium.iconSize }"
+            :input-size="inputSizes.medium"
             :show-error="{
               message: showFullnameInputError,
               highlight: !!showFullnameInputError
@@ -51,11 +48,8 @@
             placeholder="example@domain.com"
             v-model="modelSignup.email"
             :label="$t('get_started.sign_up.email')"
-            :left-icon="{ icon: 'alternate_email', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
+            :left-icon="{ icon: 'alternate_email', size: inputSizes.medium.iconSize }"
+            :input-size="inputSizes.medium"
             :show-error="{
               message: showEmailInputError,
               highlight: !!showEmailInputError
@@ -71,11 +65,8 @@
             autocomplete="new-password"
             v-model="modelSignup.password"
             :label="$t('get_started.sign_up.password')"
-            :left-icon="{ icon: 'lock', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
+            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
+            :input-size="inputSizes.medium"
             :show-error="{
               message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,
               highlight: passwordStrength === 1
@@ -130,6 +121,7 @@ import { evaluatePasswordStrength } from "~/assets/scripts/helpers/inputHelpers"
 import { useAuthStore } from "~/stores/user/auth";
 import { defaults } from "~/assets/scripts/types/models/userAuthModels"
 import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
+import { inputSizes } from "~/assets/scripts/configs/defaults.ts";
 import messages from "~/assets/scripts/constants/apiMessageKeys";
 
 const signupResponse = defaults.defaultResponses.signup();
@@ -146,7 +138,8 @@ export default defineComponent({
       submitIsLoading: false,
       redirectToLoginTimeId: null,
       signupResponse,
-      messages
+      messages,
+      inputSizes
     }
   },
   computed: {
