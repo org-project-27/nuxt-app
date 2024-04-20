@@ -7,6 +7,10 @@ locales = {
     az: "Азербайджанский",
     en: "Английский",
     ru: "Русский",
+    please_wait: "Пожалуйста, подождите",
+    redirecting_to_home: "Переход на главную страницу",
+    redirecting_to_login: "Переход на страницу входа",
+    email_confirming: "Подтверждение адреса электронной почты",
     buttons: {
         search: "Поиск",
         filter: "Фильтр",
@@ -75,6 +79,7 @@ locales = {
         EMAIL_IS_EXIST: 'Электронная почта уже существует!',
         USER_REGISTRATION_FAILED: 'Процесс регистрации пользователя не удался!',
         USER_SUCCESSFULLY_REGISTERED: 'Пользователь успешно зарегистрирован!',
+        EMAIL_SUCCESSFULLY_CONFIRMED: "Электронная почта успешно подтверждена",
         EMAIL_IS_NOT_VALID: 'Электронная почта недействительна!',
         INVALID_EMAIL: 'Электронная почта недействительна!',
         INVALID_PASSWORD: 'Пароль недействителен!',
@@ -85,7 +90,8 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'Пользователь успешно вошел в систему!',
         EMAIL_IS_NOT_REGISTERED: 'Электронная почта не зарегистрирована!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Электронная почта или пароль неверны',
-    }  
+        LINK_EXPIRED: "Срок действия ссылки истек"
+    }
 };
 
 export default { ...locales };

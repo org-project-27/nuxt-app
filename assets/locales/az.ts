@@ -7,6 +7,10 @@ locales = {
     az: "Azərbaycanca",
     en: "İngilis",
     ru: "Rus",
+    email_confirming: "E-poçt ünvanı təsdiqlənir",
+    please_wait: "Zəhmət olmasa gözləyin",
+    redirecting_to_home: "Əsas səhifəyə yönləndirilir",
+    redirecting_to_login: "Login səhifəsinə yönləndirilir",
     buttons: {
         search: "Axtar",
         filter: "Filtr",
@@ -75,6 +79,7 @@ locales = {
         EMAIL_IS_EXIST: 'E-poçt artıq mövcuddur!',
         USER_REGISTRATION_FAILED: 'İstifadəçi qeydiyyatı uğursuz oldu!',
         USER_SUCCESSFULLY_REGISTERED: 'İstifadəçi uğurla qeydiyyata alındı!',
+        EMAIL_SUCCESSFULLY_CONFIRMED: "E-poçtunuz uğurla təsdiqləndi",
         EMAIL_IS_NOT_VALID: 'E-poçt etibarsızdır!',
         INVALID_EMAIL: 'E-poçt etibarsızdır!',
         INVALID_PASSWORD: 'Şifrə etibarsızdır!',
@@ -85,6 +90,7 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'İstifadəçi uğurla daxil oldu!',
         EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',
         EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya şifrə yanlışdır',
+        LINK_EXPIRED: "Bu linki artıq keçərsizdir"
     }
 };
 
