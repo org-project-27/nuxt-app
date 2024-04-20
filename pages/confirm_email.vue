@@ -4,37 +4,38 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import {defineComponent} from 'vue'
 import { confirmEmailService } from '~/services/user';
 import {useAuthStore} from "~/stores/user/auth";
-import availableAppRoutes from "assets/scripts/constants/availableAppRoutes";
+import availableAppRoutes from '~/assets/scripts/constants/availableAppRoutes';
 
 export default defineComponent({
-  name: "confirm_email",
+  name: "ConfirmEmail",
   computed: {
-    token(): any {
+    token() {
       return this.$route.query.token || null;
     }
   },
   data() {
     return {
-      responseValue: {}
+      availableAppRoutes,
     }
   },
-  async mounted() {
+  mounted() {
     let { setAuthProgressIsLoading,} = useAuthStore();
-    setAuthProgressIsLoading(true);
-    await confirmEmailService({ token: this.token || null }).then((value) => {
-      this.responseValue = value.data;
-    }).finally(() => setAuthProgressIsLoading(false));
-    document.location.href = availableAppRoutes.profile;
+    setTimeout(async () => {
+      await confirmEmailService({ token: this.token || null }).catch((value) => {
+      console.log('====================================');
+      console.log('>>>>>>>>', value);
+      console.log('====================================');
+    }).finally(() => {
+      this.$router.push(this.availableAppRoutes.get_started);
+    });
+    this.$router.push(this.availableAppRoutes.get_started);
+    }, 2000);
+
   }
-})
-</script>
-<script setup lang="ts">
-definePageMeta({
-  layout: 'general'
 })
 </script>
 
