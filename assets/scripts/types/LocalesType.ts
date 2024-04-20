@@ -4,6 +4,7 @@ interface BackendMessage {
     EMAIL_IS_EXIST: string,
     USER_REGISTRATION_FAILED: string,
     USER_SUCCESSFULLY_REGISTERED: string,
+    EMAIL_SUCCESSFULLY_CONFIRMED: string,
     EMAIL_IS_NOT_VALID: string,
     INVALID_EMAIL: string,
     INVALID_PASSWORD: string,
@@ -14,6 +15,7 @@ interface BackendMessage {
     USER_SUCCESSFULLY_LOGIN: string,
     EMAIL_IS_NOT_REGISTERED: string,
     EMAIL_OR_PASSWORD_INCORRECT: string,
+    LINK_EXPIRED: string,
 }
 export interface Buttons {
     search: string;
@@ -94,6 +96,10 @@ export interface LanguageContent {
     az: string;
     en: string;
     ru: string;
+    email_confirming: string,
+    please_wait: string,
+    redirecting_to_home: string,
+    redirecting_to_login: string,
     buttons: Buttons;
     pages: Pages;
     get_started: GetStarted;

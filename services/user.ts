@@ -66,7 +66,7 @@ export async function confirmEmailService(payload: { token: string | null } ) {
     let data = {};
     await axiosInstance.get('/v1/user/confirm_email', { params: { token } })
         .then(response => {
-            data = response.data.data;
+            data = response.data;
         });
     return { data };
 }

@@ -173,3 +173,23 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin animate-fade-in-out($duration: 1s, $delay: 0s) {
+  animation-name: fade-in-out;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}

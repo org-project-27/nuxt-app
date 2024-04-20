@@ -7,6 +7,10 @@ locales = {
     az: "Azərbaycanca",
     en: "English",
     ru: "Русский",
+    email_confirming: "Email address confirming",
+    please_wait: "Please wait",
+    redirecting_to_home: "Redirecting to home page",
+    redirecting_to_login: "Redirecting to login page",
     buttons: {
         search: "Search",
         filter: "Filter",
@@ -75,6 +79,7 @@ locales = {
         EMAIL_IS_EXIST: 'Email is exist!',
         USER_REGISTRATION_FAILED: 'User registration progress was failed!',
         USER_SUCCESSFULLY_REGISTERED: 'User successfully registered!',
+        EMAIL_SUCCESSFULLY_CONFIRMED: "Email successfully confirmed",
         EMAIL_IS_NOT_VALID: 'Email is not valid!',
         INVALID_EMAIL: 'Email is not valid!',
         INVALID_PASSWORD: 'Password is not valid!',
@@ -85,6 +90,7 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'User successfully login!',
         EMAIL_IS_NOT_REGISTERED: 'Email is not registered!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect',
+        LINK_EXPIRED: "Link expired"
     }
 };
 
