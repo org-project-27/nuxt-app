@@ -33,7 +33,8 @@ locales = {
         privacy_and_policy: "Политику конфиденциальности",
         favorites: "Избранное",
         cart: "Tележка",
-        forgot_password: "Я забыл свой пароль"
+        forgot_password: "Я забыл свой пароль",
+        confirm_email: "Подтверждать почта"
     },
     get_started: {
         log_in: {
@@ -79,7 +80,7 @@ locales = {
         EMAIL_IS_EXIST: 'Электронная почта уже существует!',
         USER_REGISTRATION_FAILED: 'Процесс регистрации пользователя не удался!',
         USER_SUCCESSFULLY_REGISTERED: 'Пользователь успешно зарегистрирован!',
-        EMAIL_SUCCESSFULLY_CONFIRMED: "Электронная почта успешно подтверждена",
+        EMAIL_SUCCESSFULLY_CONFIRMED: "Электронная почта успешно подтверждена!",
         EMAIL_IS_NOT_VALID: 'Электронная почта недействительна!',
         INVALID_EMAIL: 'Электронная почта недействительна!',
         INVALID_PASSWORD: 'Пароль недействителен!',
@@ -89,8 +90,8 @@ locales = {
         USER_LOGIN_PROGRESS_FAILED: 'Процесс входа пользователя не удался!',
         USER_SUCCESSFULLY_LOGIN: 'Пользователь успешно вошел в систему!',
         EMAIL_IS_NOT_REGISTERED: 'Электронная почта не зарегистрирована!',
-        EMAIL_OR_PASSWORD_INCORRECT: 'Электронная почта или пароль неверны',
-        LINK_EXPIRED: "Срок действия ссылки истек"
+        EMAIL_OR_PASSWORD_INCORRECT: 'Электронная почта или пароль неверны!',
+        LINK_EXPIRED: "Срок действия ссылки истек!"
     }
 };
 

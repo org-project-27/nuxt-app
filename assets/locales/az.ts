@@ -33,7 +33,8 @@ locales = {
         terms_of_service: "Xidmət Şərtlərini",
         favorites: "Favoritlər",
         cart: "Səbətim",
-        forgot_password: "Şifrəmi unutdum"
+        forgot_password: "Şifrəmi unutdum",
+        confirm_email: 'E-poçt təsdiqi'
     },
     get_started: {
         log_in: {
@@ -79,7 +80,7 @@ locales = {
         EMAIL_IS_EXIST: 'E-poçt artıq mövcuddur!',
         USER_REGISTRATION_FAILED: 'İstifadəçi qeydiyyatı uğursuz oldu!',
         USER_SUCCESSFULLY_REGISTERED: 'İstifadəçi uğurla qeydiyyata alındı!',
-        EMAIL_SUCCESSFULLY_CONFIRMED: "E-poçtunuz uğurla təsdiqləndi",
+        EMAIL_SUCCESSFULLY_CONFIRMED: "E-poçtunuz uğurla təsdiqləndi!",
         EMAIL_IS_NOT_VALID: 'E-poçt etibarsızdır!',
         INVALID_EMAIL: 'E-poçt etibarsızdır!',
         INVALID_PASSWORD: 'Şifrə etibarsızdır!',
@@ -89,8 +90,8 @@ locales = {
         USER_LOGIN_PROGRESS_FAILED: 'İstifadəçi girişi uğursuz oldu!',
         USER_SUCCESSFULLY_LOGIN: 'İstifadəçi uğurla daxil oldu!',
         EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',
-        EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya şifrə yanlışdır',
-        LINK_EXPIRED: "Bu linki artıq keçərsizdir"
+        EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya şifrə yanlışdır!',
+        LINK_EXPIRED: "Bu linki artıq keçərsizdir!"
     }
 };
 

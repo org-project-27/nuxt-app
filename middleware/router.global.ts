@@ -21,7 +21,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 function processByConfig(to: object, from: object, config = routeConfig.default): void {
     const { brandName } = useAppConfig();
     useSeoMeta({
-        title: `${config.title} | ${brandName}`,
+        title: config.title ? `${config.title} | ${brandName}` : brandName,
         description: config.description
     });
     if(config.middlewareMethod){
