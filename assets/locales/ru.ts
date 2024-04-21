@@ -1,4 +1,5 @@
-import type {LanguageContent} from "assets/scripts/types/LocalesType";
+// @ts-ignore
+import type {LanguageContent} from "~/assets/scripts/types/LocalesType";
 
 let locales: LanguageContent;
 locales = {

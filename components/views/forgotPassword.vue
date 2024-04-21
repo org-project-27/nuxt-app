@@ -16,11 +16,8 @@
             v-model="modelForgotPassword.email"
             autocomplete="email"
             :label="$t('get_started.forgot_password.email')"
-            :left-icon="{ icon: 'alternate_email', size: '2.5rem' }"
-            :input-size="{
-              width: '100%',
-              height: '4rem'
-            }"
+            :left-icon="{ icon: 'alternate_email', size: inputSizes.medium.iconSize }"
+            :input-size="inputSizes.medium"
             :show-error="{
               message: showEmailInputError,
               highlight: !!showEmailInputError
@@ -48,13 +45,16 @@
 <script lang="js">
 import { defineComponent } from 'vue';
 import { useAuthStore } from "~/stores/user/auth";
-import { defaults } from "~/assets/scripts/types/models/userAuthModels"
 import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
 import messages from "~/assets/scripts/constants/apiMessageKeys";
+import {inputSizes} from "~/assets/scripts/configs/defaults";
 
 export default defineComponent({
   name: "ForgotPassword",
   computed: {
+    inputSizes() {
+      return inputSizes
+    },
     readyForSubmitForgotPassword() {
       let ready = false;
       if(this.modelForgotPassword.email) {
