@@ -33,7 +33,8 @@ locales = {
         privacy_and_policy: "Privacy policy",
         favorites: "Favorites",
         cart: "Cart",
-        forgot_password: "Forgot password"
+        forgot_password: "Forgot password",
+        confirm_email: 'Confirm Email'
     },
     get_started: {
         log_in: {
@@ -79,7 +80,7 @@ locales = {
         EMAIL_IS_EXIST: 'Email is exist!',
         USER_REGISTRATION_FAILED: 'User registration progress was failed!',
         USER_SUCCESSFULLY_REGISTERED: 'User successfully registered!',
-        EMAIL_SUCCESSFULLY_CONFIRMED: "Email successfully confirmed",
+        EMAIL_SUCCESSFULLY_CONFIRMED: "Email successfully confirmed!",
         EMAIL_IS_NOT_VALID: 'Email is not valid!',
         INVALID_EMAIL: 'Email is not valid!',
         INVALID_PASSWORD: 'Password is not valid!',
@@ -89,8 +90,8 @@ locales = {
         USER_LOGIN_PROGRESS_FAILED: 'User login progress was failed!',
         USER_SUCCESSFULLY_LOGIN: 'User successfully login!',
         EMAIL_IS_NOT_REGISTERED: 'Email is not registered!',
-        EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect',
-        LINK_EXPIRED: "Link expired"
+        EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect!',
+        LINK_EXPIRED: "Link expired!"
     }
 };
 

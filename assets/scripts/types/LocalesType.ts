@@ -41,6 +41,7 @@ export interface Pages {
     favorites: string;
     cart: string;
     forgot_password: string;
+    confirm_email: string;
 }
 
 export interface GetStarted {

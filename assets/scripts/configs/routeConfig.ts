@@ -8,9 +8,9 @@ let routeConfig: RouteConfigurations = {};
 routeConfig = {
     default: {
         auth: false,
-        title: i18n.global.t('pages.default'),
+        title: null,
         layout: 'default',
-        description: "Default description",
+        description: "All best for you!",
         middlewareMethod(to, from) {
         }
     },
@@ -19,7 +19,7 @@ routeConfig = {
         auth: false,
         title: "Example",
         layout: 'custom',
-        description: "No description",
+        description: "All best for you!",
         middlewareMethod(to, from) {
             //console.log('Posts page function')
         }
@@ -28,7 +28,7 @@ routeConfig = {
         auth: true,
         title: "POST AUTH NEED",
         layout: 'default',
-        description: "No description",
+        description: "All best for you!",
         middlewareMethod(to, from) {
             //console.log('Posts page special')
         }
@@ -63,7 +63,7 @@ routeConfig[appAvailableRoutes.posts] = {
     auth: false,
     title: i18n.global.t('pages.post'),
     layout: 'default',
-    description: "No description",
+    description: "All best for you!",
     middlewareMethod(to, from) {
         //console.log('Posts page function')
     }
@@ -83,7 +83,7 @@ routeConfig[appAvailableRoutes.profile] = {
     auth: true,
     title: i18n.global.t('pages.profile'),
     layout: "default",
-    description: "No description",
+    description: "All best for you!",
     middlewareMethod(to, from) {
 
     }
@@ -93,7 +93,7 @@ routeConfig[appAvailableRoutes.favorites] = {
     auth: true,
     title: i18n.global.t('pages.favorites'),
     layout: "default",
-    description: "No description",
+    description: "All best for you!",
     middlewareMethod(to, from) {
 
     }
@@ -103,7 +103,7 @@ routeConfig[appAvailableRoutes.cart] = {
     auth: true,
     title: i18n.global.t('pages.cart'),
     layout: "default",
-    description: "No description",
+    description: "All best for you!",
     middlewareMethod(to, from) {
 
     }
@@ -113,7 +113,7 @@ routeConfig[appAvailableRoutes.terms_of_service] = {
     auth: false,
     title: i18n.global.t('pages.terms_of_service'),
     layout: "default",
-    description: "No description",
+    description: "All best for you!",
     middlewareMethod(to, from) {
 
     }
@@ -123,7 +123,7 @@ routeConfig[appAvailableRoutes.privacy_and_policy] = {
     auth: false,
     title: i18n.global.t('pages.privacy_and_policy'),
     layout: "default",
-    description: "No description",
+    description: "All best for you!",
     middlewareMethod(to, from) {
 
     }
@@ -131,7 +131,7 @@ routeConfig[appAvailableRoutes.privacy_and_policy] = {
 
 routeConfig[appAvailableRoutes.confirm_email] = {
     auth: false,
-    title: "Email Confirmation",
+    title: i18n.global.t('pages.confirm_email'),
     layout: 'default',
     description: "Email Confirmation",
     middlewareMethod(to, from) {
@@ -140,9 +140,3 @@ routeConfig[appAvailableRoutes.confirm_email] = {
 };
 
 export default routeConfig;
-
-/*
-
-http://192.168.31.253:5500/confirm-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTEwMzUwNDcsImV4cCI6MTcxMTAzODY0N30.b6hnxxCNf7VYCrG5W6mYuYyo0Da5RrkWMWFyfegs314
-
-*/

@@ -19,7 +19,7 @@
         />
       </div>
       <h2>
-        {{ backendMessage(response.message) }}!
+        {{ backendMessage(response.message) }}
       </h2>
       <span>
           {{ $t('redirecting_to_login') }}...
@@ -89,14 +89,13 @@ export default defineComponent({
     width: 30rem;
     height: 20rem;
     box-shadow: $box_shadow_2;
-    gap: 2rem;
     h2 {
+      margin-top: 2rem;
       text-align: center;
       color: $black_color;
     }
 
     span {
-      color: $error_color_4;
       @include animate-fade-in-out(1.5s);
     }
 
