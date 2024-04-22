@@ -31,7 +31,6 @@
 <script lang="js">
 import {defineComponent} from 'vue'
 import {confirmEmailService} from '~/services/user';
-import {useAuthStore} from "~/stores/user/auth";
 import availableAppRoutes from '~/assets/scripts/constants/availableAppRoutes';
 import {backendMessage} from "assets/scripts/helpers/generalHelpers.js";
 import colorUtilities from "assets/scripts/constants/colorUtilities.js";
@@ -69,7 +68,7 @@ export default defineComponent({
             let tId = setTimeout(() => {
               this.$router.push(this.availableAppRoutes.get_started);
               clearTimeout(tId);
-            }, 5000)
+            }, 5000);
           });
     } else {
       this.$router.push(this.availableAppRoutes.get_started);

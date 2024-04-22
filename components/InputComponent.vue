@@ -629,7 +629,7 @@ $warning-color: $warning_color_1;
 
   &.error{
     $error-color-custom: darken($error-color, 7.5%);
-    background-color: lighten($error_color_5, 7.5%);
+    background-color: lighten($error_color_9, 5.5%);
     border: 1px solid $error-color-custom;
     label{ color: $error-color-custom; }
   }

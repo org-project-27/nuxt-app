@@ -1,5 +1,4 @@
-// @ts-ignore
-import type {LanguageContent} from "~/assets/scripts/types/LocalesType";
+import type {LanguageContent} from "assets/scripts/types/LocalesType";
 
 let locales: LanguageContent;
 locales = {
@@ -19,7 +18,8 @@ locales = {
         logout: "Выйти",
         continue: "Продолжить",
         waiting: "Ожидание",
-        get_started: "Начать"
+        get_started: "Начать",
+        save: "Сохраните"
     },
     pages: {
         default: "По умолчанию",
@@ -35,7 +35,8 @@ locales = {
         favorites: "Избранное",
         cart: "Tележка",
         forgot_password: "Я забыл свой пароль",
-        confirm_email: "Подтверждать почта"
+        confirm_email: "Подтверждать почта",
+        reset_password: "Сброс пароля",
     },
     get_started: {
         log_in: {
@@ -75,6 +76,10 @@ locales = {
             email: 'Ваша электронная почта'
         }
     },
+    reset_password: {
+        new_password: "Новый пароль",
+        new_password_description: '🔐 Выберите новый надежный пароль, который вы ранее не использовали на этом сайте.'
+    },
     backend_messages: {
         DONE: 'Готово!',
         SOMETHING_WENT_WRONG: 'Что-то пошло не так!',
@@ -92,7 +97,8 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'Пользователь успешно вошел в систему!',
         EMAIL_IS_NOT_REGISTERED: 'Электронная почта не зарегистрирована!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Электронная почта или пароль неверны!',
-        LINK_EXPIRED: "Срок действия ссылки истек!"
+        LINK_EXPIRED: "Срок действия ссылки истек!",
+        PASSWORD_SUCCESSFULLY_CHANGED: "Пароль успешно изменен!"
     }
 };
 

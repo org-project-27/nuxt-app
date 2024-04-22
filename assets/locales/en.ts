@@ -19,22 +19,24 @@ locales = {
         continue: "Continue",
         waiting: "Waiting",
         get_started: "Get started",
+        save: "Save"
     },
     pages: {
         default: "Default",
         main: "Home",
         404: "Page is not found!",
         profile: "Account",
-        get_started: "Get started",
+        get_started: "Get Started",
         post: "Product",
-        log_in: "Log in",
-        sign_up: "Sign up",
-        terms_of_service: "Terms of service",
-        privacy_and_policy: "Privacy policy",
+        log_in: "Log In",
+        sign_up: "Sign Up",
+        terms_of_service: "Terms of Service",
+        privacy_and_policy: "Privacy Policy",
         favorites: "Favorites",
         cart: "Cart",
-        forgot_password: "Forgot password",
-        confirm_email: 'Confirm Email'
+        forgot_password: "Forgot Password",
+        confirm_email: 'Confirm Email',
+        reset_password: "Reset Password"
     },
     get_started: {
         log_in: {
@@ -74,6 +76,10 @@ locales = {
             email: 'Your email'
         }
     },
+    reset_password: {
+        new_password: 'New password',
+        new_password_description: '🔐 Choose a strong, new password that you haven\'t previously used on this site.'
+    },
     backend_messages: {
         DONE: 'Done!',
         SOMETHING_WENT_WRONG: 'Something went wrong!',
@@ -91,7 +97,8 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'User successfully login!',
         EMAIL_IS_NOT_REGISTERED: 'Email is not registered!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect!',
-        LINK_EXPIRED: "Link expired!"
+        LINK_EXPIRED: "Link expired!",
+        PASSWORD_SUCCESSFULLY_CHANGED: "Password successfully changed!"
     }
 };
 
