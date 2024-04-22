@@ -1,5 +1,4 @@
-// @ts-ignore
-import type {LanguageContent} from "~/assets/scripts/types/LocalesType";
+import type {LanguageContent} from "assets/scripts/types/LocalesType";
 
 let locales: LanguageContent;
 locales = {
@@ -19,7 +18,8 @@ locales = {
         logout: "Выйти",
         continue: "Продолжить",
         waiting: "Ожидание",
-        get_started: "Начать"
+        get_started: "Начать",
+        save: "Сохраните"
     },
     pages: {
         default: "По умолчанию",
@@ -35,7 +35,8 @@ locales = {
         favorites: "Избранное",
         cart: "Tележка",
         forgot_password: "Я забыл свой пароль",
-        confirm_email: "Подтверждать почта"
+        confirm_email: "Подтверждать почта",
+        reset_password: "Сброс пароля",
     },
     get_started: {
         log_in: {
@@ -74,6 +75,10 @@ locales = {
             forget_password: "Сбросить пароль",
             email: 'Ваша электронная почта'
         }
+    },
+    reset_password: {
+        new_password: "Новый пароль",
+        new_password_description: '🔐 Выберите новый надежный пароль, который вы ранее не использовали на этом сайте.'
     },
     backend_messages: {
         DONE: 'Готово!',

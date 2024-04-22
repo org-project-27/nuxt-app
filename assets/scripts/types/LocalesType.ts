@@ -25,6 +25,7 @@ export interface Buttons {
     continue: string;
     waiting: string;
     get_started: string;
+    save: string;
 }
 
 export interface Pages {
@@ -42,6 +43,7 @@ export interface Pages {
     cart: string;
     forgot_password: string;
     confirm_email: string;
+    reset_password: string;
 }
 
 export interface GetStarted {
@@ -91,6 +93,11 @@ export interface PasswordLevels {
     strong: string;
 }
 
+export interface ResetPassword {
+    new_password: string;
+    new_password_description: string;
+}
+
 export interface LanguageContent {
     lang: string;
     note: string;
@@ -104,5 +111,7 @@ export interface LanguageContent {
     buttons: Buttons;
     pages: Pages;
     get_started: GetStarted;
+    reset_password: ResetPassword,
+
     backend_messages: BackendMessage
 }

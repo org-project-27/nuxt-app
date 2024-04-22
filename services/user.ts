@@ -70,3 +70,25 @@ export async function confirmEmailService(payload: { token: string | null } ) {
         });
     return { data };
 }
+
+export async function resetPasswordTokenVerifyService(payload: { token: string | null } ) {
+    const { token } = payload;
+    let data = {};
+    await axiosInstance.get('/v1/user/reset_password', { params: { token } })
+        .then(response => {
+            data = response.data;
+        });
+    return { data };
+}
+
+export async function resetPasswordService(payload: { new_password: string, token: string | null } ) {
+    const { token, new_password } = payload;
+    let data = {};
+    if(token && new_password){
+        await axiosInstance.post('/v1/user/reset_password', { ...payload })
+            .then(response => {
+                data = response.data;
+            });
+    }
+    return { data };
+}

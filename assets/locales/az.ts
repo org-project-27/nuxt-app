@@ -18,23 +18,25 @@ locales = {
         logout: "Çıxış",
         continue: "Davam et",
         waiting: "Gözləyin",
-        get_started: "Başlayaq"
+        get_started: "Başlayaq",
+        save: "Yadda saxla"
     },
     pages: {
         default: "Defolt",
-        main: "Əsas səhifə",
-        404: "Səhifə tapılmadı!",
+        main: "Əsas Səhifə",
+        404: "Səhifə Tapılmadı!",
         profile: "Hesabınız",
         get_started: "Başla",
         post: "Məhsul",
-        log_in: "Daxil ol",
-        sign_up: "Qeydiyyatdan keç",
+        log_in: "Daxil Ol",
+        sign_up: "Qeydiyyatdan Keç",
         privacy_and_policy: "Məxfilik Siyasətini",
         terms_of_service: "Xidmət Şərtlərini",
         favorites: "Favoritlər",
         cart: "Səbətim",
-        forgot_password: "Şifrəmi unutdum",
-        confirm_email: 'E-poçt təsdiqi'
+        forgot_password: "Parolu Unutdum",
+        confirm_email: 'E-poçt Təsdiqi',
+        reset_password: "Yeni Parol"
     },
     get_started: {
         log_in: {
@@ -42,9 +44,9 @@ locales = {
             sign_up: "Qeydiyyatdan keç",
             welcome_message: "⭐️ Xoş gəldiniz!",
             email: "E-poçt",
-            password: "Şifrə",
+            password: "Parol",
             login: "Daxil ol",
-            forget_password: "Şifrənizimi unutdunuz?",
+            forget_password: "Parolunuzu unutdunuz?",
             submit_btn: "Daxil ol",
             no_account_yet: "Hələ də hesabınız yoxdu?",
             now: "indi"
@@ -55,15 +57,15 @@ locales = {
             welcome_message: "🙃 Bizə qoşulun!",
             fullname: "Ad və Soyad",
             email: "E-poçt",
-            password: "Şifrə",
-            confirm_password: "Şifrəni təsdiqlə",
+            password: "Parol",
+            confirm_password: "Parolu təsdiqlə",
             register: "Qeydiyyat",
             submit_btn: "Qeydiyyatdan keç",
             already_have_account: "Artıq hesabınız var?",
             password_levels: {
                 weak: "Zəif: Daha çox simvol və müxtəlifliyə ehtiyac var!",
                 moderate: "Orta: Gücünü artırmaq üçün müxtəliflik əlavə edin.",
-                strong: "Güclü: Şifrəniz təhlükəsiz və möhkəmdir."
+                strong: "Güclü: Parolunuz təhlükəsiz və möhkəmdir."
             },
             terms_of_service: "<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>"
         },
@@ -74,6 +76,10 @@ locales = {
             email: 'E-poçt adresiniz'
         }
     },
+    reset_password: {
+        new_password: "Yeni parol",
+        new_password_description: '🔐 Bu saytda əvvəllər istifadə etmədiyiniz güclü, yeni parol təyin edin.'
+    },
     backend_messages: {
         DONE: 'Tamamlandı!',
         SOMETHING_WENT_WRONG: 'Bir şeylər səhv getdi!',
@@ -83,15 +89,15 @@ locales = {
         EMAIL_SUCCESSFULLY_CONFIRMED: "E-poçtunuz uğurla təsdiqləndi!",
         EMAIL_IS_NOT_VALID: 'E-poçt etibarsızdır!',
         INVALID_EMAIL: 'E-poçt etibarsızdır!',
-        INVALID_PASSWORD: 'Şifrə etibarsızdır!',
+        INVALID_PASSWORD: 'Parol etibarsızdır!',
         INVALID_FULLNAME: 'Tam ad etibarsızdır!',
         INVALID_TOKEN: 'Bir şeylər səhv getdi!',
         BCRYPT_ERROR: 'Bir şeylər səhv getdi!',
         USER_LOGIN_PROGRESS_FAILED: 'İstifadəçi girişi uğursuz oldu!',
         USER_SUCCESSFULLY_LOGIN: 'İstifadəçi uğurla daxil oldu!',
         EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',
-        EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya şifrə yanlışdır!',
-        LINK_EXPIRED: "Bu linki artıq keçərsizdir!"
+        EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya parol yanlışdır!',
+        LINK_EXPIRED: "Bu link artıq keçərsizdir!"
     }
 };
 

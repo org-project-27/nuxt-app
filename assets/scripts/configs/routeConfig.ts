@@ -1,7 +1,6 @@
 import {type RouteConfigurations} from '~/assets/scripts/types/RouteConfigTypes';
 import {i18n} from "~/plugins/i18n";
 import appAvailableRoutes from "assets/scripts/constants/availableAppRoutes";
-import router from "#app/plugins/router"; // Adjust the import path
 
 let routeConfig: RouteConfigurations = {};
 
@@ -134,6 +133,16 @@ routeConfig[appAvailableRoutes.confirm_email] = {
     title: i18n.global.t('pages.confirm_email'),
     layout: 'default',
     description: "Email Confirmation",
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.reset_password] = {
+    auth: false,
+    title: i18n.global.t('pages.reset_password'),
+    layout: 'default',
+    description: "Reset your password!",
     middlewareMethod(to, from) {
 
     }
