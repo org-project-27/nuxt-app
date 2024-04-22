@@ -97,7 +97,8 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'Пользователь успешно вошел в систему!',
         EMAIL_IS_NOT_REGISTERED: 'Электронная почта не зарегистрирована!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Электронная почта или пароль неверны!',
-        LINK_EXPIRED: "Срок действия ссылки истек!"
+        LINK_EXPIRED: "Срок действия ссылки истек!",
+        PASSWORD_SUCCESSFULLY_CHANGED: "Пароль успешно изменен!"
     }
 };
 

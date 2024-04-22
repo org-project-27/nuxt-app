@@ -97,7 +97,8 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'User successfully login!',
         EMAIL_IS_NOT_REGISTERED: 'Email is not registered!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect!',
-        LINK_EXPIRED: "Link expired!"
+        LINK_EXPIRED: "Link expired!",
+        PASSWORD_SUCCESSFULLY_CHANGED: "Password successfully changed!"
     }
 };
 

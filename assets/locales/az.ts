@@ -97,7 +97,8 @@ locales = {
         USER_SUCCESSFULLY_LOGIN: 'İstifadəçi uğurla daxil oldu!',
         EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',
         EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya parol yanlışdır!',
-        LINK_EXPIRED: "Bu link artıq keçərsizdir!"
+        LINK_EXPIRED: "Bu link artıq keçərsizdir!",
+        PASSWORD_SUCCESSFULLY_CHANGED: "Parol uğurla dəyişdirildi!"
     }
 };
 

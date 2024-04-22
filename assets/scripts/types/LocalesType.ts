@@ -1,21 +1,22 @@
 interface BackendMessage {
-    DONE: string,
-    SOMETHING_WENT_WRONG: string,
-    EMAIL_IS_EXIST: string,
-    USER_REGISTRATION_FAILED: string,
-    USER_SUCCESSFULLY_REGISTERED: string,
-    EMAIL_SUCCESSFULLY_CONFIRMED: string,
-    EMAIL_IS_NOT_VALID: string,
-    INVALID_EMAIL: string,
-    INVALID_PASSWORD: string,
-    INVALID_FULLNAME: string,
-    INVALID_TOKEN: string,
-    BCRYPT_ERROR: string,
-    USER_LOGIN_PROGRESS_FAILED: string,
-    USER_SUCCESSFULLY_LOGIN: string,
-    EMAIL_IS_NOT_REGISTERED: string,
-    EMAIL_OR_PASSWORD_INCORRECT: string,
-    LINK_EXPIRED: string,
+    DONE: string;
+    SOMETHING_WENT_WRONG: string;
+    EMAIL_IS_EXIST: string;
+    USER_REGISTRATION_FAILED: string;
+    USER_SUCCESSFULLY_REGISTERED: string;
+    EMAIL_SUCCESSFULLY_CONFIRMED: string;
+    EMAIL_IS_NOT_VALID: string;
+    INVALID_EMAIL: string;
+    INVALID_PASSWORD: string;
+    INVALID_FULLNAME: string;
+    INVALID_TOKEN: string;
+    BCRYPT_ERROR: string;
+    USER_LOGIN_PROGRESS_FAILED: string;
+    USER_SUCCESSFULLY_LOGIN: string;
+    EMAIL_IS_NOT_REGISTERED: string;
+    EMAIL_OR_PASSWORD_INCORRECT: string;
+    LINK_EXPIRED: string;
+    PASSWORD_SUCCESSFULLY_CHANGED: string;
 }
 export interface Buttons {
     search: string;
