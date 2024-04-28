@@ -18,8 +18,8 @@
               hide-icon
               type="info"
               :message="$t('reset_password.new_password_description')"/>
+          <br>
         </div>
-        <br>
         <input-component
             id="new-password-input"
             type="password"
@@ -27,7 +27,6 @@
             autocomplete="new-password"
             v-model="payload.new_password"
             :label="$t('reset_password.new_password')"
-            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
             :input-size="inputSizes.medium"
             :show-error="{
               message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,
@@ -43,11 +42,24 @@
             required
         />
         <input-component
+            id="confirm-password-input"
+            type="password"
+            name="password"
+            autocomplete="confirm-password"
+            v-model="payload.confirm_password"
+            :label="$t('reset_password.confirm_password')"
+            :input-size="inputSizes.medium"
+            :show-error="{
+              message: !checkConfirmPassword ? $t('reset_password.confirm_password_wrong') : null,
+              highlight: !checkConfirmPassword
+            }"
+            required
+        />
+        <input-component
             id="submit-btn"
             type="submit"
             :label="$t('buttons.save')"
             button-type="1"
-            :left-icon="{ icon: 'lock' }"
             :input-size="inputSizes.medium"
             :disabled="!readyForSubmit"
             :is-loading="submitIsLoading"
@@ -113,13 +125,16 @@ export default defineComponent({
     },
     readyForSubmit() {
       let ready = false;
-      if (this.payload.new_password) {
+      if (this.payload.new_password && this.checkConfirmPassword) {
         if (this.passwordStrength > 1) {
           ready = true;
         }
       }
       return ready;
     },
+    checkConfirmPassword(){
+      return this.payload.new_password === this.payload.confirm_password;
+    }
   },
   data() {
     return {
@@ -137,6 +152,7 @@ export default defineComponent({
       },
       payload: {
         new_password: null,
+        confirm_password: null,
         token: null
       }
     }
@@ -235,7 +251,7 @@ export default defineComponent({
         display: flex;
         flex-direction: column;
         text-align: left;
-        gap: 1.5rem;
+        gap: 2rem;
         margin-bottom: 20px;
       }
 

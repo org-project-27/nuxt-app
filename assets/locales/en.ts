@@ -28,8 +28,8 @@ locales = {
         profile: "Account",
         get_started: "Get Started",
         post: "Product",
-        log_in: "Log In",
-        sign_up: "Sign Up",
+        log_in: "Login",
+        sign_up: "Signup",
         terms_of_service: "Terms of Service",
         privacy_and_policy: "Privacy Policy",
         favorites: "Favorites",
@@ -78,6 +78,8 @@ locales = {
     },
     reset_password: {
         new_password: 'New password',
+        confirm_password: "Confirm password",
+        confirm_password_wrong: "Confirm password does not match the new password!",
         new_password_description: '🔐 Choose a strong, new password that you haven\'t previously used on this site.'
     },
     backend_messages: {
@@ -98,7 +100,8 @@ locales = {
         EMAIL_IS_NOT_REGISTERED: 'Email is not registered!',
         EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect!',
         LINK_EXPIRED: "Link expired!",
-        PASSWORD_SUCCESSFULLY_CHANGED: "Password successfully changed!"
+        PASSWORD_SUCCESSFULLY_CHANGED: "Password successfully changed!",
+        PASSWORD_RESET_LINK_WILL_SENT: "If your email address is registered in our system, we will send an email with password reset instructions. Please check your inbox and spam folder."
     }
 };
 

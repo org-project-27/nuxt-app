@@ -8,6 +8,7 @@ import type {
     SignupResponseModel,
     LoginResponseModel
 } from "assets/scripts/types/models/userAuthModels";
+import type {DefaultResponseDataType, DefaultResponseType} from "assets/scripts/types/defaultTypes";
 
 
 export async function loginService(payload : Login) {
@@ -51,12 +52,19 @@ export async function authService(){
     return { data };
 }
 
-export async function forgotPasswordService(payload: { email: string | null }){
-    let data = {};
+export async function forgotPasswordService(payload: { email: string | null }) : Promise<DefaultResponseDataType>{
+    let data: DefaultResponseType = {
+        success: false,
+        message: "SOMETHING_WENT_WRONG"
+    };
+
     await axiosInstance.post('/v1/user/forgot_password', payload)
         .then(response => {
-            data = response.data.data;
-        });
+            data = response.data;
+        })
+        .catch(error => {
+            data = error.response.data;
+        })
 
     return { data };
 }
