@@ -17,7 +17,7 @@ routeConfig = {
     "/posts/example/*": {
         auth: false,
         title: "Example",
-        layout: 'custom',
+        layout: 'default',
         description: "All best for you!",
         middlewareMethod(to, from) {
             //console.log('Posts page function')
