@@ -3,9 +3,14 @@
     <form class="forgot-password-form" @submit.prevent="submitForgotPassword">
       <div class="message-box">
         <message-component
+            v-if="response.success === null"
             hide-icon
             type="info"
             :message="$t('get_started.forgot_password.welcome_message')" />
+        <message-component
+            v-else
+            :type="response.success === false ?  'error' : 'success'"
+            :message="backendMessage(response.message)" />
       </div>
       <div class="input-group">
         <input-component
@@ -74,6 +79,10 @@ export default defineComponent({
     return {
       readyForView: false,
       submitIsLoading: false,
+      response: {
+        success: null,
+        message: null
+      },
       messages,
     }
   },
@@ -84,12 +93,13 @@ export default defineComponent({
     backendMessage,
     async submitForgotPassword() {
       this.submitIsLoading = true;
-      await useAuthStore().submitForgotPassword();
+      const { data } = await useAuthStore().submitForgotPassword();
+      this.response = data;
+      this.resetModel();
       this.submitIsLoading = false;
     },
     resetModel() {
-      const { resetModelForgotPassword } = useAuthStore();
-      resetModelForgotPassword();
+      useAuthStore().resetModelForgotPassword();
     },
     setReadyForView(val) {
       this.readyForView = val;

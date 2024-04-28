@@ -17,7 +17,7 @@ routeConfig = {
     "/posts/example/*": {
         auth: false,
         title: "Example",
-        layout: 'custom',
+        layout: 'default',
         description: "All best for you!",
         middlewareMethod(to, from) {
             //console.log('Posts page function')
@@ -51,8 +51,10 @@ routeConfig[appAvailableRoutes.get_started] = {
     description: "Let's get started!",
     middlewareMethod(to, from) {
         if (to.query.view) {
+            const { brandName } = useAppConfig();
+            const title = i18n.global.t(`pages.${to.query.view}`)
             useSeoMeta({
-                title: i18n.global.t(`pages.${to.query.view}`)
+                title: `${title} | ${brandName}`
             });
         }
     }

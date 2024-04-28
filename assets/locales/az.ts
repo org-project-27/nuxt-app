@@ -78,6 +78,8 @@ locales = {
     },
     reset_password: {
         new_password: "Yeni parol",
+        confirm_password: "Parolu təsdiqlə",
+        confirm_password_wrong: "Yeni şifrə ilə təsdiq şifrəsi üst-üstə düşmür!",
         new_password_description: '🔐 Bu saytda əvvəllər istifadə etmədiyiniz güclü, yeni parol təyin edin.'
     },
     backend_messages: {
@@ -98,7 +100,8 @@ locales = {
         EMAIL_IS_NOT_REGISTERED: 'E-poçt qeydiyyatdan keçməyib!',
         EMAIL_OR_PASSWORD_INCORRECT: 'E-poçt və ya parol yanlışdır!',
         LINK_EXPIRED: "Bu link artıq keçərsizdir!",
-        PASSWORD_SUCCESSFULLY_CHANGED: "Parol uğurla dəyişdirildi!"
+        PASSWORD_SUCCESSFULLY_CHANGED: "Parol uğurla dəyişdirildi!",
+        PASSWORD_RESET_LINK_WILL_SENT: "Əgər sizin e-poçt ünvanınız sistemimizdə qeydiyyatdan keçibsə, şifrəni sıfırlamaq üçün təlimatlar olan bir e-poçt göndəriləcəkdir. Zəhmət olmasa e-poçt qutunuzu və spam qovluğunuzu yoxlayın."
     }
 };
 

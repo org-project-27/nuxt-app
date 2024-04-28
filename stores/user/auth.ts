@@ -1,17 +1,14 @@
 import {
-    defaults,
-    models,
-    type TokensModel,
-    type SignupResponseModel,
-    type LoginResponseModel,
     type AuthResponseModel,
+    defaults,
+    type LoginResponseModel,
+    models,
+    type SignupResponseModel,
+    type TokensModel,
 } from "assets/scripts/types/models/userAuthModels"
-import {
-    authService,
-    loginService,
-    signupService,
-    forgotPasswordService,
-} from "~/services/user";
+import {authService, forgotPasswordService, loginService, signupService,} from "~/services/user";
+import type {DefaultResponseDataType} from "assets/scripts/types/defaultTypes";
+
 export const useAuthStore = defineStore('authStore', {
     state: () => (models),
     getters: {
@@ -49,7 +46,6 @@ export const useAuthStore = defineStore('authStore', {
                 const { data } = await authService();
                 this.modelAuth = { ...data };
             } catch(error){
-                console.log('Auth error', error);
                 this.resetTokensOnLocalStorage();
                 this.modelAuth = defaults.defaultResponses.auth();
             } finally {
@@ -58,11 +54,9 @@ export const useAuthStore = defineStore('authStore', {
             }
             return this.modelAuth;
         },
-        // #TODO: Add a response type for function
-        async submitForgotPassword() {
+        async submitForgotPassword() : Promise<DefaultResponseDataType> {
             try {
-                const data = await forgotPasswordService({ email: this.modelForgotPassword.email });
-                console.log(data);
+                return await forgotPasswordService({email: this.modelForgotPassword.email});
             } catch (error){
                 throw error;
             }

@@ -17,6 +17,7 @@ interface BackendMessage {
     EMAIL_OR_PASSWORD_INCORRECT: string;
     LINK_EXPIRED: string;
     PASSWORD_SUCCESSFULLY_CHANGED: string;
+    PASSWORD_RESET_LINK_WILL_SENT: string
 }
 export interface Buttons {
     search: string;
@@ -97,6 +98,8 @@ export interface PasswordLevels {
 export interface ResetPassword {
     new_password: string;
     new_password_description: string;
+    confirm_password: string,
+    confirm_password_wrong: string
 }
 
 export interface LanguageContent {
