@@ -214,8 +214,8 @@ import {inputCategories, inputTypes} from "assets/scripts/constants/inputConstan
 import colorUtilities from "assets/scripts/constants/colorUtilities.js";
 
 //#TODO: This components aren't Vue file. Be careful for it!
-import IconComponent from "assets/scripts/components/iconComponent.js";
-import LoadingComponent from "assets/scripts/components/loadingComponent.js";
+import IconComponent from "~/components/IconComponent.vue";
+import LoadingComponent from "~/components/LoadingComponent.vue";
 
 export default defineComponent({
   name: "InputComponent",
