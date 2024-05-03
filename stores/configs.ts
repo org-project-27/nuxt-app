@@ -27,6 +27,8 @@ export const useConfigsStore = defineStore('configs', {
         },
         reRenderApp(){
             this.renderKey++;
+            const {path} = useRoute();
+            useRouter().push(path);
         }
     }
 });
