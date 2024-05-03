@@ -1,23 +1,29 @@
-import type {LangOptionsType} from "assets/scripts/types/LocalesType";
-import en from "assets/locales/en";
-import az from "assets/locales/az";
-import ru from "assets/locales/ru";
 import { createI18n } from 'vue-i18n';
+import type {AvailableLocalItem, AvailableLocals, LangOptionsType} from "assets/scripts/types/LocalesType";
+import {availableLocales} from "assets/scripts/constants/locales";
 
 let appLang: LangOptionsType;
+
 export const useI18nStore = defineStore('i18n', {
     state: () => ({
         appLang,
+        availableLocales
     }),
     getters: {
       i18n(state){
-          const langParams = {
+          let messages: any = {};
+
+          state.availableLocales.forEach((local: AvailableLocalItem) => {
+              messages[`${local.iso}`] = local.messages;
+          })
+
+          return createI18n({
               legacy: false,
-                  globalInjection: true,
-                  locale: state.appLang,
-                  messages: { en, az, ru }
-          };
-          return createI18n(langParams);
+              globalInjection: true,
+              locale: state.appLang,
+              // @ts-ignore
+              messages,
+          });
       }
     },
     actions: {

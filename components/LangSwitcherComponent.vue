@@ -49,13 +49,9 @@ export default defineComponent({
     }
   },
   watch: {
-    currentAppLang(val: LangOptionsType, oldVal: LangOptionsType){
+    currentAppLang(val: LangOptionsType){
       const {setAppLang} = useI18nStore()
       setAppLang(val);
-      if(val !== oldVal){
-        console.log(val, oldVal)
-        //window.location.reload();
-      }
     }
   }
 })
