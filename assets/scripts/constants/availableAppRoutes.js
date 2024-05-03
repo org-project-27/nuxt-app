@@ -1,5 +1,3 @@
-import {i18n} from "~/plugins/i18n";
-
 const availableAppRoutes = {
     main: '/',
     get_started: '/getstarted',

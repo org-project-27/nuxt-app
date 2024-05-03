@@ -1,4 +1,3 @@
-import {i18n} from "~/plugins/i18n"; // Adjust the import path
 export function generateUniqueId(length = 5) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -30,5 +29,6 @@ export function developerAnnounce(message, type = 'error'){
 }
 
 export function backendMessage(message = ''){
+    const { i18n} =  useI18nStore();
     return i18n.global.t(`backend_messages.${message}`);
 }

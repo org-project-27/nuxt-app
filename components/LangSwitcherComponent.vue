@@ -27,12 +27,12 @@ export default defineComponent({
   },
   mounted() {
     this.currentAppLang = this.detectCurrentAppLang();
-    const {setAppLang} = useConfigsStore()
+    const {setAppLang} = useI18nStore()
     setAppLang(this.detectCurrentAppLang());
   },
   methods: {
     detectCurrentAppLang(): LangOptionsType{
-      const {appLang} = useConfigsStore();
+      const {appLang} = useI18nStore();
       const appLangFromLS = localStorage.getItem('system_lang');
       const defaultAppLang = useAppConfig().defaultAppLang;
       let detectedAppLang;
@@ -49,9 +49,13 @@ export default defineComponent({
     }
   },
   watch: {
-    currentAppLang(val: LangOptionsType){
-      const {setAppLang} = useConfigsStore()
+    currentAppLang(val: LangOptionsType, oldVal: LangOptionsType){
+      const {setAppLang} = useI18nStore()
       setAppLang(val);
+      if(val !== oldVal){
+        console.log(val, oldVal)
+        //window.location.reload();
+      }
     }
   }
 })
