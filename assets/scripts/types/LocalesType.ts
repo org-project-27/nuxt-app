@@ -119,3 +119,5 @@ export interface LanguageContent {
 
     backend_messages: BackendMessage
 }
+
+export type LangOptionsType = 'az' | 'en' | 'ru';

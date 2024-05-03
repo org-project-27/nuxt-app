@@ -19,17 +19,17 @@ export const headerRoutes = {
         {
             url: availableAppRoutes.profile,
             icon: 'person',
-            label: i18n.global.t('pages.profile')
+            label: 'pages.profile'
         },
         {
             url: availableAppRoutes.favorites,
             icon: 'favorite',
-            label: i18n.global.t('pages.favorites')
+            label: 'pages.favorites'
         },
         {
             url: availableAppRoutes.cart,
             icon: 'shopping_cart',
-            label: i18n.global.t('pages.cart')
+            label: 'pages.cart'
         },
     ]
 }
