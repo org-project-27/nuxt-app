@@ -125,7 +125,7 @@ export interface AvailableLocalItem {
     messages: object,
     label: string,
     iso: LangOptionsType,
-    icon: string
+    icon: any
 }
 
 export type AvailableLocals = Array <AvailableLocalItem>;
