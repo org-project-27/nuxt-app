@@ -26,11 +26,17 @@ export const useConfigsStore = defineStore('configs', {
             this.currentRoute = {...payload};
         },
         reRenderApp(){
-            this.renderKey++;
+            useRouter().push('/render');
             const {fullPath} = useRoute();
-            if(!fullPath.includes(availableAppRoutes.reset_password) || !fullPath.includes(availableAppRoutes.confirm_email)){
-                useRouter().push(fullPath);
-            }
+
+            let renderKey = setTimeout(() => {
+                if(!fullPath.includes(availableAppRoutes.reset_password) || !fullPath.includes(availableAppRoutes.confirm_email)){
+                    useRouter().push(fullPath);
+                }
+
+                this.renderKey = Number(renderKey);
+                clearTimeout(renderKey);
+            }, 5);
         }
     }
 });
