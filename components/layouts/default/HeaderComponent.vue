@@ -104,6 +104,7 @@ function setFullscreenModal() {
         height: calc($default-layout-header-height * (1 / 6));
         flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
         gap: 2rem;
 
         a {

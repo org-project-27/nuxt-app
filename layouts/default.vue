@@ -5,7 +5,7 @@
       id="default-layout"
       class="container flex-column-between-center">
     <header-component/>
-    <main>
+    <main :key="renderKey">
       <div class="responsive-width">
         <slot v-if="waitingForAuthProgress === false && deviceType"/>
         <loading-page-component v-else/>
@@ -39,6 +39,9 @@ export default defineComponent({
     },
     fullscreenModal(){
       return useFullscreenModal();
+    },
+    renderKey(){
+      return useConfigsStore().renderKey;
     }
   },
   data(){
@@ -48,7 +51,6 @@ export default defineComponent({
   },
   mounted(){
     this.waitingForAuthProgress = this.authProgressIsLoading;
-
   },
   watch: {
     authProgressIsLoading(val){

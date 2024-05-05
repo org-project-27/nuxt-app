@@ -124,7 +124,8 @@ export type LangOptionsType = 'az-AZ' | 'en-US' | 'ru-RU';
 export interface AvailableLocalItem {
     messages: object,
     label: string,
-    iso: LangOptionsType
+    iso: LangOptionsType,
+    icon: string
 }
 
 export type AvailableLocals = Array <AvailableLocalItem>;

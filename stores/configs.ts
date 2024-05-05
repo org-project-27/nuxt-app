@@ -27,9 +27,10 @@ export const useConfigsStore = defineStore('configs', {
         },
         reRenderApp(){
             this.renderKey++;
-            const {path} = useRoute();
-            useRouter().push(path);
+            const {fullPath} = useRoute();
+            if(!fullPath.includes(availableAppRoutes.reset_password) || !fullPath.includes(availableAppRoutes.confirm_email)){
+                useRouter().push(fullPath);
+            }
         }
     }
 });
-
