@@ -28,6 +28,7 @@
             v-model="payload.new_password"
             :label="$t('reset_password.new_password')"
             :input-size="inputSizes.medium"
+            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
             :show-error="{
               message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,
               highlight: passwordStrength === 1
@@ -47,6 +48,7 @@
             name="password"
             autocomplete="confirm-password"
             v-model="payload.confirm_password"
+            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
             :label="$t('reset_password.confirm_password')"
             :input-size="inputSizes.medium"
             :show-error="{
@@ -78,6 +80,7 @@
         <h2>
           {{ backendMessage(responseSubmit.message) }}
         </h2>
+        <br>
         <span>
           {{ $t('redirecting_to_login') }}...
         </span>
@@ -97,6 +100,7 @@
         <h2>
           {{ backendMessage(response.message) }}
         </h2>
+        <br>
         <span>
           {{ $t('redirecting_to_login') }}...
         </span>

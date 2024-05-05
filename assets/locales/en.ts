@@ -4,9 +4,9 @@ let locales: LanguageContent;
 locales = {
     lang: "Language",
     note: "Note",
-    az: "Azərbaycanca",
+    az: "Azerbaijani",
     en: "English",
-    ru: "Русский",
+    ru: "Russian",
     email_confirming: "Email address confirming",
     please_wait: "Please wait",
     redirecting_to_home: "Redirecting to home page",

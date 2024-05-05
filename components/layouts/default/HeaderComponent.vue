@@ -8,6 +8,7 @@
             class="child cannot-select flex-column-center">
           Link {{ i }}
         </nuxt-link>
+        <lang-switcher-component/>
       </div>
       <div class="main-area">
         <logo-component/>
@@ -21,7 +22,7 @@
             <icon-component
                 :icon-name="navigation.icon"
                 icon-size="1.7rem"/>
-            <span>{{ navigation.label }}</span>
+            <span>{{ $t(navigation.label) }}</span>
           </nuxt-link>
         </nav>
       </div>
@@ -101,7 +102,9 @@ function setFullscreenModal() {
 
       .wrapper-area {
         height: calc($default-layout-header-height * (1 / 6));
-        flex-direction: row-reverse;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
         gap: 2rem;
 
         a {

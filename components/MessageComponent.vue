@@ -7,7 +7,7 @@
             icon-name="error"
             icon-size="25"
             :color="colorUtilities.$error_color_1"/>
-            <b>{{ message }}</b>
+            <p>{{ message }}</p>
       </span>
   <span v-else-if="type === 'warn'"
         :class="type">
@@ -17,7 +17,7 @@
             icon-name="warning"
             icon-size="25"
             :color="colorUtilities.$warning_color_3"/>
-            <b>{{ message }}</b>
+            <p>{{ message }}</p>
       </span>
   <span v-else-if="type === 'success'"
         :class="type">
@@ -27,7 +27,7 @@
             icon-name="check_circle"
             icon-size="25"
             :color="colorUtilities.$success_color_1"/>
-            <b>{{ message }}</b>
+            <p>{{ message }}</p>
       </span>
   <span v-else-if="type === 'info'"
         :class="type">
@@ -37,7 +37,7 @@
             icon-name="info"
             icon-size="25"
             :color="colorUtilities.$black_color_2"/>
-            <b>{{ message }}</b>
+            <p>{{ message }}</p>
       </span>
 </template>
 
@@ -103,13 +103,12 @@ span {
   border-radius: 8px;
   box-shadow: $box_shadow_2;
   display: flex;
-  font-weight: bold;
   flex-direction: column;
   align-items: center;
   padding: 1rem 1.5rem;
   gap: .5rem;
   max-width: 100%;
-  b{
+  p{
     text-align: center;
     overflow-wrap: break-word;
   }

@@ -119,3 +119,13 @@ export interface LanguageContent {
 
     backend_messages: BackendMessage
 }
+
+export type LangOptionsType = 'az-AZ' | 'en-US' | 'ru-RU';
+export interface AvailableLocalItem {
+    messages: object,
+    label: string,
+    iso: LangOptionsType,
+    icon: string
+}
+
+export type AvailableLocals = Array <AvailableLocalItem>;

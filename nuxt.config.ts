@@ -29,7 +29,10 @@ export default defineNuxtConfig({
   css: [
     '~/assets/stylesheets/style.scss',
   ],
-  plugins: [],
+  plugins: [
+      './plugins/i18n.ts',
+      './plugins/local-storage.client.ts',
+  ],
   modules: ['@pinia/nuxt'],
   pinia: {
     storesDirs: ['./stores/**', './stores/**/*'],

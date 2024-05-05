@@ -40,8 +40,12 @@ export default defineComponent({
       } else if(view === 'forgot_password'){
         return 'forgot_password'
       }
-      this.$router.push('?view=log_in');
-      return null;
+      return this.views[0];
+    }
+  },
+  mounted(){
+    if(this.currentView && !this.$route.query.view){
+      this.$router.push(`?view=${this.currentView}`);
     }
   },
 })
