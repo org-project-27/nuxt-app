@@ -25,7 +25,6 @@ logs
 !/.vscode/
 
 /dist
-/public
 
 # local env files
 .env.local
