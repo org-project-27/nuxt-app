@@ -26,7 +26,7 @@ export const useConfigsStore = defineStore('configs', {
             this.currentRoute = {...payload};
         },
         reRenderApp(){
-            useRouter().push('/render');
+            useRouter().push('/init');
             const {fullPath} = useRoute();
 
             let renderKey = setTimeout(() => {
