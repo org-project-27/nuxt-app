@@ -1,5 +1,6 @@
 import {type RouteConfigurations} from '~/assets/scripts/types/RouteConfigTypes';
 import appAvailableRoutes from "assets/scripts/constants/availableAppRoutes";
+import availableAppRoutes from "assets/scripts/constants/availableAppRoutes";
 
 let routeConfig: RouteConfigurations = {};
 
@@ -52,6 +53,7 @@ routeConfig[appAvailableRoutes.get_started] = {
         if (to.query.view) {
             const { i18n} =  useI18nStore();
             const { brandName } = useAppConfig();
+            // @ts-ignore
             const title = i18n.global.t(`pages.${to.query.view}`)
             useSeoMeta({
                 title: `${title} | ${brandName}`

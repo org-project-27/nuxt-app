@@ -198,6 +198,8 @@ export default defineComponent({
               clearTimeout(tId);
             }, 5000);
           })
+    } else {
+      this.$router.push('/')
     }
   }
 })

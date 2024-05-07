@@ -9,7 +9,8 @@ const availableAppRoutes = {
     terms_of_service: '/terms_of_service',
     privacy_and_policy: '/privacy_and_policy',
     confirm_email: '/confirm_email',
-    reset_password: '/reset_password'
+    reset_password: '/reset_password',
+    init: '/init'
 };
 
 export const headerRoutes = {

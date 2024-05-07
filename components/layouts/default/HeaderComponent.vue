@@ -40,12 +40,15 @@
     </section>
     <section class="responsive-width responsive-visibility-2">
       <logo-component/>
-      <NuxtLink :to="currentPath" @click="setFullscreenModal">
-        <icon-component
-            :icon-name="status ? 'close' : 'menu'"
-            :color="colorUtilities.$white_color_9"
-            icon-size="30"/>
-      </NuxtLink>
+      <div style="display: flex; align-items: center; gap: 10px">
+        <lang-switcher-component/>
+        <NuxtLink :to="currentPath" @click="setFullscreenModal">
+          <icon-component
+              :icon-name="status ? 'close' : 'menu'"
+              :color="colorUtilities.$white_color_9"
+              icon-size="30"/>
+        </NuxtLink>
+      </div>
     </section>
   </header>
 

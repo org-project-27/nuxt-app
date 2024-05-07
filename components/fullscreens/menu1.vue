@@ -12,7 +12,7 @@
             :color="currentPath === navigate.url
             ? colorUtilities.$main_color_2 : colorUtilities.$white_color_9"
             icon-size="30"/>
-        <span>{{ navigate.label }}</span>
+        <span>{{ $t(navigate.label) }}</span>
       </nuxt-link>
     </nav>
     <nav class="fullscreen-nav logout" v-if="isAuthenticated">
@@ -64,7 +64,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   & > nav.logout{
-    background-color: lighten($error_color_5, 7%);
+    background-color: lighten($error_color_9, 3%);
     border-top: 1px solid $white_color_5;
     span {
       color: $error_color

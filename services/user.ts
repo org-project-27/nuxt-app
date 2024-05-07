@@ -30,8 +30,7 @@ export async function loginService(payload : Login) {
 
 export async function signupService(payload: Signup){
     let data : SignupResponseModel = defaults.defaultResponses.signup();
-
-    await axiosInstance.post('/v1/user/signup', payload)
+    await axiosInstance.post('/v1/user/signup', {...payload, lang: useI18nStore().appLang})
         .then(response => {
             if(response.data) data = response.data;
         })
