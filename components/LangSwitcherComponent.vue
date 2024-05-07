@@ -14,6 +14,7 @@
         icon-name="language"
         icon-size="23"/>
     <img
+        class="responsive-visibility-1"
         :alt="selectedLang.iso"
         :src="selectedLang.icon"/>
   </div>
