@@ -25,18 +25,12 @@ export const useConfigsStore = defineStore('configs', {
         setCurrentRoute(payload: object){
             this.currentRoute = {...payload};
         },
-        reRenderApp(){
-            useRouter().push('/init');
-            const {fullPath} = useRoute();
-
-            let renderKey = setTimeout(() => {
-                if(!fullPath.includes(availableAppRoutes.reset_password) || !fullPath.includes(availableAppRoutes.confirm_email)){
-                    useRouter().push(fullPath);
-                }
-
-                this.renderKey = Number(renderKey);
-                clearTimeout(renderKey);
-            }, 5);
+        reRenderApp(delay: number = 500){
+            const tId = setTimeout(() => {
+                // @ts-ignore
+                this.renderKey = tId;
+                clearTimeout(tId);
+            }, delay);
         }
     }
 });

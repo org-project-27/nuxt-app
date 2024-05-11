@@ -9,6 +9,7 @@ import type {
     LoginResponseModel
 } from "assets/scripts/types/models/userAuthModels";
 import type {DefaultResponseDataType, DefaultResponseType} from "assets/scripts/types/defaultTypes";
+import type {LangOptionsType} from "assets/scripts/types/LocalesType";
 
 
 export async function loginService(payload : Login) {
@@ -30,7 +31,7 @@ export async function loginService(payload : Login) {
 
 export async function signupService(payload: Signup){
     let data : SignupResponseModel = defaults.defaultResponses.signup();
-    await axiosInstance.post('/v1/user/signup', {...payload, lang: useI18nStore().appLang})
+    await axiosInstance.post('/v1/user/signup', {...payload, preferred_lang: useI18nStore().appLang})
         .then(response => {
             if(response.data) data = response.data;
         })
@@ -98,4 +99,8 @@ export async function resetPasswordService(payload: { new_password: string, toke
             });
     }
     return { data };
+}
+
+export async function setUserPreferredLang(payload: { user_id: number, lang: LangOptionsType }){
+    await axiosInstance.put('/v1/user/preferred_lang', {...payload});
 }

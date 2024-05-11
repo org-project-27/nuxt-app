@@ -45,6 +45,10 @@ export const useAuthStore = defineStore('authStore', {
             try {
                 const { data } = await authService();
                 this.modelAuth = { ...data };
+                const { preferred_lang } = this.modelAuth.details;
+                if(preferred_lang){
+                    useI18nStore().setAppLang(preferred_lang);
+                }
             } catch(error){
                 this.resetTokensOnLocalStorage();
                 this.modelAuth = defaults.defaultResponses.auth();

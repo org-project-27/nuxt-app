@@ -1,4 +1,5 @@
 import { deepCopy } from "assets/scripts/helpers/generalHelpers";
+import type {LangOptionsType} from "assets/scripts/types/LocalesType";
 
 // Signup data modeling:
 export interface Signup extends Login {
@@ -84,12 +85,26 @@ const loginResponse: LoginResponseModel = {
 export interface AuthResponseModel {
     email: string | null,
     fullname: string | null,
-    user_id: number | null
+    user_id: number | null,
+    details: {
+        preferred_lang: LangOptionsType | null;
+        phone: string | null;
+        birthday: Date | null;
+        description: string | null;
+        email_registered: boolean | null;
+    }
 }
 const auth: AuthResponseModel = {
     email: null,
     fullname: null,
-    user_id: null
+    user_id: null,
+    details: {
+        preferred_lang: null,
+        phone: null,
+        birthday: null,
+        description: null,
+        email_registered: true
+    }
 }
 
 const getModelSignup = () : Signup => deepCopy(signup);
