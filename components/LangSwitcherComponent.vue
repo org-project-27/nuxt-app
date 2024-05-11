@@ -1,6 +1,7 @@
 <template>
   <div id="lang-switcher-component"
        class="cannot-select"
+       v-if="selectedLang"
        :title="`${$t('lang')}: ${$t(selectedLang.label)}`">
     <select v-model="currentAppLang" ref="langSwitcher">
       <option
@@ -29,14 +30,11 @@ export default defineComponent({
   computed: {
     currentAppLang: {
       set(val: LangOptionsType){
-        if(val){
-          this.$i18n.locale = val
-        } else {
-          this.$i18n.locale = this.detectCurrentAppLang();
-        }
+        useI18nStore().setAppLang(val);
+        this.$i18n.locale = val;
       },
-      get() {
-        return this.$i18n.locale;
+      get(): LangOptionsType{
+        return useI18nStore().appLang;
       }
     },
     selectedLang(): any {
@@ -47,41 +45,17 @@ export default defineComponent({
       return useI18nStore().availableLocales;
     }
   },
+  beforeMount(){
+    this.currentAppLang = useI18nStore().appLang;
+  },
   data(){
     return {
       colorUtilities,
     }
   },
-  mounted() {
-    //#TODO: Do these settings within the middlewares
-    this.currentAppLang = this.detectCurrentAppLang();
-    const {setAppLang} = useI18nStore()
-    setAppLang(this.detectCurrentAppLang());
-  },
-  methods: {
-    detectCurrentAppLang(): LangOptionsType{
-      const {appLang} = useI18nStore();
-      const appLangFromLS = localStorage.getItem('system_lang');
-      const defaultAppLang = useAppConfig().defaultAppLang;
-      let detectedAppLang;
-
-      if(appLang){
-        detectedAppLang = appLang;
-      } else if(appLangFromLS) {
-        detectedAppLang = appLangFromLS;
-      } else if(defaultAppLang) {
-        detectedAppLang = defaultAppLang;
-      } else {
-        detectedAppLang = this.$i18n.availableLocales[0];
-      }
-
-      return detectedAppLang as LangOptionsType;
-    }
-  },
   watch: {
-    currentAppLang(val: LangOptionsType){
-      const {setAppLang} = useI18nStore()
-      setAppLang(val);
+    currentAppLang(val){
+      this.$i18n.locale = val;
     }
   }
 })
