@@ -101,6 +101,10 @@ export async function resetPasswordService(payload: { new_password: string, toke
     return { data };
 }
 
-export async function setUserPreferredLang(payload: { user_id: number, lang: LangOptionsType }){
+export async function setUserPreferredLangService(payload: { user_id: number, lang: LangOptionsType }){
     await axiosInstance.put('/v1/user/preferred_lang', {...payload});
+}
+
+export async function logoutService(){
+    await axiosInstance.get('/v1/user/logout');
 }
