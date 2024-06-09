@@ -6,7 +6,7 @@ import {
     type SignupResponseModel,
     type TokensModel,
 } from "assets/scripts/types/models/userAuthModels"
-import {authService, forgotPasswordService, loginService, signupService,} from "~/services/user";
+import {authService, forgotPasswordService, loginService, logoutService, signupService,} from "~/services/user";
 import type {DefaultResponseDataType} from "assets/scripts/types/defaultTypes";
 
 export const useAuthStore = defineStore('authStore', {
@@ -101,7 +101,8 @@ export const useAuthStore = defineStore('authStore', {
             this.resetModelLogin();
             this.resetModelSignup();
         },
-        logout() : void {
+        async logout() {
+            await logoutService();
             this.resetAllModels();
             window.location.reload();
         }

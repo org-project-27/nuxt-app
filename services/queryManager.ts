@@ -23,8 +23,8 @@ const errorHandler = (error: any) => {
 };
 
 axiosInstance.interceptors.request.use(async (config) => {
+  config.headers["x-secret-key"] = "1D3d59U6ghCPj8W5Ev3w423BqSH6xJCduZFITrtdSdc";
   const { addToQueriesLoading, checkQueryIsLoadingByKey } = useServiceManagementStore();
-
   const queryKey = await addToQueriesLoading(config);
 
   // @ts-ignore

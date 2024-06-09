@@ -1,7 +1,7 @@
 import {createI18n, useI18n} from 'vue-i18n';
 import type {AvailableLocalItem, AvailableLocals, LangOptionsType} from "assets/scripts/types/LocalesType";
 import {availableLocales} from "assets/scripts/constants/locales";
-import {setUserPreferredLang} from "~/services/user";
+import {setUserPreferredLangService} from "~/services/user";
 
 let appLang: LangOptionsType;
 
@@ -35,7 +35,7 @@ export const useI18nStore = defineStore('i18n', {
             const {isAuthenticated, modelAuth} = useAuthStore();
             const { user_id, details} = modelAuth;
             if(isAuthenticated && details.preferred_lang !== lang){
-                setUserPreferredLang({
+                setUserPreferredLangService({
                     lang: lang,
                     user_id: user_id || 0
                 });
