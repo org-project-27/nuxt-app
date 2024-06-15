@@ -1,6 +1,8 @@
 export interface DefaultResponseType {
     message: string;
     success: boolean;
+    data: object,
+    error: object,
 }
 
 export interface DefaultResponseWithDetailsType {
@@ -11,7 +13,4 @@ export interface DefaultResponseWithDetailsType {
 
 export interface DefaultResponseDataType {
     data: DefaultResponseType
-}
-export interface DefaultResponseDataWithDetailsType {
-    data: DefaultResponseWithDetailsType
 }

@@ -1,16 +1,30 @@
 <template>
-  <div class="box default-container">
-    <icon-component icon-name="favorite" color="red" fill/>
+  <div>
+    <input type="file" accept="audio/*" @change="uploadFile" multiple/>
+    <div v-if="uploadResult">
+      <p>File uploaded successfully:</p>
+      <a :href="uploadResult.path" target="_blank">{{ uploadResult.filename }}</a>
+      <audio controls>
+        <source :src="uploadResult.path" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   </div>
 </template>
 
-<script>
-</script>
+<script setup>
+import { ref } from 'vue'
+import axios from 'axios'
+import {uploadService} from "~/services/upload";
 
-<style scoped lang="scss">
-.box{
-  background: white;
-  width: 100%;
-  height: 90vh;
+const uploadResult = ref(null)
+
+const uploadFile = async (event) => {
+  try {
+    const response = await uploadService(event);
+    uploadResult.value = response[0].data.data
+  } catch (error) {
+    console.error('Error uploading file:', error)
+  }
 }
-</style>
+</script>

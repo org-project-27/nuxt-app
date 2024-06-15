@@ -55,7 +55,9 @@ export async function authService(){
 export async function forgotPasswordService(payload: { email: string | null }) : Promise<DefaultResponseDataType>{
     let data: DefaultResponseType = {
         success: false,
-        message: "SOMETHING_WENT_WRONG"
+        message: "SOMETHING_WENT_WRONG",
+        data: {},
+        error: {}
     };
 
     await axiosInstance.post('/v1/user/forgot_password', payload)
