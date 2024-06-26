@@ -75,6 +75,10 @@ br,
 .cannot-select {
   user-select: none;
 }
+strong,
+b {
+  font-family: $font-family-ExtraBold;
+}
 
 .flex-column-between-center{
   display: flex;

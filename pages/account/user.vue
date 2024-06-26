@@ -2,11 +2,19 @@
   <div>
     User account
     <br>
-    <span v-if="userModel">
-      <p v-for="(value, key) in userModel" :key="key">
-        <b>{{ key }}</b> - {{ value }}
-      </p>
-    </span>
+    <br>
+    <div v-if="userModel">
+      <ul v-for="(value, key) in userModel" :key="key">
+        <li v-if="key !== 'details'">
+          &nbsp; &nbsp;<b>{{ key }}</b>: {{ value }};
+        </li>
+        <li v-else>
+          <div v-for="(value2, key2) in value" :key="key">
+            &nbsp; &nbsp;<b>{{ key2 }}</b>: {{ value2 || 'null' }};
+          </div>
+        </li>
+      </ul>
+    </div>
     <br>
     <button @click="logOut">Log out</button>
   </div>
