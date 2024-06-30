@@ -1,11 +1,12 @@
 <template>
-  <div class="uploader-part">
+  <section>
+    <div class="uploader-part">
     <label for="upload" class="btn">Upload File </label>
     <input id="upload" type="file" @change="uploadFile" multiple />
     <div v-if="uploadResult">
-      <p>File uploaded successfully:</p>
-      <a :href="uploadResult.url" target="_blank">{{ uploadResult.name }}</a>
-      <img :src="uploadResult.url" :alt="uploadResult.name" :width="dimensions?.width" :height="dimensions?.height">
+      <p>File uploaded successfully {{ uploadResult.object_id }}:</p>
+      <a :href="origin + '/cdn/'+ uploadResult.object_id" target="_blank">{{ uploadResult.name }}</a>
+      <img :src="origin + '/cdn/'+ uploadResult.object_id" :alt="uploadResult.name" :width="dimensions?.width" :height="dimensions?.height">
     </div>
   </div>
   <div class="uploader-part">
@@ -14,8 +15,8 @@
     <input type="text" placeholder="File id" name="id" id="updateFileId">
     <div v-if="updateResult">
       <p>File updateed successfully:</p>
-      <a :href="updateResult.url" target="_blank">{{ updateResult.name }}</a>
-      <img :src="updateResult.url" :alt="updateResult.name" :width="dimensions?.width" :height="dimensions?.height">
+      <a :href="origin + '/cdn/'+ updateResult.object_id" target="_blank">{{ updateResult.name }}</a>
+      <img :src="origin + '/cdn/'+ updateResult.object_id" :alt="updateResult.name" :width="dimensions?.width" :height="dimensions?.height">
     </div>
   </div>
   <div class="uploader-part">
@@ -26,12 +27,13 @@
       <p>File deleted successfully:</p>
     </div>
   </div>
+  </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import {uploadService, updateService, deleteService} from "~/services/upload";
-
+const origin = window.location.origin;
 const uploadResult = ref(null)
 const updateResult = ref(null)
 const deleteResult = ref(null)
