@@ -264,7 +264,7 @@ export default defineComponent({
 
     .already-have-account {
       font-size: 1.1rem;
-      color: $black_color;
+      color: $main_black_color;
     }
   }
 }
@@ -294,7 +294,7 @@ export default defineComponent({
 
     .already-have-account {
       font-size: 1.1rem;
-      color: $black_color;
+      color: $main_black_color;
     }
   }
 }

@@ -1,3 +1,4 @@
+import {getAllPlaces} from "~/services/places";
 
 export const usePostsStore = defineStore('posts', {
     state: () => ({
@@ -404,8 +405,8 @@ export const usePostsStore = defineStore('posts', {
         ]
     }),
     actions: {
-        getPosts(limit: number){
-            return this.shuffleArray(this.posts.slice(0, limit));
+        async getPosts(limit: number){
+            return await getAllPlaces(true);
         },
         getCategories(limit: number){
             return this.categories.slice(0, limit) || [];

@@ -6,7 +6,7 @@
             :fill="iconFill"
             icon-name="error"
             icon-size="25"
-            :color="colorUtilities.$error_color_1"/>
+            :color="colorUtilities.$error_color"/>
             <p>{{ message }}</p>
       </span>
   <span v-else-if="type === 'warn'"
@@ -16,7 +16,7 @@
             :fill="iconFill"
             icon-name="warning"
             icon-size="25"
-            :color="colorUtilities.$warning_color_3"/>
+            :color="colorUtilities.$warning_color"/>
             <p>{{ message }}</p>
       </span>
   <span v-else-if="type === 'success'"
@@ -26,7 +26,7 @@
             :fill="iconFill"
             icon-name="check_circle"
             icon-size="25"
-            :color="colorUtilities.$success_color_1"/>
+            :color="colorUtilities.$success_color"/>
             <p>{{ message }}</p>
       </span>
   <span v-else-if="type === 'info'"
@@ -36,7 +36,7 @@
             v-if="!hideIcon"
             icon-name="info"
             icon-size="25"
-            :color="colorUtilities.$black_color_2"/>
+            :color="colorUtilities.$main_black_color"/>
             <p>{{ message }}</p>
       </span>
 </template>
@@ -115,25 +115,25 @@ span {
 }
 
 span{
-  background-color: $white_color_1;
-  color: $black_color_1;
+  background-color: $third_background_color;
+  color: $main_black_color;
   font-family: $font-family-Light;
 }
 
 span.error {
-  color: $error_color_3;
+  color: $error_color;
 }
 
 span.warn {
-  //color: $warning_color_2;
+  //color: $warning_color;
 }
 
 span.success {
-  //color: $success_color_3;
+  //color: $success_color;
 }
 
 span.info {
-  //color: $black_color_1;
+  //color: $main_black_color;
 }
 
 span.bounce {

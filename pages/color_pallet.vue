@@ -62,31 +62,31 @@ export default defineComponent({
       background-color: $main_color;
     }
     & > div:nth-child(2){
-      background-color: $main_color_1;
+      background-color: $main_color;
     }
     & > div:nth-child(3){
-      background-color: $main_color_2;
+      background-color: $main_color;
     }
     & > div:nth-child(4){
-      background-color: $main_color_3;
+      background-color: $main_color;
     }
     & > div:nth-child(5){
-      background-color: $main_color_4;
+      background-color: $main_color;
     }
     & > div:nth-child(6){
-      background-color: $main_color_5;
+      background-color: $main_color;
     }
     & > div:nth-child(7){
-      background-color: $main_color_6;
+      background-color: $main_color;
     }
     & > div:nth-child(8){
-      background-color: $main_color_7;
+      background-color: $main_color;
     }
     & > div:nth-child(9){
-      background-color: $main_color_8;
+      background-color: $main_color;
     }
     & > div:nth-child(10){
-      background-color: $main_color_9;
+      background-color: $main_color;
     }
   }
   #color-pallets-black{
@@ -103,34 +103,34 @@ export default defineComponent({
       justify-content: center;
     }
     & > div:nth-child(1){
-      background-color: $black_color;
+      background-color: $main_black_color;
     }
     & > div:nth-child(2){
-      background-color: $black_color_1;
+      background-color: $main_black_color;
     }
     & > div:nth-child(3){
-      background-color: $black_color_2;
+      background-color: $main_black_color;
     }
     & > div:nth-child(4){
-      background-color: $black_color_3;
+      background-color: $main_black_color;
     }
     & > div:nth-child(5){
-      background-color: $black_color_4;
+      background-color: $main_black_color;
     }
     & > div:nth-child(6){
-      background-color: $black_color_5;
+      background-color: $main_black_color;
     }
     & > div:nth-child(7){
-      background-color: $black_color_6;
+      background-color: $main_black_color;
     }
     & > div:nth-child(8){
-      background-color: $black_color_7;
+      background-color: $main_black_color;
     }
     & > div:nth-child(9){
-      background-color: $black_color_8;
+      background-color: $main_black_color;
     }
     & > div:nth-child(10){
-      background-color: $black_color_9;
+      background-color: $main_black_color;
     }
   }
   #color-pallets-white{
@@ -147,34 +147,34 @@ export default defineComponent({
       justify-content: center;
     }
     & > div:nth-child(1){
-      background-color: $white_color;
+      background-color: $main_white_color;
     }
     & > div:nth-child(2){
-      background-color: $white_color_1;
+      background-color: $main_white_color;
     }
     & > div:nth-child(3){
-      background-color: $white_color_2;
+      background-color: $main_white_color;
     }
     & > div:nth-child(4){
-      background-color: $white_color_3;
+      background-color: $main_white_color;
     }
     & > div:nth-child(5){
-      background-color: $white_color_4;
+      background-color: $main_white_color;
     }
     & > div:nth-child(6){
-      background-color: $white_color_5;
+      background-color: $second_white_color;
     }
     & > div:nth-child(7){
-      background-color: $white_color_6;
+      background-color: $second_white_color;
     }
     & > div:nth-child(8){
-      background-color: $white_color_7;
+      background-color: $second_white_color;
     }
     & > div:nth-child(9){
-      background-color: $white_color_8;
+      background-color: $second_white_color;
     }
     & > div:nth-child(10){
-      background-color: $white_color_9;
+      background-color: $second_white_color;
     }
   }
   #color-pallets-error{
@@ -194,31 +194,31 @@ export default defineComponent({
       background-color: $error_color;
     }
     & > div:nth-child(2){
-      background-color: $error_color_1;
+      background-color: $error_color;
     }
     & > div:nth-child(3){
-      background-color: $error_color_2;
+      background-color: $error_color;
     }
     & > div:nth-child(4){
-      background-color: $error_color_3;
+      background-color: $error_color;
     }
     & > div:nth-child(5){
-      background-color: $error_color_4;
+      background-color: $error_color;
     }
     & > div:nth-child(6){
-      background-color: $error_color_5;
+      background-color: $error_color;
     }
     & > div:nth-child(7){
-      background-color: $error_color_6;
+      background-color: $error_color;
     }
     & > div:nth-child(8){
-      background-color: $error_color_7;
+      background-color: $error_color;
     }
     & > div:nth-child(9){
-      background-color: $error_color_8;
+      background-color: $error_color;
     }
     & > div:nth-child(10){
-      background-color: $error_color_9;
+      background-color: $error_color;
     }
   }
   #color-pallets-success{
@@ -238,31 +238,31 @@ export default defineComponent({
       background-color: $success_color;
     }
     & > div:nth-child(2){
-      background-color: $success_color_1;
+      background-color: $success_color;
     }
     & > div:nth-child(3){
-      background-color: $success_color_2;
+      background-color: $success_color;
     }
     & > div:nth-child(4){
-      background-color: $success_color_3;
+      background-color: $success_color;
     }
     & > div:nth-child(5){
-      background-color: $success_color_4;
+      background-color: $success_color;
     }
     & > div:nth-child(6){
-      background-color: $success_color_5;
+      background-color: $success_color;
     }
     & > div:nth-child(7){
-      background-color: $success_color_6;
+      background-color: $success_color;
     }
     & > div:nth-child(8){
-      background-color: $success_color_7;
+      background-color: $success_color;
     }
     & > div:nth-child(9){
-      background-color: $success_color_8;
+      background-color: $success_color;
     }
     & > div:nth-child(10){
-      background-color: $success_color_9;
+      background-color: $success_color;
     }
   }
   #color-pallets-warning{
@@ -282,31 +282,31 @@ export default defineComponent({
       background-color: $warning_color;
     }
     & > div:nth-child(2){
-      background-color: $warning_color_1;
+      background-color: $warning_color;
     }
     & > div:nth-child(3){
-      background-color: $warning_color_2;
+      background-color: $warning_color;
     }
     & > div:nth-child(4){
-      background-color: $warning_color_3;
+      background-color: $warning_color;
     }
     & > div:nth-child(5){
-      background-color: $warning_color_4;
+      background-color: $warning_color;
     }
     & > div:nth-child(6){
-      background-color: $warning_color_5;
+      background-color: $warning_color;
     }
     & > div:nth-child(7){
-      background-color: $warning_color_6;
+      background-color: $warning_color;
     }
     & > div:nth-child(8){
-      background-color: $warning_color_7;
+      background-color: $warning_color;
     }
     & > div:nth-child(9){
-      background-color: $warning_color_8;
+      background-color: $warning_color;
     }
     & > div:nth-child(10){
-      background-color: $warning_color_9;
+      background-color: $warning_color;
     }
   }
 }
