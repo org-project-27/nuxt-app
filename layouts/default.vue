@@ -65,5 +65,43 @@ import FullscreenModal from "~/components/FullscreenModal.vue";
 </script>
 
 <style lang="scss">
-@import "assets/stylesheets/layouts/default";
+@include for-size($tablet-size, 100vw) {
+  $layout-width: 100%;
+  #default-layout.container{
+    gap: $default-layout-section-gap;
+    main{
+      border-radius: 1rem;
+      overflow: hidden;
+      min-height: 70vh;
+    }
+    footer{
+      min-height: 30rem;
+      width: 100%;
+      box-shadow: $box_shadow_1;
+      background-color: $footer_background_color;
+      color: $footer_font_color;
+    }
+  }
+}
+
+@include for-size($small-mobile-size, $tablet-size) {
+  $layout-width: 100%;
+  #default-layout.container{
+    gap: $default-layout-section-gap;
+    margin-top: $default-layout-header-height-mobile;
+    main{
+      margin-top: calc($default-layout-header-height-mobile / 2.5);
+      border-radius: 1rem;
+      overflow: hidden;
+      min-height: 70vh;
+    }
+    footer{
+      min-height: 30rem;
+      width: 100%;
+      box-shadow: $box_shadow_1;
+      background-color: $footer_background_color;
+      color: $footer_font_color;
+    }
+  }
+}
 </style>

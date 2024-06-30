@@ -29,7 +29,7 @@ export default defineComponent({
     },
     color:  {
       type: String,
-      default: () => colorUtilities.$black_color
+      default: () => colorUtilities.$main_black_color
     },
   },
   setup(){

@@ -402,12 +402,12 @@ export default defineComponent({
         messageData.key = this.showSuccess.highlight ? 'success' : null;
         messageData.icon = this.showSuccess.icon || 'check_circle';
         messageData.message = this.showSuccess.message;
-        messageData.color = colorUtilities.$success_color_1;
+        messageData.color = colorUtilities.$success_color;
       } else if (this.showInfo.message || this.showInfo.highlight){
         messageData.key = this.showInfo.highlight ? 'info' : null;
         messageData.icon = this.showInfo.icon || 'info';
         messageData.message = this.showInfo.message;
-        messageData.color = colorUtilities.$black_color;
+        messageData.color = colorUtilities.$main_black_color;
       }
       return messageData
     },
@@ -494,7 +494,7 @@ export default defineComponent({
       if(this.focusComputed){
         return main ? main : colorUtilities.$main_color;
       }
-      return colorUtilities.$black_color
+      return colorUtilities.$main_black_color
     },
   }
 });
@@ -502,9 +502,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 $active-color: $main_color;
-$disabled-color: $black_color_4;
-$error-color: $error_color_1;
-$warning-color: $warning_color_1;
+$disabled-color: $main_black_color;
 
 // Category: Writeables & Password
 .input-component.writeable{
@@ -516,7 +514,7 @@ $warning-color: $warning_color_1;
     font-size: 1rem;
     margin-top: -7px;
     margin-left: 10px;
-    background-color: $white_color;
+    background-color: $main_white_color;
     height: 12px;
     padding: 0 3px;
   }
@@ -583,9 +581,9 @@ $warning-color: $warning_color_1;
   &.active{
     box-shadow: $box_shadow_0 !important;
     border: 1px solid $active-color !important;
-    background-color: $white_color !important;
+    background-color: $main_white_color !important;
     input{
-      color: $black_color !important;
+      color: $main_black_color !important;
       &::placeholder{
         opacity: .6;
       }
@@ -609,8 +607,8 @@ $warning-color: $warning_color_1;
   }
 
   &.disabled{
-    border: 1px solid $black_color_5;
-    opacity: 0.6;
+    border: 1px solid ;
+    opacity: 0.3;
     cursor: not-allowed;
     input{
       color: $disabled-color;
@@ -628,17 +626,15 @@ $warning-color: $warning_color_1;
   }
 
   &.error{
-    $error-color-custom: darken($error-color, 7.5%);
-    background-color: lighten($error_color_9, 5.5%);
-    border: 1px solid $error-color-custom;
-    label{ color: $error-color-custom; }
+    background-color: lighten($error_color, 55%);
+    border: 1px solid $error-color;
+    label{ color: $error-color; }
   }
 
   &.warning{
-    $warning-color-custom: darken($warning-color, 10%);
-    background-color: lighten($warning_color_9, 4%);
-    border: 1px solid $warning-color-custom;
-    label{ color: $warning-color-custom; }
+    background-color: lighten($warning_color, 49%);
+    border: 1px solid $warning-color;
+    label{ color: $warning-color; }
   }
 
   &.info{
@@ -658,7 +654,7 @@ $warning-color: $warning_color_1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $black_color_9;
+  background-color: $main_black_color;
   input{
     cursor: pointer;
     width: 100%;
@@ -672,7 +668,7 @@ $warning-color: $warning_color_1;
     }
   }
   &.is-loading{
-    background-color: $black_color_6;
+    background-color: $main_black_color;
     cursor: wait !important;
     box-shadow: $box_shadow__1;
   }
@@ -681,7 +677,7 @@ $warning-color: $warning_color_1;
     background-color: $type-0;
     input{
       font-size: 1.2rem !important;
-      color: $black_color;
+      color: $main_black_color;
       font-weight: bold !important;
     }
     &.is-loading{
@@ -695,7 +691,7 @@ $warning-color: $warning_color_1;
   &.button-type-1{
     background-color: $main_color;
     input{
-      color: $white_color;
+      color: $main_white_color;
     }
     &.is-loading{
       cursor: wait !important;
@@ -704,8 +700,8 @@ $warning-color: $warning_color_1;
   }
 
   &.button-type-2{
-    background-color: $main_color_4;
-    border: 1px solid $main_color_1;
+    background-color: $main_color;
+    border: 1px solid $main_color;
     box-shadow: none;
     input{
       color: $main_color;
@@ -716,9 +712,9 @@ $warning-color: $warning_color_1;
   }
 
   &.button-type-danger{
-    background-color: $error_color_1;
+    background-color: $error_color;
     input{
-      color: $white_color;
+      color: $main_white_color;
     }
     &.is-loading{
       cursor: wait !important;
@@ -727,9 +723,9 @@ $warning-color: $warning_color_1;
   }
 
   &.button-type-success{
-    background-color: $success_color_2;
+    background-color: $success_color;
     input{
-      color: $white_color;
+      color: $main_white_color;
     }
     &.is-loading{
       cursor: wait !important;
@@ -745,11 +741,11 @@ $warning-color: $warning_color_1;
   }
 
   &.disabled{
-    //background-color: $black_color_5;
+    //background-color: $main_black_color;
     cursor: not-allowed !important;
     box-shadow: $box_shadow__1;
     input{
-      //color: $black_color_2;
+      //color: $main_black_color;
       cursor: not-allowed !important;
       opacity: .7;
     }
@@ -771,7 +767,7 @@ $warning-color: $warning_color_1;
   gap: 1.2rem;
   height: 100% !important;
   $checkbox-bg-color: lighten($main_color, 0%);
-  $checkbox-checkmark-color: $white_color;
+  $checkbox-checkmark-color: $main_white_color;
 
   input[type="checkbox"] {
     appearance: none;
@@ -799,7 +795,7 @@ $warning-color: $warning_color_1;
     }
   }
   label{
-    color: $black_color_3;
+    color: $main_black_color;
     cursor: pointer;
     font-size: 1.1rem;
     &.disabled{

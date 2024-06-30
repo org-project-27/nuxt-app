@@ -189,7 +189,7 @@ export default defineComponent({
           margin-top: .5rem;
           a {
             font-size: 1rem;
-            color: $black_color_6;
+            color: $main_black_color;
           }
         }
       }
@@ -201,7 +201,7 @@ export default defineComponent({
 
     .no-account-yet {
       font-size: 1.1rem;
-      color: $black_color;
+      color: $main_black_color;
     }
   }
 }
@@ -229,7 +229,7 @@ export default defineComponent({
           margin-top: .5rem;
           a {
             font-size: 1rem;
-            color: $black_color_6;
+            color: $main_black_color;
           }
         }
       }
@@ -241,7 +241,7 @@ export default defineComponent({
 
     .no-account-yet {
       font-size: 1.1rem;
-      color: $black_color;
+      color: $main_black_color;
     }
   }
 }

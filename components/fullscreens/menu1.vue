@@ -10,7 +10,7 @@
             :icon-name="navigate.icon"
             :fill="currentPath === navigate.url"
             :color="currentPath === navigate.url
-            ? colorUtilities.$main_color_2 : colorUtilities.$white_color_9"
+            ? colorUtilities.$main_color : colorUtilities.$second_white_color"
             icon-size="30"/>
         <span>{{ $t(navigate.label) }}</span>
       </nuxt-link>
@@ -64,8 +64,8 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-between;
   & > nav.logout{
-    background-color: lighten($error_color_9, 3%);
-    border-top: 1px solid $white_color_5;
+    background-color: lighten($error_color, 3%);
+    border-top: 1px solid $second_white_color;
     span {
       color: $error_color
     }

@@ -83,7 +83,7 @@ export default defineComponent({
 
   .message-box {
     margin-top: 2rem;
-    background: $white_color;
+    background: $main_white_color;
     border-radius: 1.1rem;
     width: 30rem;
     height: 20rem;
@@ -91,7 +91,7 @@ export default defineComponent({
     h2 {
       margin-top: 2rem;
       text-align: center;
-      color: $black_color;
+      color: $main_black_color;
     }
 
     span {

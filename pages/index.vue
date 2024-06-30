@@ -4,9 +4,11 @@
             v-for="post in posts"
             :id="'post-'+post.id"
             :key="post.id"
-            :to="'/posts/'+post.id"
+            :to="'/posts/'+post.place_id"
             class="child cannot-select flex-column-center default-container">
-          <img :src="post.thumbnailUrl" :alt="post.title">
+          {{post.name}}
+          <br>
+          <b>[{{post.Brands.name}}]</b>
         </NuxtLink>
     </div>
 </template>
@@ -20,7 +22,7 @@
     flex-wrap: wrap;
     gap: calc($default-layout-section-gap / 3);
     .child{
-      box-shadow: $box_shadow_1;
+      box-shadow: $box_shadow_2;
       border-radius: 10px;
       width: 235px ;
       height: 235px;
@@ -78,5 +80,5 @@
 </style>
 <script setup lang="ts">
 let {getPosts} = usePostsStore();
-let posts = getPosts(200);
+let posts = (await getPosts(200)).data.data.places.reverse();
 </script>

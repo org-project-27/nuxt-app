@@ -208,14 +208,14 @@ export default defineComponent({
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw) {
   #reset-password-page {
-    $border-style: 2px solid $main_color_2;
+    $border-style: 2px solid $main_color;
     height: 100%;
 
     & > div {
       width: 32rem;
       margin-top: 1rem;
       padding: 4rem 0;
-      background: $white_color;
+      background: $main_white_color;
       border-radius: 1.1rem;
       box-shadow: $box_shadow_2;
       text-align: center;
@@ -232,7 +232,7 @@ export default defineComponent({
 
       h2 {
         margin-top: 2rem;
-        color: $black_color;
+        color: $main_black_color;
         @include animate-fade-in-out(1.5s);
       }
     }
@@ -241,7 +241,7 @@ export default defineComponent({
       h2 {
         text-align: center;
         margin-top: 2rem;
-        color: $black_color;
+        color: $main_black_color;
       }
 
       .response-message {
@@ -270,13 +270,13 @@ export default defineComponent({
 
 @include for-size($small-mobile-size, $tablet-size) {
   #reset-password-page {
-    $border-style: 2px solid $main_color_2;
+    $border-style: 2px solid $main_color;
     height: 50vh;
     & > div {
       width: 93vw;
       max-width: 32rem;
       padding: 4rem 0;
-      background: $white_color;
+      background: $main_white_color;
       border-radius: 1.1rem;
       box-shadow: $box_shadow_2;
       text-align: center;
@@ -293,7 +293,7 @@ export default defineComponent({
 
       h2 {
         margin-top: 2rem;
-        color: $black_color;
+        color: $main_black_color;
         @include animate-fade-in-out(1.5s);
       }
     }
@@ -302,7 +302,7 @@ export default defineComponent({
       h2 {
         text-align: center;
         margin-top: 2rem;
-        color: $black_color;
+        color: $main_black_color;
       }
 
       .response-message {

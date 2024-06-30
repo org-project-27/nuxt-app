@@ -56,7 +56,7 @@ a.type_1 {
   }
 
   &:hover {
-    background-color: lighten($white_color_1, 3%);
+    background-color: lighten($main_white_color, 3%);
   }
 }
 
@@ -66,8 +66,8 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: $black_color_4;
-  -webkit-box-shadow: 0 0 0px 1000px lighten($white_color_1, 3%) inset;
+  -webkit-text-fill-color: $main_black_color;
+  -webkit-box-shadow: 0 0 0px 1000px lighten($main_white_color, 3%) inset;
 }
 
 // Common used styles

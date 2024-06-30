@@ -54,10 +54,10 @@ export default defineComponent({
 
 #getstarted-page {
   $layout-width: 35rem;
-  $border-radius: 1rem;
-  $nav-active-color: $main_color_2;
+  $border-radius: 1.4rem;
+  $nav-active-color: $main_color;
   $border-style: 2px solid $nav-active-color;
-  $border-style-disabled: 1px solid lighten($white_color_6, 3%);
+  $border-style-disabled: 1px solid lighten($second_white_color, 3%);
 
   display: flex;
   flex-direction: column;
@@ -67,9 +67,8 @@ export default defineComponent({
   .getstarted-container{
     margin-top: 1rem;
     nav#getstarted-views-nav {
-      min-height: 3.2rem;
-      max-height: 3.5rem;
-      background-color: $main_background_color;
+      min-height: calc(3.2rem + $border-radius / 2);
+      max-height: calc(3.5rem + $border-radius / 2);
       padding-top: 1px;
       & > a {
         border: $border-style-disabled;
@@ -91,7 +90,7 @@ export default defineComponent({
         }
         &#sign_up, &#log_in {
           height: 100%;
-          color: darken($white_color_9, 20%);
+          color: $main_black_color;
           border-top-left-radius: $border-radius;
           border-top-right-radius: $border-radius;
           border-top: $border-style-disabled;
@@ -99,7 +98,7 @@ export default defineComponent({
         }
         &.active {
           color: $nav-active-color !important;
-          background-color: $white_color !important;
+          background-color: $main_white_color !important;
           border-bottom: none !important;
           border-top: $border-style !important;
           font-size: 1.3rem;
@@ -118,7 +117,7 @@ export default defineComponent({
       overflow: hidden !important;
       border-bottom-left-radius: $border-radius !important;
       border-bottom-right-radius: $border-radius !important;
-
+      box-shadow: $box_shadow_1 !important;
       #sign-up-page,
       #log-in-page,
       #forgot-password-page{

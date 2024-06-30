@@ -12,17 +12,17 @@ $default-layout-header-height-fullscreen: calc(100% - $default-layout-header-hei
 $link-color: $main_color;
 
 $html_background_color: transparent;
-$body_background_color: $black_color;
-$main_background_color: $white_color_2;
+$body_background_color: $main_black_color;
+$main_background_color: $third_background_color;
 
-$header_background_color: $white_color;
-$header_font_color: $black_color;
+$header_background_color: $main_white_color;
+$header_font_color: $main_black_color;
 
 $footer_background_color: $body_background_color;
-$footer_font_color: $main_color_2;
+$footer_font_color: $main_color;
 
 .default-container {
-  background-color: $white_color !important;
+  background-color: $main_white_color !important;
 }
 
 .fullscreen-menu{
@@ -37,7 +37,7 @@ $footer_font_color: $main_color_2;
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid $white_color_5;
+      border-bottom: 1px solid $second_white_color;
       padding: 1.3rem 1.7rem;
       color: lighten(black, 60%) !important;
       font-size: 1.3rem;
@@ -48,12 +48,12 @@ $footer_font_color: $main_color_2;
         justify-content: center;
       }
       &.active {
-        color: $main_color_2 !important;
-        border-left: .4rem solid $main_color_2;
-        background-color: lighten($main_color_9, 9%);
+        color: $main_color !important;
+        border-left: .4rem solid $main_color;
+        background-color: lighten($main_color, 9%);
       }
       &:hover {
-        border-left: .4rem solid $main_color_2;
+        border-left: .4rem solid $main_color;
       }
     }
   }
