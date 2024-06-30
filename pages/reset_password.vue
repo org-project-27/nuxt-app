@@ -112,11 +112,11 @@
 <script lang="js">
 import {defineComponent} from 'vue'
 import {resetPasswordTokenVerifyService, resetPasswordService} from '~/services/user';
-import availableAppRoutes from '~/assets/scripts/constants/availableAppRoutes';
-import {backendMessage} from "assets/scripts/helpers/generalHelpers.js";
-import colorUtilities from "assets/scripts/constants/colorUtilities.js";
-import {inputSizes} from "assets/scripts/configs/defaults";
-import {evaluatePasswordStrength} from "~/assets/scripts/helpers/inputHelpers";
+import availableAppRoutes from '~/constants/availableAppRoutes';
+import {backendMessage} from "~/utils/helpers/generalHelpers.js";
+import colorUtilities from "~/constants/colorUtilities.js";
+import {inputSizes} from "~/constants/configs/defaults";
+import {evaluatePasswordStrength} from "~/utils/helpers/inputHelpers";
 
 export default defineComponent({
   name: "ResetPassword",

@@ -1,6 +1,5 @@
-import {type RouteConfigurations} from '~/assets/scripts/types/RouteConfigTypes';
-import appAvailableRoutes from "assets/scripts/constants/availableAppRoutes";
-import availableAppRoutes from "assets/scripts/constants/availableAppRoutes";
+import {type RouteConfigurations} from '~/constants/types/RouteConfigTypes';
+import appAvailableRoutes from "~/constants/availableAppRoutes";
 
 let routeConfig: RouteConfigurations = {};
 
@@ -82,7 +81,7 @@ routeConfig[appAvailableRoutes.categories] = {
 routeConfig[appAvailableRoutes.profile] = {
     auth: true,
     title: 'pages.profile',
-    layout: "default",
+    layout: "account",
     description: 'Manage your profile on Faynn. Update your preferences, contact details, and password here!',
     middlewareMethod(to, from) {
 

@@ -44,4 +44,4 @@ pnpm-debug.log*
 *.sln
 *.sw?
 *._*
-assets/scripts/configs/api.config.ts
+constants/configs/api.config.ts

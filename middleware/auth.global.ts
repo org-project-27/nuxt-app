@@ -1,4 +1,4 @@
-import routeConfig from "~/assets/scripts/configs/routeConfig";
+import routeConfig from "~/constants/configs/routeConfig";
 import { useAuthStore } from "~/stores/user/auth";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {

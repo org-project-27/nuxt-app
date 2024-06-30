@@ -1,4 +1,4 @@
-import type {LanguageContent} from "assets/scripts/types/LocalesType";
+import type {LanguageContent} from "~/constants/types/LocalesType";
 
 let locales: LanguageContent;
 locales = {

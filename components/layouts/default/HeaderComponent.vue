@@ -56,7 +56,7 @@
 <script setup lang="js">
 import {useRoute} from 'vue-router';
 import menu1 from "~/components/fullscreens/menu1.vue";
-import {headerRoutes} from "assets/scripts/constants/availableAppRoutes.js";
+import {headerRoutes} from "~/constants/availableAppRoutes.js";
 
 const {getCategories} = usePostsStore();
 const categories = getCategories(10);

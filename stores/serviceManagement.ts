@@ -1,4 +1,4 @@
-import {deepEqualObjects, developerAnnounce, generateUniqueId} from "assets/scripts/helpers/generalHelpers";
+import {deepEqualObjects, developerAnnounce, generateUniqueId} from "~/utils/helpers/generalHelpers";
 
 type QueryType = {
     headers: object,

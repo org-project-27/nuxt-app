@@ -7,10 +7,10 @@ export default defineComponent({
 </script>
 
 <template>
-<div>
-  account
-  <slot></slot>
-</div>
+  <div id="account-layout" class="container">
+    account
+    <slot></slot>
+  </div>
 </template>
 
 <style scoped lang="scss">

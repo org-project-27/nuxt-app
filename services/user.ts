@@ -1,5 +1,5 @@
 import { axiosInstance } from "~/services/queryManager";
-import { defaults } from "assets/scripts/types/models/userAuthModels";
+import { defaults } from "~/constants/types/models/userAuthModels";
 import type {
     Login,
     Signup,
@@ -7,9 +7,9 @@ import type {
     AuthResponseModel,
     SignupResponseModel,
     LoginResponseModel
-} from "assets/scripts/types/models/userAuthModels";
-import type {DefaultResponseDataType, DefaultResponseType} from "assets/scripts/types/defaultTypes";
-import type {LangOptionsType} from "assets/scripts/types/LocalesType";
+} from "~/constants/types/models/userAuthModels";
+import type {DefaultResponseDataType, DefaultResponseType} from "~/constants/types/defaultTypes";
+import type {LangOptionsType} from "~/constants/types/LocalesType";
 
 
 export async function loginService(payload : Login) {

@@ -1,4 +1,4 @@
-import type { AvailableLocals } from "assets/scripts/types/LocalesType";
+import type { AvailableLocals } from "~/constants/types/LocalesType";
 import en from "assets/locales/en";
 import az from "assets/locales/az";
 import ru from "assets/locales/ru";

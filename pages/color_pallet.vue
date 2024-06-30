@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import colorUtilities from "assets/scripts/constants/colorUtilities";
+import colorUtilities from "~/constants/colorUtilities";
 
 export default defineComponent({
   name: "color_pallet",

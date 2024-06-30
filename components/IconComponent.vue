@@ -4,8 +4,8 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import iconsList, {type IconsTypes} from "assets/images/icons/materialIconsList";
-import {stringToElement} from 'assets/scripts/helpers/generalHelpers.js';
-import colorUtilities from "assets/scripts/constants/colorUtilities.js";
+import {stringToElement} from '~/utils/helpers/generalHelpers.js';
+import colorUtilities from "~/constants/colorUtilities.js";
 
 let optionsCanBeSelected = Object.keys(iconsList)
 

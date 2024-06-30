@@ -209,9 +209,9 @@ import {defineComponent} from 'vue';
 import {
   developerAnnounce,
   generateUniqueId,
-} from 'assets/scripts/helpers/generalHelpers.js';
-import {inputCategories, inputTypes} from "assets/scripts/constants/inputConstants.js";
-import colorUtilities from "assets/scripts/constants/colorUtilities.js";
+} from '~/utils/helpers/generalHelpers.js';
+import {inputCategories, inputTypes} from "~/constants/inputConstants.js";
+import colorUtilities from "~/constants/colorUtilities.js";
 
 //#TODO: This components aren't Vue file. Be careful for it!
 import IconComponent from "~/components/IconComponent.vue";
