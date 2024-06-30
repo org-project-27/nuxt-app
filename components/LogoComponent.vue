@@ -50,7 +50,7 @@ $logo-color-active: lighten($logo-color-deactive, 1%);
       transition-duration: $animation-duration;
     }
     path.logo-background{
-      fill: $main_color_transparent;
+      fill: $third_background_color;
     }
   }
   span {
