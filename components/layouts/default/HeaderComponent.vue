@@ -45,7 +45,6 @@
         <NuxtLink :to="currentPath" @click="setFullscreenModal">
           <icon-component
               :icon-name="status ? 'close' : 'menu'"
-              :color="colorUtilities.$second_white_color"
               icon-size="30"/>
         </NuxtLink>
       </div>
@@ -177,8 +176,7 @@ function setFullscreenModal() {
     background-color: $header-background-color;
     min-height: $default-layout-header-height-mobile;
     width: 100%;
-    border-bottom: 2px solid $main_white_color;
-
+    box-shadow: $box_shadow_2;
     section {
       display: flex;
       flex-direction: row;

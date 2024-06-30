@@ -5,7 +5,6 @@
       <NuxtLink :to="currentPath" @click="setFullscreenModal">
         <icon-component
             :icon-name="status ? 'close' : 'menu'"
-            :color="colorUtilities.$second_white_color"
             icon-size="30"/>
       </NuxtLink>
     </section>
