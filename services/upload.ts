@@ -21,8 +21,7 @@ export async function uploadService(
                 }
             );
 
-            const url = response.data.data.path;
-            results.push({ url, name: response.data.data.filename });
+            results.push(response.data.data);
         }
     }
     return results;
