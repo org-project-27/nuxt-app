@@ -118,7 +118,7 @@ export default defineComponent({
 @include for-size($tablet-size, 100vw) {
   $sidebar-width: 20%;
   $account_layout_header_height: 6em;
-  $account_sidebar_padding: 1em 2.5em;
+  $account_sidebar_padding: 1em 2em;
   $account_layout_border_color: 1.5px solid $default_border_color;
   #account-layout.container {
     section {
@@ -160,7 +160,7 @@ export default defineComponent({
 
             & > label {
               padding: $account_sidebar_padding;
-              border-left: 5px solid transparent;
+              border-left: 13px solid transparent;
               color: $second_gray_color;
               font-weight: 600;
               font-size: 1.25em;
@@ -168,7 +168,7 @@ export default defineComponent({
 
             & > a {
               padding: $account_sidebar_padding;
-              border-left: 5px solid transparent;
+              border-left: 13px solid transparent;
               & > div {
                 display: flex;
                 align-items: center;
@@ -185,7 +185,7 @@ export default defineComponent({
 
               &:hover, &:active, &.active {
                 opacity: 1;
-                border-left: 5px solid $main_color !important;
+                border-left: 13px solid $main_color !important;
                 background-color: $main_white_color;
               }
             }
