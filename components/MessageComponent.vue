@@ -117,7 +117,6 @@ span {
 span{
   background-color: $third_background_color;
   color: $main_black_color;
-  font-family: $font-family-Light;
 }
 
 span.error {

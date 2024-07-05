@@ -36,7 +36,12 @@ locales = {
         cart: "Cart",
         forgot_password: "Forgot Password",
         confirm_email: 'Confirm Email',
-        reset_password: "Reset Password"
+        reset_password: "Reset Password",
+        brands: 'Brands',
+        dashboard: 'Dashboard',
+        requests: 'Requests',
+        settings: 'Settings',
+        support: 'Support'
     },
     get_started: {
         log_in: {
@@ -82,6 +87,27 @@ locales = {
         confirm_password_wrong: "Confirm password does not match the new password!",
         new_password_description: '🔐 Choose a strong, new password that you haven\'t previously used on this site.'
     },
+    layouts: {
+        account_layout: {
+            page: 'Page',
+            navbar: {
+                groups: {
+                    menu: 'Menu',
+                    general: 'General'
+                },
+                links: {
+                    dashboard: 'Dashboard',
+                    requests: 'Requests',
+                    your_account: 'Account',
+                    your_brands: 'Your Brands',
+                    your_places: 'Your Places',
+                    your_services: 'Your Services',
+                    support_and_help: 'Support & Help',
+                    settings: 'Settings',
+                }
+            }
+        }
+    },
     backend_messages: {
         DONE: 'Done!',
         SOMETHING_WENT_WRONG: 'Something went wrong!',
@@ -101,7 +127,30 @@ locales = {
         EMAIL_OR_PASSWORD_INCORRECT: 'Email or password incorrect!',
         LINK_EXPIRED: "Link expired!",
         PASSWORD_SUCCESSFULLY_CHANGED: "Password successfully changed!",
-        PASSWORD_RESET_LINK_WILL_SENT: "If your email address is registered in our system, we will send an email with password reset instructions. Please check your inbox and spam folder."
+        PASSWORD_RESET_LINK_WILL_SENT: "If your email address is registered in our system, we will send an email with password reset instructions. Please check your inbox and spam folder.",
+        USER_NOT_FOUND: 'User not found',
+        AUTH_REQUIRED: 'Auth required',
+        PARAM_REQUIRED: 'Param required',
+        OBJECT_NOT_FOUND: 'Object not found',
+        INVALID_PLACE_NAME: 'Invalid place name',
+        INVALID_WEB_SITE_URL: 'Invalid website URL',
+        INVALID_ZIP_CODE: 'Invalid zip-code',
+        INVALID_ADDRESS: 'Invalid address',
+        INVALID_PLACE_TYPE: 'Invalid place type',
+        INVALID_CITY: 'Invalid city',
+        INVALID_STATE: 'Invalid state',
+        INVALID_PHONE: 'Invalid phone',
+        INVALID_OPENING_HOURS: 'Invalid opening hours',
+        ALREADY_EXIST: 'Already exists!',
+        PLACE_NOT_FOUND: 'Place not found',
+        YOU_CANNOT_EDIT_PLACE_ID: 'You cannot edit place_id',
+        YOU_CANNOT_EDIT_BRAND_ID: 'You cannot edit brand_id',
+        YOU_CANNOT_EDIT_OWNER_ID: 'You cannot edit owner_id',
+        BRAND_NOT_FOUND: 'Brand not found',
+        BRAND_ALREADY_EXIST: 'Brand already exists',
+        INVALID_BRAND_NAME: 'Invalid brand name',
+        INVALID_BRAND_BIO_SIZE: 'Invalid brand bio size',
+        NAME_ALREADY_TAKEN: 'Name already taken',
     }
 };
 

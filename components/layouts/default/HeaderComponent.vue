@@ -56,7 +56,7 @@
 <script setup lang="js">
 import {useRoute} from 'vue-router';
 import menu1 from "~/components/fullscreens/menu1.vue";
-import {headerRoutes} from "~/constants/availableAppRoutes.js";
+import {headerRoutes} from "~/constants/availableAppRoutes.ts";
 
 const {getCategories} = usePostsStore();
 const categories = getCategories(10);
@@ -120,7 +120,7 @@ function setFullscreenModal() {
         gap: 2rem;
 
         .search-area {
-          background-color: $main_background_color;
+          background-color: $third_background_color;
           width: 90%;
           height: 40px;
           display: flex;
