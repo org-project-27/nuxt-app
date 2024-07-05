@@ -1,5 +1,5 @@
-import { deepCopy } from "assets/scripts/helpers/generalHelpers";
-import type {LangOptionsType} from "assets/scripts/types/LocalesType";
+import { deepCopy } from "~/utils/helpers/generalHelpers";
+import type {LangOptionsType} from "~/constants/types/LocalesType";
 
 // Signup data modeling:
 export interface Signup extends Login {

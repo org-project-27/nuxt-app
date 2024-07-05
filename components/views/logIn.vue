@@ -75,10 +75,10 @@
 <script lang="js">
 import { defineComponent } from 'vue';
 import { useAuthStore } from "~/stores/user/auth";
-import { defaults } from "~/assets/scripts/types/models/userAuthModels"
-import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
-import messages from "~/assets/scripts/constants/apiMessageKeys";
-import { inputSizes } from "~/assets/scripts/configs/defaults.ts";
+import { defaults } from "~/constants/types/models/userAuthModels"
+import { backendMessage } from "~/utils/helpers/generalHelpers";
+import messages from "~/constants/apiMessageKeys";
+import { inputSizes } from "~/constants/configs/defaults.ts";
 
 const loginResponse = defaults.defaultResponses.login();
 

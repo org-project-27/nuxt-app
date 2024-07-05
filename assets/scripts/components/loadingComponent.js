@@ -1,6 +1,6 @@
 import {defineComponent} from 'vue'
-import colorUtilities from "assets/scripts/constants/colorUtilities.js";
-import {developerAnnounce, generateUniqueId} from "assets/scripts/helpers/generalHelpers.js";
+import colorUtilities from "~/constants/colorUtilities.js";
+import {developerAnnounce, generateUniqueId} from "~/utils/helpers/generalHelpers.js";
 
 export default defineComponent({
     name: "LoadingComponent",

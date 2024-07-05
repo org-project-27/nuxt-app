@@ -1,5 +1,5 @@
-import routeConfig from "assets/scripts/configs/routeConfig";
-import availableAppRoutes, {headerRoutes} from "assets/scripts/constants/availableAppRoutes";
+import routeConfig from "~/constants/configs/routeConfig";
+import availableAppRoutes, {headerRoutes} from "~/constants/availableAppRoutes";
 export const useConfigsStore = defineStore('configs', {
     state: () => ({
         renderKey: 1,

@@ -5,9 +5,9 @@ import {
     models,
     type SignupResponseModel,
     type TokensModel,
-} from "assets/scripts/types/models/userAuthModels"
+} from "~/constants/types/models/userAuthModels"
 import {authService, forgotPasswordService, loginService, logoutService, signupService,} from "~/services/user";
-import type {DefaultResponseDataType} from "assets/scripts/types/defaultTypes";
+import type {DefaultResponseDataType} from "~/constants/types/defaultTypes";
 
 export const useAuthStore = defineStore('authStore', {
     state: () => (models),

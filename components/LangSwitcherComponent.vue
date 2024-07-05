@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts">
-import type {LangOptionsType} from "assets/scripts/types/LocalesType";
-import colorUtilities from "assets/scripts/constants/colorUtilities";
+import type {LangOptionsType} from "~/constants/types/LocalesType";
+import colorUtilities from "~/constants/colorUtilities";
 
 export default defineComponent({
   name: "LangSwitcherComponent",
@@ -56,6 +56,7 @@ export default defineComponent({
   watch: {
     currentAppLang(val){
       this.$i18n.locale = val;
+      useI18nStore().setWindowTitle();
     }
   }
 })

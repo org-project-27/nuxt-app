@@ -1,6 +1,5 @@
-import {type RouteConfigurations} from '~/assets/scripts/types/RouteConfigTypes';
-import appAvailableRoutes from "assets/scripts/constants/availableAppRoutes";
-import availableAppRoutes from "assets/scripts/constants/availableAppRoutes";
+import {type RouteConfigurations} from '~/constants/types/RouteConfigTypes';
+import appAvailableRoutes from "~/constants/availableAppRoutes";
 
 let routeConfig: RouteConfigurations = {};
 
@@ -9,43 +8,24 @@ routeConfig = {
         auth: false,
         title: null,
         layout: 'default',
-        description: "All best for you!",
+        description: "Everything will be faynn!",
         middlewareMethod(to, from) {
         }
-    },
-    //#TODO: These are examples. So delete it after if you don't need it enough.
-    "/posts/example/*": {
-        auth: false,
-        title: "Example",
-        layout: 'default',
-        description: "All best for you!",
-        middlewareMethod(to, from) {
-            //console.log('Posts page function')
-        }
-    },
-    "/posts/link3": {
-        auth: true,
-        title: "POST AUTH NEED",
-        layout: 'default',
-        description: "All best for you!",
-        middlewareMethod(to, from) {
-            //console.log('Posts page special')
-        }
-    },
+    }
 };
 
 routeConfig[appAvailableRoutes.main] = {
     auth: false,
     title: 'pages.main',
     layout: 'default',
-    description: 'Start your shopping journey on Faynn’s homepage, where you can discover our latest products, featured deals, and more!'
+    description: ''
 };
 
 routeConfig[appAvailableRoutes.get_started] = {
     auth: false,
     title: 'pages.get_started',
     layout: 'default',
-    description: 'New to Faynn? Click here to learn how to navigate our site, make purchases, and enjoy seamless shopping!',
+    description: '',
     middlewareMethod(to, from) {
         if (to.query.view) {
             const { i18n} =  useI18nStore();
@@ -63,7 +43,7 @@ routeConfig[appAvailableRoutes.posts] = {
     auth: false,
     title: 'pages.post',
     layout: 'default',
-    description: 'Stay updated with the latest posts about new arrivals, trends, and essential tips for savvy shopping on Faynn!',
+    description: '',
     middlewareMethod(to, from) {
         //console.log('Posts page function')
     }
@@ -73,7 +53,7 @@ routeConfig[appAvailableRoutes.categories] = {
     auth: false,
     title: 'pages.categories',
     layout: 'default',
-    description: 'Browse through a variety of categories to find exactly what you need—be it fashion, electronics, or home goods!',
+    description: '',
     middlewareMethod(to, from) {
         //console.log('Posts page function');
     }
@@ -82,7 +62,7 @@ routeConfig[appAvailableRoutes.categories] = {
 routeConfig[appAvailableRoutes.profile] = {
     auth: true,
     title: 'pages.profile',
-    layout: "default",
+    layout: "account",
     description: 'Manage your profile on Faynn. Update your preferences, contact details, and password here!',
     middlewareMethod(to, from) {
 
@@ -93,7 +73,7 @@ routeConfig[appAvailableRoutes.favorites] = {
     auth: true,
     title: 'pages.favorites',
     layout: "default",
-    description: 'Your favorites in one place! Review items you’ve marked as favorites and easily add them to your cart!',
+    description: '',
     middlewareMethod(to, from) {
 
     }
@@ -103,17 +83,67 @@ routeConfig[appAvailableRoutes.cart] = {
     auth: true,
     title: 'pages.cart',
     layout: "default",
-    description: 'Ready to make a purchase? Review your selections in your cart and proceed to checkout for a swift transaction!',
+    description: '',
     middlewareMethod(to, from) {
 
     }
 };
 
+routeConfig[appAvailableRoutes.dashboard] = {
+    auth: true,
+    title: 'pages.dashboard',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.brands] = {
+    auth: true,
+    title: 'pages.brands',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.requests] = {
+    auth: true,
+    title: 'pages.requests',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.support] = {
+    auth: true,
+    title: 'pages.support',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.settings] = {
+    auth: true,
+    title: 'pages.settings',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+}
+
 routeConfig[appAvailableRoutes.terms_of_service] = {
     auth: false,
     title: 'pages.terms_of_service',
     layout: "default",
-    description: 'Read the terms of service to understand your rights and responsibilities as a Faynn shopper.',
+    description: 'Read the terms of service to understand your rights and responsibilities as a Faynn user.',
     middlewareMethod(to, from) {
 
     }

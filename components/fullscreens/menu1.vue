@@ -28,7 +28,7 @@
 </template>
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {headerRoutes} from "assets/scripts/constants/availableAppRoutes";
+import {headerRoutes} from "~/constants/availableAppRoutes";
 import {useAuthStore} from "~/stores/user/auth";
 
 export default defineComponent({

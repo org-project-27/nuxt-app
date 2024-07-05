@@ -1,5 +1,5 @@
-import { axiosConfigs } from "@/assets/scripts/configs/api.config";
-import {availableLocales} from "assets/scripts/constants/locales";
+import { axiosConfigs } from "~/constants/configs/api.config";
+import {availableLocales} from "~/constants/locales";
 
 export default defineAppConfig({
     brandName: "Faynn",

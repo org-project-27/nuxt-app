@@ -1,5 +1,5 @@
 import axios from "axios";
-import { axiosConfigs } from "@/assets/scripts/configs/api.config";
+import { axiosConfigs } from "~/constants/configs/api.config";
 import { useServiceManagementStore } from "#imports";
 
 export const axiosInstance = axios.create(axiosConfigs);

@@ -1,6 +1,6 @@
 import {createI18n, useI18n} from 'vue-i18n';
-import type {AvailableLocalItem, AvailableLocals, LangOptionsType} from "assets/scripts/types/LocalesType";
-import {availableLocales} from "assets/scripts/constants/locales";
+import type {AvailableLocalItem, AvailableLocals, LangOptionsType} from "~/constants/types/LocalesType";
+import {availableLocales} from "~/constants/locales";
 import {setUserPreferredLangService} from "~/services/user";
 
 let appLang: LangOptionsType;
@@ -60,6 +60,15 @@ export const useI18nStore = defineStore('i18n', {
 
             this.appLang = detectedAppLang;
             return detectedAppLang;
+        },
+        setWindowTitle(){
+            const { brandName } = useAppConfig();
+            const config: any = useGeneralStore().currentRoute.configs;
+            useSeoMeta({
+                title: config.title ?
+                    `${useI18nStore().i18n.global.t(config.title)} | ${brandName}` : brandName,
+                description: config.description
+            });
         }
     }
 });

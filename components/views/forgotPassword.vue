@@ -50,9 +50,9 @@
 <script lang="js">
 import { defineComponent } from 'vue';
 import { useAuthStore } from "~/stores/user/auth";
-import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
-import messages from "~/assets/scripts/constants/apiMessageKeys";
-import {inputSizes} from "~/assets/scripts/configs/defaults";
+import { backendMessage } from "~/utils/helpers/generalHelpers";
+import messages from "~/constants/apiMessageKeys";
+import {inputSizes} from "~/constants/configs/defaults";
 
 export default defineComponent({
   name: "ForgotPassword",

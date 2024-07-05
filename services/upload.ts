@@ -1,5 +1,5 @@
 import { axiosInstance } from '~/services/queryManager';
-import type { DefaultResponseType } from 'assets/scripts/types/defaultTypes';
+import type { DefaultResponseType } from '~/constants/types/defaultTypes';
 
 export async function uploadService(
     event: any

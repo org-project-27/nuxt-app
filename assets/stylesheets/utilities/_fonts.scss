@@ -1,71 +1,71 @@
-@font-face {
-  font-family: 'Circle';
-  src: url('~/assets/fonts/Circle/CirceRounded-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+//@font-face {
+//  font-family: 'Circle';
+//  src: url('~/assets/fonts/Circle/CirceRounded-Regular.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-Light';
+//  src: url('~/assets/fonts/Circle/CirceRounded-Light.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-Alt-Bold';
+//  src: url('~/assets/fonts/Circle/CirceRounded-Alt-Bold.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-Alt-ExtraBold';
+//  src: url('~/assets/fonts/Circle/CirceRounded-Alt-ExtraBold.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-ExtraBold';
+//  src: url('~/assets/fonts/Circle/CirceRounded-ExtraBold.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-ExtraLight';
+//  src: url('~/assets/fonts/Circle/CirceRounded-ExtraLight.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-Light';
+//  src: url('~/assets/fonts/Circle/CirceRounded-Light.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//
+//@font-face {
+//  font-family: 'Circle-Thin';
+//  src: url('~/assets/fonts/Circle/CirceRounded-Thin.otf') format('opentype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
 
-@font-face {
-  font-family: 'Circle-Light';
-  src: url('~/assets/fonts/Circle/CirceRounded-Light.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+$font-family: Arial, sans-serif;
+$font-family-Alt-Bold: Arial, sans-serif;
+$font-family-Alt-ExtraBold: Arial, sans-serif;
+$font-family-ExtraBold: Arial, sans-serif;
+$font-family-ExtraLight: Arial, sans-serif;
+$font-family-Light: Arial, sans-serif;
+$font-family-Thin: Arial, sans-serif;
 
-@font-face {
-  font-family: 'Circle-Alt-Bold';
-  src: url('~/assets/fonts/Circle/CirceRounded-Alt-Bold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Circle-Alt-ExtraBold';
-  src: url('~/assets/fonts/Circle/CirceRounded-Alt-ExtraBold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Circle-ExtraBold';
-  src: url('~/assets/fonts/Circle/CirceRounded-ExtraBold.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Circle-ExtraLight';
-  src: url('~/assets/fonts/Circle/CirceRounded-ExtraLight.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Circle-Light';
-  src: url('~/assets/fonts/Circle/CirceRounded-Light.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Circle-Thin';
-  src: url('~/assets/fonts/Circle/CirceRounded-Thin.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-//$font-family: 'Arial';
-//$font-family-Alt-Bold: 'Arial';
-//$font-family-Alt-ExtraBold: 'Arial';
-//$font-family-ExtraBold: 'Arial';
-//$font-family-ExtraLight: 'Arial';
-//$font-family-Light: 'Arial';
-//$font-family-Thin: 'Arial';
-
-$font-family: 'Circle', sans-serif;
-$font-family-Alt-Bold: 'Circle-Alt-Bold', sans-serif;
-$font-family-Alt-ExtraBold: 'Circle-Alt-ExtraBold', sans-serif;
-$font-family-ExtraBold: 'Circle-ExtraBold', sans-serif;
-$font-family-ExtraLight: 'Circle-ExtraLight', sans-serif;
-$font-family-Light: 'Circle-Light', sans-serif;
-$font-family-Thin: 'Circle-Thin', sans-serif;
+//$font-family: 'Circle', sans-serif;
+//$font-family-Alt-Bold: 'Circle-Alt-Bold', sans-serif;
+//$font-family-Alt-ExtraBold: 'Circle-Alt-ExtraBold', sans-serif;
+//$font-family-ExtraBold: 'Circle-ExtraBold', sans-serif;
+//$font-family-ExtraLight: 'Circle-ExtraLight', sans-serif;
+//$font-family-Light: 'Circle-Light', sans-serif;
+//$font-family-Thin: 'Circle-Thin', sans-serif;

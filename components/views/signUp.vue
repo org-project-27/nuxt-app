@@ -117,12 +117,12 @@
 
 <script>
 import { defineComponent } from 'vue';
-import { evaluatePasswordStrength } from "~/assets/scripts/helpers/inputHelpers";
+import { evaluatePasswordStrength } from "~/utils/helpers/inputHelpers";
 import { useAuthStore } from "~/stores/user/auth";
-import { defaults } from "~/assets/scripts/types/models/userAuthModels"
-import { backendMessage } from "~/assets/scripts/helpers/generalHelpers";
-import { inputSizes } from "~/assets/scripts/configs/defaults.ts";
-import messages from "~/assets/scripts/constants/apiMessageKeys";
+import { defaults } from "~/constants/types/models/userAuthModels"
+import { backendMessage } from "~/utils/helpers/generalHelpers";
+import { inputSizes } from "~/constants/configs/defaults.ts";
+import messages from "~/constants/apiMessageKeys";
 
 const signupResponse = defaults.defaultResponses.signup();
 

@@ -1,4 +1,4 @@
-import colors from '@/assets/colors.json';
+import colors from 'assets/colors.json';
 
 // Box shadows
 export const boxShadows = {

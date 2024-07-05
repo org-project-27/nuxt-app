@@ -31,9 +31,9 @@
 <script lang="js">
 import {defineComponent} from 'vue'
 import {confirmEmailService} from '~/services/user';
-import availableAppRoutes from '~/assets/scripts/constants/availableAppRoutes';
-import {backendMessage} from "assets/scripts/helpers/generalHelpers.js";
-import colorUtilities from "assets/scripts/constants/colorUtilities.js";
+import availableAppRoutes from '~/constants/availableAppRoutes';
+import {backendMessage} from "~/utils/helpers/generalHelpers.js";
+import colorUtilities from "~/constants/colorUtilities.js";
 
 export default defineComponent({
   name: "ConfirmEmail",
