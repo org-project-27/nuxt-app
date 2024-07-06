@@ -59,11 +59,12 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div id="account-layout" class="container flex-column-between-center">
+  <div :id="`account-layout-${deviceType}`" class="container flex-column-between-center">
     <section>
       <aside>
         <div class="logo flex-row-start-center">
-          <logo-component/>
+          <logo-component v-if="deviceType !== 'desktop'" type="2" size="4"/>
+          <logo-component v-else/>
         </div>
         <div class="navbar">
           <nav v-for="(value, key) in accountLayoutNavLinks" :key="key">
@@ -96,9 +97,7 @@ export default defineComponent({
             <h2 v-if="currentPage">
             {{ t(`layouts.account_layout.navbar.links.${currentPage.label}`) }} {{t(`layouts.account_layout.page`)}}
           </h2>
-          <nuxt-link to="#" class="type_2">
-            What is new?
-          </nuxt-link>
+          <lang-switcher-component/>
         </header>
         <div class="responsive-width">
           <slot v-if="waitingForAuthProgress === false && deviceType"/>
@@ -114,12 +113,125 @@ export default defineComponent({
 </template>
 
 <style scoped lang="scss">
+@include for-size($tablet-size) {
+  $sidebar-width: 10%;
+  $account_layout_header_height: 6em;
+  $account_sidebar_padding: .7em 0;
+  $account_layout_border_color: 1.5px solid $default_border_color;
+  #account-layout-tablet.container {
+    section {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      & > aside {
+        transition-duration: 1s;
+        width: $sidebar-width;
+        border-right: $account_layout_border_color;
+        background-color: $second_background_color;
+
+        .logo {
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: $account_layout_header_height;
+          max-height: $account_layout_header_height;
+          min-height: $account_layout_header_height;
+          border-bottom: $account_layout_border_color;
+
+          h2 {
+            font-weight: bolder;
+            font-size: 10px;
+          }
+        }
+
+        .navbar {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5em;
+          margin-top: 2em;
+          nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            & > label {
+              padding: $account_sidebar_padding;
+              border-left: .4em solid transparent;
+              color: $second_gray_color;
+              font-weight: 600;
+              font-size: 1em;
+            }
+
+            & > a {
+              width: 92%;
+              padding: $account_sidebar_padding;
+              border-left: .4em solid transparent;
+              & > div {
+                display: flex;
+                align-items: center;
+                justify-content: center !important;
+                gap: 1.3em;
+                cursor: pointer !important;
+                label {
+                  display: none;
+                  color: $text_color;
+                  cursor: pointer !important;
+                  font-weight: 600;
+                  font-size: .95em;
+                }
+              }
+
+              &:hover, &:active, &.active {
+                opacity: 1;
+                border-left: .4em solid $main_color !important;
+              }
+              &.active {
+                background-color: $main_white_color;
+              }
+            }
+          }
+        }
+
+        & > * {
+        }
+      }
+
+      & > main {
+        width: calc(100vw - $sidebar-width);
+        overflow: hidden;
+        background-color: $main_background_color;
+
+        header {
+          height: $account_layout_header_height;
+          background-color: $main_background_color;
+          border-bottom: $account_layout_border_color;
+        }
+
+        & > * {
+          padding: 0 1.5em;
+        }
+      }
+    }
+
+    footer {
+      min-height: 30rem;
+      width: 100%;
+      box-shadow: $box_shadow_1;
+      background-color: $footer_background_color;
+      color: $footer_font_color;
+    }
+  }
+}
 @include for-size($tablet-size, 100vw) {
-  $sidebar-width: 20%;
+  $sidebar-width: 17%;
   $account_layout_header_height: 6em;
   $account_sidebar_padding: 1em 2em;
   $account_layout_border_color: 1.5px solid $default_border_color;
-  #account-layout.container {
+  #account-layout-desktop.container {
     section {
       min-height: 100vh;
       width: 100vw;
@@ -184,6 +296,8 @@ export default defineComponent({
               &:hover, &:active, &.active {
                 opacity: 1;
                 border-left: .4em solid $main_color !important;
+              }
+              &.active {
                 background-color: $main_white_color;
               }
             }
@@ -207,115 +321,6 @@ export default defineComponent({
 
         & > * {
           padding: 0 3em;
-        }
-      }
-    }
-
-    footer {
-      min-height: 30rem;
-      width: 100%;
-      box-shadow: $box_shadow_1;
-      background-color: $footer_background_color;
-      color: $footer_font_color;
-    }
-  }
-}
-
-@include for-size($small-mobile-size, $tablet-size) {
-  $sidebar-width: 13vw;
-  $account_layout_header_height: 6em;
-  $account_sidebar_padding: .7em .5em;
-  $account_layout_border_color: 1.5px solid $default_border_color;
-  #account-layout.container {
-    section {
-      min-height: 100vh;
-      width: 100vw;
-      display: flex;
-      justify-content: flex-start;
-      align-items: stretch;
-      transition-duration: 1s;
-      & > aside {
-        width: $sidebar-width;
-        border-right: $account_layout_border_color;
-        background-color: $second_background_color;
-
-        .logo {
-          padding: 0 .5rem;
-          height: $account_layout_header_height;
-          max-height: $account_layout_header_height;
-          min-height: $account_layout_header_height;
-          border-bottom: $account_layout_border_color;
-
-          h1 {
-            font-weight: bolder;
-            font-size: 30px;
-          }
-        }
-
-        .navbar {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1.5em;
-          margin-top: 2em;
-          nav {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-            & > label {
-              padding: $account_sidebar_padding;
-              border-left: .4em solid transparent;
-              color: $second_gray_color;
-              font-weight: 600;
-              font-size: .6em;
-            }
-
-            & > a {
-              padding: $account_sidebar_padding;
-              border-left: .4em solid transparent;
-              & > div {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start !important;
-                gap: 1.3em;
-                cursor: pointer !important;
-                label {
-                  display: none;
-                  color: $text_color;
-                  cursor: pointer !important;
-                  font-weight: 600;
-                  font-size: .95em;
-                }
-              }
-
-              &:hover, &:active, &.active {
-                width: calc($sidebar-width - 20px);
-                opacity: 1;
-                border-left: .4em solid $main_color !important;
-                background-color: $main_white_color;
-              }
-            }
-          }
-        }
-
-        & > * {
-        }
-      }
-
-      & > main {
-        width: calc(100vw - $sidebar-width);
-        overflow: hidden;
-        background-color: $main_background_color;
-
-        header {
-          height: $account_layout_header_height;
-          background-color: $main_background_color;
-          border-bottom: $account_layout_border_color;
-        }
-
-        & > * {
-          padding: 0 1.5em;
         }
       }
     }

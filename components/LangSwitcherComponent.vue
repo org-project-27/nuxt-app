@@ -12,7 +12,7 @@
       </option>
     </select>
     <icon-component
-        icon-name="language"
+        icon-name="translate"
         icon-size="23"/>
     <img
         class="responsive-visibility-1"
