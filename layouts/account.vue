@@ -94,7 +94,7 @@ export default defineComponent({
       </aside>
       <main :key="renderKey">
         <header class="flex-row-between-center">
-          <h2 v-if="currentPage.label">
+            <h2 v-if="currentPage">
             {{ t(`layouts.account_layout.navbar.links.${currentPage.label}`) }} {{t(`layouts.account_layout.page`)}}
           </h2>
           <nuxt-link to="#" class="type_2">
@@ -160,7 +160,7 @@ export default defineComponent({
 
             & > label {
               padding: $account_sidebar_padding;
-              border-left: 13px solid transparent;
+              border-left: .4em solid transparent;
               color: $second_gray_color;
               font-weight: 600;
               font-size: 1.25em;
@@ -168,7 +168,7 @@ export default defineComponent({
 
             & > a {
               padding: $account_sidebar_padding;
-              border-left: 13px solid transparent;
+              border-left: .4em solid transparent;
               & > div {
                 display: flex;
                 align-items: center;
@@ -185,7 +185,7 @@ export default defineComponent({
 
               &:hover, &:active, &.active {
                 opacity: 1;
-                border-left: 13px solid $main_color !important;
+                border-left: .4em solid $main_color !important;
                 background-color: $main_white_color;
               }
             }
