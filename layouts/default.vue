@@ -1,7 +1,5 @@
 <template>
-  <fullscreen-modal v-if="fullscreenModal.status"/>
   <div
-      v-show="!fullscreenModal.status"
       id="default-layout"
       class="container flex-column-between-center">
     <header-component/>
@@ -37,9 +35,6 @@ export default defineComponent({
     deviceType(){
       return useConfigsStore().deviceType;
     },
-    fullscreenModal(){
-      return useFullscreenModal();
-    },
     renderKey(){
       return useConfigsStore().renderKey;
     }
@@ -58,10 +53,6 @@ export default defineComponent({
     }
   }
 });
-</script>
-
-<script setup>
-import FullscreenModal from "~/components/FullscreenModal.vue";
 </script>
 
 <style lang="scss">

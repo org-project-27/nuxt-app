@@ -1,6 +1,8 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
-import {useAuthStore} from "~/stores/user/auth";
+import { useAuthStore } from "~/stores/user/auth";
+import { useConfigsStore } from "~/stores/configs"
+import { useI18nStore } from "~/stores/i18n"
 import colorUtilities from "~/constants/colorUtilities";
 import {accountLayoutNavLinks} from "~/constants/availableAppRoutes";
 
@@ -15,7 +17,7 @@ export default defineComponent({
     },
     currentPage(): any {
       let result = null;
-      Object.values(this.accountLayoutNavLinks).forEach(group => {
+      Object.values(this.accountLayoutNavLinks).forEach((group: any[]) => {
          group.forEach(nav => {
            if(nav.link === this.currentPath){
              result = nav;
@@ -26,9 +28,6 @@ export default defineComponent({
     },
     deviceType() {
       return useConfigsStore().deviceType;
-    },
-    fullscreenModal() {
-      return useFullscreenModal();
     },
     renderKey() {
       return useConfigsStore().renderKey;
@@ -127,7 +126,6 @@ export default defineComponent({
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
-      background-color: #ddd;
 
       & > aside {
         width: $sidebar-width;
@@ -224,16 +222,102 @@ export default defineComponent({
 }
 
 @include for-size($small-mobile-size, $tablet-size) {
-  $layout-width: 100%;
+  $sidebar-width: 13vw;
+  $account_layout_header_height: 6em;
+  $account_sidebar_padding: .7em .5em;
+  $account_layout_border_color: 1.5px solid $default_border_color;
   #account-layout.container {
-    gap: $default-layout-section-gap;
-    margin-top: $default-layout-header-height-mobile;
+    section {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      transition-duration: 1s;
+      & > aside {
+        width: $sidebar-width;
+        border-right: $account_layout_border_color;
+        background-color: $second_background_color;
 
-    main {
-      margin-top: calc($default-layout-header-height-mobile / 2.5);
-      border-radius: 1rem;
-      overflow: hidden;
-      min-height: 70vh;
+        .logo {
+          padding: 0 .5rem;
+          height: $account_layout_header_height;
+          max-height: $account_layout_header_height;
+          min-height: $account_layout_header_height;
+          border-bottom: $account_layout_border_color;
+
+          h1 {
+            font-weight: bolder;
+            font-size: 30px;
+          }
+        }
+
+        .navbar {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1.5em;
+          margin-top: 2em;
+          nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            & > label {
+              padding: $account_sidebar_padding;
+              border-left: .4em solid transparent;
+              color: $second_gray_color;
+              font-weight: 600;
+              font-size: .6em;
+            }
+
+            & > a {
+              padding: $account_sidebar_padding;
+              border-left: .4em solid transparent;
+              & > div {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start !important;
+                gap: 1.3em;
+                cursor: pointer !important;
+                label {
+                  display: none;
+                  color: $text_color;
+                  cursor: pointer !important;
+                  font-weight: 600;
+                  font-size: .95em;
+                }
+              }
+
+              &:hover, &:active, &.active {
+                width: calc($sidebar-width - 20px);
+                opacity: 1;
+                border-left: .4em solid $main_color !important;
+                background-color: $main_white_color;
+              }
+            }
+          }
+        }
+
+        & > * {
+        }
+      }
+
+      & > main {
+        width: calc(100vw - $sidebar-width);
+        overflow: hidden;
+        background-color: $main_background_color;
+
+        header {
+          height: $account_layout_header_height;
+          background-color: $main_background_color;
+          border-bottom: $account_layout_border_color;
+        }
+
+        & > * {
+          padding: 0 1.5em;
+        }
+      }
     }
 
     footer {

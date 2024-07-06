@@ -12,6 +12,12 @@ export default defineComponent({
 })
 </script>
 
+<script setup lang="ts">
+definePageMeta({
+  layout: 'account'
+})
+</script>
+
 <style scoped lang="scss">
 
 </style>

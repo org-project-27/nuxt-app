@@ -20,7 +20,7 @@
     </div>
   </template>
 
-  <script>
+  <script lang="ts">
   import {defineComponent} from 'vue'
   import {useAuthStore} from "~/stores/user/auth";
 
@@ -37,6 +37,11 @@
         logout();
       }
     }
+  })
+  </script>
+  <script setup lang="ts">
+  definePageMeta({
+    layout: 'account'
   })
   </script>
 
