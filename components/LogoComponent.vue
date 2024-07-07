@@ -1,6 +1,6 @@
 <template>
   <NuxtLink to="/" class="logo-component">
-    <svg viewBox="0 0 24529 8213" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg v-if="type == '1'" :class="'type-'+type" :width="size + 'rem'" viewBox="0 0 24529 8213" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_257_34)">
         <mask id="mask0_257_34" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="658" y="367" width="7370" height="7370">
           <path d="M8028 367H658V7737H8028V367Z" fill="white"/>
@@ -41,12 +41,43 @@
         </clipPath>
       </defs>
     </svg>
+    <svg v-if="type === '2'" :class="'type-'+type" :width="size + 'rem'" viewBox="0 0 8228 8126" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_231_49)" filter="url(#filter0_d_231_49)">
+        <path class="logo-icon-background" d="M8203 4121.5C8203 6319.32 6421.32 8101 4223.5 8101C2025.68 8101 244 6319.32 244 4121.5C244 1923.68 2025.68 142 4223.5 142C6421.32 142 8203 1923.68 8203 4121.5Z" fill="#EEE"/>
+        <path class="logo-icon" d="M7684.53 120.202C7688.03 116.946 7693.26 121.45 7690.56 125.39L3716.27 5925.44C3464.79 6292.45 2917.7 6275.47 2689.46 5893.58L692.597 2552.44C690.373 2548.72 694.829 2544.62 698.356 2547.14L2924.61 4137.94C3072.04 4243.29 3273.27 4230.23 3405.84 4106.71L7684.53 120.202Z"
+              fill="#5D45F6"/>
+      </g>
+      <defs>
+        <filter id="filter0_d_231_49" x="-4" y="0" width="8236" height="8134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+          <feOffset dy="4"/>
+          <feGaussianBlur stdDeviation="2"/>
+          <feComposite in2="hardAlpha" operator="out"/>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_231_49"/>
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_231_49" result="shape"/>
+        </filter>
+        <clipPath id="clip0_231_49">
+          <rect width="8228" height="8126" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
   </NuxtLink>
 </template>
 
-<script lang="ts" setup>
-let {brandName} = useAppConfig();
-brandName = brandName.toUpperCase();
+<script lang="ts">
+export default defineComponent({
+  name: 'LogoComponent',
+  props: {
+    type: {
+      default: () => '1'
+    },
+    size: {
+      default: () => '10'
+    }
+  }
+})
 </script>
 
 <style scoped lang="scss">
@@ -59,13 +90,22 @@ $logo-color-active: $main_color;
   justify-content: center;
   height: 100%;
   gap: .3rem;
-  svg {
-    width: 10rem;
+  svg.type-1 {
     transition-duration: $animation-duration;
     path.logo-text{
       fill: $main_black_color;
       transition-duration: $animation-duration;
     }
+    path.logo-icon{
+      fill: $logo-color-active;
+      transition-duration: $animation-duration;
+    }
+    path.logo-icon-background{
+      fill: $third_background_color;
+    }
+  }
+  svg.type-2 {
+    transition-duration: $animation-duration;
     path.logo-icon{
       fill: $logo-color-active;
       transition-duration: $animation-duration;

@@ -23,28 +23,29 @@ export default defineNuxtRouteMiddleware((to, from) => {
 });
 
 function processByConfig(to: any, from: object, config = routeConfig.default): void {
-    const { brandName } = useAppConfig();
-    const { path } = to;
-    const { reRenderApp, setCurrentRoute } = useGeneralStore();
-
-    useSeoMeta({
-        title: config.title ?
-            `${useI18nStore().i18n.global.t(config.title)} | ${brandName}` : brandName,
-        description: config.description
-    });
-
-    if (config.middlewareMethod) {
-        config.middlewareMethod(to, from);
-    }
-
-    setPageLayout(config.layout);
-    setCurrentRoute({
-        path,
-        configs: config,
-        readyForView: false,
-    });
-
     if (process.client) {
+        const { brandName } = useAppConfig();
+        const { path } = to;
+        const { reRenderApp, setCurrentRoute } = useGeneralStore();
+
+        useSeoMeta({
+            twitterSiteId: undefined,
+            value: undefined,
+            //@ts-ignore
+            title: config.title ? `${useI18nStore().i18n.global.t(config.title)} | ${brandName}` : brandName,
+            description: config.description
+        });
+
+        if (config.middlewareMethod) {
+            config.middlewareMethod(to, from);
+        }
+
+        //setPageLayout(config.layout);
+        setCurrentRoute({
+            path,
+            configs: config,
+            readyForView: false,
+        });
         reRenderApp();
     }
 }

@@ -1,79 +1,65 @@
 <template>
   <header id="header-default-layout">
-    <section class="responsive-width responsive-visibility-1">
-      <div class="wrapper-area">
-        <nuxt-link
-            v-for="i in 4" :key="i"
-            :to="'/posts/link'+i"
-            class="child cannot-select flex-column-center">
-          Link {{ i }}
-        </nuxt-link>
-        <lang-switcher-component/>
-      </div>
-      <div class="main-area">
-        <logo-component/>
-        <div class="search-area">
-          Search the product, category or brand you are looking for
-        </div>
-        <nav class="auth-area">
-          <nuxt-link v-for="navigation in headerRoutes.authRoutes"
-                     :key="navigation.url"
-                     :to="navigation.url">
-            <icon-component
-                :icon-name="navigation.icon"
-                icon-size="1.7rem"/>
-            <span>{{ $t(navigation.label) }}</span>
-          </nuxt-link>
-        </nav>
-      </div>
-      <div class="navigation-area hide-for-tablet">
-        <nav>
-          <nuxt-link
-              class="type_1"
-              v-for="i in categories.length"
-              :class="{'active': i == currentPath.params.id}"
-              :to="'/categories/'+i" :key=i>
-            {{ categories[i - 1] }}
-          </nuxt-link>
-        </nav>
-      </div>
+    <!-- Desktop Size -->
+    <section class="header-1 responsive-visibility-1" v-if="deviceType === 'desktop'">
+      <logo-component type="1"/>
+      <nuxt-link :to="availableAppRoutes.profile">
+        Click me
+      </nuxt-link>
     </section>
-    <section class="responsive-width responsive-visibility-2">
-      <logo-component/>
-      <div style="display: flex; align-items: center; gap: 10px">
-        <lang-switcher-component/>
-        <NuxtLink :to="currentPath" @click="setFullscreenModal">
+    <!-- Mobile Size -->
+    <section class="header-2 responsive-visibility-2" v-if="deviceType === 'mobile'">
+      <div class="logo-section">
+        <logo-component type="2" size="3.5"/>
+      </div>
+      <form class="search-area" @submit.prevent="handleSearch">
+        <input
+            type="search"
+            :placeholder="$t('buttons.search')+'...'"
+            :aria-label="$t('buttons.search')"
+            v-model="searchQuery"
+        />
+        <button type="submit">
+          <icon-component icon-name="search" icon-size="20"/>
+        </button>
+      </form>
+      <div class="burger-menu">
+        <nuxt-link :to="availableAppRoutes.account">
           <icon-component
-              :icon-name="status ? 'close' : 'menu'"
-              icon-size="30"/>
-        </NuxtLink>
+              icon-name="menu"
+              icon-size="30"
+              fill
+              :color="colorUtilities.$second_gray_color"/>
+        </nuxt-link>
       </div>
     </section>
   </header>
-
 </template>
+<script lang="js">
+import availableAppRoutes from "~/constants/availableAppRoutes";
+import colorUtilities from "~/constants/colorUtilities.js";
+import deviceDetection from "~/utils/helpers/device-detection";
 
-<script setup lang="js">
-import {useRoute} from 'vue-router';
-import menu1 from "~/components/fullscreens/menu1.vue";
-import {headerRoutes} from "~/constants/availableAppRoutes.ts";
-
-const {getCategories} = usePostsStore();
-const categories = getCategories(10);
-const currentPath = useRoute();
-const colorUtilities = useNuxtApp().$colorUtilities;
-
-const {status, setStatus, setView} = useFullscreenModal();
-
-function setFullscreenModal() {
-  setStatus(!status);
-  if(status){
-    setView(null);
-  } else {
-    setView(menu1);
-  }
-}
-
+export default {
+  data() {
+    return {
+      colorUtilities,
+      availableAppRoutes,
+      searchQuery: '',
+    };
+  },
+  computed: {
+    deviceType() {
+      return deviceDetection();
+    },
+  },
+  methods: {
+    handleSearch() {
+      // Method to handle the search form submission
+      console.log(this.searchQuery); // Replace with actual search logic
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -83,82 +69,11 @@ function setFullscreenModal() {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-color: $header-background-color;
     min-height: $default-layout-header-height;
     width: 100%;
     box-shadow: $box_shadow_1;
-
-    section {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: .1rem;
-
-      & > * {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        color: $header_font_color !important;
-      }
-
-      .wrapper-area {
-        height: calc($default-layout-header-height * (1 / 6));
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 2rem;
-
-        a {
-          font-size: 1.1rem;
-          color: $header_font_color !important;
-        }
-      }
-
-      .main-area {
-        height: calc($default-layout-header-height * (3 / 6));
-        gap: 2rem;
-
-        .search-area {
-          background-color: $third_background_color;
-          width: 90%;
-          height: 40px;
-          display: flex;
-          align-items: center;
-          border-radius: .8rem;
-          padding: 0 20px;
-          color: $main_black_color;
-        }
-
-        .auth-area {
-          display: flex;
-          gap: 1.5rem;
-
-          a {
-            white-space: nowrap;
-            color: unset !important;
-            display: flex;
-            align-items: center;
-            gap: .2rem;
-          }
-        }
-      }
-
-      .navigation-area {
-        display: flex;
-        align-items: center !important;
-        justify-content: center !important;
-        margin-top: 1.2rem;
-
-        nav {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          font-size: 1.1rem;
-        }
-      }
-    }
   }
 }
 
@@ -174,16 +89,37 @@ function setFullscreenModal() {
     align-items: center;
     justify-content: center;
     background-color: $header-background-color;
-    min-height: $default-layout-header-height-mobile;
+    height: $default-layout-header-height-mobile;
     width: 100%;
     box-shadow: $box_shadow_2;
     section {
+      width: 85%;
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      & > * {
-        min-width: 50px;
+      height: 100%;
+      .search-area {
+        width: 65%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 55%;
+        border-radius: 10px;
+        overflow: hidden;
+        input, button {
+          border: none;
+          outline: none;
+          height: 100%;
+        }
+        input {
+          background-color: $third_background_color;
+          padding: 0 1em;
+          width: 80%;
+        }
+        button {
+          width: 20%;
+          background-color: $main_gray_color;
+        }
       }
     }
   }

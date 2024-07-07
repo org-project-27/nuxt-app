@@ -1,7 +1,5 @@
 <template>
-  <fullscreen-modal v-if="fullscreenModal.status"/>
   <div
-      v-show="!fullscreenModal.status"
       id="default-layout"
       class="container flex-column-between-center">
     <header-component/>
@@ -23,6 +21,7 @@ import { defineComponent } from 'vue'
 import { useAuthStore } from '~/stores/user/auth';
 import LoadingPageComponent from '~/components/LoadingPageComponent.vue';
 import HeaderComponent from "~/components/layouts/default/HeaderComponent.vue";
+import deviceDetection from "~/utils/helpers/device-detection";
 
 export default defineComponent({
   name: "DefaultLayout",
@@ -34,11 +33,8 @@ export default defineComponent({
     currentPath(){
       return this.$route
     },
-    deviceType(){
-      return useConfigsStore().deviceType;
-    },
-    fullscreenModal(){
-      return useFullscreenModal();
+    deviceType() {
+      return deviceDetection();
     },
     renderKey(){
       return useConfigsStore().renderKey;
@@ -58,10 +54,6 @@ export default defineComponent({
     }
   }
 });
-</script>
-
-<script setup>
-import FullscreenModal from "~/components/FullscreenModal.vue";
 </script>
 
 <style lang="scss">
