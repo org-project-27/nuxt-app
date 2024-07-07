@@ -5,7 +5,7 @@
     <header-component/>
     <main :key="renderKey">
       <div class="responsive-width">
-        <slot v-if="waitingForAuthProgress === false && deviceType"/>
+        <slot v-if="waitingForAuthProgress === false"/>
         <loading-page-component v-else/>
       </div>
     </main>
@@ -21,7 +21,6 @@ import { defineComponent } from 'vue'
 import { useAuthStore } from '~/stores/user/auth';
 import LoadingPageComponent from '~/components/LoadingPageComponent.vue';
 import HeaderComponent from "~/components/layouts/default/HeaderComponent.vue";
-import deviceDetection from "~/utils/helpers/device-detection";
 
 export default defineComponent({
   name: "DefaultLayout",
@@ -32,9 +31,6 @@ export default defineComponent({
     },
     currentPath(){
       return this.$route
-    },
-    deviceType() {
-      return deviceDetection();
     },
     renderKey(){
       return useConfigsStore().renderKey;

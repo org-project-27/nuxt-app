@@ -5,7 +5,6 @@ import {useConfigsStore} from "~/stores/configs"
 import {useI18nStore} from "~/stores/i18n"
 import colorUtilities from "~/constants/colorUtilities";
 import availableAppRoutes, {accountLayoutNavLinks} from "~/constants/availableAppRoutes";
-import deviceDetection from "~/utils/helpers/device-detection";
 
 export default defineComponent({
   name: "account",
@@ -30,9 +29,6 @@ export default defineComponent({
       });
       return result;
     },
-    deviceType() {
-      return deviceDetection();
-    },
     renderKey() {
       return useConfigsStore().renderKey;
     },
@@ -48,8 +44,6 @@ export default defineComponent({
   },
   mounted() {
     this.waitingForAuthProgress = this.authProgressIsLoading;
-    // const element = document.getElementsByTagName('aside')[0];
-    // element.style.overflowX = 'hidden';
   },
   watch: {
     authProgressIsLoading(val) {
@@ -68,6 +62,11 @@ export default defineComponent({
   }
 })
 </script>
+<script setup lang="ts">
+import { useDeviceDetector } from '~/composables/useWindowSize';
+const {deviceType} = useDeviceDetector();
+</script>
+
 <template>
   <div :id="`account-layout-${deviceType}`" class="container flex-column-between-center" v-if="deviceType">
     <section>
@@ -160,7 +159,7 @@ export default defineComponent({
       & > aside {
         width: $sidebar-width;
         border-right: $account_layout_border_color;
-        height: 100vh;
+        min-height: 100vh;
         transition-duration: .5s;
         position: absolute;
         overflow: hidden;
@@ -429,6 +428,7 @@ export default defineComponent({
 
       & > aside {
         width: $sidebar-width;
+        min-width: 280px;
         border-right: $account_layout_border_color;
         background-color: $second_background_color;
 
