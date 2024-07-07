@@ -13,7 +13,7 @@
     </select>
     <icon-component
         icon-name="language"
-        icon-size="23"/>
+        icon-size="26"/>
     <img
         class="responsive-visibility-1"
         :alt="selectedLang.iso"

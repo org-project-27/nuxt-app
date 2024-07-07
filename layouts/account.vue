@@ -73,7 +73,7 @@ export default defineComponent({
     <section>
       <aside :class="{'active': sidebarVisible}">
         <div class="logo flex-row-start-center">
-          <logo-component v-if="deviceType !== 'tablet'"/>
+          <logo-component v-if="deviceType !== 'tablet'" size="10"/>
           <logo-component v-else type="2" size="4"/>
           <lang-switcher-component v-if="deviceType === 'mobile'"/>
         </div>
@@ -258,7 +258,7 @@ export default defineComponent({
               border: none;
               position: fixed;
               right: 0;
-              top: 13vh;
+              top: 15vh;
               padding: .6rem;
               background-color: lighten($main_color, 5);
               box-shadow: $box-shadow_1;
