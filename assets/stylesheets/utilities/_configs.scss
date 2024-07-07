@@ -11,12 +11,12 @@ $default-layout-header-height-mobile: calc($default-layout-header-height / 2.5);
 $link-color: $main_color;
 
 $html_background_color: transparent;
-$body_background_color: $main_black_color;
+$body_background_color: $main_white_color;
 
 $header_background_color: $main_white_color;
 $header_font_color: $main_black_color;
 
-$footer_background_color: $body_background_color;
+$footer_background_color: $main_black_color;
 $footer_font_color: $main_color;
 
 .default-container {

@@ -1,21 +1,24 @@
 <template>
-    <NuxtLayout>
-      <NuxtPage :key="renderKey"/>
-    </NuxtLayout>
+  <NuxtLayout>
+    <loading-page v-if="!deviceType"/>
+    <NuxtPage :key="renderKey"/>
+  </NuxtLayout>
 </template>
 <script lang="ts">
+import deviceDetection from "~/utils/helpers/device-detection";
+import LoadingPage from "~/components/LoadingPageComponent.vue";
+
 export default defineComponent({
-    name: "App",
-    mounted(){
-      if (process.client) {
-        // This code runs after the component is mounted, on the client side only
-        useConfigsStore().detectDeviceType();
-      }
+  name: "App",
+  components: {LoadingPage},
+  computed: {
+    renderKey() {
+      return useConfigsStore().renderKey;
     },
-    computed: {
-      renderKey(){
-        return useConfigsStore().renderKey;
-      }
-    }
+    deviceType() {
+      return deviceDetection();
+    },
+  }
 });
 </script>
+

@@ -10,6 +10,7 @@ const availableAppRoutes = {
     confirm_email: '/confirm_email',
     reset_password: '/reset_password',
     init: '/init',
+    account: '/account',
     profile: '/account/user',
     favorites: '/account/favorites',
     cart: '/account/cart',

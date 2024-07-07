@@ -24,8 +24,12 @@
         </button>
       </form>
       <div class="burger-menu">
-        <nuxt-link :to="availableAppRoutes.profile">
-          <icon-component icon-name="menu" icon-size="30"/>
+        <nuxt-link :to="availableAppRoutes.account">
+          <icon-component
+              icon-name="menu"
+              icon-size="30"
+              fill
+              :color="colorUtilities.$second_gray_color"/>
         </nuxt-link>
       </div>
     </section>
@@ -33,19 +37,21 @@
 </template>
 <script lang="js">
 import availableAppRoutes from "~/constants/availableAppRoutes";
+import colorUtilities from "~/constants/colorUtilities.js";
+import deviceDetection from "~/utils/helpers/device-detection";
 
 export default {
   data() {
     return {
+      colorUtilities,
       availableAppRoutes,
       searchQuery: '',
     };
   },
   computed: {
-    deviceType(){
-      const {deviceType} = useConfigsStore();
-      return deviceType;
-    }
+    deviceType() {
+      return deviceDetection();
+    },
   },
   methods: {
     handleSearch() {
