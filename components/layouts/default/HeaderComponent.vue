@@ -38,7 +38,6 @@
 <script lang="js">
 import availableAppRoutes from "~/constants/availableAppRoutes";
 import colorUtilities from "~/constants/colorUtilities.js";
-import deviceDetection from "~/utils/helpers/device-detection";
 
 export default {
   data() {
