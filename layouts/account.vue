@@ -143,6 +143,7 @@ export default defineComponent({
 </template>
 
 <style scoped lang="scss">
+// Mobile size:
 @include for-size($small-mobile-size, $tablet-size) {
   $sidebar-width: 0%;
   $account_layout_header_height: 5em;
@@ -273,7 +274,7 @@ export default defineComponent({
         }
 
         & > * {
-          padding: 0 3em;
+          padding: 0 2em;
         }
       }
     }
@@ -287,7 +288,7 @@ export default defineComponent({
     }
   }
 }
-
+// Tablet size:
 @include for-size($tablet-size) {
   $sidebar-width: 10%;
   $account_layout_header_height: 6em;
@@ -412,7 +413,7 @@ export default defineComponent({
     }
   }
 }
-
+// Desktop size:
 @include for-size($tablet-size, 100vw) {
   $sidebar-width: 17%;
   $account_layout_header_height: 6em;

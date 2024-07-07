@@ -8,11 +8,11 @@
           v-for="local in availableLocales"
           :key="local.iso"
           :value="local.iso">
-            {{$t(local.label)}}
+            {{ $t(local.label) }}
       </option>
     </select>
     <icon-component
-        icon-name="translate"
+        icon-name="language"
         icon-size="23"/>
     <img
         class="responsive-visibility-1"
