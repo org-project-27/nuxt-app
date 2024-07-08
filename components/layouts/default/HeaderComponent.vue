@@ -38,7 +38,6 @@
 <script lang="js">
 import availableAppRoutes from "~/constants/availableAppRoutes";
 import colorUtilities from "~/constants/colorUtilities.js";
-import deviceDetection from "~/utils/helpers/device-detection";
 
 export default {
   data() {
@@ -48,11 +47,6 @@ export default {
       searchQuery: '',
     };
   },
-  computed: {
-    deviceType() {
-      return deviceDetection();
-    },
-  },
   methods: {
     handleSearch() {
       // Method to handle the search form submission
@@ -61,6 +55,11 @@ export default {
   },
 };
 </script>
+<script setup lang="js">
+import { useDeviceDetector } from '~/composables/useWindowSize';
+const {deviceType} = useDeviceDetector();
+</script>
+
 
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw) {

@@ -1,5 +1,4 @@
-export default function () {
-    const width = window?.innerWidth;
+export default function (width = window?.innerWidth) {
     const sizes = {
         'large-desktop': 2000,  // For larger desktops
         'desktop': 1250,        // For desktops
@@ -9,7 +8,7 @@ export default function () {
     };
 
     if (width >= sizes['large-desktop']) {
-        return 'large-desktop';
+        return 'desktop';
     } else if (width >= sizes['desktop'] && width < sizes['large-desktop']) {
         return 'desktop';
     } else if (width >= sizes['tablet'] && width < sizes['desktop']) {
@@ -17,7 +16,7 @@ export default function () {
     } else if (width >= sizes['mobile'] && width < sizes['tablet']) {
         return 'mobile';
     } else if (width >= sizes['small-mobile'] && width < sizes['mobile']) {
-        return 'small-mobile';
+        return 'mobile';
     } else {
         return null;
     }
