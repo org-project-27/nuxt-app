@@ -91,7 +91,7 @@ const {deviceType} = useDeviceDetector();
                 <div>
                   <icon-component
                       :icon-name="nav.icon"
-                      icon-size="30"
+                      icon-size="33"
                       :fill="currentPath === nav.link"
                       :color="currentPath === nav.link ? colorUtilities.$main_color : colorUtilities.$second_gray_color"/>
                 </div>
@@ -415,7 +415,7 @@ const {deviceType} = useDeviceDetector();
 }
 // Desktop size:
 @include for-size($tablet-size, 100vw) {
-  $sidebar-width: 17%;
+  $sidebar-width: 18%;
   $account_layout_header_height: 6em;
   $account_sidebar_padding: 1em 2em;
   $account_layout_border_color: 1.5px solid $default_border_color;
@@ -429,7 +429,7 @@ const {deviceType} = useDeviceDetector();
 
       & > aside {
         width: $sidebar-width;
-        min-width: 280px;
+        min-width: 300px;
         border-right: $account_layout_border_color;
         background-color: $second_background_color;
 
@@ -463,7 +463,7 @@ const {deviceType} = useDeviceDetector();
               border-left: .4em solid transparent;
               color: $second_gray_color;
               font-weight: 600;
-              font-size: 1.25em;
+              font-size: 1.30em;
             }
 
             & > a {
@@ -481,7 +481,7 @@ const {deviceType} = useDeviceDetector();
                   color: $text_color;
                   cursor: pointer !important;
                   font-weight: 600;
-                  font-size: .95em;
+                  font-size: 1em;
                 }
               }
 
