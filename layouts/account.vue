@@ -50,7 +50,7 @@ export default defineComponent({
     authProgressIsLoading(val) {
       this.waitingForAuthProgress = val;
     },
-    currentPath(){
+    currentPath() {
       this.sidebarVisible = false;
     }
   },
@@ -64,7 +64,8 @@ export default defineComponent({
 })
 </script>
 <script setup lang="ts">
-import { useDeviceDetector } from '~/composables/useWindowSize';
+import {useDeviceDetector} from '~/composables/useWindowSize';
+
 const {deviceType} = useDeviceDetector();
 </script>
 
@@ -74,7 +75,7 @@ const {deviceType} = useDeviceDetector();
       <aside :class="{'active': sidebarVisible}">
         <div class="logo flex-row-start-center">
           <logo-component v-if="deviceType !== 'tablet'" size="10"/>
-          <logo-component v-else type="2" size="4"/>
+          <logo-component v-else type="2" size="3.5"/>
           <lang-switcher-component v-if="deviceType === 'mobile'"/>
         </div>
         <div class="navbar">
@@ -91,7 +92,7 @@ const {deviceType} = useDeviceDetector();
                 <div>
                   <icon-component
                       :icon-name="nav.icon"
-                      icon-size="30"
+                      :icon-size="deviceType === 'tablet' ? 33 : 30"
                       :fill="currentPath === nav.link"
                       :color="currentPath === nav.link ? colorUtilities.$main_color : colorUtilities.$second_gray_color"/>
                 </div>
@@ -121,11 +122,11 @@ const {deviceType} = useDeviceDetector();
                   icon-size="30"
                   icon-name="menu"
                   v-if="!sidebarVisible"/>
-             <icon-component
-                 :color="colorUtilities.$main_white_color"
-                 icon-size="30"
-                 icon-name="close"
-                 v-else/>
+              <icon-component
+                  :color="colorUtilities.$main_white_color"
+                  icon-size="30"
+                  icon-name="close"
+                  v-else/>
             </button>
           </div>
         </header>
@@ -143,6 +144,64 @@ const {deviceType} = useDeviceDetector();
 </template>
 
 <style scoped lang="scss">
+// Global:
+.container {
+  section {
+    & > aside {
+      .logo {
+        h1 {
+        }
+      }
+
+      .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 2em;
+        gap: 2rem;
+        nav {
+          & > label {
+          }
+
+          & > a {
+            & > div {
+              label {
+              }
+            }
+
+            &:hover, &:active, &.active {
+              opacity: 1;
+              background-color: $main_white_color;
+              box-shadow: $box_shadow_1;
+            }
+
+            &.active {
+              border-left: .4em solid $main_color !important;
+            }
+          }
+        }
+      }
+
+      & > * {
+      }
+    }
+
+    & > main {
+      header {
+      }
+
+      .header-nav {
+      }
+
+      & > * {
+      }
+    }
+  }
+
+  footer {
+  }
+}
+
 // Mobile size:
 @include for-size($small-mobile-size, $tablet-size) {
   $sidebar-width: 0%;
@@ -165,6 +224,7 @@ const {deviceType} = useDeviceDetector();
         position: absolute;
         overflow: hidden;
         left: 100%;
+
         .logo {
           padding: 0 2.5em;
           height: $account_layout_header_height;
@@ -174,6 +234,7 @@ const {deviceType} = useDeviceDetector();
           display: flex;
           align-items: center;
           justify-content: space-between;
+
           h1 {
             font-weight: bolder;
             font-size: 30px;
@@ -218,15 +279,6 @@ const {deviceType} = useDeviceDetector();
                   font-size: .95em;
                 }
               }
-
-              &:hover, &:active, &.active {
-                opacity: 1;
-                border-left: .4em solid $main_color !important;
-              }
-
-              &.active {
-                background-color: $main_white_color;
-              }
             }
           }
         }
@@ -253,19 +305,21 @@ const {deviceType} = useDeviceDetector();
           height: $account_layout_header_height;
           background-color: $main_background_color;
           border-bottom: $account_layout_border_color;
+
           .sidebar-controller {
             button {
+              box-shadow: $box-shadow_1;
               border: none;
               position: fixed;
               right: 0;
-              top: 15vh;
-              padding: .6rem;
+              top: 16vh;
+              padding: .8rem;
               background-color: lighten($main_color, 5);
-              box-shadow: $box-shadow_1;
               border-bottom-left-radius: 1rem;
               border-top-left-radius: 1rem;
-           }
+            }
           }
+
           .header-nav {
             display: flex;
             align-items: center;
@@ -288,6 +342,7 @@ const {deviceType} = useDeviceDetector();
     }
   }
 }
+
 // Tablet size:
 @include for-size($tablet-size) {
   $sidebar-width: 10%;
@@ -297,7 +352,7 @@ const {deviceType} = useDeviceDetector();
   #account-layout-tablet.container {
     section {
       min-height: 100vh;
-      width: 100vw;
+      width: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
@@ -324,18 +379,12 @@ const {deviceType} = useDeviceDetector();
         }
 
         .navbar {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1.5em;
-          margin-top: 2em;
-
           nav {
             display: flex;
             flex-direction: column;
             width: 100%;
             align-items: center;
-
+            gap: .6rem;
             & > label {
               padding: $account_sidebar_padding;
               border-left: .4em solid transparent;
@@ -364,14 +413,11 @@ const {deviceType} = useDeviceDetector();
                   font-size: .95em;
                 }
               }
-
               &:hover, &:active, &.active {
-                opacity: 1;
-                border-left: .4em solid $main_color !important;
+                box-shadow: none;
               }
 
               &.active {
-                background-color: $main_white_color;
               }
             }
           }
@@ -413,28 +459,29 @@ const {deviceType} = useDeviceDetector();
     }
   }
 }
+
 // Desktop size:
 @include for-size($tablet-size, 100vw) {
-  $sidebar-width: 17%;
+  $sidebar-width: 18%;
   $account_layout_header_height: 6em;
-  $account_sidebar_padding: 1em 2em;
+  $account_sidebar_padding: .8em 1.5em;
   $account_layout_border_color: 1.5px solid $default_border_color;
   #account-layout-desktop.container {
     section {
       min-height: 100vh;
-      width: 100vw;
+      width: 100%;
       display: flex;
       justify-content: flex-start;
       align-items: stretch;
 
       & > aside {
         width: $sidebar-width;
-        min-width: 280px;
+        min-width: 300px;
         border-right: $account_layout_border_color;
         background-color: $second_background_color;
 
         .logo {
-          padding: 0 2.5em;
+          padding: 0 2em;
           height: $account_layout_header_height;
           max-height: $account_layout_header_height;
           min-height: $account_layout_header_height;
@@ -447,12 +494,6 @@ const {deviceType} = useDeviceDetector();
         }
 
         .navbar {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1.5em;
-          margin-top: 2em;
-
           nav {
             display: flex;
             flex-direction: column;
@@ -463,7 +504,7 @@ const {deviceType} = useDeviceDetector();
               border-left: .4em solid transparent;
               color: $second_gray_color;
               font-weight: 600;
-              font-size: 1.25em;
+              font-size: 1.30em;
             }
 
             & > a {
@@ -481,17 +522,8 @@ const {deviceType} = useDeviceDetector();
                   color: $text_color;
                   cursor: pointer !important;
                   font-weight: 600;
-                  font-size: .95em;
+                  font-size: 1em;
                 }
-              }
-
-              &:hover, &:active, &.active {
-                opacity: 1;
-                border-left: .4em solid $main_color !important;
-              }
-
-              &.active {
-                background-color: $main_white_color;
               }
             }
           }
