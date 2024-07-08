@@ -75,7 +75,7 @@ const {deviceType} = useDeviceDetector();
       <aside :class="{'active': sidebarVisible}">
         <div class="logo flex-row-start-center">
           <logo-component v-if="deviceType !== 'tablet'" size="10"/>
-          <logo-component v-else type="2" size="4"/>
+          <logo-component v-else type="2" size="3.5"/>
           <lang-switcher-component v-if="deviceType === 'mobile'"/>
         </div>
         <div class="navbar">
@@ -92,7 +92,7 @@ const {deviceType} = useDeviceDetector();
                 <div>
                   <icon-component
                       :icon-name="nav.icon"
-                      icon-size="33"
+                      :icon-size="deviceType === 'tablet' ? 33 : 30"
                       :fill="currentPath === nav.link"
                       :color="currentPath === nav.link ? colorUtilities.$main_color : colorUtilities.$second_gray_color"/>
                 </div>
@@ -154,6 +154,11 @@ const {deviceType} = useDeviceDetector();
       }
 
       .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 2em;
+        gap: 2rem;
         nav {
           & > label {
           }
@@ -167,6 +172,7 @@ const {deviceType} = useDeviceDetector();
             &:hover, &:active, &.active {
               opacity: 1;
               background-color: $main_white_color;
+              box-shadow: $box_shadow_1;
             }
 
             &.active {
@@ -302,13 +308,13 @@ const {deviceType} = useDeviceDetector();
 
           .sidebar-controller {
             button {
+              box-shadow: $box-shadow_1;
               border: none;
               position: fixed;
               right: 0;
-              top: 15vh;
-              padding: .6rem;
+              top: 16vh;
+              padding: .8rem;
               background-color: lighten($main_color, 5);
-              box-shadow: $box-shadow_1;
               border-bottom-left-radius: 1rem;
               border-top-left-radius: 1rem;
             }
@@ -373,18 +379,12 @@ const {deviceType} = useDeviceDetector();
         }
 
         .navbar {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 2rem;
-          margin-top: 2em;
-
           nav {
             display: flex;
             flex-direction: column;
             width: 100%;
             align-items: center;
-            gap: .8rem;
+            gap: .6rem;
             & > label {
               padding: $account_sidebar_padding;
               border-left: .4em solid transparent;
@@ -412,6 +412,12 @@ const {deviceType} = useDeviceDetector();
                   font-weight: 600;
                   font-size: .95em;
                 }
+              }
+              &:hover, &:active, &.active {
+                box-shadow: none;
+              }
+
+              &.active {
               }
             }
           }
@@ -458,7 +464,7 @@ const {deviceType} = useDeviceDetector();
 @include for-size($tablet-size, 100vw) {
   $sidebar-width: 18%;
   $account_layout_header_height: 6em;
-  $account_sidebar_padding: .8em 2em;
+  $account_sidebar_padding: .8em 1.5em;
   $account_layout_border_color: 1.5px solid $default_border_color;
   #account-layout-desktop.container {
     section {
@@ -475,7 +481,7 @@ const {deviceType} = useDeviceDetector();
         background-color: $second_background_color;
 
         .logo {
-          padding: 0 2.5em;
+          padding: 0 2em;
           height: $account_layout_header_height;
           max-height: $account_layout_header_height;
           min-height: $account_layout_header_height;
@@ -488,12 +494,6 @@ const {deviceType} = useDeviceDetector();
         }
 
         .navbar {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 2rem;
-          margin-top: 2em;
-
           nav {
             display: flex;
             flex-direction: column;
