@@ -44,6 +44,7 @@ export default defineComponent({
   },
   mounted() {
     this.waitingForAuthProgress = this.authProgressIsLoading;
+    this.sidebarVisible = this.availableAppRoutes.account === this.currentPath;
   },
   watch: {
     authProgressIsLoading(val) {
