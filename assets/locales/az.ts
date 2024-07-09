@@ -47,7 +47,7 @@ locales = {
         log_in: {
             log_in: "Daxil ol",
             sign_up: "Qeydiyyatdan keç",
-            welcome_message: "⭐️ Xoş gəldiniz!",
+            welcome_message: "🎉 Xoş gəldiniz!",
             email: "E-poçt",
             password: "Parol",
             login: "Daxil ol",

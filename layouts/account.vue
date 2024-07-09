@@ -172,7 +172,6 @@ const {deviceType} = useDeviceDetector();
             &:hover, &:active, &.active {
               opacity: 1;
               background-color: $main_white_color;
-              box-shadow: $box_shadow_1;
             }
 
             &.active {
@@ -234,11 +233,6 @@ const {deviceType} = useDeviceDetector();
           display: flex;
           align-items: center;
           justify-content: space-between;
-
-          h1 {
-            font-weight: bolder;
-            font-size: 30px;
-          }
         }
 
         .navbar {
@@ -258,7 +252,7 @@ const {deviceType} = useDeviceDetector();
               border-left: .4em solid transparent;
               color: $second_gray_color;
               font-weight: 600;
-              font-size: 1.25em;
+              font-size: $font-size-big;
             }
 
             & > a {
@@ -276,9 +270,14 @@ const {deviceType} = useDeviceDetector();
                   color: $text_color;
                   cursor: pointer !important;
                   font-weight: 600;
-                  font-size: .95em;
+                  font-size: $font-size-normal;
                 }
               }
+              &.active {
+                border-left: .4em solid $main_color !important;
+                box-shadow: $box-shadow-1;
+              }
+
             }
           }
         }
@@ -371,11 +370,6 @@ const {deviceType} = useDeviceDetector();
           max-height: $account_layout_header_height;
           min-height: $account_layout_header_height;
           border-bottom: $account_layout_border_color;
-
-          h2 {
-            font-weight: bolder;
-            font-size: 10px;
-          }
         }
 
         .navbar {
@@ -390,7 +384,7 @@ const {deviceType} = useDeviceDetector();
               border-left: .4em solid transparent;
               color: $second_gray_color;
               font-weight: 600;
-              font-size: 1em;
+              font-size: $font-size-normal;
             }
 
             & > a {
@@ -407,17 +401,7 @@ const {deviceType} = useDeviceDetector();
 
                 label {
                   display: none;
-                  color: $text_color;
-                  cursor: pointer !important;
-                  font-weight: 600;
-                  font-size: .95em;
                 }
-              }
-              &:hover, &:active, &.active {
-                box-shadow: none;
-              }
-
-              &.active {
               }
             }
           }
@@ -486,11 +470,6 @@ const {deviceType} = useDeviceDetector();
           max-height: $account_layout_header_height;
           min-height: $account_layout_header_height;
           border-bottom: $account_layout_border_color;
-
-          h1 {
-            font-weight: bolder;
-            font-size: 30px;
-          }
         }
 
         .navbar {
@@ -504,7 +483,7 @@ const {deviceType} = useDeviceDetector();
               border-left: .4em solid transparent;
               color: $second_gray_color;
               font-weight: 600;
-              font-size: 1.30em;
+              font-size: $font-size-normal;
             }
 
             & > a {
@@ -522,7 +501,7 @@ const {deviceType} = useDeviceDetector();
                   color: $text_color;
                   cursor: pointer !important;
                   font-weight: 600;
-                  font-size: 1em;
+                  font-size: $font-size-small;
                 }
               }
             }

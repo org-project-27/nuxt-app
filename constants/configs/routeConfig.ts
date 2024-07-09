@@ -120,9 +120,9 @@ routeConfig[appAvailableRoutes.requests] = {
 };
 
 routeConfig[appAvailableRoutes.support] = {
-    auth: true,
+    auth: false,
     title: 'pages.support',
-    layout: "account",
+    layout: "default",
     description: '',
     middlewareMethod(to, from) {
 

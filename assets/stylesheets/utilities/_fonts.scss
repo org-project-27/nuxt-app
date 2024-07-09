@@ -54,6 +54,15 @@
 //  font-style: normal;
 //}
 
+//$font-family: 'Circle', sans-serif;
+//$font-family-Alt-Bold: 'Circle-Alt-Bold', sans-serif;
+//$font-family-Alt-ExtraBold: 'Circle-Alt-ExtraBold', sans-serif;
+//$font-family-ExtraBold: 'Circle-ExtraBold', sans-serif;
+//$font-family-ExtraLight: 'Circle-ExtraLight', sans-serif;
+//$font-family-Light: 'Circle-Light', sans-serif;
+//$font-family-Thin: 'Circle-Thin', sans-serif;
+
+
 $font-family: Arial, sans-serif;
 $font-family-Alt-Bold: Arial, sans-serif;
 $font-family-Alt-ExtraBold: Arial, sans-serif;
@@ -62,10 +71,10 @@ $font-family-ExtraLight: Arial, sans-serif;
 $font-family-Light: Arial, sans-serif;
 $font-family-Thin: Arial, sans-serif;
 
-//$font-family: 'Circle', sans-serif;
-//$font-family-Alt-Bold: 'Circle-Alt-Bold', sans-serif;
-//$font-family-Alt-ExtraBold: 'Circle-Alt-ExtraBold', sans-serif;
-//$font-family-ExtraBold: 'Circle-ExtraBold', sans-serif;
-//$font-family-ExtraLight: 'Circle-ExtraLight', sans-serif;
-//$font-family-Light: 'Circle-Light', sans-serif;
-//$font-family-Thin: 'Circle-Thin', sans-serif;
+// Font sizes:
+$font-size-extra-small: .85rem;
+$font-size-small: .90rem;
+$font-size-normal: 1rem;
+$font-size-big: 1.2rem;
+$font-size-extra-big: 1.5rem;
+$font-size-input: 1.2rem;

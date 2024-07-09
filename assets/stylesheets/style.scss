@@ -6,9 +6,10 @@
 
 
 html{
-  font-size: 14px;
   background-color: $html_background_color;
   & > * {
+    padding: 0;
+    margin: 0 auto;
     color: $text_color;
   }
 }
@@ -32,7 +33,7 @@ body{
 a {
   transition-duration: $default-transition-duration;
   color: $link-color;
-  font-size: 1.1rem;
+  font-size: $font-size-normal;
   user-select: none;
   text-decoration: none;
   white-space: nowrap;
@@ -88,6 +89,10 @@ br,
 strong,
 b {
   font-weight: bold;
+}
+
+.default-container {
+  background-color: $main_white_color !important;
 }
 
 .flex-column-between-center{

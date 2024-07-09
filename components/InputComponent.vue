@@ -511,7 +511,7 @@ $disabled-color: $main_black_color;
   transition-duration: $default-transition-duration;
   label{
     position: absolute;
-    font-size: 1rem;
+    font-size: $font-size-small;
     margin-top: -7px;
     margin-left: 10px;
     background-color: $main_white_color;
@@ -523,7 +523,7 @@ $disabled-color: $main_black_color;
     align-items: center;
     gap: 3px;
     justify-content: center;
-    font-size: .8rem;
+    font-size: $font-size-extra-small;
     margin-top: 5px;
     div{
       width: 20px;
@@ -557,14 +557,14 @@ $disabled-color: $main_black_color;
       cursor: pointer;
     }
     .char-counter{
-      font-size: 12px;
+      font-size: $font-size-small;
       position: relative;
       cursor: pointer;
       color: $disabled-color;
     }
     input{
       //background-color: #EDF5FF;
-      font-size: 1.2rem;
+      font-size: $font-size-input;
       border: none;
       width: 100%;
       height: 100%;
@@ -661,10 +661,10 @@ $disabled-color: $main_black_color;
     height: 100%;
     border: none;
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: $font-size-big;
     font-weight: bold;
     &.mid-size{
-      font-size: 1rem;
+      font-size: $font-size-normal;
     }
   }
   &.is-loading{
@@ -676,7 +676,7 @@ $disabled-color: $main_black_color;
     $type-0: #eee;
     background-color: $type-0;
     input{
-      font-size: 1.2rem !important;
+      font-size: $font-size-big !important;
       color: $main_black_color;
       font-weight: bold !important;
     }
@@ -797,7 +797,7 @@ $disabled-color: $main_black_color;
   label{
     color: $main_black_color;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: $font-size-normal;
     &.disabled{
       opacity: .5;
       cursor: not-allowed;
