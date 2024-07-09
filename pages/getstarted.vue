@@ -72,8 +72,7 @@ export default defineComponent({
       padding-top: 1px;
       & > a {
         border: $border-style-disabled;
-        font-size: $font-size-normal;
-        font-weight: bold;
+        font-size: $font-size-big;
         &#sign_up {
           &.active{
             border-right: $border-style;
@@ -104,6 +103,7 @@ export default defineComponent({
           border-bottom: none !important;
           border-top: $border-style !important;
           box-shadow: none !important;
+          font-size: $font-size-input;
         }
         &:hover{
           opacity: 1;
@@ -140,7 +140,7 @@ export default defineComponent({
     .getstarted-container{
       border-radius: $border-radius;
       nav#getstarted-views-nav {
-        height: 3.3rem;
+        height: 3.7rem;
         width: $layout-width;
         & > a {
           width: calc($layout-width/2);
@@ -170,7 +170,7 @@ export default defineComponent({
     .getstarted-container{
       border-radius: $border-radius;
       nav#getstarted-views-nav {
-        height: 3.3rem;
+        height: 3.6rem;
         width: $layout-width;
         & > a {
           width: calc($layout-width/2);
