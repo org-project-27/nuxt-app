@@ -9,16 +9,24 @@ $default-layout-header-height-mobile: calc($default-layout-header-height / 2.5);
 
 // Default Colors
 $link-color: $main_color;
-
 $html_background_color: transparent;
 $body_background_color: $main_white_color;
-
 $header_background_color: $main_white_color;
 $header_font_color: $main_black_color;
-
 $footer_background_color: $main_black_color;
 $footer_font_color: $main_color;
+$text_color: $third_black_color;
+$default_border_color: $main_gray_color;
+$main_background_color: $main_white_color;
+$second_background_color: $second_white_color;
+$third_background_color: $third_white_color;
 
-.default-container {
-  background-color: $main_white_color !important;
-}
+// Box shadows
+$box_shadow__2: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 _2px 1px rgba(0,0,0,0.25);
+$box_shadow__1: 0 0 10px 0 rgba(0,0,0,0.45) inset;
+$box_shadow_0: 0px 3px 6px 0px rgba(140, 149, 159, 0.15);
+$box_shadow_1: 0 1px 3px #ddd, 0 1px 2px rgba(0,0,0,0.24);
+$box_shadow_2: 0px 3px 8px #ddd;
+$box_shadow_3: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$box_shadow_4: 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 8px 16px rgba(0,0,0,0.11);
+$box_shadow_5: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12);

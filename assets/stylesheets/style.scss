@@ -90,6 +90,10 @@ b {
   font-weight: bold;
 }
 
+.default-container {
+  background-color: $main_white_color !important;
+}
+
 .flex-column-between-center{
   display: flex;
   flex-direction: column;
