@@ -172,7 +172,6 @@ const {deviceType} = useDeviceDetector();
             &:hover, &:active, &.active {
               opacity: 1;
               background-color: $main_white_color;
-              box-shadow: $box_shadow_1;
             }
 
             &.active {
@@ -279,6 +278,11 @@ const {deviceType} = useDeviceDetector();
                   font-size: .95em;
                 }
               }
+              &.active {
+                border-left: .4em solid $main_color !important;
+                box-shadow: $box-shadow-1;
+              }
+
             }
           }
         }
@@ -412,12 +416,6 @@ const {deviceType} = useDeviceDetector();
                   font-weight: 600;
                   font-size: .95em;
                 }
-              }
-              &:hover, &:active, &.active {
-                box-shadow: none;
-              }
-
-              &.active {
               }
             }
           }
