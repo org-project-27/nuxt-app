@@ -263,7 +263,7 @@ export default defineComponent({
     }
 
     .already-have-account {
-      font-size: 1.1rem;
+      font-size: $font-size-normal;
       color: $main_black_color;
     }
   }
@@ -277,8 +277,8 @@ export default defineComponent({
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
-      margin: 2.5rem 0;
+      gap: 1.5rem;
+      margin: 2rem 0 3rem 0;
 
       .input-group {
         display: flex;
@@ -293,7 +293,7 @@ export default defineComponent({
     }
 
     .already-have-account {
-      font-size: 1.1rem;
+      font-size: $font-size-normal;
       color: $main_black_color;
     }
   }

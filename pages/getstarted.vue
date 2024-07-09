@@ -67,11 +67,13 @@ export default defineComponent({
   .getstarted-container{
     margin-top: 1rem;
     nav#getstarted-views-nav {
-      min-height: calc(3.2rem + $border-radius / 2);
+      min-height: calc(1rem + $border-radius / 2);
       max-height: calc(3.5rem + $border-radius / 2);
       padding-top: 1px;
       & > a {
         border: $border-style-disabled;
+        font-size: $font-size-normal;
+        font-weight: bold;
         &#sign_up {
           &.active{
             border-right: $border-style;
@@ -101,7 +103,6 @@ export default defineComponent({
           background-color: $main_white_color !important;
           border-bottom: none !important;
           border-top: $border-style !important;
-          font-size: 1.3rem;
           box-shadow: none !important;
         }
         &:hover{
@@ -160,7 +161,7 @@ export default defineComponent({
 }
 
 @include for-size($small-mobile-size, $tablet-size) {
-  $layout-width: 93vw;
+  $layout-width: 92vw;
   $border-radius: 1rem;
   #getstarted-page {
     margin: .1vh 0;
@@ -169,7 +170,7 @@ export default defineComponent({
     .getstarted-container{
       border-radius: $border-radius;
       nav#getstarted-views-nav {
-        height: 4vh;
+        height: 3.3rem;
         width: $layout-width;
         & > a {
           width: calc($layout-width/2);

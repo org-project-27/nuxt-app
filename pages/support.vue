@@ -14,7 +14,7 @@ export default defineComponent({
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'account'
+  layout: 'default'
 })
 </script>
 

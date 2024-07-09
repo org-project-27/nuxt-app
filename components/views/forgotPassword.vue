@@ -133,7 +133,7 @@ export default defineComponent({
           text-align: right;
           margin-top: .5rem;
           a {
-            font-size: 1rem;
+            font-size: $font-size-normal;
             color: $main_black_color;
           }
         }
@@ -145,7 +145,7 @@ export default defineComponent({
     }
 
     .no-account-yet {
-      font-size: 1.1rem;
+      font-size: $font-size-normal;
       color: $main_black_color;
     }
   }
@@ -173,7 +173,7 @@ export default defineComponent({
           text-align: right;
           margin-top: .5rem;
           a {
-            font-size: 1rem;
+            font-size: $font-size-normal;
             color: $main_black_color;
           }
         }
@@ -185,7 +185,7 @@ export default defineComponent({
     }
 
     .no-account-yet {
-      font-size: 1.1rem;
+      font-size: $font-size-normal;
       color: $main_black_color;
     }
   }

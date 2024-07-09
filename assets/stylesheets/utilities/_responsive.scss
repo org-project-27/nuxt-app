@@ -69,7 +69,7 @@ html {
 @include for-size($mobile-size, $tablet-size) {
   .responsive-width{ width: 95vw; }
   html {
-    font-size: 13px;
+    font-size: 13.5px;
   }
   .show-for-mobile {
     display: unset;

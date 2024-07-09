@@ -47,7 +47,7 @@ locales = {
         log_in: {
             log_in: "Log in",
             sign_up: "Sign up",
-            welcome_message: "⭐️ Welcome back!",
+            welcome_message: "🎉 Welcome back!",
             email: "Email",
             password: "Password",
             login: "Login",
