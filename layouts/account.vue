@@ -161,6 +161,7 @@ const {deviceType} = useDeviceDetector();
         gap: 2rem;
         nav {
           & > label {
+            font-weight: 600;
           }
 
           & > a {
@@ -251,7 +252,6 @@ const {deviceType} = useDeviceDetector();
               padding: $account_sidebar_padding;
               border-left: .4em solid transparent;
               color: $second_gray_color;
-              font-weight: 600;
               font-size: $font-size-big;
             }
 
@@ -269,8 +269,7 @@ const {deviceType} = useDeviceDetector();
                 label {
                   color: $text_color;
                   cursor: pointer !important;
-                  font-weight: 600;
-                  font-size: $font-size-normal;
+                  font-size: $font-size-big;
                 }
               }
               &.active {
@@ -383,7 +382,6 @@ const {deviceType} = useDeviceDetector();
               padding: $account_sidebar_padding;
               border-left: .4em solid transparent;
               color: $second_gray_color;
-              font-weight: 600;
               font-size: $font-size-normal;
             }
 
@@ -482,7 +480,6 @@ const {deviceType} = useDeviceDetector();
               padding: $account_sidebar_padding;
               border-left: .4em solid transparent;
               color: $second_gray_color;
-              font-weight: 600;
               font-size: $font-size-normal;
             }
 
@@ -500,7 +497,6 @@ const {deviceType} = useDeviceDetector();
                 label {
                   color: $text_color;
                   cursor: pointer !important;
-                  font-weight: 600;
                   font-size: $font-size-small;
                 }
               }
