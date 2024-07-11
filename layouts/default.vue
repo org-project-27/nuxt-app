@@ -1,18 +1,5 @@
 <template>
-  <div
-      id="default-layout"
-      class="container flex-column-between-center">
-    <header-component/>
-    <main :key="renderKey">
-      <div class="responsive-width">
-        <slot v-if="waitingForAuthProgress === false"/>
-        <loading-page-component v-else/>
-      </div>
-    </main>
-    <footer>
-      <slot name="footer">
-      </slot>
-    </footer>
+  <div>
   </div>
 </template>
 
@@ -57,6 +44,7 @@ export default defineComponent({
   $layout-width: 100%;
   #default-layout.container{
     gap: $default-layout-section-gap;
+    background-color: $main_background_color;
     main{
       border-radius: 1rem;
       overflow: hidden;
@@ -75,6 +63,9 @@ export default defineComponent({
 @include for-size($small-mobile-size, $tablet-size) {
   $layout-width: 100%;
   #default-layout.container{
+    height: 199px !important;
+    display: flex;
+    align-items: center;
     gap: $default-layout-section-gap;
     margin-top: $default-layout-header-height-mobile;
     main{

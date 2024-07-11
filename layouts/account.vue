@@ -497,7 +497,7 @@ const {deviceType} = useDeviceDetector();
                 label {
                   color: $text_color;
                   cursor: pointer !important;
-                  font-size: $font-size-small;
+                  font-size: $font-size-normal;
                 }
               }
             }
