@@ -4,13 +4,13 @@ $default-loading-speed: 1s;
 
 // Default Layout configs:
 $default-layout-section-gap: 3rem;
-$default-layout-header-height: 12rem;
+$default-layout-header-height: 4rem;
 $default-layout-header-height-mobile: calc($default-layout-header-height / 2.5);
 
 // Default Colors
 $text_color: $third_black_color; // all texts default color
 $default_border_color: $main_gray_color; // borders default color
-$main_background_color: #eee;
+$main_background_color: $main_white_color;
 $second_background_color: $second_white_color;
 $third_background_color: $third_white_color;
 $link-color: $main_color;
