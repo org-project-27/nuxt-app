@@ -83,27 +83,29 @@ const loginResponse: LoginResponseModel = {
 
 // Auth response data modeling:
 export interface AuthResponseModel {
-    email: string | null,
-    fullname: string | null,
     user_id: number | null,
     details: {
+        email: string | null,
+        fullname: string | null,
         preferred_lang: LangOptionsType | null;
         phone: string | null;
         birthday: Date | null;
         description: string | null;
         email_registered: boolean | null;
+        bio: string | null;
     }
 }
 const auth: AuthResponseModel = {
-    email: null,
-    fullname: null,
     user_id: null,
     details: {
+        email: null,
+        fullname: null,
         preferred_lang: null,
         phone: null,
         birthday: null,
         description: null,
-        email_registered: true
+        email_registered: true,
+        bio: null
     }
 }
 

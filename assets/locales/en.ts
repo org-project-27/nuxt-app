@@ -19,7 +19,8 @@ locales = {
         continue: "Continue",
         waiting: "Waiting",
         get_started: "Get started",
-        save: "Save"
+        save: "Save",
+        change: "Change"
     },
     pages: {
         default: "Default",
@@ -86,6 +87,26 @@ locales = {
         confirm_password: "Confirm password",
         confirm_password_wrong: "Confirm password does not match the new password!",
         new_password_description: '🔐 Choose a strong, new password that you haven\'t previously used on this site.'
+    },
+    user_account: {
+        founder: "Founder",
+        brand_owner: "Brand Owner",
+        customer: "Customer",
+        user: "User",
+        account_settings: "Account Settings",
+        place_manager: "Place Manager",
+        change_password: "Change Password",
+        fullname: "Full name",
+        edit_fullname: "Your fullname",
+        email: "Email",
+        edit_email: 'Your email',
+        new_password: "New Password",
+        current_password: "Current password",
+        bio: "Bio",
+        bio_desc: "Tell us a description",
+        phone: 'Phone',
+        edit_phone: 'Your phone',
+        birthdate: 'Birthday'
     },
     layouts: {
         account_layout: {

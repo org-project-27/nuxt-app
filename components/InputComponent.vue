@@ -23,6 +23,7 @@
     <div class="input-container flex-row-center">
       <div class="left-side" :class="{'deactive': !showInputLeftSideArea}">
         <icon-component
+            v-if="leftIcon?.icon"
             class="input-icon"
             :fill="focusComputed"
             :icon-name="leftIcon?.icon"
@@ -36,6 +37,7 @@
           :required="required"
           :autofocus="autofocus"
           :placeholder="placeholder"
+          :minlength="minlength"
           :maxlength="maxlength"
           :readonly="readonly"
           :disabled="disabled"
@@ -97,6 +99,7 @@
     <div class="input-container flex-row-center">
       <div class="left-side" :class="{'deactive': !showInputLeftSideArea}">
         <icon-component
+            v-if="leftIcon?.icon"
             class="input-icon"
             :fill="focusComputed"
             :icon-name="leftIcon?.icon"
@@ -110,6 +113,7 @@
           :required="required"
           :autofocus="autofocus"
           :placeholder="placeholder || '•••••••••'"
+          :minlength="minlength"
           :maxlength="maxlength"
           :readonly="readonly"
           :disabled="disabled"
@@ -202,6 +206,22 @@
         <span v-html="htmlLabel"></span>
     </label>
   </div>
+  <div
+      class="input-component date"
+      :class="{ 'disabled': disabled }"
+      v-else-if="inputCategory === 'date'"
+      v-show="readyForView">
+    <label>{{label}}</label>
+    <input
+        :type="type"
+        :name="name"
+        :disabled="disabled"
+        :style="inputStyle"
+        :required="required"
+        :max="birthdateLimit"
+        :autocomplete="autocomplete"
+        v-model="modelComputed">
+  </div>
 </template>
 
 <script>
@@ -238,6 +258,7 @@ export default defineComponent({
     disabled: Boolean,
     pattern: String,
     maxlength: [Number, String],
+    minlength: [Number, String],
     value: [Number, String, Object, Boolean],
     label: String,
     htmlLabel: String,
@@ -418,6 +439,24 @@ export default defineComponent({
       get(){
         return this.passwordVisibilityTrigger;
       }
+    },
+    birthdateLimit() {
+      let currentDay = new Date().getDate();
+      let currentMonth = new Date().getMonth() + 1;
+      let currentYear = new Date().getFullYear() - 18;
+
+      if(Number(currentDay) < 10){
+        currentDay = `0${currentDay}`;
+      }
+      if(Number(currentMonth) < 10){
+        currentMonth = `0${currentMonth}`;
+      }
+
+      if(this.autocomplete === 'bday' || this.name === 'birthdate'){
+        return `${currentYear}-${currentMonth}-${currentDay}`;
+      }
+      return null
+
     }
   },
   data() {
@@ -561,6 +600,7 @@ $disabled-color: $main_black_color;
       position: relative;
       cursor: pointer;
       color: $disabled-color;
+      padding: 0 1rem;
     }
     input{
       //background-color: #EDF5FF;
@@ -801,6 +841,40 @@ $disabled-color: $main_black_color;
     &.disabled{
       opacity: .5;
       cursor: not-allowed;
+    }
+  }
+}
+// Category: Date
+.input-component.date{
+  label {
+    position: relative;
+    top: .6rem;
+    left: .8rem;
+    background-color: $main_white_color;
+    padding: 0 .2rem;
+    font-size: $font-size-small;
+  }
+  input[type=date] {
+    border: 1px solid $main_black_color;
+    padding: 0 .5rem;
+    width: calc(100% - 1rem);
+    height: 3.3rem;
+    font-size: $font_size_input;
+    border-radius: .4rem;
+    outline: none;
+    &:active,
+    &:hover{
+      border: 1px solid $main_color;
+    }
+    &:disabled {
+      border: 1px solid $third_gray_color;
+      color: $third_gray_color;
+      cursor: not-allowed;
+    }
+  }
+  &:hover{
+    label {
+      color: $main_color;
     }
   }
 }

@@ -514,6 +514,7 @@ const {deviceType} = useDeviceDetector();
         background-color: $main_background_color;
 
         header {
+          padding: 0 3em;
           height: $account_layout_header_height;
           background-color: $main_background_color;
           border-bottom: $account_layout_border_color;
@@ -525,8 +526,8 @@ const {deviceType} = useDeviceDetector();
           gap: .6rem;
         }
 
-        & > * {
-          padding: 0 3em;
+        .responsive-width {
+          width: 100%;
         }
       }
     }
