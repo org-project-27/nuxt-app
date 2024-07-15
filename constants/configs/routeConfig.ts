@@ -39,36 +39,6 @@ routeConfig[appAvailableRoutes.get_started] = {
     }
 };
 
-routeConfig[appAvailableRoutes.posts] = {
-    auth: false,
-    title: 'pages.post',
-    layout: 'default',
-    description: '',
-    middlewareMethod(to, from) {
-        //console.log('Posts page function')
-    }
-};
-
-routeConfig[appAvailableRoutes.categories] = {
-    auth: false,
-    title: 'pages.categories',
-    layout: 'default',
-    description: '',
-    middlewareMethod(to, from) {
-        //console.log('Posts page function');
-    }
-};
-
-routeConfig[appAvailableRoutes.profile] = {
-    auth: true,
-    title: 'pages.profile',
-    layout: "account",
-    description: 'Manage your profile on Faynn. Update your preferences, contact details, and password here!',
-    middlewareMethod(to, from) {
-
-    }
-};
-
 routeConfig[appAvailableRoutes.favorites] = {
     auth: true,
     title: 'pages.favorites',
@@ -78,66 +48,6 @@ routeConfig[appAvailableRoutes.favorites] = {
 
     }
 };
-
-routeConfig[appAvailableRoutes.cart] = {
-    auth: true,
-    title: 'pages.cart',
-    layout: "default",
-    description: '',
-    middlewareMethod(to, from) {
-
-    }
-};
-
-routeConfig[appAvailableRoutes.dashboard] = {
-    auth: true,
-    title: 'pages.dashboard',
-    layout: "account",
-    description: '',
-    middlewareMethod(to, from) {
-
-    }
-};
-
-routeConfig[appAvailableRoutes.brands] = {
-    auth: true,
-    title: 'pages.brands',
-    layout: "account",
-    description: '',
-    middlewareMethod(to, from) {
-
-    }
-};
-
-routeConfig[appAvailableRoutes.requests] = {
-    auth: true,
-    title: 'pages.requests',
-    layout: "account",
-    description: '',
-    middlewareMethod(to, from) {
-
-    }
-};
-
-routeConfig[appAvailableRoutes.support] = {
-    auth: false,
-    title: 'pages.support',
-    layout: "default",
-    description: '',
-    middlewareMethod(to, from) {
-
-    }
-};
-
-routeConfig[appAvailableRoutes.settings] = {
-    auth: true,
-    title: 'pages.settings',
-    layout: "account",
-    description: '',
-    middlewareMethod(to, from) {
-
-    }
-}
 
 routeConfig[appAvailableRoutes.terms_of_service] = {
     auth: false,
@@ -178,5 +88,84 @@ routeConfig[appAvailableRoutes.reset_password] = {
 
     }
 };
+
+routeConfig[appAvailableRoutes.support] = {
+    auth: false,
+    title: 'pages.support',
+    layout: "default",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.catalog] = {
+    auth: false,
+    title: 'pages.catalog',
+    layout: "default",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+routeConfig[appAvailableRoutes.about_us] = {
+    auth: false,
+    title: 'pages.about_us',
+    layout: "default",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.profile] = {
+    auth: true,
+    title: 'pages.profile',
+    layout: "account",
+    description: 'Manage your profile on Faynn. Update your preferences, contact details, and password here!',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.dashboard] = {
+    auth: true,
+    title: 'pages.dashboard',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.brands] = {
+    auth: true,
+    title: 'pages.brands',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.requests] = {
+    auth: true,
+    title: 'pages.requests',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+};
+
+routeConfig[appAvailableRoutes.settings] = {
+    auth: true,
+    title: 'pages.settings',
+    layout: "account",
+    description: '',
+    middlewareMethod(to, from) {
+
+    }
+}
 
 export default routeConfig;

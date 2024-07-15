@@ -4,7 +4,7 @@ $default-loading-speed: 1s;
 
 // Default Layout configs:
 $default-layout-section-gap: 3rem;
-$default-layout-header-height: 4rem;
+$default-layout-header-height: 5rem;
 $default-layout-header-height-mobile: calc($default-layout-header-height / 2.5);
 $default_border_radius: 1rem;
 
@@ -32,3 +32,6 @@ $box_shadow_2: 0px 3px 8px #ddd;
 $box_shadow_3: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $box_shadow_4: 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 8px 16px rgba(0,0,0,0.11);
 $box_shadow_5: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12);
+
+$box_shadow_main_color_1: 0 1px 3px lighten($main_color, 30%), 0 1px 2px lighten($main_color, 30%);
+$box_shadow_main_color_2: 0px 3px 8px lighten($main_color, 30%);

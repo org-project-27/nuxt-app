@@ -12,9 +12,12 @@
       </option>
     </select>
     <icon-component
-        icon-name="language"
+        v-if="true"
+        icon-name="translate"
+        :color="colorUtilities.$main_color"
         icon-size="26"/>
     <img
+        v-else
         class="responsive-visibility-1"
         :alt="selectedLang.iso"
         :src="selectedLang.icon"/>

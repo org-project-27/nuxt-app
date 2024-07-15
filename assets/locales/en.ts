@@ -42,7 +42,9 @@ locales = {
         dashboard: 'Dashboard',
         requests: 'Requests',
         settings: 'Settings',
-        support: 'Support'
+        support: 'Support',
+        about_us: 'About Us',
+        catalog: 'Catalog'
     },
     get_started: {
         log_in: {
