@@ -64,19 +64,24 @@ export default defineComponent({
 })
 </script>
 <script setup lang="ts">
-import {useDeviceDetector} from '~/composables/useWindowSize';
+import { ref, computed } from 'vue';
+import { useDeviceDetector } from '~/composables/useWindowSize';
 
-const {deviceType} = useDeviceDetector();
+const { deviceType } = useDeviceDetector();
+const readyForView = computed(() => deviceType.value !== undefined && deviceType.value !== null);
+
+const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
 </script>
 
 <template>
-  <div :id="`account-layout-${deviceType}`" class="container flex-column-between-center" v-if="deviceType">
+  <loading-page-component v-if="!readyForView"/>
+  <div :id="`account-layout-${deviceTypeSafe}`" class="container flex-column-between-center" v-if="readyForView">
     <section>
       <aside :class="{'active': sidebarVisible}">
         <div class="logo flex-row-start-center">
-          <logo-component v-if="deviceType !== 'tablet'" size="10"/>
+          <logo-component v-if="deviceTypeSafe !== 'tablet'" size="10"/>
           <logo-component v-else type="2" size="3.5"/>
-          <lang-switcher-component v-if="deviceType === 'mobile'"/>
+          <lang-switcher-component v-if="deviceTypeSafe === 'mobile'"/>
         </div>
         <div class="navbar">
           <nav v-for="(value, key) in accountLayoutNavLinks" :key="key">
@@ -92,7 +97,7 @@ const {deviceType} = useDeviceDetector();
                 <div>
                   <icon-component
                       :icon-name="nav.icon"
-                      :icon-size="deviceType === 'tablet' ? 33 : 30"
+                      :icon-size="deviceTypeSafe === 'tablet' ? 33 : 30"
                       :fill="currentPath === nav.link"
                       :color="currentPath === nav.link ? colorUtilities.$main_color : colorUtilities.$second_gray_color"/>
                 </div>
@@ -115,7 +120,7 @@ const {deviceType} = useDeviceDetector();
             </h2>
           </div>
           <div class="sidebar-controller" v-show="currentPath !== availableAppRoutes.account">
-            <lang-switcher-component v-if="deviceType !== 'mobile'"/>
+            <lang-switcher-component v-if="deviceTypeSafe !== 'mobile'"/>
             <button @click="sidebarVisible = !sidebarVisible" v-else>
               <icon-component
                   :color="colorUtilities.$main_white_color"
@@ -131,7 +136,7 @@ const {deviceType} = useDeviceDetector();
           </div>
         </header>
         <div class="responsive-width">
-          <slot v-if="waitingForAuthProgress === false && deviceType"/>
+          <slot v-if="waitingForAuthProgress === false && readyForView"/>
           <loading-page-component v-else/>
         </div>
       </main>
