@@ -10,6 +10,8 @@ import type {
 } from "~/constants/types/models/userAuthModels";
 import type {DefaultResponseDataType, DefaultResponseType} from "~/constants/types/defaultTypes";
 import type {LangOptionsType} from "~/constants/types/LocalesType";
+import type {EditUserAccountForm} from "~/constants/types/models/editUserAccountFormModels";
+import {deepCopy} from "~/utils/helpers/generalHelpers";
 
 
 export async function loginService(payload : Login) {
@@ -109,4 +111,10 @@ export async function setUserPreferredLangService(payload: { user_id: number, la
 
 export async function logoutService(){
     await axiosInstance.get('/v1/user/logout');
+}
+
+export async function editUserData(payload: EditUserAccountForm){
+    const data = deepCopy(payload);
+    delete data['email'];
+    await axiosInstance.patch('/v1/user/edit', data);
 }

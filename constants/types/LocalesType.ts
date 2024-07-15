@@ -53,6 +53,7 @@ export interface Buttons {
     waiting: LocaleType;
     get_started: LocaleType;
     save: LocaleType;
+    change: LocaleType;
 }
 
 export interface Pages {
@@ -153,6 +154,26 @@ export interface AccountLayout {
         }
     }
 }
+export interface UserAccount {
+    founder: LocaleType;
+    brand_owner: LocaleType;
+    customer: LocaleType;
+    user: LocaleType;
+    place_manager: LocaleType;
+    account_settings: LocaleType;
+    change_password: LocaleType;
+    fullname: LocaleType;
+    edit_fullname: LocaleType;
+    email: LocaleType;
+    edit_email: LocaleType;
+    new_password: LocaleType;
+    current_password: LocaleType;
+    bio: LocaleType;
+    bio_desc: LocaleType;
+    phone: LocaleType;
+    edit_phone: LocaleType;
+    birthdate: LocaleType;
+}
 
 export interface LanguageContent {
     lang: LocaleType;
@@ -169,6 +190,7 @@ export interface LanguageContent {
     get_started: GetStarted;
     reset_password: ResetPassword;
     backend_messages: BackendMessage;
+    user_account: UserAccount;
     layouts: {
         account_layout: AccountLayout
     }

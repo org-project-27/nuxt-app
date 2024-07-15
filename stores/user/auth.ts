@@ -14,8 +14,11 @@ export const useAuthStore = defineStore('authStore', {
     getters: {
         isAuthenticated(state){
             // #TODO: Configure user is really auth or not
-            return !!state.modelAuth.user_id;
+            return !!state.modelAuth.user_id || false;
         },
+        userId(state) {
+            return state.modelAuth.user_id || null;
+        }
     },
     actions: {
         resetModelSignup() : void {
