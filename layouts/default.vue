@@ -1,95 +1,66 @@
+<script setup lang="ts">
+import {ref, computed} from 'vue';
+import {useDeviceDetector} from '~/composables/useWindowSize';
+import HeaderComponent from "~/components/layouts/default/DefaultHeaderComponent.vue";
+
+const {deviceType} = useDeviceDetector();
+const readyForView = computed(() => deviceType.value !== undefined && deviceType.value !== null);
+const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
+</script>
+
 <template>
-  <div
-      id="default-layout"
-      class="container flex-column-between-center">
+  <loading-page-component v-if="!readyForView"/>
+  <div :id="`default-layout-${deviceTypeSafe}`"
+       v-if="readyForView"
+       class="container flex-column-start-center">
     <header-component/>
-    <main :key="renderKey">
-      <div class="responsive-width">
-        <slot v-if="waitingForAuthProgress === false"/>
-        <loading-page-component v-else/>
-      </div>
+    <main>
+      <slot></slot>
     </main>
-    <footer>
-      <slot name="footer">
-      </slot>
-    </footer>
   </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import { useAuthStore } from '~/stores/user/auth';
-import LoadingPageComponent from '~/components/LoadingPageComponent.vue';
-import HeaderComponent from "~/components/layouts/default/HeaderComponent.vue";
 
-export default defineComponent({
-  name: "DefaultLayout",
-  components: { LoadingPageComponent, HeaderComponent },
-  computed: {
-    authProgressIsLoading(){
-      return useAuthStore().authProgressIsLoading;
-    },
-    currentPath(){
-      return this.$route
-    },
-    renderKey(){
-      return useConfigsStore().renderKey;
-    }
-  },
-  data(){
-    return {
-      waitingForAuthProgress: null,
-    }
-  },
-  mounted(){
-    this.waitingForAuthProgress = this.authProgressIsLoading;
-  },
-  watch: {
-    authProgressIsLoading(val){
-      this.waitingForAuthProgress = val;
-    }
-  }
-});
-</script>
+<style scoped lang="scss">
+// Global:
+.container {
+  width: 100vw;
 
-<style lang="scss">
-@include for-size($tablet-size, 100vw) {
-  $layout-width: 100%;
-  #default-layout.container{
-    gap: $default-layout-section-gap;
-    main{
-      border-radius: 1rem;
-      overflow: hidden;
-      min-height: 70vh;
-    }
-    footer{
-      min-height: 30rem;
-      width: 100%;
-      box-shadow: $box_shadow_1;
-      background-color: $footer_background_color;
-      color: $footer_font_color;
-    }
+  & > * {
+    background-color: $main_background_color;
+    width: 100%;
   }
 }
 
+// Mobile size:
 @include for-size($small-mobile-size, $tablet-size) {
-  $layout-width: 100%;
-  #default-layout.container{
-    gap: $default-layout-section-gap;
-    margin-top: $default-layout-header-height-mobile;
-    main{
-      margin-top: calc($default-layout-header-height-mobile / 2.5);
-      border-radius: 1rem;
-      overflow: hidden;
-      min-height: 70vh;
+  #default-layout-mobile.container {
+    & > * {
+      background-color: lime !important;
     }
-    footer{
-      min-height: 30rem;
-      width: 100%;
-      box-shadow: $box_shadow_1;
-      background-color: $footer_background_color;
-      color: $footer_font_color;
-    }
+
   }
+}
+
+// Tablet size:
+@include for-size($tablet-size) {
+  #default-layout-tablet.container {
+    & > * {
+      background-color: blue !important;
+    }
+
+  }
+}
+
+// Desktop size:
+@include for-size($tablet-size, 100vw) {
+  #default-layout-desktop.container {
+    & > * {
+      max-width: 2000px;
+      width: 90%;
+    }
+    gap: 5rem;
+  }
+
 }
 </style>

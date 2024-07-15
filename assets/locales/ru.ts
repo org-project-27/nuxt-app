@@ -42,6 +42,8 @@ locales = {
         requests: 'Запросы',
         settings: 'Настройки',
         support: 'Поддержка',
+        about_us: 'О нас',
+        catalog: 'Каталог'
     },
     get_started: {
         log_in: {

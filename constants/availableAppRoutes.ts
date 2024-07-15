@@ -3,8 +3,6 @@ import type {IconsTypes} from "assets/images/icons/materialIconsList";
 const availableAppRoutes = {
     main: '/',
     get_started: '/getstarted',
-    posts: '/posts/*',
-    categories: '/categories/*',
     terms_of_service: '/terms_of_service',
     privacy_and_policy: '/privacy_and_policy',
     confirm_email: '/confirm_email',
@@ -13,12 +11,15 @@ const availableAppRoutes = {
     account: '/account',
     profile: '/account/user',
     favorites: '/account/favorites',
-    cart: '/account/cart',
     dashboard: '/account/dashboard',
     brands: '/account/brands',
     requests: '/account/requests',
     support: '/support',
     settings: '/settings',
+    login: '/getstarted?view=log_in',
+    signup: '/getstarted?view=sign_up',
+    about_us: '/about_us',
+    catalog: '/catalog'
 };
 
 export const headerRoutes = {
@@ -33,10 +34,23 @@ export const headerRoutes = {
             icon: 'favorite',
             label: 'pages.favorites'
         },
+    ],
+    defaultLayoutHeaderNavLinks: [
         {
-            url: availableAppRoutes.cart,
-            icon: 'shopping_cart',
-            label: 'pages.cart'
+            url: availableAppRoutes.main,
+            label: 'pages.main'
+        },
+        {
+            url: availableAppRoutes.catalog,
+            label: 'pages.catalog'
+        },
+        {
+            url: availableAppRoutes.brands,
+            label: 'pages.brands'
+        },
+        {
+            url: availableAppRoutes.about_us,
+            label: 'pages.about_us'
         },
     ]
 }

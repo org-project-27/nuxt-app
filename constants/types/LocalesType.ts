@@ -76,6 +76,8 @@ export interface Pages {
     requests: LocaleType;
     settings: LocaleType;
     support: LocaleType;
+    about_us: LocaleType;
+    catalog: LocaleType;
 }
 
 export interface GetStarted {

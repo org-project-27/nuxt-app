@@ -29,7 +29,7 @@ locales = {
         get_started: "Başla",
         post: "Məhsul",
         log_in: "Daxil Ol",
-        sign_up: "Qeydiyyatdan Keç",
+        sign_up: "Qeydiyyat",
         privacy_and_policy: "Məxfilik Siyasətini",
         terms_of_service: "Xidmət Şərtlərini",
         favorites: "Favoritlər",
@@ -42,6 +42,8 @@ locales = {
         requests: 'Sorğular',
         settings: 'Ayarlar',
         support: 'Dəstək',
+        about_us: 'Haqqımızda',
+        catalog: 'Kataloq'
     },
     get_started: {
         log_in: {

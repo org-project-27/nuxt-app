@@ -1,13 +1,13 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 export default defineComponent({
-  name: "Home"
+  name: "Catalog"
 })
 </script>
 
 <template>
     <div class="parent flex-row-center">
-      index
+      catalog
     </div>
 </template>
 

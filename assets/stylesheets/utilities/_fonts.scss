@@ -1,80 +1,99 @@
-//@font-face {
-//  font-family: 'Circle';
-//  src: url('~/assets/fonts/Circle/CirceRounded-Regular.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-Light';
-//  src: url('~/assets/fonts/Circle/CirceRounded-Light.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-Alt-Bold';
-//  src: url('~/assets/fonts/Circle/CirceRounded-Alt-Bold.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-Alt-ExtraBold';
-//  src: url('~/assets/fonts/Circle/CirceRounded-Alt-ExtraBold.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-ExtraBold';
-//  src: url('~/assets/fonts/Circle/CirceRounded-ExtraBold.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-ExtraLight';
-//  src: url('~/assets/fonts/Circle/CirceRounded-ExtraLight.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-Light';
-//  src: url('~/assets/fonts/Circle/CirceRounded-Light.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: 'Circle-Thin';
-//  src: url('~/assets/fonts/Circle/CirceRounded-Thin.otf') format('opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-Black.ttf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
 
-//$font-family: 'Circle', sans-serif;
-//$font-family-Alt-Bold: 'Circle-Alt-Bold', sans-serif;
-//$font-family-Alt-ExtraBold: 'Circle-Alt-ExtraBold', sans-serif;
-//$font-family-ExtraBold: 'Circle-ExtraBold', sans-serif;
-//$font-family-ExtraLight: 'Circle-ExtraLight', sans-serif;
-//$font-family-Light: 'Circle-Light', sans-serif;
-//$font-family-Thin: 'Circle-Thin', sans-serif;
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-BlackItalic.ttf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-Bold.ttf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-BoldItalic.ttf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-Italic.ttf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-Light.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-LightItalic.ttf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('~/assets/fonts/Roboto/Roboto-Medium.ttf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Classes usage */
+
+.bold-text {
+  font-weight: 700;
+}
+
+.black-text {
+  font-weight: 900;
+}
+
+.light-text {
+  font-weight: 300;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.bold-italic-text {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.black-italic-text {
+  font-weight: 900;
+  font-style: italic;
+}
+
+.light-italic-text {
+  font-weight: 300;
+  font-style: italic;
+}
 
 
-$font-family: Arial, sans-serif;
-$font-family-Alt-Bold: Arial, sans-serif;
-$font-family-Alt-ExtraBold: Arial, sans-serif;
-$font-family-ExtraBold: Arial, sans-serif;
-$font-family-ExtraLight: Arial, sans-serif;
-$font-family-Light: Arial, sans-serif;
-$font-family-Thin: Arial, sans-serif;
+$font-family: Roboto;
 
 // Font sizes:
 $font-size-extra-small: .85rem;
 $font-size-small: .90rem;
-$font-size-normal: 1rem;
-$font-size-big: 1.2rem;
+$font-size-normal: 1.1rem;
+$font-size-big: 1.35rem;
 $font-size-extra-big: 1.5rem;
 $font-size-input: 1.2rem;
