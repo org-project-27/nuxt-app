@@ -121,6 +121,14 @@ b {
   background-color: $main_white_color !important;
 }
 
+span.divider {
+  display: block;
+  width: 100%;
+  padding: 1px 0;
+  background: $default_border_color;
+  margin: 1.5rem 0;
+}
+
 .flex-column-between-center{
   display: flex;
   flex-direction: column;

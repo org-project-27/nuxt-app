@@ -173,6 +173,7 @@ export interface UserAccount {
     phone: LocaleType;
     edit_phone: LocaleType;
     birthdate: LocaleType;
+    confirm_password: LocaleType;
 }
 
 export interface LanguageContent {

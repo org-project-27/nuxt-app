@@ -32,7 +32,6 @@
         </div>
       </section>
       <section class="account-profile-body">
-
         <card-component
             :label="$t('user_account.account_settings')"
             icon="manufacturing">

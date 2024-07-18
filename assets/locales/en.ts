@@ -103,12 +103,13 @@ locales = {
         email: "Email",
         edit_email: 'Your email',
         new_password: "New Password",
-        current_password: "Current password",
+        current_password: "Current Password",
         bio: "Bio",
         bio_desc: "Tell us a description",
         phone: 'Phone',
         edit_phone: 'Your phone',
-        birthdate: 'Birthday'
+        birthdate: 'Birthday',
+        confirm_password: 'Confirm Password'
     },
     layouts: {
         account_layout: {
