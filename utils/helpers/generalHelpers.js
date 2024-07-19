@@ -1,3 +1,6 @@
+import * as stream from "node:stream";
+import { axiosConfigs } from "~/constants/configs/api.config";
+
 export function generateUniqueId(length = 5) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
@@ -91,4 +94,13 @@ export function deepEqualObjectsWithArray(obj1, obj2) {
     }
 
     return true;
+}
+
+export function getCDN(id) {
+    if(id) {
+        let origin = window.location.origin;
+        origin = axiosConfigs.baseURL.replace('api', 'cdn')
+        return `${origin}/${id}`;
+    }
+    return null;
 }

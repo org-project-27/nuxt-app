@@ -6,7 +6,10 @@
       <section class="account-profile-header flex-row-between-center">
         <div class="left-side">
           <div class="profile-photo flex-column-center">
-            <img src="https://media.licdn.com/dms/image/D4D03AQF9YHiCypPq3w/profile-displayphoto-shrink_400_400/0/1706166153864?e=1726099200&v=beta&t=sO4mZ6yVcHu_N_PVzBfkt9fBu5_FEVJCsW0ML6EEcT0" alt="">
+            <img v-if="profileSrc" :src="profileSrc" alt="profile_photo">
+            <div v-else class="no-photo">
+              <icon-component icon-name="add_a_photo" icon-size="50" fill :color="colorUtilities.$main_color"/>
+            </div>
           </div>
           <div class="profile-info">
             <div class="user-status flex-row-center">
@@ -17,9 +20,9 @@
                     icon-size="1.5rem"
                     :color="colorUtilities.$success_color"/>
               </div>
-              <span>Brand owner</span>
+              <span>{{$t('user_account.brand_owner')}}</span>
             </div>
-            <span class="user-name">{{userModel.details.fullname}}</span>
+            <span class="user-name">{{ userModel.details.fullname }}</span>
             <span class="user-bio">
               <span v-html="userModel.details.bio"></span>
             </span>
@@ -27,7 +30,9 @@
         </div>
         <div class="right-side">
           <div class="right-side-container">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consectetur doloribus earum eius facilis illum inventore libero magni maxime, minima provident quae quasi quia quibusdam quisquam temporibus vel voluptatibus?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque consectetur doloribus earum eius
+            facilis illum inventore libero magni maxime, minima provident quae quasi quia quibusdam quisquam temporibus
+            vel voluptatibus?
           </div>
         </div>
       </section>
@@ -55,6 +60,7 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import {useAuthStore} from "~/stores/user/auth";
+import {getCDN} from "~/utils/helpers/generalHelpers";
 
 
 export default defineComponent({
@@ -63,18 +69,21 @@ export default defineComponent({
     userModel() {
       return useAuthStore().modelAuth;
     },
-  },
-  data(){
-    return {
+    profileSrc() {
+      return this.getCDN(this.userModel.details.profile_photo_id)
     }
   },
+  data() {
+    return {}
+  },
   methods: {
+    getCDN,
     logOut() {
       const {logout} = useAuthStore();
       logout();
     },
   },
-  mounted(){
+  mounted() {
   },
 })
 </script>
@@ -90,11 +99,13 @@ definePageMeta({
 
 <style scoped lang="scss">
 #account-page {
+  background-color: $main_white_color;
   section.background-photo-area {
     width: 100%;
     height: 15rem;
-    background-color: darken($main_color, 35%);
+    background-color: lighten($main_color, 5%);
   }
+
   section.account-profile-area {
     display: flex;
     flex-direction: column;
@@ -102,17 +113,20 @@ definePageMeta({
     gap: 2rem;
     position: relative;
     top: -5rem;
+
     section {
-      background-color: $main_background_color;
       border-radius: $default_border_radius;
       width: 95%;
     }
+
     section.account-profile-header {
       $pp_width: 15rem;
       $right-side-width: 45%;
       $left-side-width: 50%;
       gap: .5rem;
       box-shadow: $box_shadow_1;
+      background-color: $main_background_color;
+
       .left-side {
         width: $left-side-width;
         display: flex;
@@ -120,21 +134,36 @@ definePageMeta({
         gap: 2.5rem;
         padding: 0 4rem;
         height: 14rem;
+
         .profile-photo {
           height: 100%;
-           img {
-             width: $pp_width;
-             border-radius: $default_border_radius;
-             position: relative;
-             top: -25%;
-             box-shadow: $box_shadow_4;
-           }
+
+          .no-photo,
+          img {
+            cursor: pointer;
+            background-color: $third_white_color;
+            width: $pp_width;
+            height: calc($pp_width + 20px);
+            border-radius: $default_border_radius;
+            position: relative;
+            top: -25%;
+            box-shadow: $box_shadow_4;
+          }
+          .no-photo {
+            box-shadow: $box_shadow_2;
+            transition-duration: $default-transition-duration;
+            &:hover {
+              box-shadow: $box_shadow_1;
+            }
+          }
         }
+
         .profile-info {
           display: flex;
           flex-direction: column;
           gap: 1rem;
           width: 100%;
+
           .user-status {
             max-width: 10rem;
             font-size: $font_size-small;
@@ -146,17 +175,21 @@ definePageMeta({
             border-radius: 3rem;
             gap: .5rem;
           }
-          span.user-name{
+
+          span.user-name {
             font-size: $font_size-extra-big;
             font-weight: bold;
           }
+
           span.user-bio {
             color: $text_color;
           }
         }
       }
+
       .right-side {
         width: $right-side-width;
+
         .right-side-container {
           display: flex;
           align-items: center;
@@ -167,6 +200,7 @@ definePageMeta({
         }
       }
     }
+
     section.account-profile-body {
       min-height: 400px;
       display: flex;

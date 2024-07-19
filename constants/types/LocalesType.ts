@@ -11,6 +11,7 @@ interface BackendMessage {
     INVALID_EMAIL: LocaleType;
     INVALID_PASSWORD: LocaleType;
     INVALID_FULLNAME: LocaleType;
+    INVALID_BIRTHDAY: LocaleType;
     INVALID_TOKEN: LocaleType;
     BCRYPT_ERROR: LocaleType;
     USER_NOT_FOUND: LocaleType;
@@ -19,8 +20,12 @@ interface BackendMessage {
     EMAIL_IS_NOT_REGISTERED: LocaleType;
     EMAIL_OR_PASSWORD_INCORRECT: LocaleType;
     LINK_EXPIRED: LocaleType;
+    OLD_PASSWORD_INCORRECT: LocaleType;
     PASSWORD_SUCCESSFULLY_CHANGED: LocaleType;
     PASSWORD_RESET_LINK_WILL_SENT: LocaleType;
+    PASSWORDS_ARE_SAME: LocaleType;
+    INVALID_BODY: LocaleType;
+    BIRTHDAY_ALREADY_EXIST: LocaleType;
     AUTH_REQUIRED: LocaleType;
     PARAM_REQUIRED: LocaleType;
     OBJECT_NOT_FOUND: LocaleType;

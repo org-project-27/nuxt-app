@@ -94,6 +94,7 @@ export default defineComponent({
   }
   main {
     padding: 2rem;
+    background-color: lighten($second_white_color, 1.5);
   }
   &:hover {
     box-shadow: $box_shadow_2;

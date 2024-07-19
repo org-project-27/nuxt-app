@@ -548,6 +548,7 @@ $disabled-color: $main_black_color;
   border-radius: 5px;
   //overflow: hidden;
   transition-duration: $default-transition-duration;
+  overflow: hidden;
   label{
     position: absolute;
     font-size: $font-size-small;
@@ -574,7 +575,7 @@ $disabled-color: $main_black_color;
     }
   }
   .input-container{
-    background-color: transparent;
+    background-color: $main_background_color;
     width: 100%;
     height: 100%;
     overflow: hidden;

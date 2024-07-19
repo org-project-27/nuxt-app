@@ -104,8 +104,8 @@ locales = {
         edit_email: 'Your email',
         new_password: "New Password",
         current_password: "Current Password",
-        bio: "Bio",
-        bio_desc: "Tell us a description",
+        bio: "About",
+        bio_desc: "Note about yourself",
         phone: 'Phone',
         edit_phone: 'Your phone',
         birthdate: 'Birthday',
@@ -175,6 +175,11 @@ locales = {
         INVALID_BRAND_NAME: 'Invalid brand name',
         INVALID_BRAND_BIO_SIZE: 'Invalid brand bio size',
         NAME_ALREADY_TAKEN: 'Name already taken',
+        INVALID_BIRTHDAY: 'Invalid birthdate',
+        OLD_PASSWORD_INCORRECT: 'Current password is incorrect!',
+        PASSWORDS_ARE_SAME: 'New password cannot be same with current password!',
+        INVALID_BODY: 'Invalid form fields!',
+        BIRTHDAY_ALREADY_EXIST: 'Birthday already set!',
     }
 };
 
