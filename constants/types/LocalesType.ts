@@ -1,3 +1,5 @@
+import PhotoUploadAndCrop from "~/components/PhotoUploadAndCrop.vue";
+
 type LocaleType = string | number;
 
 interface BackendMessage {
@@ -179,6 +181,19 @@ export interface UserAccount {
     edit_phone: LocaleType;
     birthdate: LocaleType;
     confirm_password: LocaleType;
+    change_profile_photo: LocaleType;
+}
+
+export interface PhotoUploadAndCrop {
+    desc: LocaleType;
+    submit: LocaleType;
+    reset: LocaleType;
+}
+
+export interface FileUploader {
+    desc: LocaleType;
+    submit: LocaleType;
+    reset: LocaleType;
 }
 
 export interface LanguageContent {
@@ -199,6 +214,10 @@ export interface LanguageContent {
     user_account: UserAccount;
     layouts: {
         account_layout: AccountLayout
+    },
+    components: {
+        photo_uploader: PhotoUploadAndCrop;
+        file_uploader: FileUploader
     }
 }
 

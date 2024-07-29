@@ -99,7 +99,7 @@ export default defineComponent({
 span {
   @include animate-intro-shifting-x(1s);
   user-select: none;
-  font-size: $font-size-input;
+  font-size: $font-size-normal;
   border-radius: 8px;
   box-shadow: $box_shadow_2;
   display: flex;

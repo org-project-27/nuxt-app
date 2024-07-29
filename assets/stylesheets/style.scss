@@ -22,6 +22,7 @@ body{
   font-family: $font-family;
   background-color: $body_background_color;
   .container {
+    @include animate-fade-in(1s);
     background-color: $main_background_color;
     min-width: 95vw;
     min-height: 100vh;
@@ -45,7 +46,8 @@ a {
   }
 }
 
-a.type_1 {
+
+button.type_1, a.type_1 {
   border: 3px solid transparent;
   width: 100%;
   text-align: center;
@@ -63,6 +65,7 @@ a.type_1 {
     background-color: lighten($main_white_color, 3%);
   }
 }
+button.type_2,
 a.type_2 {
   color: $main_color;
   font-weight: normal;
@@ -70,22 +73,28 @@ a.type_2 {
   background-color: $main_color_transparent;
   padding: .8em 1.2em;
   border-radius: 8px;
+  border: none;
 }
 
-a.type_3 {
+
+button.type_3, a.type_3 {
   color: $main_white_color;
   font-weight: 500;
   font-size: $font-size-small;
   background-color: $main_color;
   padding: .8em 1rem;
   border-radius: 8px;
+  cursor: pointer;
+  transition-duration: $default-transition-duration;
+  border: none;
   &:hover{
     opacity: .9;
     box-shadow: $box_shadow_3;
   }
 }
 
-a.type_4 {
+
+button.type_4, a.type_4 {
   font-weight: 500;
   font-size: $font-size-normal;
   color: $main_color;
@@ -124,7 +133,7 @@ b {
 span.divider {
   display: block;
   width: 100%;
-  padding: 1px 0;
+  padding: .5px 0;
   background: $default_border_color;
   margin: 1.5rem 0;
 }
@@ -268,4 +277,113 @@ span.divider {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.default-writeable-styles {
+  $writeable-input-width: 100%;
+
+  label, span.message-area {
+    user-select: none !important;
+    cursor: pointer;
+    color: $second_gray_color;
+    font-size: $font-size-extra-small;
+    font-weight: bold;
+    position: relative;
+    left: .1rem;
+    transition-duration: $default-transition-duration;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: .3rem 0;
+    transition-duration: $default-transition-duration;
+    background-color: $main_background_color;
+    border: 1px solid $default_border_color;
+    border-radius: calc($default_border_radius / 3);
+    & > input,
+    & > textarea {
+      width: $writeable-input-width;
+      background-color: transparent;
+      outline: none;
+      border: none;
+    }
+  }
+
+  .message-box {
+    transition-duration: $default-transition-duration;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &.active {
+    label {
+      color: $main_color;
+    }
+    .input-container {
+      box-shadow: $box_shadow_main_color_0;
+    }
+  }
+
+  &.error {
+    .input-container {
+      border-color: lighten($error_color, 40%);;
+      background-color: lighten($error_color, 52%);
+
+      .right-area,
+      .left-area {
+        border-color: lighten($error_color, 40%);;
+      }
+    }
+
+    label {
+      color: $error_color;
+    }
+  }
+
+  &.warning {
+    .input-container {
+      border-color: lighten($warning_color, 10%);;
+      background-color: lighten($warning_color, 29%);
+
+      .right-area,
+      .left-area {
+        border-color: lighten($warning_color, 40%);;
+      }
+    }
+
+    label {
+      color: $warning_color;
+    }
+  }
+
+  &.success {
+    .message-area.success {
+    }
+  }
+
+  &.disabled {
+    opacity: .4;
+    user-select: none;
+    cursor: not-allowed !important;
+    label, .message-area {
+      cursor: not-allowed !important;
+    }
+    .input-container {
+      cursor: not-allowed !important;
+      input {
+        cursor: not-allowed !important;
+        user-select: none;
+      }
+    }
+  }
+}
+
+button.transparent-btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }

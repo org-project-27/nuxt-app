@@ -5,17 +5,18 @@
 
   "$main_white_color": "#FFFFFF",
   "$second_white_color": "#f9f9fa",
-  "$third_white_color": "#FAFAF9",
+  "$third_white_color": "#F6F6FA",
 
   "$main_gray_color": "#E5E5E6",
   "$second_gray_color": "#919192",
-  "$third_gray_color": "#949393",
+  "$third_gray_color": "#606060",
 
   "$main_color": "#5D45F7",
   "$second_color": "#5B44F6",
   "$main_color_transparent": "#ECEBFF",
+  "$second_color_transparent": "#F6F5FF",
 
   "$error_color": "#CF212B",
-  "$warning_color": "orange",
+  "$warning_color": "#FF9966",
   "$success_color": "#4EAA57"
 }

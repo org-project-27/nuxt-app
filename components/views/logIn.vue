@@ -1,77 +1,3 @@
-<template>
-  <div id="log-in-page" class="flex-column-center" v-show="readyForView">
-    <form class="log-in-form" @submit.prevent="submit">
-      <div class="message-box">
-        <message-component
-            v-if="!showEmailInputError && loginProgressStatus === false"
-            type="error"
-            :message="backendMessage(loginResponse.message)"/>
-        <message-component
-            v-else
-            hide-icon
-            type="info"
-            :message="$t('get_started.log_in.welcome_message')" />
-      </div>
-      <div class="input-group">
-        <input-component
-            id="email-input"
-            type="email"
-            name="email"
-            placeholder="example@domain.com"
-            v-model="modelLogin.email"
-            autocomplete="email"
-            :label="$t('get_started.log_in.email')"
-            :left-icon="{ icon: 'alternate_email', size: inputSizes.medium.iconSize }"
-            :input-size="inputSizes.medium"
-            :show-error="{
-              message: showEmailInputError,
-              highlight: !!showEmailInputError
-            }"
-            required
-            clearable />
-        <br>
-        <input-component
-            id="password-input"
-            type="password"
-            name="password"
-            autocomplete="current-password"
-            v-model="modelLogin.password"
-            :label="$t('get_started.log_in.password')"
-            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
-            :input-size="inputSizes.medium"
-            required
-            clearable />
-        <div class="forget-password-area">
-          <nuxt-link to="?view=forgot_password" class="decoration">
-            {{ $t('get_started.log_in.forget_password') }}
-          </nuxt-link>
-        </div>
-      </div>
-      <input-component
-          id="submit-btn"
-          type="submit"
-          button-type="1"
-          :label="$t('get_started.log_in.submit_btn')"
-          @ready-for-view="setReadyForView"
-          :left-icon="{ icon: 'lock' }"
-          :input-size="{
-            width: '100%',
-            height: '3.5rem'
-          }"
-          :is-loading="submitIsLoading"
-          :disabled="!readyForSubmit" />
-    </form>
-    <span class="no-account-yet">
-      {{ $t('get_started.log_in.no_account_yet') }}
-      <nuxt-link to="?view=sign_up" class="decoration">
-        {{ $t('get_started.log_in.sign_up') }}
-      </nuxt-link>
-      {{ $t('get_started.log_in.now').toLowerCase() }}!
-    </span>
-    <br>
-  </div>
-</template>
-
 <script lang="js">
 import { defineComponent } from 'vue';
 import { useAuthStore } from "~/stores/user/auth";
@@ -104,7 +30,7 @@ export default defineComponent({
       let error = null;
       if (this.loginProgressStatus === false &&
           this.loginResponse.message === this.messages.INVALID_EMAIL) {
-          error = this.backendMessage(this.messages.INVALID_EMAIL);
+        error = this.backendMessage(this.messages.INVALID_EMAIL);
       }
       return error;
     }
@@ -127,21 +53,21 @@ export default defineComponent({
       this.submitIsLoading = true;
       const { submitLogin, authUser, afterAuthPath } = useAuthStore();
       await submitLogin()
-        .then(async (response) => {
-          this.loginResponse = { ... response };
-          if(this.loginResponse.success){
-            // Getting auth user
-            await authUser()
-                .then(() => this.$router.push(afterAuthPath))
-                .finally(() => this.submitIsLoading = false);
-          }
-        })
-        .catch(error => {
-          this.loginResponse = { ...error };
-        })
-        .finally(() => {
-          this.submitIsLoading = false;
-        });
+          .then(async (response) => {
+            this.loginResponse = { ... response };
+            if(this.loginResponse.success){
+              // Getting auth user
+              await authUser()
+                  .then(() => this.$router.push(afterAuthPath))
+                  .finally(() => this.submitIsLoading = false);
+            }
+          })
+          .catch(error => {
+            this.loginResponse = { ...error };
+          })
+          .finally(() => {
+            this.submitIsLoading = false;
+          });
     },
     resetModel() {
       const { resetModelLogin } = useAuthStore();
@@ -164,6 +90,72 @@ export default defineComponent({
   }
 });
 </script>
+
+<template>
+  <div id="log-in-page" class="flex-column-center">
+    <form class="log-in-form" @submit.prevent="submit">
+      <div class="message-box">
+        <message-component
+            v-if="!showEmailInputError && loginProgressStatus === false"
+            type="error"
+            :message="backendMessage(loginResponse.message)"/>
+        <message-component
+            v-else
+            hide-icon
+            type="info"
+            :message="$t('get_started.log_in.welcome_message')" />
+      </div>
+      <div class="input-group">
+        <input-component
+            id="email-input"
+            type="email"
+            name="email"
+            placeholder="example@domain.com"
+            v-model="modelLogin.email"
+            autocomplete="email"
+            :label="$t('get_started.log_in.email')"
+            icon="alternate_email"
+            :show-error="showEmailInputError"
+            required
+            clearable />
+        <br>
+        <input-component
+            id="password-input"
+            type="password"
+            name="password"
+            autocomplete="current-password"
+            v-model="modelLogin.password"
+            :label="$t('get_started.log_in.password')"
+            icon="lock"
+            placeholder="•••••••••"
+            required
+            clearable />
+        <div class="forget-password-area">
+          <nuxt-link to="?view=forgot_password" class="decoration">
+            {{ $t('get_started.log_in.forget_password') }}
+          </nuxt-link>
+        </div>
+      </div>
+      <div class="submit-btn">
+        <input-component
+            id="submit-btn"
+            type="submit"
+            button-type="main"
+            :label="$t('get_started.log_in.submit_btn')"
+            :is-loading="submitIsLoading"
+            :disabled="!readyForSubmit" />
+      </div>
+    </form>
+    <span class="no-account-yet">
+      {{ $t('get_started.log_in.no_account_yet') }}
+      <nuxt-link to="?view=sign_up" class="decoration">
+        {{ $t('get_started.log_in.sign_up') }}
+      </nuxt-link>
+      {{ $t('get_started.log_in.now').toLowerCase() }}!
+    </span>
+    <br>
+  </div>
+</template>
 
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw) {
@@ -188,7 +180,7 @@ export default defineComponent({
           text-align: right;
           margin-top: .5rem;
           a {
-            font-size: $font-size-normal;
+            font-size: $font-size-small;
             color: $main_black_color;
           }
         }
@@ -197,10 +189,15 @@ export default defineComponent({
       .message-box {
         margin-bottom: 1rem;
       }
+      .submit-btn {
+        width: 100%;
+      }
     }
 
     .no-account-yet {
-      font-size: $font-size-normal;
+      &, & > *{
+        font-size: $font-size-small;
+      }
       color: $main_black_color;
     }
   }
@@ -228,7 +225,7 @@ export default defineComponent({
           text-align: right;
           margin-top: .5rem;
           a {
-            font-size: $font-size-normal;
+            font-size: $font-size-small;
             color: $main_black_color;
           }
         }
@@ -237,10 +234,15 @@ export default defineComponent({
       .message-box {
         margin-bottom: 1rem;
       }
+      .submit-btn {
+        width: 100%;
+      }
     }
 
     .no-account-yet {
-      font-size: $font-size-normal;
+      &, & > *{
+        font-size: $font-size-small;
+      }
       color: $main_black_color;
     }
   }

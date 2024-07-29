@@ -71,9 +71,9 @@ locales = {
             submit_btn: "Регистр",
             already_have_account: "Уже есть аккаунт?",
             password_levels: {
-                weak: "Слабый: Требуется больше символов и разнообразия!",
-                moderate: "Средний: Добавьте разнообразие для усиления.",
-                strong: "Сильный: Ваш пароль надежен и надежный."
+                weak: "Слабый - Требуется больше символов и разнообразия!",
+                moderate: "Средний - Добавьте разнообразие для усиления.",
+                strong: "Сильный - Ваш пароль надежен и надежный."
             },
             terms_of_service: "<span>Я принимаю <a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Условия обслуживания</a> и <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Политику конфиденциальности</a></span>"
         },
@@ -109,7 +109,8 @@ locales = {
         phone: "Телефон",
         edit_phone: "Ваш телефон",
         birthdate: "День рождения",
-        confirm_password: "Подтвердите пароль"
+        confirm_password: "Подтвердите пароль",
+        change_profile_photo: "Изменить Фотографию Профиля"
     },
     layouts: {
         account_layout: {
@@ -130,6 +131,18 @@ locales = {
                     settings: 'Настройки',
                 }
             }
+        }
+    },
+    components: {
+        photo_uploader: {
+            desc: "Перетащите сюда свое изображение или щелкните и выберите",
+            submit: "Сохраните",
+            reset: "Очистить"
+        },
+        file_uploader: {
+            desc: "Перетащите файл сюда или щелкните и выберите",
+            submit: "Сохраните",
+            reset: "Очистить"
         }
     },
     backend_messages: {

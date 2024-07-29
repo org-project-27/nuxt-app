@@ -71,9 +71,9 @@ locales = {
             submit_btn: "Qeydiyyatdan keç",
             already_have_account: "Artıq hesabınız var?",
             password_levels: {
-                weak: "Zəif: Daha çox simvol və müxtəlifliyə ehtiyac var!",
-                moderate: "Orta: Gücünü artırmaq üçün müxtəliflik əlavə edin.",
-                strong: "Güclü: Parolunuz təhlükəsiz və möhkəmdir."
+                weak: "Zəif - Daha çox simvol və müxtəlifliyə ehtiyac var!",
+                moderate: "Orta - Gücünü artırmaq üçün müxtəliflik əlavə edin.",
+                strong: "Güclü - Parolunuz təhlükəsiz və möhkəmdir."
             },
             terms_of_service: "<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>"
         },
@@ -110,6 +110,7 @@ locales = {
         edit_phone: 'Telefon nömrəniz',
         birthdate: 'Doğum tarixi',
         confirm_password: 'Parol təsdiqləmə',
+        change_profile_photo: "Profil şəklini dəyişdir"
     },
     layouts: {
         account_layout: {
@@ -130,6 +131,18 @@ locales = {
                     settings: 'Tənzimləmələr',
                 }
             }
+        }
+    },
+    components: {
+        photo_uploader: {
+            desc: "Şəkilinizi bura sürükləyib buraxın, yaxud click edib seçin",
+            submit: "Yadda saxla",
+            reset: "Reset"
+        },
+        file_uploader: {
+            desc: "Faylı bura sürükləyib buraxın, yaxud click edib seçin",
+            submit: "Yadda saxla",
+            reset: "Reset"
         }
     },
     backend_messages: {

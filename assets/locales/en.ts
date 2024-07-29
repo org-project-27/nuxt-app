@@ -71,9 +71,9 @@ locales = {
             submit_btn: "Register Now",
             already_have_account: "Already have an account?",
             password_levels: {
-                weak: "Weak: Needs more characters and variety!",
-                moderate: "Moderate: Add variety to enhance strength.",
-                strong: "Strong: Your password is secure and robust."
+                weak: "Weak - Needs more characters and variety!",
+                moderate: "Moderate - Add variety to enhance strength.",
+                strong: "Strong - Your password is secure and robust."
             },
             terms_of_service: "<span>I accept the <a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Terms of service</a> and <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Privacy policy</a></span>"
         },
@@ -109,7 +109,8 @@ locales = {
         phone: 'Phone',
         edit_phone: 'Your phone',
         birthdate: 'Birthday',
-        confirm_password: 'Confirm Password'
+        confirm_password: 'Confirm Password',
+        change_profile_photo: 'Change Profile Photo'
     },
     layouts: {
         account_layout: {
@@ -130,6 +131,18 @@ locales = {
                     settings: 'Settings',
                 }
             }
+        }
+    },
+    components: {
+        photo_uploader: {
+            desc: "Drag your image here or click and select",
+            submit: "Save",
+            reset: "Reset"
+        },
+        file_uploader: {
+            desc: "Drag your file here or click and select",
+            submit: "Save",
+            reset: "Reset"
         }
     },
     backend_messages: {
@@ -183,4 +196,4 @@ locales = {
     }
 };
 
-export default { ...locales };
+export default {...locales};

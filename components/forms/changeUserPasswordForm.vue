@@ -30,13 +30,13 @@ export default defineComponent({
   },
   methods: {
     evaluatePasswordStrength,
-    checkConfirmPassword(){
+    checkConfirmPassword() {
       const {formData} = useChangeUserPasswordStore();
       this.confirmPasswordIsMatch = formData.newPassword === formData.confirmPassword;
     },
     async submitChangePasswordForm() {
       this.checkConfirmPassword();
-      if(this.confirmPasswordIsMatch){
+      if (this.confirmPasswordIsMatch) {
         const {changeUserPassword} = useChangeUserPasswordStore();
         await changeUserPassword();
       }
@@ -73,47 +73,44 @@ const {formData} = useChangeUserPasswordStore();
         :label="$t('user_account.new_password')"
         :input-size="inputSizes.medium"
         v-model="formData.newPassword"
-        :show-error="{
-              message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,
-              highlight: passwordStrength === 1
-               }"
-        :show-warning="{
-              message: passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null,
-              highlight: passwordStrength === 2
-               }"
-        :show-success="{
-              message: passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null,
-               }"
+        :show-error="passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null"
+        :show-warning="passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null"
+        :show-success="passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null"
     />
     <br>
     <input-component
         id="confirm-password-input"
         type="password"
         name="confirm-password"
-        autocomplete="confirm-password"
+        autocomplete="new-password"
         required
-        @input="confirmPasswordIsMatch = true"
         :label="$t('user_account.confirm_password')"
         :input-size="inputSizes.medium"
         v-model="formData.confirmPassword"
-        :show-error="{
-              message: !confirmPasswordIsMatch ? $t('reset_password.confirm_password_wrong') : null,
-              highlight: !confirmPasswordIsMatch
-        }"
+        :show-error="!confirmPasswordIsMatch ? $t('reset_password.confirm_password_wrong') : null"
+        @input="confirmPasswordIsMatch = true"
     />
     <br>
-    <input-component
-        id="change-password-btn"
-        type="submit"
-        :label="$t('buttons.change')"
-        button-type="1"
-        :input-size="inputSizes.medium"
-        :is-loading="isLoading"
-        :disabled="!readyForSubmit"
-    />
+    <div class="submit-buttons">
+      <input-component
+          id="change-password-btn"
+          type="submit"
+          :label="$t('buttons.change')"
+          button-type="main"
+          icon="sync_lock"
+          :input-size="inputSizes.medium"
+          :is-loading="isLoading"
+          :disabled="!readyForSubmit"
+      />
+    </div>
   </form>
 </template>
 
 <style scoped lang="scss">
-
+#change-user-password-form {
+  .submit-buttons {
+    float: right;
+    width: 50%;
+  }
+}
 </style>

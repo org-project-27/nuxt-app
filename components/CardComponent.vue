@@ -80,7 +80,7 @@ export default defineComponent({
     background-color: $second_white_color;
     border-bottom: 2px solid $default_border_color;
     font-size: $font-size-input;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
     button {
       cursor: pointer;
       background-color: transparent;

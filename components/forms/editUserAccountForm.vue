@@ -1,9 +1,10 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
+
 export default defineComponent({
   name: "editUserAccountForm",
   computed: {
-    isLoading(){
+    isLoading() {
       return useEditUserAccountStore().saveProgressIsLoading;
     },
   }
@@ -12,6 +13,7 @@ export default defineComponent({
 <script lang="ts" setup>
 import {useEditUserAccountStore} from "~/stores/user/editUserAccountStore";
 import {inputSizes} from "~/constants/configs/defaults";
+
 const {
   formData,
   getUserAccountData,
@@ -22,7 +24,7 @@ const disableEmailInput = ref(false);
 onMounted(() => {
   getUserAccountData();
   nextTick(() => {
-      disableEmailInput.value = true
+    disableEmailInput.value = true
   });
 });
 </script>
@@ -32,52 +34,59 @@ onMounted(() => {
     <input-component
         id="fullname-input"
         type="text"
-        name="fullname"
+        name="firstname"
         autocomplete="name"
         required
         clearable
-        minLength="3"
+        minlength="3"
         maxlength="255"
         :placeholder="$t('user_account.edit_fullname')"
         :label="$t('user_account.fullname')"
         :input-size="inputSizes.medium"
+        icon="person"
         v-model="formData.fullname"
     />
     <br>
     <input-component
         id="email-input"
-        type="text"
+        type="email"
         name="email"
         autocomplete="email"
         :disabled="disableEmailInput"
         clearable
-        minLength="3"
+        minlength="3"
         maxlength="255"
         :placeholder="$t('user_account.edit_email')"
         :label="$t('user_account.email')"
         :input-size="inputSizes.medium"
+        icon="alternate_email"
+        show-info="You cannot edit your email address!"
         v-model="formData.email"
     />
     <br>
     <input-component
         id="phone-input"
-        type="text"
+        type="tel"
         name="phone"
-        autocomplete="phone"
-        required
+        autocomplete="tel"
         clearable
-        minLength="3"
+        minlength="3"
         maxlength="255"
         :placeholder="$t('user_account.edit_phone')"
         :label="$t('user_account.phone')"
         :input-size="inputSizes.medium"
+        icon="call"
         v-model="formData.phone"
     />
-    <input-component type="date"
-       :label="$t('user_account.birthdate')"
-       name="birthdate"
-       autocomplete="bday"
-       v-model="formData.birthday"/>
+    <br>
+    <input-component
+        type="date"
+        icon="celebration"
+        :label="$t('user_account.birthdate')"
+        name="birthdate"
+        autocomplete="bday"
+        v-model="formData.birthday"/>
+    <br>
     <textarea-component
         name="bio"
         autocomplete="bio"
@@ -87,17 +96,25 @@ onMounted(() => {
         :placeholder="$t('user_account.bio_desc')"
     />
     <br>
-    <input-component
-        id="save-edits-btn"
-        type="submit"
-        :label="$t('buttons.save')"
-        button-type="1"
-        :input-size="inputSizes.medium"
-        :is-loading="isLoading"
-    />
+    <div class="submit-buttons">
+      <input-component
+          id="save-edits-btn"
+          type="submit"
+          button-type="main"
+          icon="save"
+          :label="$t('buttons.save')"
+          :input-size="inputSizes.medium"
+          :is-loading="isLoading"
+      />
+    </div>
   </form>
 </template>
 
 <style scoped lang="scss">
-
+#edit-user-account-form {
+  .submit-buttons {
+    float: right;
+    width: 50%;
+  }
+}
 </style>
