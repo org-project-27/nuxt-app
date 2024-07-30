@@ -118,7 +118,6 @@ export default defineComponent({
             :show-error="showEmailInputError"
             required
             clearable />
-        <br>
         <input-component
             id="password-input"
             type="password"
@@ -172,7 +171,7 @@ export default defineComponent({
       .input-group {
         display: flex;
         flex-direction: column;
-        gap: .4rem;
+        gap: 1.1rem;
         width: 100%;
 
         .forget-password-area {

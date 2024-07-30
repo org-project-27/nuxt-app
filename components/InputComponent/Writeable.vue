@@ -125,6 +125,17 @@ export default defineComponent({
       }
       return null
     },
+    sideIconColorDetector(){
+      let result = this.focusComputed ?
+          colorUtilities.$main_color :
+          colorUtilities.$third_gray_color;
+
+      if((this.error || this.warning) && this.statusColorDetector) {
+        result = this.statusColorDetector;
+      }
+
+      return result
+    },
     passwordVisibilityTrigger: {
       set(val: boolean) {
         this.showPassword = val;
@@ -217,9 +228,7 @@ export default defineComponent({
               :icon-name="icon"
               :icon-size="sideIconSize"
               :fill="focusComputed"
-              :color="focusComputed ?
-              colorUtilities.$main_color :
-              colorUtilities.$third_gray_color"
+              :color="sideIconColorDetector"
           />
         </div>
       </div>

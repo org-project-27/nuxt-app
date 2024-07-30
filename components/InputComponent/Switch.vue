@@ -49,11 +49,11 @@ export default defineComponent({
       <div>
         <icon-component
             :color="colorUtilities.$main_color"
-            icon-size="1.8rem"
+            icon-size="2.2rem"
             :fill="toggle"
             :icon-name="toggle ?
-            'task_alt' :
-            'radio_button_unchecked'"/>
+            'toggle_on' :
+            'toggle_off'"/>
       </div>
       <input
           id="checkbox-input"

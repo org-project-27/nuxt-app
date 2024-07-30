@@ -158,7 +158,6 @@ export default defineComponent({
             required
             clearable
         />
-        <br>
         <input-component
             id="email-input"
             type="email"
@@ -172,7 +171,6 @@ export default defineComponent({
             required
             clearable
         />
-        <br>
         <input-component
             id="password-input"
             type="password"
@@ -189,14 +187,15 @@ export default defineComponent({
             required
             clearable
         />
-        <br>
-        <input-component
-            id="terms-of-service"
-            name="terms-of-service"
-            type="checkbox"
-            :label="termsOfService.html"
-            required
-            v-model="termsOfService.value"/>
+        <div class="terms-of-service-area">
+          <input-component
+              id="terms-of-service"
+              name="terms-of-service"
+              type="checkbox"
+              :label="termsOfService.html"
+              required
+              v-model="termsOfService.value"/>
+        </div>
       </div>
       <div class="submit-btn">
         <input-component
@@ -234,7 +233,7 @@ export default defineComponent({
       .input-group {
         display: flex;
         flex-direction: column;
-        gap: .4rem;
+        gap: 1.1rem;
         width: 100%;
       }
 
@@ -251,6 +250,9 @@ export default defineComponent({
         font-size: $font-size-small;
       }
       color: $main_black_color;
+    }
+    .terms-of-service-area {
+      margin: 1rem 0 0 0;
     }
   }
 }
@@ -286,6 +288,9 @@ export default defineComponent({
         font-size: $font-size-small;
       }
       color: $main_black_color;
+    }
+    .terms-of-service-area {
+      margin: 1rem 0 0 0;
     }
   }
 }

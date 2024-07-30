@@ -69,7 +69,7 @@ locales = {
             confirm_password: "Parolu təsdiqlə",
             register: "Qeydiyyat",
             submit_btn: "Qeydiyyatdan keç",
-            already_have_account: "Artıq hesabınız var?",
+            already_have_account: "Mövcut bir hesabınız var?",
             password_levels: {
                 weak: "Zəif - Daha çox simvol və müxtəlifliyə ehtiyac var!",
                 moderate: "Orta - Gücünü artırmaq üçün müxtəliflik əlavə edin.",
