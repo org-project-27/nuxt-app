@@ -296,6 +296,9 @@ export default defineComponent({
     input {
       height: $writeable-input-height;
       padding: 0 .8rem;
+      &::placeholder {
+        opacity: 0.1;
+      }
     }
 
     input[type='date'],

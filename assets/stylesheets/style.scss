@@ -287,10 +287,13 @@ span.divider {
     cursor: pointer;
     color: $second_gray_color;
     font-size: $font-size-extra-small;
-    font-weight: bold;
     position: relative;
     left: .1rem;
     transition-duration: $default-transition-duration;
+  }
+
+  label {
+    font-weight: bold;
   }
 
   .input-container {
@@ -309,6 +312,7 @@ span.divider {
       background-color: transparent;
       outline: none;
       border: none;
+      font-size: $font-size-input;
     }
   }
 

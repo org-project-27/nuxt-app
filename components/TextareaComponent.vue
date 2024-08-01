@@ -192,6 +192,7 @@ export default defineComponent({
       height: 10rem;
       resize: none;
       font-family: $font-family;
+      font-size: $font-size-input;
       padding: 1rem;
     }
   }

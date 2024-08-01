@@ -27,42 +27,26 @@
             autocomplete="new-password"
             v-model="payload.new_password"
             :label="$t('reset_password.new_password')"
-            :input-size="inputSizes.medium"
-            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
-            :show-error="{
-              message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,
-              highlight: passwordStrength === 1
-               }"
-            :show-warning="{
-              message: passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null,
-              highlight: passwordStrength === 2
-               }"
-            :show-success="{
-              message: passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null,
-               }"
+            :show-error="passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null"
+            :show-warning="passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null"
+            :show-success="passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null"
             required
         />
         <input-component
             id="confirm-password-input"
             type="password"
             name="password"
-            autocomplete="confirm-password"
+            autocomplete="new-password"
             v-model="payload.confirm_password"
-            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
             :label="$t('reset_password.confirm_password')"
-            :input-size="inputSizes.medium"
-            :show-error="{
-              message: !checkConfirmPassword ? $t('reset_password.confirm_password_wrong') : null,
-              highlight: !checkConfirmPassword
-            }"
+            :show-error="!checkConfirmPassword ? $t('reset_password.confirm_password_wrong') : null"
             required
         />
         <input-component
             id="submit-btn"
             type="submit"
             :label="$t('buttons.save')"
-            button-type="1"
-            :input-size="inputSizes.medium"
+            button-type="main"
             :disabled="!readyForSubmit"
             :is-loading="submitIsLoading"
         />
