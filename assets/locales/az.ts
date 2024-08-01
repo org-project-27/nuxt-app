@@ -19,7 +19,8 @@ locales = {
         continue: "Davam et",
         waiting: "Gözləyin",
         get_started: "Başlayaq",
-        save: "Yadda saxla"
+        save: "Yadda saxla",
+        change: "Dəyişdir"
     },
     pages: {
         default: "Defolt",
@@ -68,11 +69,11 @@ locales = {
             confirm_password: "Parolu təsdiqlə",
             register: "Qeydiyyat",
             submit_btn: "Qeydiyyatdan keç",
-            already_have_account: "Artıq hesabınız var?",
+            already_have_account: "Mövcut bir hesabınız var?",
             password_levels: {
-                weak: "Zəif: Daha çox simvol və müxtəlifliyə ehtiyac var!",
-                moderate: "Orta: Gücünü artırmaq üçün müxtəliflik əlavə edin.",
-                strong: "Güclü: Parolunuz təhlükəsiz və möhkəmdir."
+                weak: "Zəif - Daha çox simvol və müxtəlifliyə ehtiyac var!",
+                moderate: "Orta - Gücünü artırmaq üçün müxtəliflik əlavə edin.",
+                strong: "Güclü - Parolunuz təhlükəsiz və möhkəmdir."
             },
             terms_of_service: "<span><a style='font-size: 1rem' class='decoration' href='/terms_of_service' target='_blank'>Xidmət Şərtlərini</a> və <a style='font-size: 1rem' class='decoration' href='/privacy_and_policy' target='_blank'>Məxfilik Siyasətini</a> qəbul edirəm</span>"
         },
@@ -88,6 +89,28 @@ locales = {
         confirm_password: "Parolu təsdiqlə",
         confirm_password_wrong: "Yeni şifrə ilə təsdiq şifrəsi üst-üstə düşmür!",
         new_password_description: '🔐 Bu saytda əvvəllər istifadə etmədiyiniz güclü, yeni parol təyin edin.'
+    },
+    user_account: {
+        founder: 'Təsisçisi',
+        brand_owner: 'Brend sahibi',
+        customer: 'Müştəri',
+        user: 'İstifadəçi',
+        place_manager: 'Menecer',
+        account_settings: 'Hesab tənzimləmələri',
+        change_password: 'Parol dəyişmə',
+        fullname: 'Ad və Soyad',
+        edit_fullname: 'Adınız və Soyadınız',
+        email: 'E-poçt',
+        edit_email: 'E-poçtunuz',
+        new_password: 'Yeni parol',
+        current_password: 'Cari parol',
+        bio: 'Haqqında',
+        bio_desc: 'Özünüz haqqında qeydləriniz',
+        phone: 'Telefon',
+        edit_phone: 'Telefon nömrəniz',
+        birthdate: 'Doğum tarixi',
+        confirm_password: 'Parol təsdiqləmə',
+        change_profile_photo: "Profil şəklini dəyişdir"
     },
     layouts: {
         account_layout: {
@@ -105,9 +128,21 @@ locales = {
                     your_places: 'Məkanlarınız',
                     your_services: 'Xidmətləriniz',
                     support_and_help: 'Dəstək və Kömək',
-                    settings: 'Ayarlar',
+                    settings: 'Tənzimləmələr',
                 }
             }
+        }
+    },
+    components: {
+        photo_uploader: {
+            desc: "Şəkilinizi bura sürükləyib buraxın, yaxud click edib seçin",
+            submit: "Yadda saxla",
+            reset: "Reset"
+        },
+        file_uploader: {
+            desc: "Faylı bura sürükləyib buraxın, yaxud click edib seçin",
+            submit: "Yadda saxla",
+            reset: "Reset"
         }
     },
     backend_messages: {
@@ -130,29 +165,34 @@ locales = {
         LINK_EXPIRED: "Bu link artıq keçərsizdir!",
         PASSWORD_SUCCESSFULLY_CHANGED: "Parol uğurla dəyişdirildi!",
         PASSWORD_RESET_LINK_WILL_SENT: "Əgər sizin e-poçt ünvanınız sistemimizdə qeydiyyatdan keçibsə, şifrəni sıfırlamaq üçün təlimatlar olan bir e-poçt göndəriləcəkdir. Zəhmət olmasa e-poçt qutunuzu və spam qovluğunuzu yoxlayın.",
-        USER_NOT_FOUND: 'İstifadəçi tapılmadı',
-        AUTH_REQUIRED: 'Login tələb olunur',
-        PARAM_REQUIRED: 'Parametr tələb olunur',
-        OBJECT_NOT_FOUND: 'Obyekt tapılmadı',
-        INVALID_PLACE_NAME: 'Uyğunsuz məkan adı',
-        INVALID_WEB_SITE_URL: 'Uyğunsuz veb sayt URL-si',
-        INVALID_ZIP_CODE: 'Uyğunsuz poçt indeksi',
-        INVALID_ADDRESS: 'Uyğunsuz ünvan',
-        INVALID_PLACE_TYPE: 'Uyğunsuz məkan növü',
-        INVALID_CITY: 'Uyğunsuz şəhər adı',
-        INVALID_STATE: 'Uyğunsuz vilayət adı',
-        INVALID_PHONE: 'Uyğunsuz telefon nömrəsi',
-        INVALID_OPENING_HOURS: 'Uyğunsuz açılış saatları',
+        USER_NOT_FOUND: 'İstifadəçi tapılmadı!',
+        AUTH_REQUIRED: 'Login tələb olunur!',
+        PARAM_REQUIRED: 'Parametr tələb olunur!',
+        OBJECT_NOT_FOUND: 'Obyekt tapılmadı!',
+        INVALID_PLACE_NAME: 'Etibarsız məkan adı!',
+        INVALID_WEB_SITE_URL: 'Etibarsız veb sayt URL-si!',
+        INVALID_ZIP_CODE: 'Etibarsız poçt indeksi!',
+        INVALID_ADDRESS: 'Etibarsız ünvan!',
+        INVALID_PLACE_TYPE: 'Etibarsız məkan növü!',
+        INVALID_CITY: 'Etibarsız şəhər adı!',
+        INVALID_STATE: 'Etibarsız ölkə adı!',
+        INVALID_PHONE: 'Etibarsız telefon nömrəsi!',
+        INVALID_OPENING_HOURS: 'Etibarsız açılış saatları!',
         ALREADY_EXIST: 'Artıq mövcuddur!',
-        PLACE_NOT_FOUND: 'Məkan tapılmadı',
-        YOU_CANNOT_EDIT_PLACE_ID: 'Place_id-ni redaktə edə bilməzsiniz',
-        YOU_CANNOT_EDIT_BRAND_ID: 'Brand_id-ni redaktə edə bilməzsiniz',
-        YOU_CANNOT_EDIT_OWNER_ID: 'Owner_id-ni redaktə edə bilməzsiniz',
-        BRAND_NOT_FOUND: 'Brend tapılmadı',
-        BRAND_ALREADY_EXIST: 'Brend artıq mövcuddur',
-        INVALID_BRAND_NAME: 'Uyğunsuz brend adı',
-        INVALID_BRAND_BIO_SIZE: 'Uyğunsuz brend bio ölçüsü',
-        NAME_ALREADY_TAKEN: 'Ad artıq götürülüb',
+        PLACE_NOT_FOUND: 'Məkan tapılmadı!',
+        YOU_CANNOT_EDIT_PLACE_ID: 'Place_id-ni redaktə edə bilməzsiniz!',
+        YOU_CANNOT_EDIT_BRAND_ID: 'Brand_id-ni redaktə edə bilməzsiniz!',
+        YOU_CANNOT_EDIT_OWNER_ID: 'Owner_id-ni redaktə edə bilməzsiniz!',
+        BRAND_NOT_FOUND: 'Brend tapılmadı!',
+        BRAND_ALREADY_EXIST: 'Brend artıq mövcuddur!',
+        INVALID_BRAND_NAME: 'Etibarsız brend adı!',
+        INVALID_BRAND_BIO_SIZE: 'Etibarsız brend bio ölçüsü!',
+        NAME_ALREADY_TAKEN: 'Bu ad ilə istifadəçi artıq mövcuddur!',
+        INVALID_BIRTHDAY: 'Etibarsız doğum tarixi!',
+        OLD_PASSWORD_INCORRECT: 'Cari parol yanlışdı!',
+        PASSWORDS_ARE_SAME: 'Yeni parolunuz cari parolunuz ilə eyni ola bilməz!',
+        INVALID_BODY: 'Etibarsız form xətası!',
+        BIRTHDAY_ALREADY_EXIST: 'Doğum tarixi artıq təyin olunub!',
     }
 };
 

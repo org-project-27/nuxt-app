@@ -13,6 +13,7 @@ import type {LangOptionsType} from "~/constants/types/LocalesType";
 import type {EditUserAccountForm} from "~/constants/types/models/editUserAccountFormModels";
 import {deepCopy} from "~/utils/helpers/generalHelpers";
 import type {ChangeUserPasswordForm} from "~/constants/types/models/changeUserPasswordFormModel";
+import axios from "axios";
 
 
 export async function loginService(payload : Login) {
@@ -127,4 +128,17 @@ export async function changePassword(payload: ChangeUserPasswordForm) {
         new_password: data.newPassword,
         old_password: data.currentPassword,
     });
+}
+
+export async function uploadProfilePhoto(formData: FormData) {
+    await axiosInstance.post('/v1/user/profile_photo', formData, {
+        headers: {'Content-Type': 'multipart/form-data'},
+    })
+        .then((response) => {
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error('Error uploading:', error);
+            return error;
+        });
 }

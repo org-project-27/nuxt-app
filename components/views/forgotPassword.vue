@@ -1,52 +1,3 @@
-<template>
-    <div id="forgot-password-page" class="flex-column-center" v-show="readyForView">
-    <form class="forgot-password-form" @submit.prevent="submitForgotPassword">
-      <div class="message-box">
-        <message-component
-            v-if="response.success === null"
-            hide-icon
-            type="info"
-            :message="$t('get_started.forgot_password.welcome_message')" />
-        <message-component
-            v-else
-            :type="response.success === false ?  'error' : 'success'"
-            :message="backendMessage(response.message)" />
-      </div>
-      <div class="input-group">
-        <input-component
-            id="email-input"
-            type="email"
-            name="email"
-            placeholder="example@domain.com"
-            v-model="modelForgotPassword.email"
-            autocomplete="email"
-            :label="$t('get_started.forgot_password.email')"
-            :left-icon="{ icon: 'alternate_email', size: inputSizes.medium.iconSize }"
-            :input-size="inputSizes.medium"
-            :show-error="{
-              message: showEmailInputError,
-              highlight: !!showEmailInputError
-            }"
-            required
-            clearable />
-      </div>
-      <input-component
-          id="submit-btn"
-          type="submit"
-          button-type="1"
-          :label="$t('get_started.forgot_password.submit_btn')"
-          @ready-for-view="setReadyForView"
-          :left-icon="{ icon: 'lock' }"
-          :input-size="{
-            width: '100%',
-            height: '3.5rem'
-          }"
-          :is-loading="submitIsLoading"
-          :disabled="!readyForSubmitForgotPassword" />
-    </form>
-  </div>
-</template>
-
 <script lang="js">
 import { defineComponent } from 'vue';
 import { useAuthStore } from "~/stores/user/auth";
@@ -110,6 +61,47 @@ export default defineComponent({
 });
 </script>
 
+<template>
+    <div id="forgot-password-page" class="flex-column-center">
+    <form class="forgot-password-form" @submit.prevent="submitForgotPassword">
+      <div class="message-box">
+        <message-component
+            v-if="response.success === null"
+            hide-icon
+            type="info"
+            :message="$t('get_started.forgot_password.welcome_message')" />
+        <message-component
+            v-else
+            :type="response.success === false ?  'error' : 'success'"
+            :message="backendMessage(response.message)" />
+      </div>
+      <div class="input-group">
+        <input-component
+            id="email-input"
+            type="email"
+            name="email"
+            placeholder="example@domain.com"
+            autocomplete="email"
+            icon="alternate_email"
+            :label="$t('get_started.forgot_password.email')"
+            :show-error="showEmailInputError"
+            v-model="modelForgotPassword.email"
+            required
+            clearable />
+      </div>
+      <div class="submit-btn">
+        <input-component
+            id="submit-btn"
+            type="submit"
+            button-type="main"
+            :label="$t('get_started.forgot_password.submit_btn')"
+            :is-loading="submitIsLoading"
+            :disabled="!readyForSubmitForgotPassword" />
+      </div>
+    </form>
+  </div>
+</template>
+
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw) {
   #forgot-password-page {
@@ -148,6 +140,9 @@ export default defineComponent({
       font-size: $font-size-normal;
       color: $main_black_color;
     }
+    .submit-btn {
+      width: 100%;
+    }
   }
 }
 
@@ -182,6 +177,9 @@ export default defineComponent({
       .message-box {
         margin-bottom: 1rem;
       }
+    }
+    .submit-btn {
+      width: 100%;
     }
 
     .no-account-yet {

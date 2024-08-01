@@ -1,5 +1,8 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
+import {generateUniqueId} from "~/utils/helpers/generalHelpers";
+import type {IconsTypes} from "assets/images/icons/materialIconsList";
+import colorUtilities from "~/constants/colorUtilities";
 
 export default defineComponent({
   name: "TextareaComponent",
@@ -34,44 +37,16 @@ export default defineComponent({
       default: () => false
     },
     showSuccess: {
-      type: Object,
-      default: () => {
-        return {
-          message: null,
-          highlight: false,
-          icon: null
-        }
-      }
+      type: String
     },
     showInfo: {
-      type: Object,
-      default: () => {
-        return {
-          message: null,
-          highlight: false,
-          icon: null
-        }
-      }
+      type: String
     },
     showWarning: {
-      type: Object,
-      default: () => {
-        return {
-          message: null,
-          highlight: false,
-          icon: null
-        }
-      }
+      type: String
     },
     showError: {
-      type: Object,
-      default: () => {
-        return {
-          message: null,
-          highlight: false,
-          icon: null
-        }
-      }
+      type: String
     },
   },
   computed: {
@@ -94,12 +69,65 @@ export default defineComponent({
         return this.modelValue;
       }
     },
+    error() {
+      return !!this.showError;
+    },
+    warning() {
+      if (this.error) return false;
+      return !!this.showWarning;
+    },
+    success() {
+      if (this.error || this.warning) return false;
+      return !!this.showSuccess;
+    },
+    info() {
+      if (this.error || this.warning || this.success) return false;
+      return !!this.showInfo;
+    },
+    statusIconDetector(): IconsTypes | null {
+      if (this.error) {
+        return 'cancel';
+      }
+      if (this.warning) {
+        return 'warning';
+      }
+      if (this.success) {
+        return 'check_circle';
+      }
+      if (this.info) {
+        return 'info';
+      }
+      return null;
+    },
+    statusColorDetector() {
+      if (this.error) {
+        return this.colorUtilities.$error_color;
+      }
+      if (this.warning) {
+        return this.colorUtilities.$warning_color;
+      }
+      if (this.success) {
+        return this.colorUtilities.$success_color;
+      }
+      if (this.info) {
+        return this.colorUtilities.$main_color;
+      }
+      return null
+    },
   },
   data() {
     return {
+      colorUtilities,
       inputFocus: false,
-      model: ''
+      model: '',
+      localId: '',
     }
+  },
+  methods: {
+    generateUniqueId
+  },
+  mounted() {
+    this.localId = this.generateUniqueId();
   }
 })
 </script>
@@ -107,130 +135,69 @@ export default defineComponent({
 <template>
   <div
       id="textarea-component"
+      class="default-writeable-styles"
       :class="{
           'active': focusComputed,
           'deactive': !focusComputed,
           'disabled': disabled,
-      }"
-  >
-    <label>
-      {{label}}
-    </label>
-    <textarea
-        :name="name"
-        :required="required"
-        :autofocus="autofocus"
-        :readonly="readonly"
-        :autocomplete="autocomplete"
-        :disabled="disabled"
-        :maxlength="maxlength"
-        :style="style"
-        :placeholder="placeholder"
-        @focusin="focusComputed = true"
-        @focusout="focusComputed = false"
-        v-model="modelComputed"
-    />
+          'info': info,
+          'error': error,
+          'warning': warning,
+          'success': success,
+      }">
+    <div class="top-area flex-row-between-center">
+      <label :for="`input-writeable-${localId}`">
+        {{label}}
+      </label>
+      <span class="char-counter" v-if="maxlength">
+         ({{modelComputed.length}}/{{maxlength}})
+      </span>
+    </div>
+    <div class="input-container">
+      <textarea
+          :id="`input-writeable-${localId}`"
+          :name="name"
+          :required="required"
+          :autofocus="autofocus"
+          :readonly="readonly"
+          :autocomplete="autocomplete"
+          :disabled="disabled"
+          :maxlength="maxlength"
+          :style="style"
+          :placeholder="placeholder"
+          @focusin="focusComputed = true"
+          @focusout="focusComputed = false"
+          v-model="modelComputed"
+      />
+    </div>
+    <div class="message-box" v-if="error || warning || success || info">
+      <div class="icon-area" v-if="statusIconDetector && statusColorDetector">
+        <icon-component
+            :icon-name="statusIconDetector"
+            :color="statusColorDetector"
+            icon-size="1rem"/>
+      </div>
+      <span class="message-area error" v-if="error">{{ showError }}</span>
+      <span class="message-area warning" v-else-if="warning">{{ showWarning }}</span>
+      <span class="message-area success" v-else-if="success">{{ showSuccess }}</span>
+      <span class="message-area info" v-else-if="info">{{ showInfo }}</span>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 #textarea-component {
-  $active-color: $main_color;
-  $disabled-color: $main_black_color;
-  $padding_side: 1rem;
-  width: 100%;
-  label {
-    position: relative;
-    top: 9px;
-    left: 1rem;
-    background-color: $main_white_color;
-    padding: 0 .2rem;
-    font-size: $font-size-small;
-  }
-  textarea {
-    resize: none;
-    min-height: 10rem;
-    outline: none;
-    border-radius: .4rem;
-    padding: 1rem $padding_side;
-    width: calc(100% - ($padding_side * 2));
-    font-family: $font_family;
-    font-size: $font-size-normal;
-  }
-  &.active {
+  .input-container {
     textarea {
-      box-shadow: $box_shadow_0 !important;
-      border: 1px solid $active-color !important;
-      background-color: $main_white_color !important;
-      color: $main_black_color !important;
-
-      &::placeholder {
-        opacity: .6;
-      }
-    }
-
-    label {
-      color: $active-color !important;
+      height: 10rem;
+      resize: none;
+      font-family: $font-family;
+      font-size: $font-size-input;
+      padding: 1rem;
     }
   }
-
-  &.deactive {
-    textarea {
-      border: 1px solid $disabled-color;
-      color: $disabled-color;
-
-      &::placeholder {
-        opacity: .4;
-      }
-    }
-
-    label {
-      color: $disabled-color;
-    }
-  }
-
-  &.disabled {
-    textarea {
-      user-select: none;
-      border: 1px solid $main_gray_color;
-      cursor: not-allowed;
-      color: $main_gray_color;
-
-      &::placeholder {
-        opacity: .4;
-      }
-
-      &:disabled {
-        background-color: transparent;
-        cursor: not-allowed;
-      }
-    }
-
-    label {
-      color: $main_gray_color;
-      user-select: none;
-      background-color: $main_white_color;
-    }
-  }
-
-  &.error {
-    textarea {
-      background-color: lighten($error_color, 55%);
-      border: 1px solid $error-color;
-    }
-    label {
-      color: $error-color;
-    }
-  }
-
-  &.warning {
-    textarea {
-      background-color: lighten($warning_color, 49%);
-      border: 1px solid $warning-color;
-    }
-    label {
-      color: $warning-color;
-    }
+  .char-counter {
+    font-size: .65rem !important;
   }
 }
 </style>

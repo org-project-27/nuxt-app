@@ -193,3 +193,63 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
+
+@keyframes box-shadow {
+  $animation-color: lighten($main_color, 30%);
+  0% {
+    box-shadow: 3px -3px 1px 0px $animation-color;
+  }
+  25% {
+    box-shadow: 3px 3px 1px 0px $animation-color;
+  }
+  50% {
+    box-shadow: -3px 3px 1px 0px $animation-color;
+  }
+  75% {
+    box-shadow: -3px -3px 1px 0px $animation-color;
+  }
+  100% {
+    box-shadow: 3px -3px 1px 0px $animation-color;
+  }
+}
+
+@mixin animate-box-shadow($duration: 1s, $delay: 0s) {
+  animation-name: box-shadow;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading-border {
+  $animation-color: $main_color;
+  0% {
+    border-bottom:  2px solid transparent;
+    border-left: 2px solid $animation-color;
+  }
+  25% {
+    border-left:  2px solid transparent;
+    border-top: 2px solid $animation-color;
+  }
+  50% {
+    border-top:  2px solid transparent;
+    border-right: 2px solid $animation-color;
+  }
+  75% {
+    border-right:  2px solid transparent;
+    border-bottom: 2px solid $animation-color;
+  }
+  100% {
+    border-bottom:  2px solid transparent;
+    border-left: 2px solid $animation-color;
+  }
+}
+
+@mixin animate-loading-border($duration: 1s, $delay: 0s) {
+  animation-name: loading-border;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+

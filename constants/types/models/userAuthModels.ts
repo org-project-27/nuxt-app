@@ -93,6 +93,7 @@ export interface AuthResponseModel {
         description: string | null;
         email_registered: boolean | null;
         bio: string | null;
+        profile_photo_id: string | null;
     }
 }
 const auth: AuthResponseModel = {
@@ -105,7 +106,8 @@ const auth: AuthResponseModel = {
         birthday: null,
         description: null,
         email_registered: true,
-        bio: null
+        bio: null,
+        profile_photo_id: 'nophoto.png'
     }
 }
 

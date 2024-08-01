@@ -101,7 +101,7 @@ $logo-color-active: $main_color;
       transition-duration: $animation-duration;
     }
     path.logo-icon-background{
-      fill: $third_background_color;
+      fill: lighten($main_gray_color, 4%);
     }
   }
   svg.type-2 {
@@ -111,7 +111,7 @@ $logo-color-active: $main_color;
       transition-duration: $animation-duration;
     }
     path.logo-icon-background{
-      fill: $third_background_color;
+      fill: lighten($main_gray_color, 4%);
     }
   }
   &.active,
