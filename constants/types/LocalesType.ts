@@ -182,6 +182,7 @@ export interface UserAccount {
     birthdate: LocaleType;
     confirm_password: LocaleType;
     change_profile_photo: LocaleType;
+    you_cannot_edit_your_email: LocaleType;
 }
 
 export interface PhotoUploadAndCrop {

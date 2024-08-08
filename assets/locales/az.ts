@@ -110,7 +110,8 @@ locales = {
         edit_phone: 'Telefon nömrəniz',
         birthdate: 'Doğum tarixi',
         confirm_password: 'Parol təsdiqləmə',
-        change_profile_photo: "Profil şəklini dəyişdir"
+        change_profile_photo: "Profil şəklini dəyişdir",
+        you_cannot_edit_your_email: "E-poçt addresi dəyişdirilə bilməz!"
     },
     layouts: {
         account_layout: {

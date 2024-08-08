@@ -149,7 +149,7 @@ export default defineComponent({
       <label :for="`input-writeable-${localId}`">
         {{label}}
       </label>
-      <span class="char-counter" v-if="maxlength">
+      <span class="char-counter" v-if="maxlength && modelComputed">
          ({{modelComputed.length}}/{{maxlength}})
       </span>
     </div>

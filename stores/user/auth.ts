@@ -107,8 +107,8 @@ export const useAuthStore = defineStore('authStore', {
         },
         async logout() {
             await logoutService();
-            this.resetAllModels();
             await useRouter().push(availableAppRoutes.profile);
+            this.resetAllModels();
             window.location.reload();
         }
     }

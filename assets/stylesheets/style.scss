@@ -313,6 +313,7 @@ span.divider {
       outline: none;
       border: none;
       font-size: $font-size-input;
+      font-family: $font-family;
     }
   }
 
@@ -390,4 +391,6 @@ button.transparent-btn{
   background: transparent;
   border: none;
   cursor: pointer;
+  font-size: $font-size-input;
+  font-family: $font-family;
 }

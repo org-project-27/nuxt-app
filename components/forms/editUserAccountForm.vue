@@ -60,7 +60,7 @@ onMounted(() => {
         :label="$t('user_account.email')"
         :input-size="inputSizes.medium"
         icon="alternate_email"
-        show-info="You cannot edit your email address!"
+        :show-info="$t('user_account.you_cannot_edit_your_email')"
         v-model="formData.email"
     />
     <br>
@@ -70,6 +70,7 @@ onMounted(() => {
         name="phone"
         autocomplete="tel"
         clearable
+        required
         minlength="3"
         maxlength="255"
         :placeholder="$t('user_account.edit_phone')"

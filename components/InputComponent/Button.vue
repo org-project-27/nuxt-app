@@ -162,6 +162,7 @@ $button-input-height: 3rem;
     background-color: $background-color;
     transition-duration: $default_transition_duration;
     color: $main_white_color;
+    font-weight: 600;
   }
 
   &.disabled {

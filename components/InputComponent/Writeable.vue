@@ -297,7 +297,7 @@ export default defineComponent({
       height: $writeable-input-height;
       padding: 0 .8rem;
       &::placeholder {
-        opacity: 0.1;
+        opacity: .4;
       }
     }
 
