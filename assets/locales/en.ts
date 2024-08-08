@@ -110,7 +110,8 @@ locales = {
         edit_phone: 'Your phone',
         birthdate: 'Birthday',
         confirm_password: 'Confirm Password',
-        change_profile_photo: 'Change Profile Photo'
+        change_profile_photo: 'Change Profile Photo',
+        you_cannot_edit_your_email: 'You cannot edit your email address!'
     },
     layouts: {
         account_layout: {

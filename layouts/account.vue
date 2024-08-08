@@ -122,7 +122,6 @@ const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
           <div class="sidebar-controller" v-show="currentPath !== availableAppRoutes.account">
             <div v-if="deviceTypeSafe !== 'mobile'" class="flex-row-start-center">
               <lang-switcher-component/>
-              <account-dropdown/>
             </div>
             <button @click="sidebarVisible = !sidebarVisible" v-else>
               <icon-component

@@ -6,8 +6,9 @@ import {useDeviceDetector} from "~/composables/useWindowSize";
 import DefaultSearchComponent from "~/components/layouts/default/DefaultSearchComponent.vue";
 
 const route = useRoute();
-const currentPath = computed(() => route.path);
 const {deviceType} = useDeviceDetector();
+const {isAuthenticated} = useAuthStore();
+const currentPath = computed(() => route.path);
 const readyForView = computed(() => deviceType.value !== undefined && deviceType.value !== null);
 const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
 </script>
@@ -38,13 +39,16 @@ const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
       <div class="lang-switcher-area">
         <lang-switcher-component/>
       </div>
-      <div class="auth-area flex-row-start-center">
+      <div class="auth-area flex-row-start-center" v-if="!isAuthenticated">
         <nuxt-link :to="availableAppRoutes.login" class="type_4">
           {{ $t('pages.log_in') }}
         </nuxt-link>
         <nuxt-link :to="availableAppRoutes.signup" class="type_3">
           {{ $t('pages.sign_up') }}
         </nuxt-link>
+      </div>
+      <div v-else>
+        <account-dropdown/>
       </div>
     </section>
   </header>
