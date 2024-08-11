@@ -136,6 +136,7 @@ locales = {
     },
     components: {
         photo_uploader: {
+            no_profile_photo: "Delete current profile photo",
             desc: "Drag your image here or click and select",
             submit: "Save",
             reset: "Reset"

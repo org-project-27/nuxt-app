@@ -136,6 +136,7 @@ locales = {
     },
     components: {
         photo_uploader: {
+            no_profile_photo: "Cari profil şəklini sil",
             desc: "Şəkilinizi bura sürükləyib buraxın, yaxud click edib seçin",
             submit: "Yadda saxla",
             reset: "Reset"

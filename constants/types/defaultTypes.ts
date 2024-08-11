@@ -14,3 +14,11 @@ export interface DefaultResponseWithDetailsType {
 export interface DefaultResponseDataType {
     data: DefaultResponseType
 }
+
+export type ToastElementType = {
+    label?: string,
+    content?: any,
+    timeout?: number,
+    trigger?: () => void,
+    type?: 'error' | 'success' | 'info' | 'warning',
+}

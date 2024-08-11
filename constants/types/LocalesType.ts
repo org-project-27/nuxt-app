@@ -189,6 +189,7 @@ export interface PhotoUploadAndCrop {
     desc: LocaleType;
     submit: LocaleType;
     reset: LocaleType;
+    no_profile_photo: LocaleType;
 }
 
 export interface FileUploader {
