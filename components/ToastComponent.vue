@@ -71,7 +71,7 @@ export default defineComponent({
       :id="toastId"
       class="notification-toast-container">
     <div class="toast-header flex-row-between-center">
-      <h3>{{label}}</h3>
+      <h3 v-if="label">{{label}}</h3>
       <div class="icon-are">
         <button @click.prevent="closeToast" class="transparent-btn">
           <icon-component icon-name="close" icon-size="1.6rem"/>
@@ -79,7 +79,7 @@ export default defineComponent({
       </div>
     </div>
     <div class="toast-body">
-      <p v-html="content"></p>
+      <p v-if="content" v-html="content"></p>
     </div>
   </div>
 </template>
