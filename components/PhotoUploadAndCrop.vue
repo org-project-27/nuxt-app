@@ -21,7 +21,7 @@
         <input class="file-input" type="file" @change="onFileChange" accept="image/*"/>
       </div>
   </div>
-    <div class="submit-btns">
+    <div class="submit-btns" v-if="cropperReady">
       <input-component
           id="photo-upload-and-crop-button"
           @click="cropAndUpload"
@@ -31,7 +31,6 @@
           icon="save"
           :input-size="inputSizes.medium"
           :is-loading="isLoading"
-          :button-icon="{ icon: 'backup', size: '2rem', color: colorUtilities.$main_white_color }"
           :label="$t('components.photo_uploader.submit')"/>
       <input-component
           id="photo-upload-and-crop-button"
@@ -52,7 +51,7 @@ import Cropper from 'cropperjs';
 import 'cropperjs/dist/cropper.css';
 import colorUtilities from "~/constants/colorUtilities";
 import {inputSizes} from "~/constants/configs/defaults";
-const emit = defineEmits(['file'])
+const emit = defineEmits(['file', 'dragChange'])
 
 let cropper: Cropper | null = null;
 const imageSrc = ref('');
@@ -83,7 +82,7 @@ watch(imageSrc, (newValue) => {
 
 const initiateCropper = () => {
   if (imageElement.value) {
-    cropper?.destroy(); // Destroy any existing cropper instance
+    cropper?.destroy();
     cropper = new Cropper(imageElement.value, {
       aspectRatio: 1,
       viewMode: 1,
@@ -147,6 +146,9 @@ const reset = () => {
 onUnmounted(() => {
   cropper?.destroy();
 });
+watch(cropperReady, (newValue) => {
+  emit('dragChange', newValue);
+})
 </script>
 
 <style lang="scss" scoped>

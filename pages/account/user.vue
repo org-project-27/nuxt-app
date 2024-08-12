@@ -45,7 +45,17 @@
         <card-component
             :label="$t('user_account.change_profile_photo')"
             icon="add_a_photo">
-          <photo-upload-and-crop @file="uploadProfilePhoto"/>
+          <photo-upload-and-crop @file="uploadProfilePhoto" @drag-change="(val) => dragOverChange = val"/>
+          <div class="submit-btns" v-if="!dragOverChange && userModel.details.profile_photo_id">
+            <input-component
+                id="remove-current-profile-photo"
+                @click="removeCurrentPhoto"
+                type="button"
+                icon="no_photography"
+                :input-size="inputSizes.medium"
+                :is-loading="loadingForDeleteProfilePicture"
+                :label="$t('components.photo_uploader.no_profile_photo')"/>
+          </div>
         </card-component>
         <card-component
             :label="$t('user_account.change_password')"
@@ -61,6 +71,7 @@
 import {defineComponent} from 'vue'
 import {useAuthStore} from "~/stores/user/auth";
 import {getCDN} from "~/utils/helpers/generalHelpers";
+import {deleteProfilePhoto} from "~/services/user";
 
 
 export default defineComponent({
@@ -74,7 +85,10 @@ export default defineComponent({
     },
   },
   data() {
-    return {}
+    return {
+      dragOverChange: false,
+      loadingForDeleteProfilePicture: false,
+    }
   },
   methods: {
     getCDN,
@@ -82,6 +96,15 @@ export default defineComponent({
       const {logout} = useAuthStore();
       await logout();
     },
+    async removeCurrentPhoto(){
+      if(this.userModel.details.profile_photo_id) {
+        this.loadingForDeleteProfilePicture = true;
+        await deleteProfilePhoto().finally(() => {
+          this.loadingForDeleteProfilePicture = false;
+          window.location.reload();
+        });
+      }
+    }
   },
   mounted() {
   },
@@ -93,6 +116,7 @@ import EditUserAccountForm from "~/components/forms/editUserAccountForm.vue";
 import ChangeUserPasswordForm from "~/components/forms/changeUserPasswordForm.vue";
 import PhotoUploadAndCrop from "~/components/PhotoUploadAndCrop.vue";
 import {uploadProfilePhoto} from "~/services/user";
+import {inputSizes} from "~/constants/configs/defaults";
 
 definePageMeta({
   layout: 'account'
@@ -208,6 +232,9 @@ definePageMeta({
       min-height: 400px;
       display: flex;
       gap: 2rem;
+      .submit-btns {
+        margin-top: 2rem;
+      }
     }
   }
 }

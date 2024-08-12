@@ -79,29 +79,19 @@
 
 @keyframes color-change {
   0% {
-    fill: $main_color;
-    color: $main_color;
-    border-color: $main_color;
+    background-color: $main_color;
   }
   5% {
-    fill: $main_color;
-    color: $main_color;
-    border-color: $main_color;
+    background-color: $main_color;
   }
   15% {
-    fill: $main_black_color;
-    color: $main_black_color;
-    border-color: $main_black_color;
+    background-color: $main_black_color;
   }
   90% {
-    fill: $main_black_color;
-    color: $main_black_color;
-    border-color: $main_black_color;
+    background-color: $main_black_color;
   }
   100% {
-    fill: $main_color;
-    color: $main_color;
-    border-color: $main_color;
+    background-color: $main_color;
   }
 }
 

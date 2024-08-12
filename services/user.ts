@@ -142,3 +142,7 @@ export async function uploadProfilePhoto(formData: FormData) {
             return error;
         });
 }
+
+export async function deleteProfilePhoto() {
+    await axiosInstance.delete('/v1/user/profile_photo');
+}

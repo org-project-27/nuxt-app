@@ -138,7 +138,7 @@ export default defineComponent({
             cursor: pointer;
             font-weight: 400;
             color: $third_gray_color;
-            font-size: $font-size-normal;
+            font-size: $font-size-input;
           }
           display: block;
           color: $text_color;

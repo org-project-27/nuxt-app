@@ -136,6 +136,7 @@ locales = {
     },
     components: {
         photo_uploader: {
+            no_profile_photo: "Удалить текущую фото профиля",
             desc: "Перетащите сюда свое изображение или щелкните и выберите",
             submit: "Сохраните",
             reset: "Очистить"
