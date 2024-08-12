@@ -1,6 +1,7 @@
 <template>
   <div class="default-container">
-    requests
+    <div class="example">
+    </div>
   </div>
 </template>
 
@@ -14,8 +15,10 @@ export default defineComponent({
 <script setup lang="ts">
 definePageMeta({
   layout: 'account'
-})
+});
+
 </script>
 <style scoped lang="scss">
-
+.example {
+}
 </style>

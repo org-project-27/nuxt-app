@@ -116,11 +116,13 @@ const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
               <icon-component icon-name="arrow_back_ios" icon-size="25" :color="colorUtilities.$main_color"/>
             </nuxt-link>
             <h2 v-if="currentPage">
-              {{ t(`layouts.account_layout.navbar.links.${currentPage.label}`) }} {{ t(`layouts.account_layout.page`) }}
+              {{ t(`layouts.account_layout.navbar.links.${currentPage.label}`) }} {{ t(`layouts.account_layout.page`).toLowerCase() }}
             </h2>
           </div>
           <div class="sidebar-controller" v-show="currentPath !== availableAppRoutes.account">
-            <lang-switcher-component v-if="deviceTypeSafe !== 'mobile'"/>
+            <div v-if="deviceTypeSafe !== 'mobile'" class="flex-row-start-center">
+              <lang-switcher-component/>
+            </div>
             <button @click="sidebarVisible = !sidebarVisible" v-else>
               <icon-component
                   :color="colorUtilities.$main_white_color"

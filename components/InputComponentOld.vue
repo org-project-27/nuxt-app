@@ -163,18 +163,26 @@
           color="white"
           speed=".8"/>
     </div>
-    <input
-        :id="idComputed"
-        :type="type"
-        :name="name"
-        :autofocus="autofocus"
-        :disabled="disabled"
-        :style="inputStyle"
-        :value="label"
-        :class="{'mid-size': midSize}"
-        @click.stop="$emit('click')"
-        v-else
-    />
+    <div v-else class="button-container">
+      <div class="icon-area" v-if="buttonIcon">
+        <icon-component
+            class="input-icon"
+            :icon-name="buttonIcon?.icon"
+            :icon-size="buttonIcon?.size"
+            :color="buttonIcon?.color"/>
+      </div>
+      <input
+          :id="idComputed"
+          :type="type"
+          :name="name"
+          :autofocus="autofocus"
+          :disabled="disabled"
+          :style="inputStyle"
+          :value="label"
+          :class="{'mid-size': midSize}"
+          @click.stop="$emit('click')"
+      />
+    </div>
   </div>
   <div
       class="input-component selectable"
@@ -250,6 +258,7 @@ export default defineComponent({
     inputStyle: Object,
     style: Object,
     leftIcon: Object,
+    buttonIcon: Object,
     id: [String, Number],
     required: Boolean,
     autofocus: Boolean,
@@ -456,7 +465,6 @@ export default defineComponent({
         return `${currentYear}-${currentMonth}-${currentDay}`;
       }
       return null
-
     }
   },
   data() {
@@ -574,7 +582,6 @@ $disabled-color: $main_black_color;
     }
   }
   .input-container{
-    background-color: transparent;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -695,6 +702,12 @@ $disabled-color: $main_black_color;
   align-items: center;
   justify-content: center;
   background-color: $main_black_color;
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+  }
   input{
     cursor: pointer;
     width: 100%;

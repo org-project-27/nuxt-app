@@ -8,6 +8,7 @@ import {
 } from "~/constants/types/models/userAuthModels"
 import {authService, forgotPasswordService, loginService, logoutService, signupService,} from "~/services/user";
 import type {DefaultResponseDataType} from "~/constants/types/defaultTypes";
+import availableAppRoutes from "~/constants/availableAppRoutes";
 
 export const useAuthStore = defineStore('authStore', {
     state: () => (models),
@@ -106,6 +107,7 @@ export const useAuthStore = defineStore('authStore', {
         },
         async logout() {
             await logoutService();
+            await useRouter().push(availableAppRoutes.profile);
             this.resetAllModels();
             window.location.reload();
         }

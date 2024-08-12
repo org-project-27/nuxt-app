@@ -13,7 +13,7 @@
     </select>
     <icon-component
         v-if="true"
-        icon-name="translate"
+        icon-name="language"
         :color="colorUtilities.$main_color"
         icon-size="26"/>
     <img

@@ -12,6 +12,8 @@ import type {DefaultResponseDataType, DefaultResponseType} from "~/constants/typ
 import type {LangOptionsType} from "~/constants/types/LocalesType";
 import type {EditUserAccountForm} from "~/constants/types/models/editUserAccountFormModels";
 import {deepCopy} from "~/utils/helpers/generalHelpers";
+import type {ChangeUserPasswordForm} from "~/constants/types/models/changeUserPasswordFormModel";
+import axios from "axios";
 
 
 export async function loginService(payload : Login) {
@@ -117,4 +119,30 @@ export async function editUserData(payload: EditUserAccountForm){
     const data = deepCopy(payload);
     delete data['email'];
     await axiosInstance.patch('/v1/user/edit', data);
+}
+
+export async function changePassword(payload: ChangeUserPasswordForm) {
+    const data: ChangeUserPasswordForm = deepCopy(payload);
+    delete data['confirmPassword'];
+    await axiosInstance.patch('/v1/user/change_password', {
+        new_password: data.newPassword,
+        old_password: data.currentPassword,
+    });
+}
+
+export async function uploadProfilePhoto(formData: FormData) {
+    await axiosInstance.post('/v1/user/profile_photo', formData, {
+        headers: {'Content-Type': 'multipart/form-data'},
+    })
+        .then((response) => {
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error('Error uploading:', error);
+            return error;
+        });
+}
+
+export async function deleteProfilePhoto() {
+    await axiosInstance.delete('/v1/user/profile_photo');
 }

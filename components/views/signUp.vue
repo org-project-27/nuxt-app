@@ -1,120 +1,3 @@
-<template>
-  <div id="sign-up-page" class="flex-column-center" v-show="readyForView">
-    <form class="sign-up-form" @submit.prevent="submit">
-      <div class="message-box">
-        <message-component
-            v-if="signupProgressStatus"
-            type="success"
-            :message="backendMessage(signupResponse.message)"/>
-        <message-component
-            v-else-if="showEmailInputError || showFullnameInputError"
-            type="error"
-            :message="backendMessage(messages.USER_REGISTRATION_FAILED)"/>
-        <message-component
-            v-else-if="signupProgressStatus === false"
-            type="error"
-            :message="backendMessage(signupResponse.message)"/>
-        <message-component
-            v-else
-            hide-icon
-            type="info"
-            :message="$t('get_started.sign_up.welcome_message')"/>
-      </div>
-      <div class="input-group">
-        <input-component
-            id="fullname-input"
-            type="text"
-            name="fullname"
-            autocomplete="name"
-            v-model="modelSignup.fullname"
-            maxlength="255"
-            :placeholder="$t('user_account.edit_fullname')"
-            :label="$t('get_started.sign_up.fullname')"
-            :left-icon="{ icon: 'person', size: inputSizes.medium.iconSize }"
-            :input-size="inputSizes.medium"
-            :show-error="{
-              message: showFullnameInputError,
-              highlight: !!showFullnameInputError
-            }"
-            required
-            clearable
-        />
-        <br>
-        <input-component
-            id="email-input"
-            type="email"
-            name="email"
-            autocomplete="email"
-            :placeholder="$t('user_account.edit_email')"
-            v-model="modelSignup.email"
-            :label="$t('get_started.sign_up.email')"
-            :left-icon="{ icon: 'alternate_email', size: inputSizes.medium.iconSize }"
-            :input-size="inputSizes.medium"
-            :show-error="{
-              message: showEmailInputError,
-              highlight: !!showEmailInputError
-            }"
-            required
-            clearable
-        />
-        <br>
-        <input-component
-            id="password-input"
-            type="password"
-            name="password"
-            autocomplete="new-password"
-            v-model="modelSignup.password"
-            :label="$t('get_started.sign_up.password')"
-            :left-icon="{ icon: 'lock', size: inputSizes.medium.iconSize }"
-            :input-size="inputSizes.medium"
-            :show-error="{
-              message: passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null,
-              highlight: passwordStrength === 1
-            }"
-            :show-warning="{
-              message: passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null,
-              highlight: passwordStrength === 2
-            }"
-            :show-success="{
-              message: passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null,
-            }"
-            required
-            clearable
-        />
-        <br>
-        <input-component
-            id="terms-of-service"
-            name="terms-of-service"
-            type="checkbox"
-            :html-label="termsOfService.html"
-            required
-            v-model="termsOfService.value"/>
-      </div>
-      <input-component
-          id="submit-btn"
-          type="submit"
-          @ready-for-view="setReadyForView"
-          :label="$t('get_started.sign_up.submit_btn')"
-          button-type="1"
-          :left-icon="{ icon: 'lock' }"
-          :input-size="{
-              width: '100%',
-              height: '3.5rem'
-          }"
-          :disabled="!readyForSubmit"
-          :is-loading="submitIsLoading"
-      />
-    </form>
-    <span class="already-have-account">
-      {{ $t('get_started.sign_up.already_have_account') }}
-      <nuxt-link to="?view=log_in" class="decoration">
-      {{ $t('get_started.sign_up.log_in') }}
-      </nuxt-link>
-    </span>
-    <br>
-  </div>
-</template>
-
 <script>
 import { defineComponent } from 'vue';
 import { evaluatePasswordStrength } from "~/utils/helpers/inputHelpers";
@@ -198,22 +81,22 @@ export default defineComponent({
       this.submitIsLoading = true;
       const { submitSignup, modelLogin } = useAuthStore();
       await submitSignup()
-        .then(response => {
-          this.signupResponse = { ...response };
-          if(this.signupProgressStatus){
-            modelLogin.email = this.modelSignup.email;
-            this.redirectToLoginTimeId = setTimeout(() => {
-              this.$router.push('?view=log_in');
-              clearTimeout(this.redirectToLoginTimeId);
-            }, 2000)
-          }
-        })
-        .catch(error => {
-          this.signupResponse = { ...error };
-        })
-        .finally(() => {
-          this.submitIsLoading = false;
-        });
+          .then(response => {
+            this.signupResponse = { ...response };
+            if(this.signupProgressStatus){
+              modelLogin.email = this.modelSignup.email;
+              this.redirectToLoginTimeId = setTimeout(() => {
+                this.$router.push('?view=log_in');
+                clearTimeout(this.redirectToLoginTimeId);
+              }, 2000)
+            }
+          })
+          .catch(error => {
+            this.signupResponse = { ...error };
+          })
+          .finally(() => {
+            this.submitIsLoading = false;
+          });
     },
     resetModel() {
       const { resetModelSignup } = useAuthStore();
@@ -238,6 +121,103 @@ export default defineComponent({
 });
 </script>
 
+<template>
+  <div id="sign-up-page" class="flex-column-center">
+    <form class="sign-up-form" @submit.prevent="submit">
+      <div class="message-box">
+        <message-component
+            v-if="signupProgressStatus"
+            type="success"
+            :message="backendMessage(signupResponse.message)"/>
+        <message-component
+            v-else-if="showEmailInputError || showFullnameInputError"
+            type="error"
+            :message="backendMessage(messages.USER_REGISTRATION_FAILED)"/>
+        <message-component
+            v-else-if="signupProgressStatus === false"
+            type="error"
+            :message="backendMessage(signupResponse.message)"/>
+        <message-component
+            v-else
+            hide-icon
+            type="info"
+            :message="$t('get_started.sign_up.welcome_message')"/>
+      </div>
+      <div class="input-group">
+        <input-component
+            id="fullname-input"
+            type="text"
+            name="fullname"
+            autocomplete="name"
+            v-model="modelSignup.fullname"
+            maxlength="255"
+            :placeholder="$t('user_account.edit_fullname')"
+            :label="$t('get_started.sign_up.fullname')"
+            icon="person"
+            :show-error="showFullnameInputError"
+            required
+            clearable
+        />
+        <input-component
+            id="email-input"
+            type="email"
+            name="email"
+            autocomplete="email"
+            :placeholder="$t('user_account.edit_email')"
+            v-model="modelSignup.email"
+            :label="$t('get_started.sign_up.email')"
+            icon="alternate_email"
+            :show-error="showEmailInputError"
+            required
+            clearable
+        />
+        <input-component
+            id="password-input"
+            type="password"
+            name="password"
+            autocomplete="new-password"
+            icon="lock"
+            v-model="modelSignup.password"
+            :placeholder="$t('user_account.new_password')"
+            :label="$t('get_started.sign_up.password')"
+            :input-size="inputSizes.medium"
+            :show-error="passwordStrength === 1 ? $t('get_started.sign_up.password_levels.weak') : null"
+            :show-warning="passwordStrength === 2 ? $t('get_started.sign_up.password_levels.moderate') : null"
+            :show-success="passwordStrength === 3 ? $t('get_started.sign_up.password_levels.strong') : null"
+            required
+            clearable
+        />
+        <div class="terms-of-service-area">
+          <input-component
+              id="terms-of-service"
+              name="terms-of-service"
+              type="checkbox"
+              :label="termsOfService.html"
+              required
+              v-model="termsOfService.value"/>
+        </div>
+      </div>
+      <div class="submit-btn">
+        <input-component
+            id="submit-btn"
+            type="submit"
+            :label="$t('get_started.sign_up.submit_btn')"
+            button-type="main"
+            :disabled="!readyForSubmit"
+            :is-loading="submitIsLoading"
+        />
+      </div>
+    </form>
+    <span class="already-have-account">
+      {{ $t('get_started.sign_up.already_have_account') }}
+      <nuxt-link to="?view=log_in" class="decoration">
+      {{ $t('get_started.sign_up.log_in') }}
+      </nuxt-link>
+    </span>
+    <br>
+  </div>
+</template>
+
 <style scoped lang="scss">
 @include for-size($tablet-size, 100vw){
   #sign-up-page {
@@ -253,18 +233,26 @@ export default defineComponent({
       .input-group {
         display: flex;
         flex-direction: column;
-        gap: .4rem;
+        gap: 1.1rem;
         width: 100%;
       }
 
       .message-box {
         margin-bottom: 1rem;
       }
+      .submit-btn {
+        width: 100%;
+      }
     }
 
     .already-have-account {
-      font-size: $font-size-normal;
+      &, & > *{
+        font-size: $font-size-small;
+      }
       color: $main_black_color;
+    }
+    .terms-of-service-area {
+      margin: 1rem 0 0 0;
     }
   }
 }
@@ -290,11 +278,19 @@ export default defineComponent({
       .message-box {
         margin-bottom: 1rem;
       }
+      .submit-btn {
+        width: 100%;
+      }
     }
 
     .already-have-account {
-      font-size: $font-size-normal;
+      &, & > *{
+        font-size: $font-size-small;
+      }
       color: $main_black_color;
+    }
+    .terms-of-service-area {
+      margin: 1rem 0 0 0;
     }
   }
 }
