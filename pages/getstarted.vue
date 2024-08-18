@@ -1,5 +1,8 @@
 <template>
   <div id="getstarted-page">
+    <div class="banner-area">
+      <banner-component :banner="bannerKey"/>
+    </div>
     <div class="getstarted-container default-container">
       <nav id="getstarted-views-nav" class="flex-row-center">
         <nuxt-link
@@ -18,17 +21,21 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 import sign_up from "~/components/views/signUp.vue";
 import log_in from "~/components/views/logIn.vue";
 import forgot_password from "~/components/views/forgotPassword.vue";
+import colorUtilities from "~/constants/colorUtilities.js";
+import type {BannersType} from "assets/images/banners/bannersList.js";
 
 export default defineComponent({
   name: "get-started",
+  methods: {},
   components: {sign_up, log_in, forgot_password},
   data: () => {
     return {
+      bannerColor: colorUtilities.$main_color,
       views: ['log_in', 'sign_up']
     }
   },
@@ -41,6 +48,17 @@ export default defineComponent({
         return 'forgot_password'
       }
       return this.views[0];
+    },
+    bannerKey(): BannersType {
+      if(this.currentView === 'sign_up'){
+        return "user_register";
+      } else if(this.currentView === 'log_in') {
+        return "user_login"
+      } else if(this.currentView === 'forgot_password') {
+        return "forgot_password"
+      } else if(this.currentView === 'reset_password') {
+        return "reset_password"
+      }
     }
   },
   mounted(){
@@ -58,13 +76,27 @@ export default defineComponent({
   $nav-active-color: $main_color;
   $border-style: 2px solid $nav-active-color;
   $border-style-disabled: 1px solid lighten($second_white_color, 3%);
-
-  display: flex;
-  flex-direction: column;
+  overflow: hidden !important;
   height: 100%;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  gap: 10%;
+  .banner-area {
+    .svg-banner-element > svg{
+      @include animate-intro-shifting-x-reverse(1s);
+    }
+  }
+  & > div {
+    width: 50%;
+    height: 100%;
+  }
   .getstarted-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 1rem;
     nav#getstarted-views-nav {
       min-height: calc(1rem + $border-radius / 2);
