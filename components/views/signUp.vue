@@ -129,14 +129,14 @@ export default defineComponent({
             v-if="signupProgressStatus"
             type="success"
             :message="backendMessage(signupResponse.message)"/>
-        <message-component
-            v-else-if="showEmailInputError || showFullnameInputError"
-            type="error"
-            :message="backendMessage(messages.USER_REGISTRATION_FAILED)"/>
-        <message-component
-            v-else-if="signupProgressStatus === false"
-            type="error"
-            :message="backendMessage(signupResponse.message)"/>
+<!--        <message-component-->
+<!--            v-else-if="showEmailInputError || showFullnameInputError"-->
+<!--            type="error"-->
+<!--            :message="backendMessage(messages.USER_REGISTRATION_FAILED)"/>-->
+<!--        <message-component-->
+<!--            v-else-if="signupProgressStatus === false"-->
+<!--            type="error"-->
+<!--            :message="backendMessage(signupResponse.message)"/>-->
         <message-component
             v-else
             hide-icon

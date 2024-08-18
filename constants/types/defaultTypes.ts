@@ -20,5 +20,5 @@ export type ToastElementType = {
     content?: any,
     timeout?: number,
     trigger?: () => void,
-    type?: 'error' | 'success' | 'info' | 'warning',
+    status?: 'error' | 'success' | 'info' | 'warning',
 }

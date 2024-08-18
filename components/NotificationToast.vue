@@ -16,7 +16,7 @@ export default defineComponent({
       :content="toast.content"
       :timeout="toast.timeout"
       :trigger="toast.trigger"
-      :type="toast.type"
+      :status="toast.status"
       @close="() => deleteToast(index)"
     />
   </div>

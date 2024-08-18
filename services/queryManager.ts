@@ -1,6 +1,7 @@
 import axios from "axios";
 import { axiosConfigs } from "~/constants/configs/api.config";
 import { useServiceManagementStore } from "#imports";
+import {backendMessage} from "~/utils/helpers/generalHelpers";
 
 export const axiosInstance = axios.create(axiosConfigs);
 
@@ -17,6 +18,14 @@ const errorHandler = (error: any) => {
   const { queryKey } = error.config.env;
   if(queryKey){
     const { addToQueryHistories } = useServiceManagementStore();
+    const {setToast} = useNotificationToast();
+    const {i18n} = useI18nStore()
+    setToast({
+      label: i18n.global.t('error'),
+      content: backendMessage(error.response.data.message),
+      timeout: 5000,
+      status: 'error'
+    })
     addToQueryHistories(queryKey);
   }
   return Promise.reject(error);

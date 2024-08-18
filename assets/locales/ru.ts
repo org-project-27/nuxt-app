@@ -11,6 +11,7 @@ locales = {
     redirecting_to_home: "Переход на главную страницу",
     redirecting_to_login: "Переход на страницу входа",
     email_confirming: "Подтверждение адреса электронной почты",
+    error: "Оопс! Произошла ошибка",
     buttons: {
         search: "Поиск",
         filter: "Фильтр",
