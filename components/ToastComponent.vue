@@ -6,6 +6,9 @@ function closeToast(event: Event) {
 
 </script>
 <script lang="ts">
+import type {IconsTypes} from "assets/images/icons/materialIconsList";
+import colorUtilities from "~/constants/colorUtilities";
+
 export default defineComponent({
   name: 'ToastComponent',
   props: {
@@ -29,10 +32,47 @@ export default defineComponent({
       default: () => {
         return () => { console.log('default trigger') }
       },
+    },
+    status: {
+      type: String as () => 'error' | 'warning' | 'success' | 'info' ,
+      default: () => 'info',
     }
+  },
+  computed: {
+    statusIconDetector(): IconsTypes | null {
+      if (this.status === 'error') {
+        return 'cancel';
+      }
+      if (this.status === 'warning') {
+        return 'warning';
+      }
+      if (this.status === 'success') {
+        return 'check_circle';
+      }
+      if (this.status === 'info') {
+        return 'info';
+      }
+      return null;
+    },
+    statusColorDetector() {
+      if (this.status === 'error') {
+        return this.colorUtilities.$error_color;
+      }
+      if (this.status === 'warning') {
+        return this.colorUtilities.$warning_color;
+      }
+      if (this.status === 'success') {
+        return this.colorUtilities.$success_color;
+      }
+      if (this.status === 'info') {
+        return this.colorUtilities.$main_color;
+      }
+      return null
+    },
   },
   data() {
     return {
+      colorUtilities,
       tIds: {
         active: '',
         outro: ''
@@ -42,7 +82,7 @@ export default defineComponent({
   mounted() {
     if(this.toastId){
       const element = document.getElementById(this.toastId);
-      if(element) {
+      if(element && this.timeout) {
         // @ts-ignore
         this.tIds['active'] = setTimeout(() => {
           element.classList.add('active');
@@ -69,9 +109,14 @@ export default defineComponent({
 <template>
   <div
       :id="toastId"
-      class="notification-toast-container">
+      :class="`notification-toast-container status-${status}`">
     <div class="toast-header flex-row-between-center">
-      <h3 v-if="label">{{label}}</h3>
+      <div class="flex-row-center" style="gap: .3rem">
+        <div class="icon-area">
+          <icon-component :icon-name="status" icon-size="1.5rem" :color="statusColorDetector"/>
+        </div>
+        <h3 v-if="label">{{label}}</h3>
+      </div>
       <div class="icon-are">
         <button @click.prevent="closeToast" class="transparent-btn">
           <icon-component icon-name="close" icon-size="1.6rem"/>
@@ -99,7 +144,7 @@ export default defineComponent({
   gap: 1rem;
   @include animate-intro-shifting-x(1s);
   &.active {
-    @include animate-bounce(1s);
+    @include animate-bounce(2s);
   }
   &.outro {
     @include animate-outro-shifting-x(1s);

@@ -11,6 +11,7 @@ locales = {
     please_wait: "Please wait",
     redirecting_to_home: "Redirecting to home page",
     redirecting_to_login: "Redirecting to login page",
+    error: 'Oops! An error occurred',
     buttons: {
         search: "Search",
         filter: "Filter",

@@ -208,6 +208,7 @@ export interface LanguageContent {
     please_wait: LocaleType;
     redirecting_to_home: LocaleType;
     redirecting_to_login: LocaleType;
+    error: LocaleType;
     buttons: Buttons;
     pages: Pages;
     get_started: GetStarted;

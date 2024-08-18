@@ -11,6 +11,7 @@ locales = {
     please_wait: "Zəhmət olmasa gözləyin",
     redirecting_to_home: "Əsas səhifəyə yönləndirilir",
     redirecting_to_login: "Login səhifəsinə yönləndirilir",
+    error: 'Oops! Xəta baş verdi',
     buttons: {
         search: "Axtar",
         filter: "Filtr",

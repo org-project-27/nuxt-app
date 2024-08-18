@@ -95,12 +95,11 @@ export default defineComponent({
   <div id="log-in-page" class="flex-column-center">
     <form class="log-in-form" @submit.prevent="submit">
       <div class="message-box">
+<!--        <message-component-->
+<!--            v-if="!showEmailInputError && loginProgressStatus === false"-->
+<!--            type="error"-->
+<!--            :message="backendMessage(loginResponse.message)"/>-->
         <message-component
-            v-if="!showEmailInputError && loginProgressStatus === false"
-            type="error"
-            :message="backendMessage(loginResponse.message)"/>
-        <message-component
-            v-else
             hide-icon
             type="info"
             :message="$t('get_started.log_in.welcome_message')" />
