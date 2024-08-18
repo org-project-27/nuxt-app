@@ -125,6 +125,27 @@
 
 // @include animate-intro-shifting-x(3s, 0s);
 
+@keyframes intro-shifting-x-reverse {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@mixin animate-intro-shifting-x-reverse($duration: 1s, $delay: 0s) {
+  animation-name: intro-shifting-x-reverse;
+  animation-duration: $duration;
+  animation-delay: $delay;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+// @include animate-intro-shifting-x-reverse(3s, 0s);
+
 @keyframes intro-shifting-y {
   0%, 100% {
     opacity: 0;

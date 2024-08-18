@@ -24,7 +24,7 @@ const deviceTypeSafe = computed(() => deviceType.value || 'unknown');
 <style scoped lang="scss">
 // Global:
 .container {
-  width: 100vw;
+  width: 99vw;
 
   & > * {
     background-color: $main_background_color;
